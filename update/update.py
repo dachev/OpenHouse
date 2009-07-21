@@ -5,7 +5,7 @@ import urllib
 import libxml2
 import re
 import locale
-from dateutil.parser import *
+from dateutil import parser
 from sqlalchemy import Table, Column, DateTime, MetaData, create_engine
 import Queue
 from ThreadUrl import ThreadUrl
@@ -136,13 +136,12 @@ def images_action():
 
         # fetch full-size image
         url = IMAGE_BASE + '?' + urllib.urlencode(args)
-        response = urllib.urlopen(url).read()
+        queue.put(url)
 
         # fetch thumbnail
         if image['thumb'] == 1:
             args['size'] = 't'
             url = IMAGE_BASE + '?' + urllib.urlencode(args)
-            #response = urllib.urlopen(url).read()
             queue.put(url)
 
         # set DB flag
@@ -194,8 +193,8 @@ def parse(ctxt):
         'ltype'       : {'sel':'g:listing_type[1]', 'val':[]},
         'model'       : {'sel':'g:model[1]', 'val':[]},
         'style'       : {'sel':'g:style[1]', 'val':[]},
-        'lat'         : {'sel':'.//g:latitude[1]', 'val':[]},
-        'lng'         : {'sel':'.//g:longitude[1]', 'val':[]},
+        'lat'         : {'sel':'g:location/g:latitude[1]', 'val':[]},
+        'lng'         : {'sel':'g:location/g:longitude[1]', 'val':[]},
         'addr'        : {'sel':'g:location/text()', 'val':[]},
         'floor'       : {'sel':'g:floor_number[1]', 'val':[]},
         'parking'     : {'sel':'g:parking[1]', 'val':[]}
@@ -226,7 +225,7 @@ def parse(ctxt):
     item = {}
     for k,v in entry.iteritems():
         item[k] = v['val']
-
+    
     # break up and delete the range array
     item['bdate'] = None
     item['edate'] = None
@@ -286,7 +285,7 @@ def extractDates(date):
 
     try:
         for date in dates:
-            d.append(dateutil.parser.parse(date))
+            d.append(parser.parse(date))
     except:
         print(date)
         return []

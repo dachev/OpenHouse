@@ -10,8 +10,11 @@ class ThreadUrl(threading.Thread):
     def run(self):
         while True:
             url = self.queue.get()
-            
-            url = urllib2.urlopen(url)
-            url.read(1024)
+
+            try:
+                url = urllib2.urlopen(url)
+                url.read(1024)
+            except:
+                f=''
             
             self.queue.task_done()
