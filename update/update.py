@@ -1,36 +1,89 @@
 #!/usr/bin/env python
 import sys
-from datetime import datetime, timedelta
 import urllib
 import libxml2
 import re
 import locale
-from dateutil import parser
-from sqlalchemy import Table, Column, DateTime, MetaData, create_engine
 import Queue
+import json
+import time
+from datetime import datetime, timedelta
+from dateutil import parser
+from sqlalchemy import Table, Column, DateTime, MetaData, text, create_engine
 from ThreadUrl import ThreadUrl
 
 SEARCH_BASE = 'http://base.google.com/base/feeds/snippets'
 IMAGE_BASE  = 'http://localhost/service/image/resize.png'
-Houses = Images = None
+Houses = Images = engine = None
 
 def index(req):
     main(req.form.getfirst('action', ''))
 
-def main(action):
-    global Houses, Images
+def search(req):
+    global Houses, engine
+
+    # initialize response
+    response = {'success':False, 'msg': ''}
 
     # initialize DB
-    engine = create_engine('mysql://blago:F$USA&4?sE@localhost:3306/openhouses')
-    meta = MetaData()
-    meta.bind = engine
-    meta.create_all()
-    Images = Table('images', meta, autoload=True)
-    Houses = Table('houses', meta,
-                   Column('bdate', DateTime(timezone=False)),
-                   Column('edate', DateTime(timezone=False)),
-                   Column('expdate', DateTime(timezone=False)),
-                   autoload=True)
+    init_db()
+
+    # parse arguments
+    try:
+        lat     = float(req.form.getfirst('lat', ''))
+        lng     = float(req.form.getfirst('lng', ''))
+        offset  = int(req.form.getfirst('offset', ''))
+        records = int(req.form.getfirst('records', ''))
+        bdate   = extractDates(req.form.getfirst('bdate', ''))
+        edate   = extractDates(req.form.getfirst('edate', ''))
+        if len(bdate) != 1:
+            raise Exception('bdate is missing or invalid')
+        if len(edate) != 1:
+            raise Exception('edate is missing or invalid')
+        if records < 1 or records > 250:
+            raise Exception('records must be an integer between 1 and 250')
+    except Exception as e:
+        response['msg'] = e.message
+        req.write(json.dumps(response));
+        return
+
+    # load data from the DB
+    houses = []
+    distance = text("""
+        SELECT *, 3959 * ACOS(SIN(RADIANS(:plat)) * SIN(RADIANS(lat)) + COS(RADIANS(:plat)) * COS(RADIANS(lat)) * COS(RADIANS(lng) - RADIANS(:plng))) AS distance 
+        FROM houses 
+        HAVING distance < 50 
+        LIMIT :poffset, :precords
+    """)
+    results = engine.execute(distance, plat=lat, plng=lng, poffset=offset, precords=records)
+
+    # generate column list
+    keys = []
+    for c in Houses.c:
+        keys.append(c.name)
+    keys.append('distance')
+
+    # massage data
+    for result in results:
+        vals = []
+        for c in result:
+            val = c
+            if type(val) == datetime:
+                val = int(time.mktime(c.timetuple()))
+            vals.append(val)
+        houses.append(dict(zip(keys, vals)))
+    results.close()
+
+    # write response
+    # TODO: add total
+    response = {'houses':houses, 'offset':offset, 'records':len(houses), 'success':True}
+    req.write(json.dumps(response))
+
+def main(action):
+    global Houses, Images, engine
+
+    # initialize DB
+    init_db()
 
     # perform action
     if action == 'houses':
@@ -39,9 +92,6 @@ def main(action):
         images_action()
     elif action == 'cleanup':
         cleanup_action()
-
-def search_action():
-    f = ''
 
 def houses_action():
     global Houses, Images
@@ -292,7 +342,20 @@ def extractDates(date):
 
     return d
 
-
+def init_db():
+    global Houses, Images, engine
+    
+    engine = create_engine('mysql://blago:F$USA&4?sE@localhost:3306/openhouses')
+    meta = MetaData()
+    meta.bind = engine
+    meta.create_all()
+    Images = Table('images', meta, autoload=True)
+    Houses = Table('houses', meta,
+                   Column('bdate', DateTime(timezone=False)),
+                   Column('edate', DateTime(timezone=False)),
+                   Column('expdate', DateTime(timezone=False)),
+                   autoload=True)
+    
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         usage(sys.argv[0])
