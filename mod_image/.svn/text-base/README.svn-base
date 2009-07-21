@@ -1,0 +1,12 @@
+mod_v8 is an experiment in integrating the v8 javascript engine within the 
+Apache HTTP Server.
+
+To use:
+  AddHandler v8-script .v8
+
+And write a .v8 file with your script.
+
+mod_v8 currently exposes a global 'ap' object, with the following functions:
+  ap.log: Logs a message to the apache error log.
+  ap.write: Writes a string to the client.
+

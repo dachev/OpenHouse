@@ -1,0 +1,23 @@
+CXX           = g++
+DEFINES       = -DDARWIN -DSIGPROCMASK_SETS_THREAD_MASK
+CXXFLAGS      = -no-cpp-precomp -fPIC
+INCPATH       = -I/opt/local/include/apr-1 -I/opt/local/apache2/include -I`pkg-config --variable=includedir GraphicsMagick++` -I`pkg-config --variable=includedir libcurl` -I/opt/local/libexec/qt4-mac/mkspecs/macx-g++ -I. -I/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers -I/opt/local/libexec/qt4-mac/include/QtCore -I/opt/local/libexec/qt4-mac/lib/QtNetwork.framework/Versions/4/Headers -I/opt/local/libexec/qt4-mac/include/QtNetwork -I/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers -I/opt/local/libexec/qt4-mac/include/QtGui -I/opt/local/libexec/qt4-mac/include -I. -I. -F/opt/local/libexec/qt4-mac/lib
+LIBS          = -F/opt/local/libexec/qt4-mac/lib -L/opt/local/libexec/qt4-mac/lib -framework QtCore `pkg-config --libs libcurl` `pkg-config --libs GraphicsMagick++`
+
+all: mod_image.os UrlLibrary.os md5.os md5wrapper.os
+	g++ -o mod_image.so -undefined dynamic_lookup -bundle mod_image.os UrlLibrary.os md5.os md5wrapper.os $(LIBS)
+
+mod_image.os: mod_image.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mod_image.os mod_image.cpp
+
+UrlLibrary.os: UrlLibrary.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o UrlLibrary.os UrlLibrary.cpp
+
+md5.os: md5.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o md5.os md5.cpp
+
+md5wrapper.os: md5wrapper.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o md5wrapper.os md5wrapper.cpp
+
+clean:
+	rm -f *.so *.os

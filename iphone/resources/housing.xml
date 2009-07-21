@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<entry xmlns='http://www.w3.org/2005/Atom' xmlns:gm='http://base.google.com/ns-metadata/1.0' xmlns:batch='http://schemas.google.com/gdata/batch'>
+    <id>http://www.google.com/base/feeds/itemtypes/en_US/housing</id>
+    <updated>2009-06-23T03:51:30.647Z</updated>
+    <category scheme='http://base.google.com/categories/itemtypes' term='housing'/>
+    <title type='text'>housing</title>
+    <content type='text'>housing</content>
+    <link rel='related' type='application/atom+xml' href='http://www.google.com/base/feeds/snippets/-/housing' title='Items of type &apos;housing&apos;'/>
+    <link rel='self' type='application/atom+xml' href='http://www.google.com/base/feeds/itemtypes/en_US/housing'/>
+    <gm:item_type>housing</gm:item_type>
+    <gm:attributes>
+        <gm:attribute name='location' type='location'/>
+        <gm:attribute name='property type' type='text'/>
+        <gm:attribute name='price' type='floatUnit'/>
+        <gm:attribute name='broker' type='text'/>
+        <gm:attribute name='mls listing id' type='text'/>
+        <gm:attribute name='mls name' type='text'/>
+        <gm:attribute name='agent' type='text'/>
+        <gm:attribute name='school' type='text'/>
+        <gm:attribute name='school district' type='text'/>
+        
+        <gm:attribute name='lot size' type='numberUnit'/>
+        <gm:attribute name='area' type='numberUnit'/>
+        <gm:attribute name='bathrooms' type='number'/>
+        <gm:attribute name='year' type='number'/>
+        <gm:attribute name='bedrooms' type='number'/>
+        <gm:attribute name='open house date range' type='dateTimeRange'/>
+        
+        
+        
+        <gm:attribute name='expiration date' type='dateTime'/>
+        <gm:attribute name='listing type' type='text'/>
+        <gm:attribute name='model' type='text'/>
+        <gm:attribute name='provider class' type='text'/>
+        <gm:attribute name='price type' type='text'/>
+        <gm:attribute name='agent_email' type='text'/>
+        <gm:attribute name='area_contiguous' type='numberUnit'/>
+        <gm:attribute name='parking' type='number'/>
+        <gm:attribute name='lease_type' type='text'/>
+        <gm:attribute name='area_min' type='numberUnit'/>
+        <gm:attribute name='agent_phone' type='text'/>
+        <gm:attribute name='price_min' type='number'/>
+        <gm:attribute name='floor_number' type='text'/>
+        <gm:attribute name='financials' type='text'/>
+        <gm:attribute name='zoning' type='text'/>
+        <gm:attribute name='hoa dues' type='number'/>
+        <gm:attribute name='style' type='text'/>
+        <gm:attribute name='feature' type='text'/>
+        <gm:attribute name='property taxes' type='number'/>
+        <gm:attribute name='listing status' type='text'/>
+    </gm:attributes>
+</entry>
