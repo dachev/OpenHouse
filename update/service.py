@@ -16,9 +16,6 @@ SEARCH_BASE = 'http://base.google.com/base/feeds/snippets'
 IMAGE_BASE  = 'http://localhost/service/image/resize.png'
 Houses = Images = engine = None
 
-def index(req):
-    main(req.form.getfirst('action', ''))
-
 def search(req):
     global Houses, engine
 
@@ -59,13 +56,14 @@ def search(req):
     # write response
     req.write(json.dumps(response))
 
-def main(action):
+def update(req):
     global Houses, Images, engine
 
     # initialize DB
     init_db()
 
     # perform action
+    action = req.form.getfirst('action', '')
     if action == 'houses':
         houses_action()
     elif action == 'images':
@@ -395,5 +393,15 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         usage(sys.argv[0])
         sys.exit(0)
-        
-    main(sys.argv[1])
+
+    # initialize DB
+    init_db()
+
+    # perform action
+    action = sys.argv[1]
+    if action == 'houses':
+        houses_action()
+    elif action == 'images':
+        images_action()
+    elif action == 'cleanup':
+        cleanup_action()
