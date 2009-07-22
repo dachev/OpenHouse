@@ -23,6 +23,7 @@ def search(req):
     global Houses, engine
 
     # initialize response
+    req.content_type = 'application/json'
     response = {'success':False, 'msg': ''}
 
     # initialize DB
@@ -46,37 +47,16 @@ def search(req):
         response['msg'] = e.message
         req.write(json.dumps(response));
         return
-
-    # load data from the DB
-    houses = []
-    distance = text("""
-        SELECT *, 3959 * ACOS(SIN(RADIANS(:plat)) * SIN(RADIANS(lat)) + COS(RADIANS(:plat)) * COS(RADIANS(lat)) * COS(RADIANS(lng) - RADIANS(:plng))) AS distance 
-        FROM houses 
-        HAVING distance < 50 
-        LIMIT :poffset, :precords
-    """)
-    results = engine.execute(distance, plat=lat, plng=lng, poffset=offset, precords=records)
-
-    # generate column list
-    keys = []
-    for c in Houses.c:
-        keys.append(c.name)
-    keys.append('distance')
-
-    # massage data
-    for result in results:
-        vals = []
-        for c in result:
-            val = c
-            if type(val) == datetime:
-                val = int(time.mktime(c.timetuple()))
-            vals.append(val)
-        houses.append(dict(zip(keys, vals)))
-    results.close()
+    
+    response = {'success':True, 'total':0, 'offset':offset, 'houses':[]}
+    total    = count_houses(lat, lng, bdate[0], edate[0])
+    
+    response['total'] = total
+    if total > 0:
+        houses = get_houses(lat, lng, bdate[0], edate[0], offset, records)
+        response['houses'] = houses
 
     # write response
-    # TODO: add total
-    response = {'houses':houses, 'offset':offset, 'records':len(houses), 'success':True}
     req.write(json.dumps(response))
 
 def main(action):
@@ -210,11 +190,76 @@ def cleanup_action():
 
     # TODO: Call image server and delete photos
 
-def usage(command):
-    report('Usage: ' + command + ' houses|images|cleanup')
+def init_db():
+    global Houses, Images, engine
     
-def report(msg):
-    print msg
+    engine = create_engine('mysql://blago:F$USA&4?sE@localhost:3306/openhouses')
+    meta = MetaData()
+    meta.bind = engine
+    meta.create_all()
+    Images = Table('images', meta, autoload=True)
+    Houses = Table('houses', meta,
+                   Column('bdate', DateTime(timezone=False)),
+                   Column('edate', DateTime(timezone=False)),
+                   Column('expdate', DateTime(timezone=False)),
+                   autoload=True)
+
+def count_houses(lat, lng, bdate, edate):
+    global Houses, engine
+
+    # initialize DB
+    init_db()
+
+    # load data from the DB
+    houses = []
+    sql    = text("""
+        SELECT count(*)
+        FROM houses
+        WHERE (3959 * ACOS(SIN(RADIANS(:alat)) * SIN(RADIANS(lat)) + COS(RADIANS(:alat)) * COS(RADIANS(lat)) * COS(RADIANS(lng) - RADIANS(:alng)))) < 50
+        AND bdate > :abdate
+        AND edate < :aedate
+    """)
+    results = engine.execute(sql, alat=lat, alng=lng, abdate=bdate, aedate=edate)
+    total   = results.fetchone()[0]
+    results.close()
+
+    return total
+
+def get_houses(lat, lng, bdate, edate, offset, records):
+    global Houses, engine
+
+    # initialize DB
+    init_db()
+
+    # load data from the DB
+    houses = []
+    sql    = text("""
+        SELECT *
+        FROM houses
+        WHERE (3959 * ACOS(SIN(RADIANS(:alat)) * SIN(RADIANS(lat)) + COS(RADIANS(:alat)) * COS(RADIANS(lat)) * COS(RADIANS(lng) - RADIANS(:alng)))) < 50
+        AND bdate > :abdate
+        AND edate < :aedate
+        LIMIT :aoffset, :arecords
+    """)
+    results = engine.execute(sql, alat=lat, alng=lng, abdate=bdate, aedate=edate, aoffset=offset, arecords=records)
+
+    # generate column list
+    keys = []
+    for c in Houses.c:
+        keys.append(c.name)
+
+    # massage data
+    for result in results:
+        vals = []
+        for c in result:
+            val = c
+            if type(val) == datetime:
+                val = int(time.mktime(c.timetuple()))
+            vals.append(val)
+        houses.append(dict(zip(keys, vals)))
+    results.close()
+
+    return houses
 
 def parse(ctxt):
     entry = {
@@ -342,20 +387,10 @@ def extractDates(date):
 
     return d
 
-def init_db():
-    global Houses, Images, engine
-    
-    engine = create_engine('mysql://blago:F$USA&4?sE@localhost:3306/openhouses')
-    meta = MetaData()
-    meta.bind = engine
-    meta.create_all()
-    Images = Table('images', meta, autoload=True)
-    Houses = Table('houses', meta,
-                   Column('bdate', DateTime(timezone=False)),
-                   Column('edate', DateTime(timezone=False)),
-                   Column('expdate', DateTime(timezone=False)),
-                   autoload=True)
-    
+def usage(command):
+    report('Usage: ' + command + ' houses|images|cleanup')
+
+
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         usage(sys.argv[0])
