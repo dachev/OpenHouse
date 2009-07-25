@@ -18,9 +18,10 @@
 
 
 @implementation BrowseController
-@synthesize mapController, tableController, activeController, page, origin, currentAnnotations, navButtons, toolbar;
+@synthesize mapController, tableController, activeController, page, origin, currentAnnotations, navButtons, toolbar, mapIconImage, listIconImage;
 
-
+#pragma mark -
+#pragma mark Instantiation and tear down
 -(id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
 		[self setCurrentAnnotations:[NSArray array]];
@@ -43,6 +44,8 @@
 		[[self navigationItem] setRightBarButtonItem:barNavButton];
 		[barNavButton release];
 		
+        [self setListIconImage:[UIImage imageNamed:@"list.png"]];
+        [self setMapIconImage:[UIImage imageNamed:@"map.png"]];
 		
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectedHouseCallback:) name:@"selectedHouse" object:nil];
     }
@@ -58,10 +61,15 @@
 	[currentAnnotations release];
 	[navButtons release];
 	[toolbar release];
-	
+	[mapIconImage release];
+	[listIconImage release];
+    
     [super dealloc];
 }
 
+
+#pragma mark -
+#pragma mark Standard UIViewController stuff
 -(void) loadView {
 	[self setView:[[[UIView alloc] initWithFrame:CGRectZero] autorelease]];
 	
@@ -90,29 +98,42 @@
 	[self.view addSubview:toolbar];
  	
 	/* Initialize toolbar items */
-    UIView *statusView = [[[UIView alloc] initWithFrame:CGRectMake(0,0,260,20)] autorelease];
-    UILabel *statusLabel = [[[UILabel alloc] initWithFrame:CGRectMake(100,0,140,20)] autorelease];
+    int viewWidth      = 225;
+    int spinnerWidth   = 20;
+    UIView *statusView = [[[UIView alloc] initWithFrame:CGRectMake(0,0,viewWidth,20)] autorelease];
+    
+    NSString *statusText = @"Loading Data...";
+    int labelWidth       = (int) [statusText sizeWithFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]].width;
+    int labelOffset      = (int) (viewWidth - (labelWidth + spinnerWidth + 6)) / 2;
+    int spinnerOffset    = labelOffset + labelWidth + 6;
+    UILabel *statusLabel = [[[UILabel alloc] initWithFrame:CGRectMake(labelOffset,0,labelWidth,20)] autorelease];
     [statusLabel setBackgroundColor:[UIColor clearColor]];
     [statusLabel setTextColor:[UIColor whiteColor]];
     [statusLabel setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]];
     //[statusLabel setTextAlignment:UITextAlignmentCenter];
-    [statusLabel setText:@"Loading Data..."];
-    UIActivityIndicatorView *spinner = [[[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(75,0,20,20)] autorelease];
+    [statusLabel setText:statusText];
+    UIActivityIndicatorView *spinner = [[[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(spinnerOffset,0,spinnerWidth,20)] autorelease];
     [spinner startAnimating];
     [statusView addSubview:spinner];
     [statusView addSubview:statusLabel];
 	
     UIBarButtonItem *statusButton  = [[UIBarButtonItem alloc] initWithCustomView:statusView];
+    UIBarButtonItem *actionButton  = [[UIBarButtonItem alloc]
+                                      initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                      target:self
+                                      action:@selector(selectAction:)];
 	UIBarButtonItem *flipButton    = [[UIBarButtonItem alloc]
-									  initWithImage:[UIImage imageNamed:@"list.png"]
+									  initWithImage:listIconImage
 									  style:UIBarButtonItemStylePlain
 									  target:self
 									  action:@selector(changeView:)];
-    
-	[toolbar setItems:[NSArray arrayWithObjects:statusButton,flipButton,nil]];
-    [[[[toolbar items] objectAtIndex:0] view] setAlpha:0.0f];
+
+	[toolbar setItems:[NSArray arrayWithObjects:actionButton, statusButton,flipButton,nil]];
+    [[[[toolbar items] objectAtIndex:1] view] setAlpha:0.0f];
     [statusButton release];
 	[flipButton release];
+    
+    [self.navigationController setDelegate:self];
 }
 
 /*
@@ -167,31 +188,8 @@
 }
 
 
-#pragma mark ---- delegate methods for the OpenHousesApiDelegate class ----
--(void) finishedWithPage:(NSNumber *)p {
-    [[[[toolbar items] objectAtIndex:0] view] setAlpha:0.0f];
-    
-	[self showPage:p];
-}
-
--(void) failedWithError:(NSError *)error {
-    [[[[toolbar items] objectAtIndex:0] view] setAlpha:0.0f];
-    
-	UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle:nil
-                          message:@"An API error has ocurred. Please try again later."
-                          delegate:self
-                          cancelButtonTitle:nil
-                          otherButtonTitles:@"OK", nil];
-	
-    [alert show];
-    [alert release];
-}
-
-
-
-
-
+#pragma mark -
+#pragma mark Custom UIViewController methods
 -(void) showPage:(NSNumber *)p {
 	OpenHouses *openHouses = [OpenHouses sharedOpenHouses];
 	if ([openHouses hasDataForPage:p] == NO) {
@@ -207,7 +205,7 @@
 }
 
 -(void) getPage:(NSNumber *)p {
-    [[[[toolbar items] objectAtIndex:0] view] setAlpha:1.0f];
+    [[[[toolbar items] objectAtIndex:1] view] setAlpha:1.0f];
     
 	OpenHouses *openHouses = [OpenHouses sharedOpenHouses];
 	[openHouses loadMoreData:origin];
@@ -253,6 +251,13 @@
 -(void) toggleView {
 	UIView *mapView   = [mapController view];
 	UIView *tableView = [tableController view];
+    
+	if (activeController == mapController) {
+        [[[toolbar items] objectAtIndex:2] setImage:mapIconImage];
+    }
+    else {
+        [[[toolbar items] objectAtIndex:2] setImage:listIconImage];
+    }
 	
 	[UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:0.5];
@@ -295,6 +300,46 @@
         [detailsController setHouse:house];
 		[[self navigationController] pushViewController:detailsController animated:YES];
 	}
+}
+
+
+#pragma mark ---- delegate methods for the UINavigationController class ----
+-(void) navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if (viewController != self) {
+        return;
+    }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"browseControllerWillShow" object:nil];
+}
+
+-(void) navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if (viewController != self) {
+        return;
+    }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"browseControllerDidShow" object:nil];
+}
+
+
+#pragma mark ---- delegate methods for the OpenHousesApiDelegate class ----
+-(void) finishedWithPage:(NSNumber *)p {
+    [[[[toolbar items] objectAtIndex:1] view] setAlpha:0.0f];
+    
+	[self showPage:p];
+}
+
+-(void) failedWithError:(NSError *)error {
+    [[[[toolbar items] objectAtIndex:1] view] setAlpha:0.0f];
+    
+	UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:nil
+                          message:@"An API error has ocurred. Please try again later."
+                          delegate:self
+                          cancelButtonTitle:nil
+                          otherButtonTitles:@"OK", nil];
+	
+    [alert show];
+    [alert release];
 }
 
 @end

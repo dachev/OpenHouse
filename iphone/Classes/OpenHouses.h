@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GData.h"
-#import "GDataEntryGoogleBase.h"
-#import "GDataFeedGoogleBase.h"
 #import "SynthesizeSingleton.h"
+#import "TaggedRequest.h"
+#import "ConnectionManager.h"
+#import "CJSONDeserializer.h"
 #import "OpenHouse.h"
 #import "Constants.h"
 

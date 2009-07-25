@@ -10,6 +10,7 @@
 
 @interface SpecsView (Private)
 -(void) makeLineWithLabel:(NSString *)attr andValue:(NSString *)value;
+-(NSString *) makeRangeLabelforBegin:(NSDate *)begin end:(NSDate *)end;
 @end
 
 
@@ -35,24 +36,12 @@
     [house release];
     house = v;
     
-    
-    NSString *time = @"";
-    NSString *date = @"";
-    NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
-    [dateFormatter setDateFormat:OPEN_HOUSE_DATE_TIME];
-    time = [time stringByAppendingString:[dateFormatter stringFromDate:[house begin]]];
-    time = [time stringByAppendingString:@" - "];
-    time = [time stringByAppendingString:[dateFormatter stringFromDate:[house end]]];
-    
-    [dateFormatter setDateFormat:OPEN_HOUSE_DATE_DAY];
-    time = [time stringByAppendingString:@"\n"];
-    time = [time stringByAppendingString:[dateFormatter stringFromDate:[house begin]]];
-    
-    date = [dateFormatter stringFromDate:[house expirationDate]];
+    NSString *range = [self makeRangeLabelforBegin:[house begin] end:[house end]];
+    NSString *date  = [self makeRangeLabelforBegin:[house expirationDate] end:nil];
     
     [self makeLineWithLabel:@"Price" andValue:[house price]];
     [self makeLineWithLabel:@"Address" andValue:[house title]];
-    [self makeLineWithLabel:@"Time" andValue:time];
+    [self makeLineWithLabel:@"Time" andValue:range];
     [self makeLineWithLabel:@"Description" andValue:[house content]];
     [self makeLineWithLabel:@"Expires" andValue:date];
     [self makeLineWithLabel:@"Prop Taxes" andValue:[house propertyTaxes]];
@@ -63,6 +52,8 @@
     [self makeLineWithLabel:@"Lot Size" andValue:[house lotSize]];
     [self makeLineWithLabel:@"Year" andValue:[house year]];
     [self makeLineWithLabel:@"Prop Type" andValue:[house propertyType]];
+    [self makeLineWithLabel:@"Model" andValue:[house model]];
+    [self makeLineWithLabel:@"Style" andValue:[house style]];
     [self makeLineWithLabel:@"Zoning" andValue:[house zoning]];
     [self makeLineWithLabel:@"School" andValue:[house school]];
     [self makeLineWithLabel:@"School Dist" andValue:[house schoolDistrict]];
@@ -73,8 +64,8 @@
 }
 
 -(void) makeLineWithLabel:(NSString *)attr andValue:(NSString *)value {
-    UILabel *l11 = [[[UILabel alloc] initWithFrame:CGRectMake(10, vOffset, 80, 20)] autorelease];
-    UILabel *l12 = [[[UILabel alloc] initWithFrame:CGRectMake(100, vOffset+1, 210, 0)] autorelease];
+    UILabel *l11 = [[[UILabel alloc] initWithFrame:CGRectMake(10, vOffset+3, 80, 14)] autorelease];
+    UILabel *l12 = [[[UILabel alloc] initWithFrame:CGRectMake(100, vOffset, 210, 0)] autorelease];
     [l11 setText:attr];
     [l12 setText:value];
     [l11 setBackgroundColor:[UIColor clearColor]];
@@ -88,13 +79,63 @@
     [l12 setNumberOfLines:0];
     [l12 sizeToFit];
     
-    vOffset += l11.frame.size.height > l12.frame.size.height ?
-        l11.frame.size.height :
+    float oDelta = l11.frame.size.height > l12.frame.size.height ?
+        20.0f :
         l12.frame.size.height;
-    vOffset += 2.0f;
+    vOffset += oDelta + 7;
     
     [self addSubview:l11];
     [self addSubview:l12];
+}
+
+-(NSString *) makeRangeLabelforBegin:(NSDate *)begin end:(NSDate *)end {
+    NSString *text = @"";
+
+    if (begin == nil) {
+        return @"";
+    }
+    
+    NSDateFormatter *formatter    = [[[NSDateFormatter alloc] init] autorelease];
+    if (end == nil) {
+        [formatter setDateFormat:OPEN_HOUSE_DATE_DATE];
+        return [formatter stringFromDate:begin];
+    }
+    
+    NSCalendar *calendar          = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
+    int calendarUnits             = kCFCalendarUnitYear|kCFCalendarUnitMonth|kCFCalendarUnitDay|kCFCalendarUnitHour|kCFCalendarUnitMinute|kCFCalendarUnitSecond;
+    NSDateComponents *bcomponents = [calendar components:calendarUnits fromDate:begin];
+    NSDateComponents *ecomponents = [calendar components:calendarUnits fromDate:end];
+    BOOL isSameDate               = (bcomponents.year  == ecomponents.year) &&
+                                    (bcomponents.month == ecomponents.month) &&
+                                    (bcomponents.day   == ecomponents.day) ?
+                                        YES : NO;
+    
+    if (!isSameDate) {
+        [formatter setDateFormat:OPEN_HOUSE_DATE_DATE];
+        text = [text stringByAppendingString:[formatter stringFromDate:begin]];
+        text = [text stringByAppendingString:@", "];
+        text = [text stringByAppendingString:[formatter stringFromDate:end]];
+        
+        return text;
+    }
+    
+    if (bcomponents.hour == 0 || ecomponents.hour == 23) {
+        [formatter setDateFormat:OPEN_HOUSE_DATE_DATE];
+        text = [text stringByAppendingString:[formatter stringFromDate:begin]];
+        
+        return text;
+    }
+    
+    [formatter setDateFormat:OPEN_HOUSE_DATE_TIME];
+    text = [text stringByAppendingString:[formatter stringFromDate:begin]];
+    text = [text stringByAppendingString:@" - "];
+    text = [text stringByAppendingString:[formatter stringFromDate:end]];
+    
+    [formatter setDateFormat:OPEN_HOUSE_DATE_DATE];
+    text = [text stringByAppendingString:@"\n"];
+    text = [text stringByAppendingString:[formatter stringFromDate:begin]];
+    
+    return text;
 }
 
 

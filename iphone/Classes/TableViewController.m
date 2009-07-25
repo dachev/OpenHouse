@@ -17,7 +17,8 @@
 -(id) initWithStyle:(UITableViewStyle)style {
     if (self = [super initWithStyle:style]) {
 		[self setCurrentAnnotations:[NSArray array]];
-		[self setThumbnails:[NSMutableArray arrayWithCapacity:RESULTS_PER_PAGE_DISPLAY]];
+        
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(browseControllerCallback) name:@"browseControllerWillShow" object:nil];
     }
 	
     return self;
@@ -89,6 +90,8 @@
 	[currentAnnotations release];
 	currentAnnotations = v;
 	
+    [self setThumbnails:[NSMutableArray arrayWithCapacity:RESULTS_PER_PAGE_DISPLAY]];
+    
 	int idx = -1;
 	UIImage *defaultImage = [UIImage imageNamed:@"loading.png"];
 	for (OpenHouse *house in currentAnnotations) {
@@ -119,6 +122,11 @@
 	[self.tableView reloadData];
 }
 
+-(void) browseControllerCallback {
+    NSIndexPath *tableSelection = [self.tableView indexPathForSelectedRow];
+    [self.tableView deselectRowAtIndexPath:tableSelection animated:YES];
+}
+
 
 #pragma mark -
 #pragma mark Table view data source methods
@@ -139,7 +147,7 @@
     if (cell == nil) {
         cell = [[[HouseTableCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"] autorelease];
 		cell.accessoryType  = UITableViewCellAccessoryDetailDisclosureButton;
-		cell.selectionStyle = UITableViewCellSelectionStyleNone;
+		//cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
 	
 	UIImage *thumb = [thumbnails objectAtIndex:indexPath.row];

@@ -9,7 +9,7 @@
 #import "OpenHouse.h"
 
 @interface OpenHouse (Private)
--(void) setAttribute:(GDataGoogleBaseAttribute *)attr;
+//-(void) setAttribute:(GDataGoogleBaseAttribute *)attr;
 -(NSString *) formatPrice:(NSString *)p;
 @end
 
@@ -20,9 +20,9 @@
 			schoolDistrict, lotSize, area, bathrooms, year, bedrooms,
 			hoaDues, itemLanguage, targetCountry, zoning, itemType,
 			listingType, listingStatus, providerClass, propertyTaxes,
-			expirationDate, begin, end, imageLinks;
+			model, style, expirationDate, begin, end, imageLinks;
 
--(id) initWithGDataEntry:(GDataEntryGoogleBase *)entry {
+-(id) initWithDictionary:(NSDictionary *)data {
 	if (self = [super init]) {
 		[self setPropertyType:@""];
 		[self setPrice:@""];
@@ -48,6 +48,8 @@
 		[self setListingStatus:@""];
 		[self setProviderClass:@""];
 		[self setPropertyTaxes:@""];
+		[self setModel:@""];
+		[self setStyle:@""];
 		[self setExpirationDate:[NSDate date]];
 		[self setBegin:[NSDate date]];
 		[self setEnd:[NSDate date]];
@@ -57,16 +59,46 @@
 		coord.latitude  = 0.0f;
 		coord.longitude = 0.0f;
 		[self setCoordinate:coord];
+        
+        coordinate.latitude = [[data objectForKey:@"lat"] floatValue];
+        coordinate.longitude = [[data objectForKey:@"lng"] floatValue];
+        [self setTitle:[data objectForKey:@"addr"]];
+        [self setPropertyType:[data objectForKey:@"ptype"]];
+        [self setPrice:[data objectForKey:@"price"]];
+        [self setIdentifier:[data objectForKey:@"id"]];
+        [self setBroker:[data objectForKey:@"broker"]];
+        [self setMlsId:[data objectForKey:@"mlsid"]];
+        [self setMlsName:[data objectForKey:@"mlsname"]];
+        [self setAgent:[data objectForKey:@"agent"]];
+        [self setProviderType:[data objectForKey:@"pclass"]];
+        [self setSchool:[data objectForKey:@"school"]];
+        [self setSchoolDistrict:[data objectForKey:@"schoold"]];
+        [self setLotSize:[data objectForKey:@"lot"]];
+        [self setArea:[data objectForKey:@"area"]];
+        [self setBathrooms:[data objectForKey:@"bathrooms"]];
+        [self setBedrooms:[data objectForKey:@"bedrooms"]];
+        [self setYear:[data objectForKey:@"year"]];
+        [self setHoaDues:[data objectForKey:@"hoa"]];
+        [self setZoning:[data objectForKey:@"zoning"]];
+        [self setListingType:[data objectForKey:@"ltype"]];
+        [self setPropertyTaxes:[data objectForKey:@"ptaxes"]];
+        [self setModel:[data objectForKey:@"model"]];
+        [self setStyle:[data objectForKey:@"style"]];
+        
+        [self setYear:[data objectForKey:@"year"]];
+        [self setYear:[data objectForKey:@"year"]];
+        [self setYear:[data objectForKey:@"year"]];
+        
+        NSTimeInterval unixDate = [[data objectForKey:@"expdate"] intValue];
+        [self setExpirationDate:[NSDate dateWithTimeIntervalSince1970:unixDate]];
+        unixDate = [[data objectForKey:@"bdate"] intValue];
+        [self setBegin:[NSDate dateWithTimeIntervalSince1970:unixDate]];
+        unixDate = [[data objectForKey:@"edate"] intValue];
+        [self setEnd:[NSDate dateWithTimeIntervalSince1970:unixDate]];
+        
+		[self setImageLinks:[data objectForKey:@"images"]];
 		
-		for (GDataGoogleBaseAttribute *attr in [entry entryAttributes]) {
-			[self setAttribute:attr];
-			
-			for (GDataGoogleBaseAttribute *subattr in [attr subAttributes]) {
-				[self setAttribute:subattr];
-			}
-		}
-		
-        NSString *c = [[entry content] stringValue];
+        NSString *c = [data objectForKey:@"description"];
         if ([c isEqualToString:[c uppercaseString]] == YES) {
             c = [c lowercaseString];
         }
@@ -81,16 +113,13 @@
 			[self setSubtitle:[NSString stringWithFormat:@"%@, %@ bath", subtitle, bathrooms]];
 		}
 		[self setSubtitle:[NSString stringWithFormat:@"%@, %@", subtitle, propertyType]];
-		
+
 		/* Sort image links so we always use the same as a thumbnail */
 		NSArray *fred = [imageLinks sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
 		[self setImageLinks:[NSArray arrayWithArray:fred]];
-		
-		//NSLog(@"%@", [location textValue]);
-		//NSLog(@"%@", self);
-	}
-	
-	return self;
+    }
+        
+    return self;
 }
 
 -(void) dealloc {
@@ -121,6 +150,8 @@
 	[listingStatus release];
 	[providerClass release];
 	[propertyTaxes release];
+    [model release];
+    [style release];
 	[expirationDate release];
 	[begin release];
 	[end release];
@@ -129,8 +160,8 @@
 	[super dealloc];
 }
 
--(void) setAttribute:(GDataGoogleBaseAttribute *)attr {
-	
+//-(void) setAttribute:(GDataGoogleBaseAttribute *)attr {
+	/*
 	if ([[attr name] isEqualToString:@"latitude"]) {
 		coordinate.latitude = [[attr textValue] floatValue];
 	}
@@ -241,7 +272,8 @@
 	else {
 		//NSLog(@"%@ (%@): %@", [attr name], [attr type], [attr textValue]);
 	}
-}
+    */
+//}
 
 -(NSString *) formatPrice:(NSString *)p {
 	NSString *local = [NSString stringWithString:p];

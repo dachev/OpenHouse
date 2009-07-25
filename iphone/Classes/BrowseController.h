@@ -14,7 +14,7 @@
 #import "OpenHouses.h"
 
 
-@interface BrowseController : UIViewController <OpenHousesApiDelegate> {
+@interface BrowseController : UIViewController <OpenHousesApiDelegate, UINavigationControllerDelegate> {
     MapViewController   *mapController;
     TableViewController *tableController;
     UIViewController *activeController;
@@ -25,6 +25,8 @@
 	
 	UISegmentedControl *navButtons;
 	UIToolbar *toolbar;
+    UIImage *mapIconImage;
+    UIImage *listIconImage;
 }
 
 @property (nonatomic, retain) MapViewController *mapController;
@@ -35,5 +37,7 @@
 @property (nonatomic, retain) NSArray *currentAnnotations;
 @property (nonatomic, retain) UISegmentedControl *navButtons;
 @property (nonatomic, retain) UIToolbar *toolbar;
+@property (nonatomic, retain) UIImage *mapIconImage;
+@property (nonatomic, retain) UIImage *listIconImage;
 
 @end

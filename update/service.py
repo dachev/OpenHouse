@@ -10,6 +10,7 @@ import time
 from datetime import datetime, timedelta
 from dateutil import parser
 from sqlalchemy import Table, Column, DateTime, MetaData, text, create_engine
+from sqlalchemy.pool import NullPool
 from ThreadUrl import ThreadUrl
 
 SEARCH_BASE = 'http://base.google.com/base/feeds/snippets'
@@ -38,6 +39,8 @@ def search(req):
             raise Exception('bdate is missing or invalid')
         if len(edate) != 1:
             raise Exception('edate is missing or invalid')
+        if offset < 1:
+            raise Exception('offset must be an integer larger than 1')
         if records < 1 or records > 250:
             raise Exception('records must be an integer between 1 and 250')
     except Exception as e:
@@ -50,7 +53,7 @@ def search(req):
     
     response['total'] = total
     if total > 0:
-        houses = get_houses(lat, lng, bdate[0], edate[0], offset, records)
+        houses = get_houses(lat, lng, bdate[0], edate[0], offset, records, req)
         response['houses'] = houses
 
     # write response
@@ -96,7 +99,7 @@ def houses_action():
             'content'     : 'geocodes',
             'max-results' : page,
             'orderby'     : 'modification_time',
-            'sortorder'   : 'descending',
+            'sortorder'   : 'ascending',
             'alt'         : 'atom',
             'start-index' : offset
         }
@@ -121,8 +124,8 @@ def houses_action():
             if houses.fetchone():
                 houses.close()
                 continue
-            
             houses.close()
+            
             ids = Houses.insert().execute(housedata).last_inserted_ids()
             if len(ids) !=1:
                 continue
@@ -186,12 +189,13 @@ def cleanup_action():
         Images.delete(Images.c.hid==house['id']).execute()
         Houses.delete(Houses.c.id==house['id']).execute()
 
+    houses.close()
     # TODO: Call image server and delete photos
 
 def init_db():
     global Houses, Images, engine
     
-    engine = create_engine('mysql://blago:F$USA&4?sE@localhost:3306/openhouses')
+    engine = create_engine('mysql://blago:F$USA&4?sE@localhost:3306/openhouses', poolclass=NullPool)
     meta = MetaData()
     meta.bind = engine
     meta.create_all()
@@ -223,30 +227,39 @@ def count_houses(lat, lng, bdate, edate):
 
     return total
 
-def get_houses(lat, lng, bdate, edate, offset, records):
+def get_houses(lat, lng, bdate, edate, offset, records, req):
     global Houses, engine
 
     # initialize DB
     init_db()
 
-    # load data from the DB
-    houses = []
-    sql    = text("""
-        SELECT *
-        FROM houses
-        WHERE (3959 * ACOS(SIN(RADIANS(:alat)) * SIN(RADIANS(lat)) + COS(RADIANS(:alat)) * COS(RADIANS(lat)) * COS(RADIANS(lng) - RADIANS(:alng)))) < 50
-        AND bdate > :abdate
-        AND edate < :aedate
-        LIMIT :aoffset, :arecords
+    # load house data from the DB
+    sql = text("""
+    
+        SELECT h.*, i.url FROM (
+            SELECT *, (3959 * ACOS(SIN(RADIANS(:alat)) * SIN(RADIANS(lat)) + COS(RADIANS(:alat)) * COS(RADIANS(lat)) * COS(RADIANS(lng) - RADIANS(:alng)))) AS distance
+            FROM houses
+            WHERE bdate > :abdate
+            AND edate < :aedate
+            HAVING distance < 50
+            ORDER BY distance
+            LIMIT :aoffset, :arecords
+        ) AS h
+        LEFT JOIN images AS i
+        ON h.id = i.hid
+        ORDER BY h.distance, h.id ASC, i.thumb DESC
     """)
-    results = engine.execute(sql, alat=lat, alng=lng, abdate=bdate, aedate=edate, aoffset=offset, arecords=records)
+    results = engine.execute(sql, alat=lat, alng=lng, abdate=bdate, aedate=edate, aoffset=offset-1, arecords=records)
 
     # generate column list
     keys = []
     for c in Houses.c:
         keys.append(c.name)
+    keys.append('distance')
+    keys.append('url')
 
-    # massage data
+    # create row dictionaries
+    rows = []
     for result in results:
         vals = []
         for c in result:
@@ -254,8 +267,25 @@ def get_houses(lat, lng, bdate, edate, offset, records):
             if type(val) == datetime:
                 val = int(time.mktime(c.timetuple()))
             vals.append(val)
-        houses.append(dict(zip(keys, vals)))
+        house = dict(zip(keys, vals))
+        
+        hid = str(house['id'])
+        rows.append(house);
+        
     results.close()
+    
+    # normalize results
+    last_hid = 0
+    houses   = []
+    for row in rows:
+        if row['id'] != last_hid:
+            row['images'] = []
+            houses.append(row)
+            last_hid = row['id']
+            
+        if row['url'] != None:
+            houses[-1]['images'].append(row['url'])
+            del row['url']
 
     return houses
 

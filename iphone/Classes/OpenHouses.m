@@ -10,8 +10,9 @@
 
 
 @interface OpenHouses (Private)
--(GDataServiceGoogleBase *) googleBaseService;
 -(NSNumber *) calculatePageFromStartIndex:(NSNumber *)idx;
+-(void) getHousesFinish:(TaggedURLConnection *)connection withData:(NSData *)data;
+-(void) getHousesFail:(TaggedURLConnection *)connection withError:(NSString *)error;
 @end
 
 @implementation OpenHouses
@@ -41,114 +42,85 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(OpenHouses);
 	
 	NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
 	[dateFormatter setDateFormat:@"yyyy-MM-dd"];
-	NSString *beginString = [dateFormatter stringFromDate:beginDate];
-	NSString *endString   = [dateFormatter stringFromDate:endDate];
-	
-	NSString *queryString = [NSString stringWithFormat:OPEN_HOUSES_REQUEST_QUERY, beginString, endString, origin.coordinate.latitude, origin.coordinate.longitude];
-	
-	
-	NSString *googleBaseSnippetsFeed = kGDataGoogleBaseSnippetsFeed;
-	NSURL *feedURL = [NSURL URLWithString:googleBaseSnippetsFeed];
-	
-	GDataQueryGoogleBase *query = [GDataQueryGoogleBase googleBaseQueryWithFeedURL:feedURL];
-	[query setGoogleBaseQuery:queryString];
-	[query setStartIndex:[[self allAnnotations] count] + 1];
-	[query setMaxResults:RESULTS_PER_PAGE_FETCH];
-	[query addCustomParameterWithName:@"content" value:@"geocodes,thumbnails"];
-	[query addCustomParameterWithName:@"orderby" value:[NSString stringWithFormat:@"[x = location(location): neg(min(dist(x, @%+08.4f%+09.4f)))]", origin.coordinate.latitude, origin.coordinate.longitude]];
-	
-	GDataServiceGoogleBase *service = [self googleBaseService];
-	[service setUserCredentialsWithUsername:nil
-								   password:nil];
+	NSString *beginString  = [dateFormatter stringFromDate:beginDate];
+	NSString *endString    = [dateFormatter stringFromDate:endDate];
+    int offset             = [[self allAnnotations] count] + 1;
+    int records            = RESULTS_PER_PAGE_FETCH;
+    float lat              = origin.coordinate.latitude;
+    float lng              = origin.coordinate.longitude;
+    NSString *url          = [NSString stringWithFormat:SEARCH_API_REQUEST_URL, offset, records, lat, lng, beginString, endString];
+    NSString *identifier   = [NSString stringWithFormat:@"%d", [beginDate timeIntervalSince1970]];
     
-	[service fetchGoogleBaseQuery:query
-						 delegate:self
-				didFinishSelector:@selector(ticket:finishedWithObject:)
-				  didFailSelector:@selector(ticket:failedWithError:)];
+    TaggedRequest *request = [TaggedRequest requestWithId:identifier url:url];
+    [request setTimeoutInterval:CONFIG_NETWORK_TIMEOUT];
+    [request delegate:self didFinishSelector:@selector(getHousesFinish:withData:) didFailSelector:@selector(getHousesFail:withError:)];
+    
+    ConnectionManager *manager = [ConnectionManager sharedConnectionManager];
+    [manager add:request];
 	
 	[self setPendingRequest:YES];
 }
 
 
--(GDataServiceGoogleBase *) googleBaseService {
-	
-	static GDataServiceGoogleBase* service = nil;
-	
-	if (!service) {
-		service = [[GDataServiceGoogleBase alloc] init];
-		
-		[service setUserAgent:@"OpenHouses-0.1"];
-		
-		[service setShouldCacheDatedData:YES];
-		
-		// Note: Though this sample doesn't demonstrate it, GData responses are
-		//       typically chunked, so check all returned feeds for "next" links
-		//       (use -nextLink method from the GDataLinkArray category on the
-		//       links array of GData objects) or call the service's
-		//       setShouldFollowNextLinks: method.     
+#pragma mark -
+#pragma mark Search API delegates
+-(void) getHousesFinish:(TaggedURLConnection *)connection withData:(NSData *)data {
+    [self setPendingRequest:NO];
+    
+    if([connection status] != 200) {
+        [self getHousesFail:connection withError:@""];
+        return;
+    }
+    
+	NSDictionary *response = [[CJSONDeserializer deserializer] deserializeAsDictionary:data error:nil];
+	if (response == nil) {
+        [self getHousesFail:connection withError:@""];
+        return;
 	}
-	return service;
-}
-
-
-#pragma mark ---- delegate methods for the GDataQueryGoogleBase class ----
-- (void)ticket:(GDataServiceTicket *)ticket finishedWithObject:(GDataObject *)object {
-	[self setPendingRequest:NO];
-	
-	GDataFeedGoogleBase *feed;
-	
-	if ([object isKindOfClass:[GDataEntryGoogleBase class]]) {
-		feed = [GDataFeedGoogleBase googleBaseFeed];
-		
-		[feed addEntry:(GDataEntryGoogleBase *) object];
-	} else {
-		feed = (GDataFeedGoogleBase *) object;
+    
+	if ([[response objectForKey:@"success"] intValue] != 1) {
+        [self getHousesFail:connection withError:@""];
+        return;
 	}
-	
+    
+    NSArray *houses = [response objectForKey:@"houses"];
 	NSMutableArray *annotations = [NSMutableArray array];
-	for (GDataEntryGoogleBase *entry in [feed entries]) {
-		for (GDataGoogleBaseAttribute *attr in [entry entryAttributes]) {
-			//NSLog(@"%@ (%@)", [attr name], [attr type]);
-		}
-		
-		OpenHouse *annotation = [[[OpenHouse alloc] initWithGDataEntry:entry] autorelease];
-		
+	for (NSDictionary *house in houses) {
+		OpenHouse *annotation = [[[OpenHouse alloc] initWithDictionary:house] autorelease];
 		[annotations addObject:annotation];
 	}
-	
-	[self setTotalResults:[feed totalResults]];
+    
+	[self setTotalResults:[NSNumber numberWithInt:[[response objectForKey:@"total"] intValue]]];
 	[self setTotalPages:[NSNumber numberWithInt:ceil([[self totalResults] floatValue] / RESULTS_PER_PAGE_DISPLAY)]];
-	
+    
 	/* Save results */
-	NSRange range;
-	range.location = [[feed startIndex] intValue] - 1;
-	range.length   = [annotations count];
-	[[self allAnnotations] insertObjects:annotations atIndexes:[NSIndexSet indexSetWithIndexesInRange:range]];
-	
-	if ([delegate respondsToSelector: @selector(finishedWithPage:)]) {
-		NSNumber *p = [self calculatePageFromStartIndex:[NSNumber numberWithInt:[[feed startIndex] intValue]]];
-		[delegate finishedWithPage:p];
-    }
+     NSRange range;
+     range.location = [[response objectForKey:@"offset"] intValue] - 1;
+     range.length   = [annotations count];
+     [[self allAnnotations] insertObjects:annotations atIndexes:[NSIndexSet indexSetWithIndexesInRange:range]];
+     
+     if ([delegate respondsToSelector: @selector(finishedWithPage:)]) {
+         NSNumber *p = [self calculatePageFromStartIndex:[NSNumber numberWithInt:[[response objectForKey:@"offset"] intValue]]];
+         [delegate finishedWithPage:p];
+     }
+    
+    //NSLog(@"%@", houses);
 }
 
-- (void)ticket:(GDataServiceTicket *)ticket failedWithError:(NSError *)error {
-	[self setPendingRequest:NO];
-
-	if ([delegate respondsToSelector: @selector(failedWithError:)]) {
-		[delegate failedWithError:error];
-	}
-		
+-(void) getHousesFail:(TaggedURLConnection *)connection withError:(NSString *)error {
+     [self setPendingRequest:NO];
+    
 	/*
-	UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle:nil
-                          message:@"An API error has ocurred. Please try again later."
-                          delegate:self
-                          cancelButtonTitle:nil
-                          otherButtonTitles:@"OK", nil];
-	
-    [alert show];
-    [alert release];
-	*/
+     UIAlertView *alert = [[UIAlertView alloc]
+     initWithTitle:nil
+     message:@"An API error has ocurred. Please try again later."
+     delegate:self
+     cancelButtonTitle:nil
+     otherButtonTitles:@"OK", nil];
+     
+     [alert show];
+     [alert release];
+     */
 }
 
 

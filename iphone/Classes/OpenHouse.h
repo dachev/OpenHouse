@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 #import "Constants.h"
-#import "GDataEntryGoogleBase.h"
 
 
 @interface OpenHouse : NSObject <MKAnnotation> {
@@ -42,6 +41,8 @@
 	NSString *listingStatus;
 	NSString *providerClass;
 	NSString *propertyTaxes;
+	NSString *model;
+	NSString *style;
 	NSDate *expirationDate;
 	NSDate *begin;
 	NSDate *end;
@@ -77,11 +78,13 @@
 @property (nonatomic, retain) NSString *listingStatus;
 @property (nonatomic, retain) NSString *providerClass;
 @property (nonatomic, retain) NSString *propertyTaxes;
+@property (nonatomic, retain) NSString *model;
+@property (nonatomic, retain) NSString *style;
 @property (nonatomic, retain) NSDate *expirationDate;
 @property (nonatomic, retain) NSDate *begin;
 @property (nonatomic, retain) NSDate *end;
 @property (nonatomic, retain) NSMutableArray *imageLinks;
 
--(id) initWithGDataEntry:(GDataEntryGoogleBase *)entry;
+-(id) initWithDictionary:(NSDictionary *)entry;
 
 @end
