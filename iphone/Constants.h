@@ -15,7 +15,7 @@
 #define SEARCH_API_REQUEST_URL @"http://localhost/~blago/openhouses/service.py/search?offset=%d&records=%d&lat=%f&lng=%f&bdate=%@&edate=%@"
 
 #define RESULTS_PER_PAGE_DISPLAY 10
-#define RESULTS_PER_PAGE_FETCH 100
+#define RESULTS_PER_PAGE_FETCH 50
 
 #define OPEN_HOUSE_DATE_RANGE @"yyyy-MM-dd'T'HH:mm:ss"
 //#define OPEN_HOUSE_DATE_DAY @"MM/dd/yyyy"

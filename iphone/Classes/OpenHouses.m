@@ -104,7 +104,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(OpenHouses);
          [delegate finishedWithPage:p];
      }
     
-    //NSLog(@"%@", houses);
+    NSLog(@"%@", [response objectForKey:@"total"]);
+    NSLog(@"%d", [houses count]);
 }
 
 -(void) getHousesFail:(TaggedURLConnection *)connection withError:(NSString *)error {
@@ -151,12 +152,14 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(OpenHouses);
 }
 
 -(BOOL) hasDataForPage:(NSNumber *)p {
-	NSUInteger idxBegin = ([p intValue] - 1) * RESULTS_PER_PAGE_DISPLAY;
-	NSUInteger idxEnd   = idxBegin + RESULTS_PER_PAGE_DISPLAY - 1;
-	
+	NSInteger idxBegin = ([p intValue] - 1) * RESULTS_PER_PAGE_DISPLAY;
+    
+	NSInteger length   = RESULTS_PER_PAGE_DISPLAY;
 	if ([p intValue] == [totalPages intValue]) {
-		idxEnd = [totalResults intValue] % RESULTS_PER_PAGE_DISPLAY - 1;
+		NSInteger partial = [totalResults intValue] % RESULTS_PER_PAGE_DISPLAY;
+        length = (partial != 0) ? partial : length;
 	}
+	NSInteger idxEnd = idxBegin + length - 1;
 	
 	if (idxBegin >= [allAnnotations count] || idxEnd >= [allAnnotations count]) {
 		return NO;

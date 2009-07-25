@@ -283,15 +283,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>25</integer>
-									<integer>15</integer>
-									<integer>10</integer>
+									<integer>9</integer>
+									<integer>5</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 379}, {276, 760}}</string>
+							<string>{{0, 0}, {276, 760}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -326,7 +325,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>83E55D200FB7F8FC00ED0E37</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>BrowseController.m</string>
+								<string>OpenHouses.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -334,11 +333,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>83E55D210FB7F8FC00ED0E37</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>BrowseController.m</string>
+										<string>OpenHouses.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>83FB8482101B907100936F2C</string>
+										<string>83FB8510101BC28500936F2C</string>
 										<key>history</key>
 										<array>
 											<string>835B0FA20FC13181007F818F</string>
@@ -367,34 +366,29 @@
 											<string>83E4DA18100C4FB500E8FE1E</string>
 											<string>83E4DACA100D7F2800E8FE1E</string>
 											<string>835044381016DADC005F857D</string>
-											<string>83FB8246101981BE00936F2C</string>
 											<string>83FB827A10198F8B00936F2C</string>
-											<string>83FB828C1019996D00936F2C</string>
-											<string>83FB832F1019A8D600936F2C</string>
-											<string>83FB833C1019A94900936F2C</string>
 											<string>83FB835E101AA15900936F2C</string>
 											<string>83FB8365101AA28300936F2C</string>
 											<string>83FB8366101AA28300936F2C</string>
-											<string>83FB8367101AA28300936F2C</string>
-											<string>83FB839A101AAC1A00936F2C</string>
-											<string>83FB83C1101AB4EF00936F2C</string>
 											<string>83FB83C3101AB4EF00936F2C</string>
 											<string>83FB83CD101AB51600936F2C</string>
-											<string>83FB83D4101ABE4900936F2C</string>
 											<string>83FB83D5101ABE4900936F2C</string>
 											<string>83FB83F8101AC85400936F2C</string>
 											<string>83FB83F9101AC85400936F2C</string>
-											<string>83FB842F101B728200936F2C</string>
-											<string>83FB8481101B907100936F2C</string>
+											<string>83FB8487101BA42100936F2C</string>
+											<string>83FB8488101BA42100936F2C</string>
+											<string>83FB8489101BA42100936F2C</string>
+											<string>83FB848A101BA42100936F2C</string>
+											<string>83FB8499101BA45100936F2C</string>
+											<string>83FB84B1101BBAD900936F2C</string>
+											<string>83FB84B2101BBAD900936F2C</string>
+											<string>83FB84FD101BC02A00936F2C</string>
+											<string>83FB850C101BC23F00936F2C</string>
+											<string>83FB850D101BC23F00936F2C</string>
 										</array>
 										<key>nextStack</key>
 										<array>
-											<string>83FB82911019996D00936F2C</string>
-											<string>83FB81FE10194AD400936F2C</string>
-											<string>83FB81FF10194AD400936F2C</string>
-											<string>83FB83271019A77D00936F2C</string>
-											<string>83FB836A101AA28300936F2C</string>
-											<string>83FB836B101AA28300936F2C</string>
+											<string>83FB850E101BC23F00936F2C</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -435,7 +429,6 @@
 											<string>83FB83411019A94900936F2C</string>
 											<string>83FB8361101AA15900936F2C</string>
 											<string>83FBCAC50FCD0F000008C3BC</string>
-											<string>8350448F1016ED4D005F857D</string>
 											<string>83FB8379101AA53E00936F2C</string>
 											<string>83FB8389101AA7A800936F2C</string>
 											<string>83FB838C101AA7A800936F2C</string>
@@ -450,12 +443,23 @@
 											<string>83FB83CF101AB51600936F2C</string>
 											<string>83FB83D8101ABE4900936F2C</string>
 											<string>83FB83D9101ABE4900936F2C</string>
-											<string>83FB83FC101AC85400936F2C</string>
 											<string>83FB83FD101AC85400936F2C</string>
-											<string>83FB841A101B70A900936F2C</string>
 											<string>83FB841B101B70A900936F2C</string>
-											<string>83FB8431101B728200936F2C</string>
 											<string>83FB8432101B728200936F2C</string>
+											<string>83FB848E101BA42100936F2C</string>
+											<string>83FB848F101BA42100936F2C</string>
+											<string>83FB8490101BA42100936F2C</string>
+											<string>83FB8491101BA42100936F2C</string>
+											<string>83FB8492101BA42100936F2C</string>
+											<string>83FB8493101BA42100936F2C</string>
+											<string>83FB849B101BA45100936F2C</string>
+											<string>83FB84B6101BBAD900936F2C</string>
+											<string>83FB84B7101BBAD900936F2C</string>
+											<string>83FB84C2101BBDD800936F2C</string>
+											<string>83FB84DF101BBF0B00936F2C</string>
+											<string>83FB84F3101BBFD600936F2C</string>
+											<string>83FB84FA101BBFEF00936F2C</string>
+											<string>83FB8500101BC02A00936F2C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
