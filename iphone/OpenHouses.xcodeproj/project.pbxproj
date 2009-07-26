@@ -42,6 +42,7 @@
 		83EE513E0FECBD3C0099FC4E /* BrowseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */; };
 		83FB83E5101ABF7600936F2C /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 83FB83E4101ABF7600936F2C /* map.png */; };
 		83FB83F2101AC16700936F2C /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 83FB83F1101AC16700936F2C /* logo.png */; };
+		83FB854E101BD10500936F2C /* map.html in Resources */ = {isa = PBXBuildFile; fileRef = 83FB854D101BD10500936F2C /* map.html */; };
 		83FBD24E0FCE71FA0008C3BC /* OpenHouse.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FBD24D0FCE71FA0008C3BC /* OpenHouse.m */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +105,7 @@
 		83EE513D0FECBD3C0099FC4E /* BrowseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseController.m; sourceTree = "<group>"; };
 		83FB83E4101ABF7600936F2C /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map.png; path = resources/map.png; sourceTree = "<group>"; };
 		83FB83F1101AC16700936F2C /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = resources/logo.png; sourceTree = "<group>"; };
+		83FB854D101BD10500936F2C /* map.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = map.html; path = resources/map.html; sourceTree = "<group>"; };
 		83FBC9870FCD07320008C3BC /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		83FBCA3C0FCD09C50008C3BC /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
 		83FBD24C0FCE71FA0008C3BC /* OpenHouse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenHouse.h; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				830C82280FF2A07E0045741F /* housing.xml */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* OpenHouses-Info.plist */,
+				83FB854D101BD10500936F2C /* map.html */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				8361078C1006D596007082CD /* up.png in Resources */,
 				83FB83E5101ABF7600936F2C /* map.png in Resources */,
 				83FB83F2101AC16700936F2C /* logo.png in Resources */,
+				83FB854E101BD10500936F2C /* map.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

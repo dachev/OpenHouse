@@ -9,7 +9,7 @@
 #import "DetailsController.h"
 
 @interface DetailsController (Private)
-- (void)loadScrollViewWithPage:(int)page;
+-(void) loadScrollView:(UIView *)view withPage:(int)page;
 @end
 
 @implementation DetailsController
@@ -83,7 +83,7 @@
     //scrollView.backgroundColor = [UIColor whiteColor];
     scrollView.backgroundColor = [UIColor colorWithRed:145/255.0 green:145/255.0 blue:145/255.0 alpha:1.0];
 	scrollView.pagingEnabled = YES;
-    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * pages, scrollView.frame.size.height);
+    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * (pages+1), scrollView.frame.size.height);
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.scrollsToTop = NO;
@@ -93,7 +93,7 @@
     [pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];
     //pageControl.backgroundColor = [UIColor clearColor];
     pageControl.backgroundColor = [UIColor colorWithRed:145/255.0 green:145/255.0 blue:145/255.0 alpha:1.0];
-    pageControl.numberOfPages = pages;
+    pageControl.numberOfPages = pages+1;
 	pageControl.currentPage = 0;
     
     UIView *separator = [[[UIView alloc] initWithFrame:CGRectMake(0,CONFIG_PAGE_VIEW_HEIGHT+10,320,1)] autorelease];
@@ -140,11 +140,23 @@
 		[manager add:request];
         idx++;
 	}
+    
+    // Create static map view
+    NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"map" ofType:@"html"];
+    float lat          = house.coordinate.latitude;
+    float lng          = house.coordinate.longitude;
+    NSString *url      = [NSString stringWithFormat:STATIC_MAPS_REQUEST_URL, lat, lng, lat, lng];
+    NSString *html     = [NSString stringWithFormat:[NSString stringWithContentsOfFile:htmlPath], url];
+    UIWebView *mapView = [[[UIWebView alloc] initWithFrame:CGRectMake(0,0,310,233)] autorelease];
+    
+    // Add map view
+    [mapView loadHTMLString:html baseURL:nil];
+    [self loadScrollView:mapView withPage:pages];
 }
 
 #pragma mark -
 #pragma mark scrollView delegate
--(void) loadScrollViewWithPage:(int)page {
+-(void) loadScrollViewWithPageOld:(int)page {
     if (page < 0) return;
     if (page >= pages) return;
 	
@@ -245,6 +257,37 @@
     self.pageControlUsed = YES;
 }
 
+-(void) loadScrollView:(UIView *)view withPage:(int)page {
+    NSUInteger width  = view.frame.size.width;
+    NSUInteger height = view.frame.size.height;
+    CGRect frame      = scrollView.frame;
+    
+    int pageXOrigin = frame.size.width * page;
+    int pageYOrigin = 0;
+    int xDiff = (320 - width);
+    int yDiff = (CONFIG_PAGE_VIEW_HEIGHT - height);
+    
+    frame.origin.x    = pageXOrigin + xDiff/2.0;
+    frame.origin.y    = pageYOrigin + yDiff/2.0;
+    frame.size.width  = width;
+    frame.size.height = height;
+    view.frame   = frame;
+    
+    UIView *separator1 = [[[UIView alloc] initWithFrame:CGRectMake(view.frame.origin.x, view.frame.origin.y, width, 1)] autorelease];
+    UIView *separator2 = [[[UIView alloc] initWithFrame:CGRectMake(view.frame.origin.x, view.frame.origin.y+height-1, width, 1)] autorelease];
+    UIView *separator3 = [[[UIView alloc] initWithFrame:CGRectMake(view.frame.origin.x, view.frame.origin.y, 1, height)] autorelease];
+    UIView *separator4 = [[[UIView alloc] initWithFrame:CGRectMake(view.frame.origin.x+width-1, view.frame.origin.y, 1, height)] autorelease];
+    separator1.backgroundColor = [UIColor colorWithRed:218/255.0 green:218/255.0 blue:218/255.0 alpha:1.0];
+    separator2.backgroundColor = [UIColor colorWithRed:218/255.0 green:218/255.0 blue:218/255.0 alpha:1.0];
+    separator3.backgroundColor = [UIColor colorWithRed:218/255.0 green:218/255.0 blue:218/255.0 alpha:1.0];
+    separator4.backgroundColor = [UIColor colorWithRed:218/255.0 green:218/255.0 blue:218/255.0 alpha:1.0];
+    
+    [scrollView addSubview:view];
+    [scrollView addSubview:separator1];
+    [scrollView addSubview:separator2];
+    [scrollView addSubview:separator3];
+    [scrollView addSubview:separator4];
+}
 
 #pragma mark -
 #pragma mark Image API delegates
@@ -253,37 +296,19 @@
         return;
     }
     
-	NSUInteger page = (NSUInteger) [[connection tag] intValue];
-    UIImage *image  = [UIImage imageWithData:data];
+    // Create view
+	NSUInteger page        = (NSUInteger) [[connection tag] intValue];
+    UIImage *image         = [UIImage imageWithData:data];
     UIImageView *imageView = [[[UIImageView alloc] initWithImage:image] autorelease];
     
-    CGRect frame = scrollView.frame;
-        
-    int pageXOrigin = frame.size.width * page;
-    int pageYOrigin = 0;
-    int xDiff = (320 - [image size].width);
-    int yDiff = (CONFIG_PAGE_VIEW_HEIGHT - [image size].height);
-        
-        frame.origin.x = pageXOrigin + xDiff/2.0;
-        frame.origin.y = pageYOrigin + yDiff/2.0;
-        frame.size.width  = [image size].width;
-        frame.size.height = [image size].height;
-        imageView.frame = frame;
-        
-        UIView *separator1 = [[[UIView alloc] initWithFrame:CGRectMake(imageView.frame.origin.x, imageView.frame.origin.y, [image size].width, 1)] autorelease];
-        UIView *separator2 = [[[UIView alloc] initWithFrame:CGRectMake(imageView.frame.origin.x, imageView.frame.origin.y+[image size].height-1, [image size].width, 1)] autorelease];
-        UIView *separator3 = [[[UIView alloc] initWithFrame:CGRectMake(imageView.frame.origin.x, imageView.frame.origin.y, 1, [image size].height)] autorelease];
-        UIView *separator4 = [[[UIView alloc] initWithFrame:CGRectMake(imageView.frame.origin.x+[image size].width-1, imageView.frame.origin.y, 1, [image size].height)] autorelease];
-        separator1.backgroundColor = [UIColor colorWithRed:218/255.0 green:218/255.0 blue:218/255.0 alpha:1.0];
-        separator2.backgroundColor = [UIColor colorWithRed:218/255.0 green:218/255.0 blue:218/255.0 alpha:1.0];
-        separator3.backgroundColor = [UIColor colorWithRed:218/255.0 green:218/255.0 blue:218/255.0 alpha:1.0];
-        separator4.backgroundColor = [UIColor colorWithRed:218/255.0 green:218/255.0 blue:218/255.0 alpha:1.0];
-        
-        [scrollView addSubview:imageView];
-        [scrollView addSubview:separator1];
-        [scrollView addSubview:separator2];
-        [scrollView addSubview:separator3];
-        [scrollView addSubview:separator4];
+    // Adjust view size
+    CGRect frame      = imageView.frame;
+    frame.size.width  = [image size].width;
+    frame.size.height = [image size].height;
+    imageView.frame   = frame;
+    
+    // Insert into scoll parent
+    [self loadScrollView:imageView withPage:page];
 }
 
 -(void) getPhotoFail:(TaggedURLConnection *)connection withError:(NSString *)error {
