@@ -23,6 +23,7 @@
 
 
 @interface OpenHouses : NSObject {
+    CLLocation *origin;
 	NSNumber *totalResults;
 	NSNumber *totalPages;
 	BOOL pendingRequest;
@@ -32,6 +33,7 @@
 	id delegate;
 }
 
+@property (nonatomic, retain) CLLocation *origin;
 @property (nonatomic, retain) NSNumber *totalResults;
 @property (nonatomic, retain) NSNumber *totalPages;
 @property (nonatomic, assign) BOOL pendingRequest;
@@ -41,6 +43,6 @@
 +(OpenHouses *) sharedOpenHouses;
 -(NSArray *) getPage:(NSNumber *)p;
 -(BOOL) hasDataForPage:(NSNumber *)p;
--(void) loadMoreData:(CLLocation *) origin;
+-(void) loadMoreData;
 
 @end

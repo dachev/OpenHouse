@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import <MapKit/MKAnnotation.h>
 #import "MapViewController.h"
 #import "TableViewController.h"
 #import "DetailsController.h"
@@ -14,7 +16,7 @@
 #import "OpenHouses.h"
 
 
-@interface BrowseController : UIViewController <OpenHousesApiDelegate, UINavigationControllerDelegate> {
+@interface BrowseController : UIViewController <OpenHousesApiDelegate, UIActionSheetDelegate, UINavigationControllerDelegate> {
     MapViewController   *mapController;
     TableViewController *tableController;
     UIViewController *activeController;

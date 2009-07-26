@@ -10,6 +10,7 @@
 
 
 @interface BrowseController (Private)
+-(void) setOriginAtLat:(float)lat lng:(float)lng;
 -(void) getPage:(NSNumber *)p;
 -(void) showPage:(NSNumber *)p;
 -(void) updateNavButtons;
@@ -77,15 +78,11 @@
 	[self setMapController:[[[MapViewController alloc] initWithNibName:nil bundle:nil] autorelease]];
 	[self setActiveController:mapController];
 	[[self view] addSubview:[mapController view]];
-	CLLocation *loc = [[[CLLocation alloc] initWithLatitude:44.97614 longitude:-93.27704] autorelease];
-	[mapController centerAtLocation:loc];
-	[self setOrigin:loc]; 
 	
 	[self setTableController:[[[TableViewController alloc] initWithStyle:UITableViewStylePlain] autorelease]];
 	
 	OpenHouses *openHouses = [OpenHouses sharedOpenHouses];
 	[openHouses setDelegate:self];
-	[self showPage:[NSNumber numberWithInt:1]];
 	
 	/* Initialize the bottom toolbar */
 	[self setToolbar:[[[UIToolbar alloc] initWithFrame:CGRectZero] autorelease]];
@@ -134,6 +131,8 @@
 	[flipButton release];
     
     [self.navigationController setDelegate:self];
+    
+    [self setOriginAtLat:44.97614 lng:-93.27704];
 }
 
 /*
@@ -189,7 +188,20 @@
 
 
 #pragma mark -
-#pragma mark Custom UIViewController methods
+#pragma mark Custom methods
+-(void) setOriginAtLat:(float)lat lng:(float)lng {
+    [self setPage:[NSNumber numberWithInt:0]];
+    
+    CLLocation *loc = [[[CLLocation alloc] initWithLatitude:lat longitude:lng] autorelease];
+    [mapController setLocation:loc];
+    [self setOrigin:loc];
+    
+	OpenHouses *openHouses = [OpenHouses sharedOpenHouses];
+    [openHouses setOrigin:loc];
+    
+    [self showPage:[NSNumber numberWithInt:1]];
+}
+
 -(void) showPage:(NSNumber *)p {
 	OpenHouses *openHouses = [OpenHouses sharedOpenHouses];
 	if ([openHouses hasDataForPage:p] == NO) {
@@ -208,7 +220,7 @@
     [[[[toolbar items] objectAtIndex:1] view] setAlpha:1.0f];
     
 	OpenHouses *openHouses = [OpenHouses sharedOpenHouses];
-	[openHouses loadMoreData:origin];
+	[openHouses loadMoreData];
 }
 
 -(void) updateNavButtons {
@@ -223,6 +235,19 @@
 	if ([[self page] intValue] > 1) {
 		[[self navButtons] setEnabled:YES forSegmentAtIndex:1];
 	}
+}
+
+-(void) selectAction:(id)sender {
+    UIActionSheet *menu = [[UIActionSheet alloc]
+                           initWithTitle:@"New browse localion from"
+                           delegate:self
+                           cancelButtonTitle:@"Cancel"
+                           destructiveButtonTitle:nil
+                           otherButtonTitles:@"Current Location", @"Map Center", @"Browse History", @"Address", nil];
+    menu.tag = 1;
+    menu.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    [menu showInView:[delegate window]];
 }
 
 -(void) changePage:(id)sender {
@@ -303,7 +328,24 @@
 }
 
 
-#pragma mark ---- delegate methods for the UINavigationController class ----
+#pragma mark ---- UIActionSheetDelegate methods ----
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+    }
+    else if (buttonIndex == 1) {
+        CLLocationCoordinate2D center = mapController.mapView.centerCoordinate;
+        [self setOriginAtLat:center.latitude lng:center.longitude];
+    }
+    else if (buttonIndex == 2) {
+    }
+    else if (buttonIndex == 3) {
+    }
+    
+    NSLog(@"%d", buttonIndex);
+}
+
+
+#pragma mark ---- UINavigationControllerDelegate methods ----
 -(void) navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     if (viewController != self) {
         return;
@@ -321,7 +363,7 @@
 }
 
 
-#pragma mark ---- delegate methods for the OpenHousesApiDelegate class ----
+#pragma mark ---- OpenHousesApiDelegate methods ----
 -(void) finishedWithPage:(NSNumber *)p {
     [[[[toolbar items] objectAtIndex:1] view] setAlpha:0.0f];
     

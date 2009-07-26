@@ -14,7 +14,8 @@
 @implementation MapViewController
 @synthesize mapView, currentAnnotations;
 
-
+#pragma mark -
+#pragma mark Instantiation and tear down
 -(id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
 		[self setCurrentAnnotations:[NSArray array]];
@@ -29,6 +30,9 @@
     [super dealloc];
 }
 
+
+#pragma mark -
+#pragma mark Standard UIViewController stuff
 -(void) loadView {
 	[super loadView];
 	
@@ -66,35 +70,9 @@
 }
 
 
-#pragma mark ---- delegate methods for the MKMapView class ----
-- (MKAnnotationView *) mapView:(MKMapView *)map viewForAnnotation:(id <MKAnnotation>) annotation {
-	MKPinAnnotationView *annView=[[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"currentloc"] autorelease];
-	annView.animatesDrop=YES;
-	annView.canShowCallout=YES;
-	
-	if (annotation == [map userLocation]) {
-		[annView setPinColor:MKPinAnnotationColorGreen];
-	}
-	else {
-		UIButton *button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-		[button addTarget:self action:@selector(showDetails:) forControlEvents:UIControlEventTouchUpInside];
-		annView.rightCalloutAccessoryView=button;
-	}
-	
-	return annView;
-}
-
--(void) mapView:(MKMapView *)map didAddAnnotationViews:(NSArray *)views {
-	[self performSelector:@selector(showCallout) withObject:nil afterDelay:1];
-}
-
-//-(void) mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
-	//NSLog(@"------");
-//}
-
-
-#pragma mark ---- Misc ----
--(void) centerAtLocation:(CLLocation *)loc {
+#pragma mark -
+#pragma mark Custom methods
+-(void) setLocation:(CLLocation *)loc {
 	/*Region and Zoom*/
 	MKCoordinateRegion region;
 	MKCoordinateSpan span;
@@ -160,6 +138,33 @@
 	OpenHouse *house = [(MKPinAnnotationView *)[[sender superview] superview] annotation];
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"selectedHouse" object:house];
 }
+
+
+#pragma mark ---- MKMapViewDelegate methods ----
+- (MKAnnotationView *) mapView:(MKMapView *)map viewForAnnotation:(id <MKAnnotation>) annotation {
+	MKPinAnnotationView *annView=[[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"currentloc"] autorelease];
+	annView.animatesDrop=YES;
+	annView.canShowCallout=YES;
+	
+	if (annotation == [map userLocation]) {
+		[annView setPinColor:MKPinAnnotationColorGreen];
+	}
+	else {
+		UIButton *button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+		[button addTarget:self action:@selector(showDetails:) forControlEvents:UIControlEventTouchUpInside];
+		annView.rightCalloutAccessoryView=button;
+	}
+	
+	return annView;
+}
+
+-(void) mapView:(MKMapView *)map didAddAnnotationViews:(NSArray *)views {
+	[self performSelector:@selector(showCallout) withObject:nil afterDelay:1];
+}
+
+//-(void) mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
+//NSLog(@"------");
+//}
 
 
 @end

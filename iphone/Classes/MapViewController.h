@@ -20,7 +20,7 @@
 @property (nonatomic, retain) NSArray *currentAnnotations;
 @property (nonatomic, retain) MKMapView *mapView;
 
--(void) centerAtLocation:(CLLocation *)loc;
+-(void) setLocation:(CLLocation *)loc;
 -(void) showPage:(NSArray *)annotations withOrigin:(CLLocation *)origin;
 -(void) showCallout:(OpenHouse *)house;
 

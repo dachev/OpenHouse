@@ -17,18 +17,19 @@
 
 @implementation OpenHouses
 SYNTHESIZE_SINGLETON_FOR_CLASS(OpenHouses);
-@synthesize totalResults, totalPages, pendingRequest, allAnnotations, delegate;
+@synthesize origin, totalResults, totalPages, pendingRequest, allAnnotations, delegate;
 
 -(id) init {
 	if (self = [super init]) {
-		[self setAllAnnotations:[NSMutableArray array]];
-		[self setPendingRequest:NO];
+        CLLocation *o = [[[CLLocation alloc] initWithLatitude:0 longitude:0] autorelease];
+        [self setOrigin:o];
 	}
 	
 	return self;
 }
 
 -(void) dealloc {
+    [origin release];
 	[totalResults release];
 	[totalPages release];
 	[allAnnotations release];
@@ -36,7 +37,18 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(OpenHouses);
 	[super dealloc];
 }
 
--(void) loadMoreData:(CLLocation *) origin {
+-(void) setOrigin:(CLLocation *)v {
+    [v retain];
+    [origin release];
+    origin = v;
+    
+	[self setTotalResults:[NSNumber numberWithInt:0]];
+	[self setTotalPages:[NSNumber numberWithInt:0]];
+    [self setAllAnnotations:[NSMutableArray array]];
+    [self setPendingRequest:NO];
+}
+
+-(void) loadMoreData {
 	NSDate *beginDate = [NSDate date];
 	NSDate *endDate   = [NSDate dateWithTimeIntervalSinceNow: 60*60*24*7*2];
 	
@@ -103,9 +115,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(OpenHouses);
          NSNumber *p = [self calculatePageFromStartIndex:[NSNumber numberWithInt:[[response objectForKey:@"offset"] intValue]]];
          [delegate finishedWithPage:p];
      }
-    
-    NSLog(@"%@", [response objectForKey:@"total"]);
-    NSLog(@"%d", [houses count]);
 }
 
 -(void) getHousesFail:(TaggedURLConnection *)connection withError:(NSString *)error {
