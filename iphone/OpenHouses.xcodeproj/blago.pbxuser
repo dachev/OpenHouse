@@ -46,6 +46,7 @@
 		);
 		breakpoints = (
 			83E4DAD6100D7F9000E8FE1E /* [NSException raise] */,
+			83FB86B7101C399700936F2C /* BrowseController.m:369 */,
 		);
 		codeSenseManager = 83E55D090FB7F64F00ED0E37 /* Code sense */;
 		executables = (
@@ -1030,6 +1031,46 @@
 			83FB8697101C2F6F00936F2C /* PBXTextBookmark */ = 83FB8697101C2F6F00936F2C /* PBXTextBookmark */;
 			83FB8698101C2F6F00936F2C /* PBXTextBookmark */ = 83FB8698101C2F6F00936F2C /* PBXTextBookmark */;
 			83FB869A101C2F9A00936F2C /* PBXTextBookmark */ = 83FB869A101C2F9A00936F2C /* PBXTextBookmark */;
+			83FB869C101C327E00936F2C /* PBXTextBookmark */ = 83FB869C101C327E00936F2C /* PBXTextBookmark */;
+			83FB869D101C327E00936F2C /* PBXTextBookmark */ = 83FB869D101C327E00936F2C /* PBXTextBookmark */;
+			83FB869E101C327E00936F2C /* PBXTextBookmark */ = 83FB869E101C327E00936F2C /* PBXTextBookmark */;
+			83FB869F101C327E00936F2C /* PBXTextBookmark */ = 83FB869F101C327E00936F2C /* PBXTextBookmark */;
+			83FB86A2101C32FB00936F2C /* PBXTextBookmark */ = 83FB86A2101C32FB00936F2C /* PBXTextBookmark */;
+			83FB86A3101C32FB00936F2C /* PBXTextBookmark */ = 83FB86A3101C32FB00936F2C /* PBXTextBookmark */;
+			83FB86A4101C32FB00936F2C /* PBXTextBookmark */ = 83FB86A4101C32FB00936F2C /* PBXTextBookmark */;
+			83FB86A5101C32FB00936F2C /* PBXTextBookmark */ = 83FB86A5101C32FB00936F2C /* PBXTextBookmark */;
+			83FB86A9101C392100936F2C /* PBXTextBookmark */ = 83FB86A9101C392100936F2C /* PBXTextBookmark */;
+			83FB86AE101C394300936F2C /* PBXTextBookmark */ = 83FB86AE101C394300936F2C /* PBXTextBookmark */;
+			83FB86B3101C398200936F2C /* PBXTextBookmark */ = 83FB86B3101C398200936F2C /* PBXTextBookmark */;
+			83FB86B5101C398C00936F2C /* PBXTextBookmark */ = 83FB86B5101C398C00936F2C /* PBXTextBookmark */;
+			83FB86B9101C399B00936F2C /* PBXTextBookmark */ = 83FB86B9101C399B00936F2C /* PBXTextBookmark */;
+			83FB86BE101C3A7200936F2C /* PBXTextBookmark */ = 83FB86BE101C3A7200936F2C /* PBXTextBookmark */;
+			83FB86BF101C3A7B00936F2C /* PBXTextBookmark */ = 83FB86BF101C3A7B00936F2C /* PBXTextBookmark */;
+			83FB86C2101C3A9D00936F2C /* PBXTextBookmark */ = 83FB86C2101C3A9D00936F2C /* PBXTextBookmark */;
+			83FB86C5101C3AFF00936F2C /* PBXTextBookmark */ = 83FB86C5101C3AFF00936F2C /* PBXTextBookmark */;
+			83FB86C7101C3BD100936F2C /* PBXTextBookmark */ = 83FB86C7101C3BD100936F2C /* PBXTextBookmark */;
+			83FB86C8101C3BD100936F2C /* PBXTextBookmark */ = 83FB86C8101C3BD100936F2C /* PBXTextBookmark */;
+			83FB86C9101C3BD100936F2C /* PBXTextBookmark */ = 83FB86C9101C3BD100936F2C /* PBXTextBookmark */;
+			83FB86CA101C3BD100936F2C /* PBXTextBookmark */ = 83FB86CA101C3BD100936F2C /* PBXTextBookmark */;
+			83FB86CC101C3C0900936F2C /* PBXTextBookmark */ = 83FB86CC101C3C0900936F2C /* PBXTextBookmark */;
+			83FB86CF101C3C6F00936F2C /* PBXTextBookmark */ = 83FB86CF101C3C6F00936F2C /* PBXTextBookmark */;
+			83FB86D0101C3C6F00936F2C /* PBXTextBookmark */ = 83FB86D0101C3C6F00936F2C /* PBXTextBookmark */;
+			83FB86D1101C3C6F00936F2C /* PBXTextBookmark */ = 83FB86D1101C3C6F00936F2C /* PBXTextBookmark */;
+			83FB86D2101C3C6F00936F2C /* PBXTextBookmark */ = 83FB86D2101C3C6F00936F2C /* PBXTextBookmark */;
+			83FB86D3101C3C8000936F2C /* PBXTextBookmark */ = 83FB86D3101C3C8000936F2C /* PBXTextBookmark */;
+			83FB86D4101C3C8000936F2C /* PBXTextBookmark */ = 83FB86D4101C3C8000936F2C /* PBXTextBookmark */;
+			83FB86D5101C3C9A00936F2C /* PBXTextBookmark */ = 83FB86D5101C3C9A00936F2C /* PBXTextBookmark */;
+			83FB86D6101C3CA400936F2C /* PBXTextBookmark */ = 83FB86D6101C3CA400936F2C /* PBXTextBookmark */;
+			83FB86DA101C3D3400936F2C /* PBXTextBookmark */ = 83FB86DA101C3D3400936F2C /* PBXTextBookmark */;
+			83FB86DB101C3D3400936F2C /* PBXTextBookmark */ = 83FB86DB101C3D3400936F2C /* PBXTextBookmark */;
+			83FB86DC101C3D3400936F2C /* PBXTextBookmark */ = 83FB86DC101C3D3400936F2C /* PBXTextBookmark */;
+			83FB86DD101C3D3400936F2C /* PBXTextBookmark */ = 83FB86DD101C3D3400936F2C /* PBXTextBookmark */;
+			83FB86DF101C3D5C00936F2C /* PBXTextBookmark */ = 83FB86DF101C3D5C00936F2C /* PBXTextBookmark */;
+			83FB86E1101C3DA500936F2C /* PBXTextBookmark */ = 83FB86E1101C3DA500936F2C /* PBXTextBookmark */;
+			83FB86E8101C3DF600936F2C /* PBXTextBookmark */ = 83FB86E8101C3DF600936F2C /* PBXTextBookmark */;
+			83FB86E9101C3DFF00936F2C /* PBXTextBookmark */ = 83FB86E9101C3DFF00936F2C /* PBXTextBookmark */;
+			83FB86EC101C3E2900936F2C /* PBXTextBookmark */ = 83FB86EC101C3E2900936F2C /* PBXTextBookmark */;
+			83FB86ED101C3E6000936F2C /* PBXTextBookmark */ = 83FB86ED101C3E6000936F2C /* PBXTextBookmark */;
 			83FBC87B0FCCFAED0008C3BC = 83FBC87B0FCCFAED0008C3BC /* PBXTextBookmark */;
 			83FBCA450FCD0A410008C3BC = 83FBCA450FCD0A410008C3BC /* PBXTextBookmark */;
 			83FBCA4F0FCD0A410008C3BC = 83FBCA4F0FCD0A410008C3BC /* PBXTextBookmark */;
@@ -1226,7 +1267,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 203";
 		rLen = 0;
-		rLoc = 12474;
+		rLoc = 13119;
 		rType = 0;
 		vrLen = 769;
 		vrLoc = 6720;
@@ -1256,7 +1297,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 69";
 		rLen = 0;
-		rLoc = 2649;
+		rLoc = 2662;
 		rType = 0;
 		vrLen = 944;
 		vrLoc = 2104;
@@ -1266,7 +1307,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 69";
 		rLen = 0;
-		rLoc = 2649;
+		rLoc = 2662;
 		rType = 0;
 		vrLen = 944;
 		vrLoc = 2104;
@@ -1634,9 +1675,9 @@
 	};
 	835E12650FEC921800923362 /* OpenHouses.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1081, 2928}}";
-			sepNavSelRange = "{1926, 0}";
-			sepNavVisRange = "{1325, 1433}";
+			sepNavIntBoundsRect = "{{0, 0}, {1097, 2864}}";
+			sepNavSelRange = "{2072, 0}";
+			sepNavVisRange = "{3045, 1275}";
 		};
 	};
 	836107E610086F8A007082CD /* SpecsView.h */ = {
@@ -2051,7 +2092,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		location = CoreFoundation;
-		modificationTime = 270279792.064777;
+		modificationTime = 270286334.055232;
 		state = 1;
 		symbolName = "[NSException raise]";
 	};
@@ -2171,9 +2212,9 @@
 	};
 	83EE513D0FECBD3C0099FC4E /* BrowseController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1081, 6288}}";
-			sepNavSelRange = "{2365, 0}";
-			sepNavVisRange = "{2113, 1019}";
+			sepNavIntBoundsRect = "{{0, 0}, {1125, 6592}}";
+			sepNavSelRange = "{12588, 0}";
+			sepNavVisRange = "{12006, 1114}";
 		};
 	};
 	83FB814C101888E000936F2C /* PBXTextBookmark */ = {
@@ -2231,7 +2272,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 99";
 		rLen = 0;
-		rLoc = 3761;
+		rLoc = 3774;
 		rType = 0;
 		vrLen = 1190;
 		vrLoc = 2765;
@@ -2251,7 +2292,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 99";
 		rLen = 0;
-		rLoc = 3761;
+		rLoc = 3774;
 		rType = 0;
 		vrLen = 1190;
 		vrLoc = 2765;
@@ -2972,7 +3013,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 99";
 		rLen = 0;
-		rLoc = 3761;
+		rLoc = 3774;
 		rType = 0;
 		vrLen = 1190;
 		vrLoc = 2765;
@@ -3252,7 +3293,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 69";
 		rLen = 0;
-		rLoc = 2649;
+		rLoc = 2662;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 2104;
@@ -3282,7 +3323,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 69";
 		rLen = 0;
-		rLoc = 2649;
+		rLoc = 2662;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 2104;
@@ -3532,7 +3573,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 69";
 		rLen = 0;
-		rLoc = 2649;
+		rLoc = 2662;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 2104;
@@ -4679,7 +4720,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 288";
 		rLen = 0;
-		rLoc = 12474;
+		rLoc = 13119;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 8256;
@@ -4699,7 +4740,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 288";
 		rLen = 0;
-		rLoc = 12474;
+		rLoc = 13119;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 8256;
@@ -4789,7 +4830,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 279";
 		rLen = 0;
-		rLoc = 12474;
+		rLoc = 13119;
 		rType = 0;
 		vrLen = 1002;
 		vrLoc = 7565;
@@ -4849,7 +4890,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 279";
 		rLen = 0;
-		rLoc = 12474;
+		rLoc = 13119;
 		rType = 0;
 		vrLen = 1002;
 		vrLoc = 7565;
@@ -4919,7 +4960,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 279";
 		rLen = 0;
-		rLoc = 12474;
+		rLoc = 13119;
 		rType = 0;
 		vrLen = 987;
 		vrLoc = 7655;
@@ -4949,7 +4990,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 279";
 		rLen = 0;
-		rLoc = 12474;
+		rLoc = 13119;
 		rType = 0;
 		vrLen = 987;
 		vrLoc = 7655;
@@ -5019,7 +5060,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 279";
 		rLen = 0;
-		rLoc = 12474;
+		rLoc = 13119;
 		rType = 0;
 		vrLen = 987;
 		vrLoc = 7655;
@@ -5039,7 +5080,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 279";
 		rLen = 0;
-		rLoc = 12474;
+		rLoc = 13119;
 		rType = 0;
 		vrLen = 989;
 		vrLoc = 7655;
@@ -5049,7 +5090,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 263";
 		rLen = 0;
-		rLoc = 12474;
+		rLoc = 13119;
 		rType = 0;
 		vrLen = 1005;
 		vrLoc = 7655;
@@ -5059,7 +5100,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 263";
 		rLen = 0;
-		rLoc = 12474;
+		rLoc = 13119;
 		rType = 0;
 		vrLen = 1005;
 		vrLoc = 7655;
@@ -5069,7 +5110,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 263";
 		rLen = 0;
-		rLoc = 12474;
+		rLoc = 13119;
 		rType = 0;
 		vrLen = 946;
 		vrLoc = 7488;
@@ -5089,7 +5130,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 263";
 		rLen = 0;
-		rLoc = 12474;
+		rLoc = 13119;
 		rType = 0;
 		vrLen = 667;
 		vrLoc = 7655;
@@ -5099,7 +5140,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 294";
 		rLen = 0;
-		rLoc = 12474;
+		rLoc = 13119;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 8256;
@@ -5109,7 +5150,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 268";
 		rLen = 0;
-		rLoc = 12474;
+		rLoc = 13119;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 7565;
@@ -5129,7 +5170,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 268";
 		rLen = 0;
-		rLoc = 12474;
+		rLoc = 13119;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 7565;
@@ -5249,7 +5290,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 268";
 		rLen = 0;
-		rLoc = 12474;
+		rLoc = 13119;
 		rType = 0;
 		vrLen = 968;
 		vrLoc = 7608;
@@ -5299,7 +5340,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 170";
 		rLen = 0;
-		rLoc = 11712;
+		rLoc = 11738;
 		rType = 0;
 		vrLen = 985;
 		vrLoc = 4785;
@@ -5309,7 +5350,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 170";
 		rLen = 0;
-		rLoc = 11712;
+		rLoc = 11738;
 		rType = 0;
 		vrLen = 862;
 		vrLoc = 5076;
@@ -5319,7 +5360,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 170";
 		rLen = 0;
-		rLoc = 11712;
+		rLoc = 11738;
 		rType = 0;
 		vrLen = 561;
 		vrLoc = 5209;
@@ -5329,7 +5370,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 170";
 		rLen = 0;
-		rLoc = 11712;
+		rLoc = 11738;
 		rType = 0;
 		vrLen = 891;
 		vrLoc = 5079;
@@ -5339,7 +5380,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 169";
 		rLen = 21;
-		rLoc = 11568;
+		rLoc = 11594;
 		rType = 0;
 		vrLen = 891;
 		vrLoc = 5079;
@@ -5349,7 +5390,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 169";
 		rLen = 21;
-		rLoc = 11568;
+		rLoc = 11594;
 		rType = 0;
 		vrLen = 891;
 		vrLoc = 5079;
@@ -5369,7 +5410,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 170";
 		rLen = 0;
-		rLoc = 11712;
+		rLoc = 11738;
 		rType = 0;
 		vrLen = 561;
 		vrLoc = 5211;
@@ -5419,7 +5460,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 167";
 		rLen = 326;
-		rLoc = 11490;
+		rLoc = 11516;
 		rType = 0;
 		vrLen = 891;
 		vrLoc = 5079;
@@ -5509,7 +5550,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 177";
 		rLen = 0;
-		rLoc = 6788;
+		rLoc = 6814;
 		rType = 0;
 		vrLen = 979;
 		vrLoc = 4964;
@@ -5519,7 +5560,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 172";
 		rLen = 0;
-		rLoc = 11158;
+		rLoc = 11184;
 		rType = 0;
 		vrLen = 1095;
 		vrLoc = 139;
@@ -5549,7 +5590,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 177";
 		rLen = 0;
-		rLoc = 6788;
+		rLoc = 6814;
 		rType = 0;
 		vrLen = 979;
 		vrLoc = 4964;
@@ -5569,7 +5610,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 292";
 		rLen = 0;
-		rLoc = 11817;
+		rLoc = 11843;
 		rType = 0;
 		vrLen = 1234;
 		vrLoc = 8717;
@@ -5579,7 +5620,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 286";
 		rLen = 24;
-		rLoc = 11450;
+		rLoc = 11476;
 		rType = 0;
 		vrLen = 1295;
 		vrLoc = 8550;
@@ -5599,7 +5640,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 286";
 		rLen = 24;
-		rLoc = 11450;
+		rLoc = 11476;
 		rType = 0;
 		vrLen = 1295;
 		vrLoc = 8550;
@@ -5679,7 +5720,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 271";
 		rLen = 133;
-		rLoc = 10175;
+		rLoc = 10201;
 		rType = 0;
 		vrLen = 1097;
 		vrLoc = 7895;
@@ -5709,7 +5750,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 271";
 		rLen = 133;
-		rLoc = 10175;
+		rLoc = 10201;
 		rType = 0;
 		vrLen = 1097;
 		vrLoc = 7895;
@@ -5839,7 +5880,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 290";
 		rLen = 0;
-		rLoc = 11812;
+		rLoc = 11838;
 		rType = 0;
 		vrLen = 1347;
 		vrLoc = 8279;
@@ -5859,7 +5900,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 290";
 		rLen = 0;
-		rLoc = 11812;
+		rLoc = 11838;
 		rType = 0;
 		vrLen = 1347;
 		vrLoc = 8279;
@@ -5909,7 +5950,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 290";
 		rLen = 24;
-		rLoc = 11450;
+		rLoc = 11476;
 		rType = 0;
 		vrLen = 1174;
 		vrLoc = 8382;
@@ -5949,7 +5990,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 290";
 		rLen = 24;
-		rLoc = 11450;
+		rLoc = 11476;
 		rType = 0;
 		vrLen = 1174;
 		vrLoc = 8382;
@@ -6246,7 +6287,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 241";
 		rLen = 0;
-		rLoc = 9256;
+		rLoc = 9282;
 		rType = 0;
 		vrLen = 1005;
 		vrLoc = 7087;
@@ -6256,7 +6297,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 241";
 		rLen = 0;
-		rLoc = 9256;
+		rLoc = 9282;
 		rType = 0;
 		vrLen = 1005;
 		vrLoc = 7087;
@@ -6336,7 +6377,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 237";
 		rLen = 0;
-		rLoc = 8881;
+		rLoc = 8907;
 		rType = 0;
 		vrLen = 757;
 		vrLoc = 6742;
@@ -6346,7 +6387,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 237";
 		rLen = 0;
-		rLoc = 8881;
+		rLoc = 8907;
 		rType = 0;
 		vrLen = 757;
 		vrLoc = 6742;
@@ -6356,7 +6397,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 237";
 		rLen = 0;
-		rLoc = 8881;
+		rLoc = 8907;
 		rType = 0;
 		vrLen = 910;
 		vrLoc = 6807;
@@ -6366,7 +6407,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 237";
 		rLen = 0;
-		rLoc = 8881;
+		rLoc = 8907;
 		rType = 0;
 		vrLen = 348;
 		vrLoc = 6742;
@@ -6456,7 +6497,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 249";
 		rLen = 0;
-		rLoc = 8974;
+		rLoc = 9000;
 		rType = 0;
 		vrLen = 1050;
 		vrLoc = 7221;
@@ -6466,7 +6507,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 271";
 		rLen = 0;
-		rLoc = 9788;
+		rLoc = 9814;
 		rType = 0;
 		vrLen = 1227;
 		vrLoc = 7453;
@@ -6476,7 +6517,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 249";
 		rLen = 0;
-		rLoc = 8974;
+		rLoc = 9000;
 		rType = 0;
 		vrLen = 1227;
 		vrLoc = 7453;
@@ -6486,7 +6527,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 249";
 		rLen = 0;
-		rLoc = 8974;
+		rLoc = 9000;
 		rType = 0;
 		vrLen = 1227;
 		vrLoc = 7453;
@@ -6496,7 +6537,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 270";
 		rLen = 0;
-		rLoc = 9788;
+		rLoc = 9814;
 		rType = 0;
 		vrLen = 1274;
 		vrLoc = 7410;
@@ -6506,7 +6547,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 251";
 		rLen = 0;
-		rLoc = 9025;
+		rLoc = 9051;
 		rType = 0;
 		vrLen = 1277;
 		vrLoc = 7453;
@@ -6516,7 +6557,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 248";
 		rLen = 0;
-		rLoc = 8974;
+		rLoc = 9000;
 		rType = 0;
 		vrLen = 1253;
 		vrLoc = 7453;
@@ -6536,7 +6577,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 272";
 		rLen = 0;
-		rLoc = 9788;
+		rLoc = 9814;
 		rType = 0;
 		vrLen = 1094;
 		vrLoc = 7453;
@@ -6546,7 +6587,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 272";
 		rLen = 0;
-		rLoc = 9788;
+		rLoc = 9814;
 		rType = 0;
 		vrLen = 1094;
 		vrLoc = 7453;
@@ -6566,7 +6607,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 249";
 		rLen = 0;
-		rLoc = 9166;
+		rLoc = 9192;
 		rType = 0;
 		vrLen = 895;
 		vrLoc = 7002;
@@ -6586,7 +6627,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 316";
 		rLen = 0;
-		rLoc = 11917;
+		rLoc = 11943;
 		rType = 0;
 		vrLen = 1014;
 		vrLoc = 9463;
@@ -6896,7 +6937,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 327";
 		rLen = 0;
-		rLoc = 11917;
+		rLoc = 11943;
 		rType = 0;
 		vrLen = 1009;
 		vrLoc = 10152;
@@ -6916,7 +6957,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 208";
 		rLen = 0;
-		rLoc = 7252;
+		rLoc = 7278;
 		rType = 0;
 		vrLen = 929;
 		vrLoc = 6504;
@@ -7016,7 +7057,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 251";
 		rLen = 0;
-		rLoc = 8881;
+		rLoc = 8907;
 		rType = 0;
 		vrLen = 880;
 		vrLoc = 7692;
@@ -7026,7 +7067,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 247";
 		rLen = 0;
-		rLoc = 8837;
+		rLoc = 8863;
 		rType = 0;
 		vrLen = 932;
 		vrLoc = 7914;
@@ -7036,7 +7077,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 247";
 		rLen = 0;
-		rLoc = 8837;
+		rLoc = 8863;
 		rType = 0;
 		vrLen = 421;
 		vrLoc = 7914;
@@ -7096,7 +7137,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 247";
 		rLen = 0;
-		rLoc = 8837;
+		rLoc = 8863;
 		rType = 0;
 		vrLen = 714;
 		vrLoc = 7490;
@@ -7116,7 +7157,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 247";
 		rLen = 0;
-		rLoc = 8837;
+		rLoc = 8863;
 		rType = 0;
 		vrLen = 714;
 		vrLoc = 7490;
@@ -7186,7 +7227,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 247";
 		rLen = 0;
-		rLoc = 8837;
+		rLoc = 8863;
 		rType = 0;
 		vrLen = 714;
 		vrLoc = 7490;
@@ -7216,7 +7257,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 247";
 		rLen = 0;
-		rLoc = 8837;
+		rLoc = 8863;
 		rType = 0;
 		vrLen = 489;
 		vrLoc = 7709;
@@ -7246,7 +7287,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 247";
 		rLen = 0;
-		rLoc = 8837;
+		rLoc = 8863;
 		rType = 0;
 		vrLen = 711;
 		vrLoc = 7493;
@@ -7266,7 +7307,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 241";
 		rLen = 0;
-		rLoc = 8709;
+		rLoc = 8735;
 		rType = 0;
 		vrLen = 711;
 		vrLoc = 7493;
@@ -7276,7 +7317,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 238";
 		rLen = 0;
-		rLoc = 8663;
+		rLoc = 8689;
 		rType = 0;
 		vrLen = 711;
 		vrLoc = 7493;
@@ -7296,7 +7337,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 238";
 		rLen = 0;
-		rLoc = 8663;
+		rLoc = 8689;
 		rType = 0;
 		vrLen = 711;
 		vrLoc = 7493;
@@ -7306,7 +7347,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 107";
 		rLen = 0;
-		rLoc = 4127;
+		rLoc = 4140;
 		rType = 0;
 		vrLen = 973;
 		vrLoc = 3264;
@@ -7316,7 +7357,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 107";
 		rLen = 0;
-		rLoc = 4127;
+		rLoc = 4140;
 		rType = 0;
 		vrLen = 973;
 		vrLoc = 3264;
@@ -7336,7 +7377,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 107";
 		rLen = 0;
-		rLoc = 4127;
+		rLoc = 4140;
 		rType = 0;
 		vrLen = 719;
 		vrLoc = 3424;
@@ -7346,7 +7387,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 107";
 		rLen = 0;
-		rLoc = 4127;
+		rLoc = 4140;
 		rType = 0;
 		vrLen = 1230;
 		vrLoc = 3056;
@@ -7356,7 +7397,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 107";
 		rLen = 0;
-		rLoc = 4127;
+		rLoc = 4140;
 		rType = 0;
 		vrLen = 1189;
 		vrLoc = 3048;
@@ -7366,7 +7407,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 107";
 		rLen = 0;
-		rLoc = 4127;
+		rLoc = 4140;
 		rType = 0;
 		vrLen = 774;
 		vrLoc = 3309;
@@ -7376,7 +7417,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 156";
 		rLen = 0;
-		rLoc = 5325;
+		rLoc = 5338;
 		rType = 0;
 		vrLen = 615;
 		vrLoc = 4850;
@@ -7396,7 +7437,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 156";
 		rLen = 0;
-		rLoc = 5325;
+		rLoc = 5338;
 		rType = 0;
 		vrLen = 615;
 		vrLoc = 4850;
@@ -7436,7 +7477,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 196";
 		rLen = 4;
-		rLoc = 6933;
+		rLoc = 6959;
 		rType = 0;
 		vrLen = 894;
 		vrLoc = 6439;
@@ -7446,7 +7487,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 102";
 		rLen = 0;
-		rLoc = 3938;
+		rLoc = 3951;
 		rType = 0;
 		vrLen = 615;
 		vrLoc = 4850;
@@ -7456,7 +7497,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 153";
 		rLen = 0;
-		rLoc = 5164;
+		rLoc = 5177;
 		rType = 0;
 		vrLen = 656;
 		vrLoc = 4809;
@@ -7486,7 +7527,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 196";
 		rLen = 4;
-		rLoc = 6933;
+		rLoc = 6959;
 		rType = 0;
 		vrLen = 894;
 		vrLoc = 6439;
@@ -7496,7 +7537,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 102";
 		rLen = 0;
-		rLoc = 3938;
+		rLoc = 3951;
 		rType = 0;
 		vrLen = 615;
 		vrLoc = 4850;
@@ -7536,7 +7577,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 196";
 		rLen = 4;
-		rLoc = 6933;
+		rLoc = 6959;
 		rType = 0;
 		vrLen = 953;
 		vrLoc = 6438;
@@ -7556,7 +7597,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 203";
 		rLen = 0;
-		rLoc = 7129;
+		rLoc = 7155;
 		rType = 0;
 		vrLen = 900;
 		vrLoc = 6590;
@@ -7566,7 +7607,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 203";
 		rLen = 0;
-		rLoc = 7129;
+		rLoc = 7155;
 		rType = 0;
 		vrLen = 900;
 		vrLoc = 6590;
@@ -7576,7 +7617,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 203";
 		rLen = 0;
-		rLoc = 7129;
+		rLoc = 7155;
 		rType = 0;
 		vrLen = 900;
 		vrLoc = 6590;
@@ -7586,7 +7627,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 102";
 		rLen = 0;
-		rLoc = 3938;
+		rLoc = 3951;
 		rType = 0;
 		vrLen = 618;
 		vrLoc = 4847;
@@ -7596,7 +7637,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 203";
 		rLen = 0;
-		rLoc = 7129;
+		rLoc = 7155;
 		rType = 0;
 		vrLen = 900;
 		vrLoc = 6590;
@@ -7606,7 +7647,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 94";
 		rLen = 9;
-		rLoc = 3495;
+		rLoc = 3508;
 		rType = 0;
 		vrLen = 1256;
 		vrLoc = 2627;
@@ -7616,7 +7657,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 94";
 		rLen = 9;
-		rLoc = 3495;
+		rLoc = 3508;
 		rType = 0;
 		vrLen = 1256;
 		vrLoc = 2627;
@@ -7626,7 +7667,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 94";
 		rLen = 9;
-		rLoc = 3495;
+		rLoc = 3508;
 		rType = 0;
 		vrLen = 1256;
 		vrLoc = 2627;
@@ -7636,7 +7677,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 94";
 		rLen = 9;
-		rLoc = 3495;
+		rLoc = 3508;
 		rType = 0;
 		vrLen = 1256;
 		vrLoc = 2627;
@@ -7646,7 +7687,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 94";
 		rLen = 9;
-		rLoc = 3495;
+		rLoc = 3508;
 		rType = 0;
 		vrLen = 1256;
 		vrLoc = 2627;
@@ -7656,7 +7697,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 94";
 		rLen = 0;
-		rLoc = 3577;
+		rLoc = 3590;
 		rType = 0;
 		vrLen = 835;
 		vrLoc = 3048;
@@ -7666,7 +7707,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 98";
 		rLen = 0;
-		rLoc = 3647;
+		rLoc = 3660;
 		rType = 0;
 		vrLen = 1245;
 		vrLoc = 2768;
@@ -7675,7 +7716,7 @@
 		isa = PBXTextBookmark;
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		rLen = 0;
-		rLoc = 231;
+		rLoc = 232;
 		rType = 1;
 	};
 	83FB84DF101BBF0B00936F2C /* PBXTextBookmark */ = {
@@ -7683,7 +7724,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 203";
 		rLen = 0;
-		rLoc = 7129;
+		rLoc = 7155;
 		rType = 0;
 		vrLen = 829;
 		vrLoc = 6664;
@@ -7693,7 +7734,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 98";
 		rLen = 0;
-		rLoc = 3647;
+		rLoc = 3660;
 		rType = 0;
 		vrLen = 1245;
 		vrLoc = 2768;
@@ -7703,7 +7744,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 220";
 		rLen = 0;
-		rLoc = 7546;
+		rLoc = 7572;
 		rType = 0;
 		vrLen = 839;
 		vrLoc = 6654;
@@ -7713,7 +7754,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 228";
 		rLen = 10;
-		rLoc = 8387;
+		rLoc = 8413;
 		rType = 0;
 		vrLen = 690;
 		vrLoc = 7394;
@@ -7723,7 +7764,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 228";
 		rLen = 10;
-		rLoc = 8387;
+		rLoc = 8413;
 		rType = 0;
 		vrLen = 690;
 		vrLoc = 7394;
@@ -7733,7 +7774,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 228";
 		rLen = 10;
-		rLoc = 8387;
+		rLoc = 8413;
 		rType = 0;
 		vrLen = 690;
 		vrLoc = 7394;
@@ -7743,7 +7784,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 228";
 		rLen = 10;
-		rLoc = 8387;
+		rLoc = 8413;
 		rType = 0;
 		vrLen = 763;
 		vrLoc = 6329;
@@ -7760,7 +7801,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 228";
 		rLen = 10;
-		rLoc = 8387;
+		rLoc = 8413;
 		rType = 0;
 		vrLen = 763;
 		vrLoc = 6329;
@@ -7770,7 +7811,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 156";
 		rLen = 0;
-		rLoc = 5325;
+		rLoc = 5338;
 		rType = 0;
 		vrLen = 694;
 		vrLoc = 4709;
@@ -7780,7 +7821,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 156";
 		rLen = 0;
-		rLoc = 5325;
+		rLoc = 5338;
 		rType = 0;
 		vrLen = 694;
 		vrLoc = 4709;
@@ -7790,7 +7831,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 194";
 		rLen = 0;
-		rLoc = 6821;
+		rLoc = 6847;
 		rType = 0;
 		vrLen = 771;
 		vrLoc = 7149;
@@ -7800,7 +7841,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 156";
 		rLen = 0;
-		rLoc = 5325;
+		rLoc = 5338;
 		rType = 0;
 		vrLen = 650;
 		vrLoc = 4709;
@@ -7810,7 +7851,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 156";
 		rLen = 0;
-		rLoc = 5325;
+		rLoc = 5338;
 		rType = 0;
 		vrLen = 694;
 		vrLoc = 4709;
@@ -7820,7 +7861,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 194";
 		rLen = 0;
-		rLoc = 6821;
+		rLoc = 6847;
 		rType = 0;
 		vrLen = 771;
 		vrLoc = 7149;
@@ -7830,7 +7871,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 156";
 		rLen = 0;
-		rLoc = 5325;
+		rLoc = 5338;
 		rType = 0;
 		vrLen = 650;
 		vrLoc = 4709;
@@ -7840,7 +7881,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 194";
 		rLen = 0;
-		rLoc = 6821;
+		rLoc = 6847;
 		rType = 0;
 		vrLen = 797;
 		vrLoc = 6173;
@@ -7857,7 +7898,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 156";
 		rLen = 0;
-		rLoc = 5325;
+		rLoc = 5338;
 		rType = 0;
 		vrLen = 650;
 		vrLoc = 4709;
@@ -7867,7 +7908,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 194";
 		rLen = 0;
-		rLoc = 6821;
+		rLoc = 6847;
 		rType = 0;
 		vrLen = 797;
 		vrLoc = 6173;
@@ -7877,7 +7918,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 159";
 		rLen = 0;
-		rLoc = 5372;
+		rLoc = 5385;
 		rType = 0;
 		vrLen = 650;
 		vrLoc = 4709;
@@ -7887,7 +7928,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 159";
 		rLen = 0;
-		rLoc = 5444;
+		rLoc = 5457;
 		rType = 0;
 		vrLen = 663;
 		vrLoc = 4709;
@@ -7912,7 +7953,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 94";
 		rLen = 0;
-		rLoc = 3577;
+		rLoc = 3590;
 		rType = 0;
 		vrLen = 975;
 		vrLoc = 2768;
@@ -7922,7 +7963,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 159";
 		rLen = 0;
-		rLoc = 5444;
+		rLoc = 5457;
 		rType = 0;
 		vrLen = 480;
 		vrLoc = 4852;
@@ -7932,7 +7973,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 156";
 		rLen = 0;
-		rLoc = 5277;
+		rLoc = 5290;
 		rType = 0;
 		vrLen = 700;
 		vrLoc = 4749;
@@ -7952,7 +7993,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 156";
 		rLen = 0;
-		rLoc = 5277;
+		rLoc = 5290;
 		rType = 0;
 		vrLen = 700;
 		vrLoc = 4749;
@@ -7972,7 +8013,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 156";
 		rLen = 0;
-		rLoc = 5277;
+		rLoc = 5290;
 		rType = 0;
 		vrLen = 746;
 		vrLoc = 4749;
@@ -7982,7 +8023,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 159";
 		rLen = 0;
-		rLoc = 5445;
+		rLoc = 5458;
 		rType = 0;
 		vrLen = 700;
 		vrLoc = 4749;
@@ -7992,7 +8033,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 154";
 		rLen = 0;
-		rLoc = 5203;
+		rLoc = 5216;
 		rType = 0;
 		vrLen = 700;
 		vrLoc = 4749;
@@ -8022,7 +8063,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 154";
 		rLen = 0;
-		rLoc = 5203;
+		rLoc = 5216;
 		rType = 0;
 		vrLen = 700;
 		vrLoc = 4749;
@@ -8249,7 +8290,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 159";
 		rLen = 0;
-		rLoc = 5444;
+		rLoc = 5457;
 		rType = 0;
 		vrLen = 511;
 		vrLoc = 4898;
@@ -8629,7 +8670,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 194";
 		rLen = 0;
-		rLoc = 6821;
+		rLoc = 6847;
 		rType = 0;
 		vrLen = 792;
 		vrLoc = 6173;
@@ -8649,7 +8690,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 229";
 		rLen = 13;
-		rLoc = 7814;
+		rLoc = 7840;
 		rType = 0;
 		vrLen = 820;
 		vrLoc = 7151;
@@ -8659,7 +8700,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 230";
 		rLen = 0;
-		rLoc = 7925;
+		rLoc = 7951;
 		rType = 0;
 		vrLen = 1021;
 		vrLoc = 7151;
@@ -8679,7 +8720,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 239";
 		rLen = 0;
-		rLoc = 8375;
+		rLoc = 8401;
 		rType = 0;
 		vrLen = 915;
 		vrLoc = 7394;
@@ -8689,7 +8730,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 239";
 		rLen = 0;
-		rLoc = 8375;
+		rLoc = 8401;
 		rType = 0;
 		vrLen = 915;
 		vrLoc = 7394;
@@ -8709,7 +8750,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 237";
 		rLen = 0;
-		rLoc = 8278;
+		rLoc = 8304;
 		rType = 0;
 		vrLen = 963;
 		vrLoc = 7394;
@@ -8719,7 +8760,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 230";
 		rLen = 0;
-		rLoc = 7924;
+		rLoc = 7950;
 		rType = 0;
 		vrLen = 967;
 		vrLoc = 7394;
@@ -8729,7 +8770,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 234";
 		rLen = 0;
-		rLoc = 8185;
+		rLoc = 8211;
 		rType = 0;
 		vrLen = 1012;
 		vrLoc = 7394;
@@ -8739,7 +8780,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 234";
 		rLen = 0;
-		rLoc = 8159;
+		rLoc = 8185;
 		rType = 0;
 		vrLen = 1013;
 		vrLoc = 7394;
@@ -8749,7 +8790,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 232";
 		rLen = 0;
-		rLoc = 8021;
+		rLoc = 8047;
 		rType = 0;
 		vrLen = 1013;
 		vrLoc = 7394;
@@ -8759,7 +8800,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 232";
 		rLen = 0;
-		rLoc = 8021;
+		rLoc = 8047;
 		rType = 0;
 		vrLen = 1013;
 		vrLoc = 7394;
@@ -8779,7 +8820,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11097;
+		rLoc = 11123;
 		rType = 0;
 		vrLen = 1043;
 		vrLoc = 10200;
@@ -8789,7 +8830,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11097;
+		rLoc = 11123;
 		rType = 0;
 		vrLen = 1043;
 		vrLoc = 10200;
@@ -8809,7 +8850,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 325";
 		rLen = 0;
-		rLoc = 11158;
+		rLoc = 11184;
 		rType = 0;
 		vrLen = 1054;
 		vrLoc = 10191;
@@ -8819,7 +8860,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 307";
 		rLen = 0;
-		rLoc = 10251;
+		rLoc = 10277;
 		rType = 0;
 		vrLen = 890;
 		vrLoc = 9497;
@@ -8829,7 +8870,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11081;
+		rLoc = 11107;
 		rType = 0;
 		vrLen = 1188;
 		vrLoc = 9928;
@@ -8839,7 +8880,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11081;
+		rLoc = 11107;
 		rType = 0;
 		vrLen = 1188;
 		vrLoc = 9928;
@@ -8859,7 +8900,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11081;
+		rLoc = 11107;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 10200;
@@ -8909,7 +8950,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 105";
 		rLen = 0;
-		rLoc = 4127;
+		rLoc = 4140;
 		rType = 0;
 		vrLen = 1147;
 		vrLoc = 3048;
@@ -8919,7 +8960,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 5;
-		rLoc = 11071;
+		rLoc = 11097;
 		rType = 0;
 		vrLen = 1188;
 		vrLoc = 9928;
@@ -8929,7 +8970,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 5;
-		rLoc = 11071;
+		rLoc = 11097;
 		rType = 0;
 		vrLen = 1251;
 		vrLoc = 9865;
@@ -8979,7 +9020,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 105";
 		rLen = 0;
-		rLoc = 4127;
+		rLoc = 4140;
 		rType = 0;
 		vrLen = 1147;
 		vrLoc = 3048;
@@ -8989,7 +9030,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11097;
+		rLoc = 11123;
 		rType = 0;
 		vrLen = 1199;
 		vrLoc = 9928;
@@ -8999,7 +9040,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11097;
+		rLoc = 11123;
 		rType = 0;
 		vrLen = 1188;
 		vrLoc = 9928;
@@ -9009,7 +9050,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11097;
+		rLoc = 11123;
 		rType = 0;
 		vrLen = 1251;
 		vrLoc = 9865;
@@ -9019,7 +9060,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11097;
+		rLoc = 11123;
 		rType = 0;
 		vrLen = 609;
 		vrLoc = 10191;
@@ -9029,7 +9070,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11097;
+		rLoc = 11123;
 		rType = 0;
 		vrLen = 1251;
 		vrLoc = 9865;
@@ -9039,7 +9080,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11097;
+		rLoc = 11123;
 		rType = 0;
 		vrLen = 609;
 		vrLoc = 10191;
@@ -9049,7 +9090,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11061;
+		rLoc = 11087;
 		rType = 0;
 		vrLen = 1091;
 		vrLoc = 9865;
@@ -9059,7 +9100,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11061;
+		rLoc = 11087;
 		rType = 0;
 		vrLen = 522;
 		vrLoc = 10327;
@@ -9069,7 +9110,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 324";
 		rLen = 0;
-		rLoc = 11066;
+		rLoc = 11092;
 		rType = 0;
 		vrLen = 1095;
 		vrLoc = 9865;
@@ -9079,7 +9120,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 324";
 		rLen = 0;
-		rLoc = 11066;
+		rLoc = 11092;
 		rType = 0;
 		vrLen = 1181;
 		vrLoc = 9973;
@@ -9089,7 +9130,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 324";
 		rLen = 0;
-		rLoc = 11066;
+		rLoc = 11092;
 		rType = 0;
 		vrLen = 602;
 		vrLoc = 10191;
@@ -9129,7 +9170,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 329";
 		rLen = 0;
-		rLoc = 11061;
+		rLoc = 11087;
 		rType = 0;
 		vrLen = 791;
 		vrLoc = 10174;
@@ -9179,7 +9220,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 329";
 		rLen = 0;
-		rLoc = 11061;
+		rLoc = 11087;
 		rType = 0;
 		vrLen = 791;
 		vrLoc = 10174;
@@ -9199,7 +9240,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 329";
 		rLen = 0;
-		rLoc = 11061;
+		rLoc = 11087;
 		rType = 0;
 		vrLen = 840;
 		vrLoc = 10174;
@@ -9239,7 +9280,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 325";
 		rLen = 0;
-		rLoc = 11061;
+		rLoc = 11087;
 		rType = 0;
 		vrLen = 1127;
 		vrLoc = 10011;
@@ -9279,7 +9320,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 325";
 		rLen = 0;
-		rLoc = 11061;
+		rLoc = 11087;
 		rType = 0;
 		vrLen = 1127;
 		vrLoc = 10011;
@@ -9299,7 +9340,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 325";
 		rLen = 0;
-		rLoc = 11061;
+		rLoc = 11087;
 		rType = 0;
 		vrLen = 1127;
 		vrLoc = 10011;
@@ -9319,7 +9360,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 325";
 		rLen = 0;
-		rLoc = 11061;
+		rLoc = 11087;
 		rType = 0;
 		vrLen = 1127;
 		vrLoc = 10011;
@@ -9329,7 +9370,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 327";
 		rLen = 0;
-		rLoc = 11061;
+		rLoc = 11087;
 		rType = 0;
 		vrLen = 1127;
 		vrLoc = 10011;
@@ -9339,7 +9380,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11061;
+		rLoc = 11087;
 		rType = 0;
 		vrLen = 1127;
 		vrLoc = 10011;
@@ -9349,7 +9390,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 322";
 		rLen = 0;
-		rLoc = 11061;
+		rLoc = 11087;
 		rType = 0;
 		vrLen = 991;
 		vrLoc = 10011;
@@ -9359,7 +9400,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 325";
 		rLen = 0;
-		rLoc = 11061;
+		rLoc = 11087;
 		rType = 0;
 		vrLen = 963;
 		vrLoc = 10011;
@@ -9369,7 +9410,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 326";
 		rLen = 0;
-		rLoc = 11061;
+		rLoc = 11087;
 		rType = 0;
 		vrLen = 960;
 		vrLoc = 10011;
@@ -9409,7 +9450,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 324";
 		rLen = 0;
-		rLoc = 10909;
+		rLoc = 10935;
 		rType = 0;
 		vrLen = 938;
 		vrLoc = 10011;
@@ -9419,7 +9460,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 326";
 		rLen = 0;
-		rLoc = 11061;
+		rLoc = 11087;
 		rType = 0;
 		vrLen = 960;
 		vrLoc = 10011;
@@ -9439,7 +9480,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 326";
 		rLen = 0;
-		rLoc = 11061;
+		rLoc = 11087;
 		rType = 0;
 		vrLen = 959;
 		vrLoc = 10011;
@@ -9489,7 +9530,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 326";
 		rLen = 0;
-		rLoc = 11061;
+		rLoc = 11087;
 		rType = 0;
 		vrLen = 1013;
 		vrLoc = 9956;
@@ -9509,7 +9550,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 324";
 		rLen = 0;
-		rLoc = 10909;
+		rLoc = 10935;
 		rType = 0;
 		vrLen = 1093;
 		vrLoc = 10011;
@@ -9549,7 +9590,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 324";
 		rLen = 0;
-		rLoc = 10909;
+		rLoc = 10935;
 		rType = 0;
 		vrLen = 938;
 		vrLoc = 10011;
@@ -9609,7 +9650,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 325";
 		rLen = 0;
-		rLoc = 10909;
+		rLoc = 10935;
 		rType = 0;
 		vrLen = 1149;
 		vrLoc = 10011;
@@ -9649,7 +9690,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 329";
 		rLen = 0;
-		rLoc = 11022;
+		rLoc = 11048;
 		rType = 0;
 		vrLen = 1149;
 		vrLoc = 10011;
@@ -9659,7 +9700,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 329";
 		rLen = 0;
-		rLoc = 11022;
+		rLoc = 11048;
 		rType = 0;
 		vrLen = 1149;
 		vrLoc = 10011;
@@ -9699,7 +9740,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 346";
 		rLen = 0;
-		rLoc = 11492;
+		rLoc = 11518;
 		rType = 0;
 		vrLen = 1094;
 		vrLoc = 9769;
@@ -9729,7 +9770,7 @@
 		comments = "warning: 'MapViewController' may not respond to '-centerAtLocation:'";
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		rLen = 1;
-		rLoc = 336;
+		rLoc = 337;
 		rType = 1;
 	};
 	83FB862E101C1E9C00936F2C /* PBXTextBookmark */ = {
@@ -9737,7 +9778,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 308";
 		rLen = 0;
-		rLoc = 10253;
+		rLoc = 10279;
 		rType = 0;
 		vrLen = 1094;
 		vrLoc = 9769;
@@ -9767,7 +9808,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 323";
 		rLen = 0;
-		rLoc = 10909;
+		rLoc = 10935;
 		rType = 0;
 		vrLen = 1118;
 		vrLoc = 10053;
@@ -9787,7 +9828,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 189";
 		rLen = 0;
-		rLoc = 6787;
+		rLoc = 6813;
 		rType = 0;
 		vrLen = 859;
 		vrLoc = 5964;
@@ -9797,7 +9838,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 189";
 		rLen = 0;
-		rLoc = 6787;
+		rLoc = 6813;
 		rType = 0;
 		vrLen = 859;
 		vrLoc = 5964;
@@ -9877,7 +9918,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 330";
 		rLen = 0;
-		rLoc = 10909;
+		rLoc = 10935;
 		rType = 0;
 		vrLen = 1017;
 		vrLoc = 10213;
@@ -9927,7 +9968,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 206";
 		rLen = 6;
-		rLoc = 7016;
+		rLoc = 7042;
 		rType = 0;
 		vrLen = 857;
 		vrLoc = 6250;
@@ -9947,7 +9988,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 206";
 		rLen = 6;
-		rLoc = 7016;
+		rLoc = 7042;
 		rType = 0;
 		vrLen = 857;
 		vrLoc = 6250;
@@ -9977,7 +10018,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 208";
 		rLen = 0;
-		rLoc = 6982;
+		rLoc = 7008;
 		rType = 0;
 		vrLen = 881;
 		vrLoc = 6335;
@@ -10066,7 +10107,7 @@
 		isa = PBXTextBookmark;
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		rLen = 0;
-		rLoc = 206;
+		rLoc = 207;
 		rType = 1;
 	};
 	83FB865C101C22F700936F2C /* PBXTextBookmark */ = {
@@ -10094,7 +10135,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 206";
 		rLen = 0;
-		rLoc = 6951;
+		rLoc = 6977;
 		rType = 0;
 		vrLen = 825;
 		vrLoc = 6334;
@@ -10124,7 +10165,7 @@
 		comments = "warning: 'OpenHouses' may not respond to '-loadMoreData:'";
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		rLen = 1;
-		rLoc = 222;
+		rLoc = 223;
 		rType = 1;
 	};
 	83FB8665101C247F00936F2C /* PBXTextBookmark */ = {
@@ -10132,7 +10173,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 220";
 		rLen = 12;
-		rLoc = 7328;
+		rLoc = 7354;
 		rType = 0;
 		vrLen = 895;
 		vrLoc = 6693;
@@ -10202,7 +10243,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 220";
 		rLen = 0;
-		rLoc = 7340;
+		rLoc = 7366;
 		rType = 0;
 		vrLen = 947;
 		vrLoc = 6727;
@@ -10212,7 +10253,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 332";
 		rLen = 80;
-		rLoc = 10829;
+		rLoc = 10855;
 		rType = 0;
 		vrLen = 1071;
 		vrLoc = 10215;
@@ -10242,7 +10283,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 332";
 		rLen = 80;
-		rLoc = 10829;
+		rLoc = 10855;
 		rType = 0;
 		vrLen = 1071;
 		vrLoc = 10215;
@@ -10302,7 +10343,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 332";
 		rLen = 80;
-		rLoc = 10829;
+		rLoc = 10855;
 		rType = 0;
 		vrLen = 1131;
 		vrLoc = 10160;
@@ -10499,7 +10540,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 63";
 		rLen = 0;
-		rLoc = 1929;
+		rLoc = 1946;
 		rType = 0;
 		vrLen = 1432;
 		vrLoc = 1325;
@@ -10509,10 +10550,424 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 63";
 		rLen = 0;
-		rLoc = 1926;
+		rLoc = 1924;
 		rType = 0;
 		vrLen = 1433;
 		vrLoc = 1325;
+	};
+	83FB869C101C327E00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83FBC9870FCD07320008C3BC /* Constants.h */;
+		name = "Constants.h: 7";
+		rLen = 0;
+		rLoc = 142;
+		rType = 0;
+		vrLen = 1081;
+		vrLoc = 0;
+	};
+	83FB869D101C327E00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
+		name = "OpenHouses.m: 63";
+		rLen = 0;
+		rLoc = 1946;
+		rType = 0;
+		vrLen = 1368;
+		vrLoc = 1519;
+	};
+	83FB869E101C327E00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83FBC9870FCD07320008C3BC /* Constants.h */;
+		name = "Constants.h: 7";
+		rLen = 0;
+		rLoc = 142;
+		rType = 0;
+		vrLen = 1081;
+		vrLoc = 0;
+	};
+	83FB869F101C327E00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
+		name = "OpenHouses.m: 65";
+		rLen = 0;
+		rLoc = 2072;
+		rType = 0;
+		vrLen = 1443;
+		vrLoc = 1519;
+	};
+	83FB86A2101C32FB00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
+		name = "OpenHouses.m: 65";
+		rLen = 0;
+		rLoc = 2072;
+		rType = 0;
+		vrLen = 1364;
+		vrLoc = 1519;
+	};
+	83FB86A3101C32FB00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 74";
+		rLen = 0;
+		rLoc = 2365;
+		rType = 0;
+		vrLen = 934;
+		vrLoc = 2113;
+	};
+	83FB86A4101C32FB00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
+		name = "OpenHouses.m: 65";
+		rLen = 0;
+		rLoc = 2072;
+		rType = 0;
+		vrLen = 1364;
+		vrLoc = 1519;
+	};
+	83FB86A5101C32FB00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 368";
+		rLen = 0;
+		rLoc = 11958;
+		rType = 0;
+		vrLen = 830;
+		vrLoc = 11651;
+	};
+	83FB86A9101C392100936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 357";
+		rLen = 1;
+		rLoc = 11593;
+		rType = 0;
+		vrLen = 989;
+		vrLoc = 11492;
+	};
+	83FB86AE101C394300936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 357";
+		rLen = 1;
+		rLoc = 11593;
+		rType = 0;
+		vrLen = 989;
+		vrLoc = 11492;
+	};
+	83FB86B3101C398200936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 205";
+		rLen = 8;
+		rLoc = 6822;
+		rType = 0;
+		vrLen = 868;
+		vrLoc = 6477;
+	};
+	83FB86B5101C398C00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 205";
+		rLen = 8;
+		rLoc = 6822;
+		rType = 0;
+		vrLen = 868;
+		vrLoc = 6477;
+	};
+	83FB86B7101C399700936F2C /* BrowseController.m:369 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		functionName = "-finishedWithPage:";
+		hitCount = 2;
+		ignoreCount = 0;
+		lineNumber = 369;
+		location = OpenHouses;
+		modificationTime = 270286347.911246;
+		state = 1;
+	};
+	83FB86B9101C399B00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 205";
+		rLen = 8;
+		rLoc = 6822;
+		rType = 0;
+		vrLen = 989;
+		vrLoc = 11492;
+	};
+	83FB86BE101C3A7200936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 205";
+		rLen = 8;
+		rLoc = 6822;
+		rType = 0;
+		vrLen = 989;
+		vrLoc = 11492;
+	};
+	83FB86BF101C3A7B00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 205";
+		rLen = 8;
+		rLoc = 6822;
+		rType = 0;
+		vrLen = 989;
+		vrLoc = 11492;
+	};
+	83FB86C2101C3A9D00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 205";
+		rLen = 8;
+		rLoc = 6822;
+		rType = 0;
+		vrLen = 989;
+		vrLoc = 11492;
+	};
+	83FB86C5101C3AFF00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 202";
+		rLen = 0;
+		rLoc = 6762;
+		rType = 0;
+		vrLen = 885;
+		vrLoc = 6250;
+	};
+	83FB86C7101C3BD100936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83FBC9870FCD07320008C3BC /* Constants.h */;
+		name = "Constants.h: 25";
+		rLen = 0;
+		rLoc = 1075;
+		rType = 0;
+		vrLen = 1080;
+		vrLoc = 0;
+	};
+	83FB86C8101C3BD100936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 375";
+		rLen = 0;
+		rLoc = 12343;
+		rType = 0;
+		vrLen = 1098;
+		vrLoc = 11738;
+	};
+	83FB86C9101C3BD100936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83FBC9870FCD07320008C3BC /* Constants.h */;
+		name = "Constants.h: 25";
+		rLen = 0;
+		rLoc = 1075;
+		rType = 0;
+		vrLen = 1080;
+		vrLoc = 0;
+	};
+	83FB86CA101C3BD100936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 375";
+		rLen = 0;
+		rLoc = 12375;
+		rType = 0;
+		vrLen = 1019;
+		vrLoc = 11738;
+	};
+	83FB86CC101C3C0900936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 372";
+		rLen = 0;
+		rLoc = 12134;
+		rType = 0;
+		vrLen = 996;
+		vrLoc = 11738;
+	};
+	83FB86CF101C3C6F00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 372";
+		rLen = 0;
+		rLoc = 12096;
+		rType = 0;
+		vrLen = 1044;
+		vrLoc = 11738;
+	};
+	83FB86D0101C3C6F00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
+		name = "OpenHouses.m: 65";
+		rLen = 0;
+		rLoc = 2072;
+		rType = 0;
+		vrLen = 1364;
+		vrLoc = 1519;
+	};
+	83FB86D1101C3C6F00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 372";
+		rLen = 0;
+		rLoc = 12096;
+		rType = 0;
+		vrLen = 1044;
+		vrLoc = 11738;
+	};
+	83FB86D2101C3C6F00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
+		name = "OpenHouses.m: 65";
+		rLen = 0;
+		rLoc = 2072;
+		rType = 0;
+		vrLen = 1124;
+		vrLoc = 2491;
+	};
+	83FB86D3101C3C8000936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 344";
+		rLen = 0;
+		rLoc = 11092;
+		rType = 0;
+		vrLen = 732;
+		vrLoc = 10278;
+	};
+	83FB86D4101C3C8000936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
+		name = "OpenHouses.m: 65";
+		rLen = 0;
+		rLoc = 2072;
+		rType = 0;
+		vrLen = 392;
+		vrLoc = 2491;
+	};
+	83FB86D5101C3C9A00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
+		name = "OpenHouses.m: 65";
+		rLen = 0;
+		rLoc = 2072;
+		rType = 0;
+		vrLen = 1268;
+		vrLoc = 2962;
+	};
+	83FB86D6101C3CA400936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
+		name = "OpenHouses.m: 65";
+		rLen = 0;
+		rLoc = 2072;
+		rType = 0;
+		vrLen = 399;
+		vrLoc = 2962;
+	};
+	83FB86DA101C3D3400936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
+		name = "OpenHouses.m: 65";
+		rLen = 0;
+		rLoc = 2072;
+		rType = 0;
+		vrLen = 1275;
+		vrLoc = 3045;
+	};
+	83FB86DB101C3D3400936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		rLen = 0;
+		rLoc = 368;
+		rType = 1;
+	};
+	83FB86DC101C3D3400936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
+		name = "OpenHouses.m: 65";
+		rLen = 0;
+		rLoc = 2072;
+		rType = 0;
+		vrLen = 1275;
+		vrLoc = 3045;
+	};
+	83FB86DD101C3D3400936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 372";
+		rLen = 0;
+		rLoc = 12131;
+		rType = 0;
+		vrLen = 1143;
+		vrLoc = 11844;
+	};
+	83FB86DF101C3D5C00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 375";
+		rLen = 0;
+		rLoc = 12351;
+		rType = 0;
+		vrLen = 1148;
+		vrLoc = 11844;
+	};
+	83FB86E1101C3DA500936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 372";
+		rLen = 0;
+		rLoc = 12085;
+		rType = 0;
+		vrLen = 1172;
+		vrLoc = 11844;
+	};
+	83FB86E8101C3DF600936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 373";
+		rLen = 0;
+		rLoc = 12188;
+		rType = 0;
+		vrLen = 1229;
+		vrLoc = 11844;
+	};
+	83FB86E9101C3DFF00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 373";
+		rLen = 0;
+		rLoc = 12188;
+		rType = 0;
+		vrLen = 1172;
+		vrLoc = 11844;
+	};
+	83FB86EC101C3E2900936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 372";
+		rLen = 0;
+		rLoc = 12076;
+		rType = 0;
+		vrLen = 1169;
+		vrLoc = 11844;
+	};
+	83FB86ED101C3E6000936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 375";
+		rLen = 39;
+		rLoc = 12304;
+		rType = 0;
+		vrLen = 1114;
+		vrLoc = 12006;
 	};
 	83FBC87B0FCCFAED0008C3BC /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -10526,9 +10981,9 @@
 	};
 	83FBC9870FCD07320008C3BC /* Constants.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1286, 499}}";
-			sepNavSelRange = "{741, 0}";
-			sepNavVisRange = "{0, 1043}";
+			sepNavIntBoundsRect = "{{0, 0}, {1286, 476}}";
+			sepNavSelRange = "{1051, 22}";
+			sepNavVisRange = "{0, 1080}";
 			sepNavWindowFrame = "{{15, -1}, {1023, 874}}";
 		};
 	};

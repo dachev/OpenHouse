@@ -60,9 +60,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(OpenHouses);
     int records            = RESULTS_PER_PAGE_FETCH;
     float lat              = origin.coordinate.latitude;
     float lng              = origin.coordinate.longitude;
-    NSString *url          = [NSString stringWithFormat:SEARCH_API_REQUEST_URL, offset, records, lat, lng, 100.0, beginString, endString];
+    NSString *url          = [NSString stringWithFormat:SEARCH_API_REQUEST_URL, offset, records, lat, lng, CONFIG_SEARCH_DISTANCE, beginString, endString];
     NSString *identifier   = [NSString stringWithFormat:@"%d", [beginDate timeIntervalSince1970]];
-    
+
     TaggedRequest *request = [TaggedRequest requestWithId:identifier url:url];
     [request setTimeoutInterval:CONFIG_NETWORK_TIMEOUT];
     [request delegate:self didFinishSelector:@selector(getHousesFinish:withData:) didFailSelector:@selector(getHousesFail:withError:)];

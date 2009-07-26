@@ -199,6 +199,7 @@
 	OpenHouses *openHouses = [OpenHouses sharedOpenHouses];
     [openHouses setOrigin:loc];
     
+	[self updateNavButtons];
     [self showPage:[NSNumber numberWithInt:1]];
 }
 
@@ -366,6 +367,21 @@
 #pragma mark ---- OpenHousesApiDelegate methods ----
 -(void) finishedWithPage:(NSNumber *)p {
     [[[[toolbar items] objectAtIndex:1] view] setAlpha:0.0f];
+    
+    OpenHouses *openHouses = [OpenHouses sharedOpenHouses];
+    if ([p intValue] == 1 && [[openHouses totalResults] intValue] < 1) {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:nil
+                              message:[NSString stringWithFormat:@"No houses found within a %d mile radius.", (int)CONFIG_SEARCH_DISTANCE]
+                              delegate:self
+                              cancelButtonTitle:nil
+                              otherButtonTitles:@"OK", nil];
+        
+        [alert show];
+        [alert release];
+        
+        return;
+    }
     
 	[self showPage:p];
 }
