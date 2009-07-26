@@ -283,10 +283,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>25</integer>
-									<integer>15</integer>
-									<integer>10</integer>
-									<integer>1</integer>
+									<integer>34</integer>
+									<integer>33</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -326,7 +324,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>83E55D200FB7F8FC00ED0E37</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>BrowseController.m</string>
+								<string>OpenHouses.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -334,11 +332,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>83E55D210FB7F8FC00ED0E37</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>BrowseController.m</string>
+										<string>OpenHouses.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>83FB8686101C28C100936F2C</string>
+										<string>83FB869A101C2F9A00936F2C</string>
 										<key>history</key>
 										<array>
 											<string>835B0FA20FC13181007F818F</string>
@@ -369,11 +367,9 @@
 											<string>83FB83F8101AC85400936F2C</string>
 											<string>83FB83F9101AC85400936F2C</string>
 											<string>83FB848A101BA42100936F2C</string>
-											<string>83FB850C101BC23F00936F2C</string>
 											<string>83FB854F101BD12700936F2C</string>
 											<string>83FB855F101BD26700936F2C</string>
 											<string>83FB8571101BD3F000936F2C</string>
-											<string>83FB8588101BEABE00936F2C</string>
 											<string>83FB8589101BEABE00936F2C</string>
 											<string>83FB85AF101BEDDB00936F2C</string>
 											<string>83FB85B1101BEDDB00936F2C</string>
@@ -384,9 +380,15 @@
 											<string>83FB862C101C1E9C00936F2C</string>
 											<string>83FB8645101C222A00936F2C</string>
 											<string>83FB8648101C222A00936F2C</string>
-											<string>83FB8676101C259500936F2C</string>
 											<string>83FB8677101C259500936F2C</string>
-											<string>83FB8685101C28C100936F2C</string>
+											<string>83FB8689101C2EA400936F2C</string>
+											<string>83FB8693101C2F6F00936F2C</string>
+											<string>83FB8694101C2F6F00936F2C</string>
+											<string>83FB8695101C2F6F00936F2C</string>
+										</array>
+										<key>nextStack</key>
+										<array>
+											<string>83FB8697101C2F6F00936F2C</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -479,13 +481,11 @@
 											<string>83FB863D101C205300936F2C</string>
 											<string>83FB864A101C222A00936F2C</string>
 											<string>83FB864C101C222A00936F2C</string>
-											<string>83FB865D101C22F700936F2C</string>
-											<string>83FB8667101C247F00936F2C</string>
-											<string>83FB8669101C247F00936F2C</string>
-											<string>83FB866B101C247F00936F2C</string>
 											<string>83FB8671101C250E00936F2C</string>
-											<string>83FB8672101C250E00936F2C</string>
 											<string>83FB8679101C259500936F2C</string>
+											<string>83FB868C101C2EA400936F2C</string>
+											<string>83FB868D101C2EA400936F2C</string>
+											<string>83FB8696101C2F6F00936F2C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -541,6 +541,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1142, 215}}</string>
+										<key>RubberWindowFrame</key>
+										<string>0 59 1440 819 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXProjectFindModule</string>
@@ -579,8 +581,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1142, 215}}</string>
-										<key>RubberWindowFrame</key>
-										<string>0 59 1440 819 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>

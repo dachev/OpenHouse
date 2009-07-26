@@ -29,12 +29,13 @@ def search(req):
 
     # parse arguments
     try:
-        lat     = float(req.form.getfirst('lat', ''))
-        lng     = float(req.form.getfirst('lng', ''))
-        offset  = int(req.form.getfirst('offset', ''))
-        records = int(req.form.getfirst('records', ''))
-        bdate   = extractDates(req.form.getfirst('bdate', ''))
-        edate   = extractDates(req.form.getfirst('edate', ''))
+        lat      = float(req.form.getfirst('lat', ''))
+        lng      = float(req.form.getfirst('lng', ''))
+        distance = float(req.form.getfirst('distance', 50))
+        offset   = int(req.form.getfirst('offset', ''))
+        records  = int(req.form.getfirst('records', ''))
+        bdate    = extractDates(req.form.getfirst('bdate', ''))
+        edate    = extractDates(req.form.getfirst('edate', ''))
         if len(bdate) != 1:
             raise Exception('bdate is missing or invalid')
         if len(edate) != 1:
@@ -49,11 +50,11 @@ def search(req):
         return
     
     response = {'success':True, 'total':0, 'offset':offset, 'houses':[]}
-    total    = count_houses(lat, lng, bdate[0], edate[0])
+    total    = count_houses(lat, lng, distance, bdate[0], edate[0])
     
     response['total'] = total
     if total > 0:
-        houses = get_houses(lat, lng, bdate[0], edate[0], offset, records, req)
+        houses = get_houses(lat, lng, distance, bdate[0], edate[0], offset, records)
         response['houses'] = houses
 
     # write response
@@ -206,7 +207,7 @@ def init_db():
                    Column('expdate', DateTime(timezone=False)),
                    autoload=True)
 
-def count_houses(lat, lng, bdate, edate):
+def count_houses(lat, lng, distance, bdate, edate):
     global Houses, engine
 
     # initialize DB
@@ -217,17 +218,17 @@ def count_houses(lat, lng, bdate, edate):
     sql    = text("""
         SELECT count(*)
         FROM houses
-        WHERE (3959 * ACOS(SIN(RADIANS(:alat)) * SIN(RADIANS(lat)) + COS(RADIANS(:alat)) * COS(RADIANS(lat)) * COS(RADIANS(lng) - RADIANS(:alng)))) < 50
+        WHERE (3959 * ACOS(SIN(RADIANS(:alat)) * SIN(RADIANS(lat)) + COS(RADIANS(:alat)) * COS(RADIANS(lat)) * COS(RADIANS(lng) - RADIANS(:alng)))) < :adistance
         AND bdate > :abdate
         AND edate < :aedate
     """)
-    results = engine.execute(sql, alat=lat, alng=lng, abdate=bdate, aedate=edate)
+    results = engine.execute(sql, alat=lat, alng=lng, abdate=bdate, aedate=edate, adistance=distance)
     total   = results.fetchone()[0]
     results.close()
 
     return total
 
-def get_houses(lat, lng, bdate, edate, offset, records, req):
+def get_houses(lat, lng, distance, bdate, edate, offset, records):
     global Houses, engine
 
     # initialize DB
@@ -241,7 +242,7 @@ def get_houses(lat, lng, bdate, edate, offset, records, req):
             FROM houses
             WHERE bdate > :abdate
             AND edate < :aedate
-            HAVING distance < 50
+            HAVING distance < :adistance
             ORDER BY distance
             LIMIT :aoffset, :arecords
         ) AS h
@@ -249,7 +250,7 @@ def get_houses(lat, lng, bdate, edate, offset, records, req):
         ON h.id = i.hid
         ORDER BY h.distance, h.id ASC, i.thumb DESC
     """)
-    results = engine.execute(sql, alat=lat, alng=lng, abdate=bdate, aedate=edate, aoffset=offset-1, arecords=records)
+    results = engine.execute(sql, alat=lat, alng=lng, abdate=bdate, aedate=edate, aoffset=offset-1, arecords=records, adistance=distance)
 
     # generate column list
     keys = []

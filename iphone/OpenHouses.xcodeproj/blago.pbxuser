@@ -1014,6 +1014,22 @@
 			83FB867D101C277300936F2C /* PBXTextBookmark */ = 83FB867D101C277300936F2C /* PBXTextBookmark */;
 			83FB8685101C28C100936F2C /* PBXTextBookmark */ = 83FB8685101C28C100936F2C /* PBXTextBookmark */;
 			83FB8686101C28C100936F2C /* PBXTextBookmark */ = 83FB8686101C28C100936F2C /* PBXTextBookmark */;
+			83FB8687101C29A800936F2C /* PBXTextBookmark */ = 83FB8687101C29A800936F2C /* PBXTextBookmark */;
+			83FB8689101C2EA400936F2C /* PBXTextBookmark */ = 83FB8689101C2EA400936F2C /* PBXTextBookmark */;
+			83FB868A101C2EA400936F2C /* PBXTextBookmark */ = 83FB868A101C2EA400936F2C /* PBXTextBookmark */;
+			83FB868B101C2EA400936F2C /* PBXTextBookmark */ = 83FB868B101C2EA400936F2C /* PBXTextBookmark */;
+			83FB868C101C2EA400936F2C /* PBXTextBookmark */ = 83FB868C101C2EA400936F2C /* PBXTextBookmark */;
+			83FB868D101C2EA400936F2C /* PBXTextBookmark */ = 83FB868D101C2EA400936F2C /* PBXTextBookmark */;
+			83FB868E101C2EA400936F2C /* PBXTextBookmark */ = 83FB868E101C2EA400936F2C /* PBXTextBookmark */;
+			83FB868F101C2EA400936F2C /* PBXTextBookmark */ = 83FB868F101C2EA400936F2C /* PBXTextBookmark */;
+			83FB8691101C2F1B00936F2C /* PBXTextBookmark */ = 83FB8691101C2F1B00936F2C /* PBXTextBookmark */;
+			83FB8693101C2F6F00936F2C /* PBXTextBookmark */ = 83FB8693101C2F6F00936F2C /* PBXTextBookmark */;
+			83FB8694101C2F6F00936F2C /* PBXTextBookmark */ = 83FB8694101C2F6F00936F2C /* PBXTextBookmark */;
+			83FB8695101C2F6F00936F2C /* PBXTextBookmark */ = 83FB8695101C2F6F00936F2C /* PBXTextBookmark */;
+			83FB8696101C2F6F00936F2C /* PBXTextBookmark */ = 83FB8696101C2F6F00936F2C /* PBXTextBookmark */;
+			83FB8697101C2F6F00936F2C /* PBXTextBookmark */ = 83FB8697101C2F6F00936F2C /* PBXTextBookmark */;
+			83FB8698101C2F6F00936F2C /* PBXTextBookmark */ = 83FB8698101C2F6F00936F2C /* PBXTextBookmark */;
+			83FB869A101C2F9A00936F2C /* PBXTextBookmark */ = 83FB869A101C2F9A00936F2C /* PBXTextBookmark */;
 			83FBC87B0FCCFAED0008C3BC = 83FBC87B0FCCFAED0008C3BC /* PBXTextBookmark */;
 			83FBCA450FCD0A410008C3BC = 83FBCA450FCD0A410008C3BC /* PBXTextBookmark */;
 			83FBCA4F0FCD0A410008C3BC = 83FBCA4F0FCD0A410008C3BC /* PBXTextBookmark */;
@@ -1200,7 +1216,7 @@
 		fRef = 835043E41016D735005F857D /* service.py */;
 		name = "service.py: 85";
 		rLen = 9;
-		rLoc = 2479;
+		rLoc = 2560;
 		rType = 0;
 		vrLen = 833;
 		vrLoc = 1992;
@@ -1240,7 +1256,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 69";
 		rLen = 0;
-		rLoc = 2642;
+		rLoc = 2649;
 		rType = 0;
 		vrLen = 944;
 		vrLoc = 2104;
@@ -1250,7 +1266,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 69";
 		rLen = 0;
-		rLoc = 2642;
+		rLoc = 2649;
 		rType = 0;
 		vrLen = 944;
 		vrLoc = 2104;
@@ -1260,7 +1276,7 @@
 		fRef = 835043E41016D735005F857D /* service.py */;
 		name = "service.py: 285";
 		rLen = 0;
-		rLoc = 8576;
+		rLoc = 8728;
 		rType = 0;
 		vrLen = 1029;
 		vrLoc = 7890;
@@ -1270,7 +1286,7 @@
 		fRef = 835043E41016D735005F857D /* service.py */;
 		name = "service.py: 278";
 		rLen = 0;
-		rLoc = 8539;
+		rLoc = 8691;
 		rType = 0;
 		vrLen = 837;
 		vrLoc = 7710;
@@ -1280,7 +1296,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 270";
 		rLen = 0;
-		rLoc = 8539;
+		rLoc = 8691;
 		rType = 0;
 		vrLen = 1048;
 		vrLoc = 7869;
@@ -1292,9 +1308,9 @@
 		path = /Users/blago/Desktop/OpenHouses/update/service.py;
 		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1181, 7184}}";
-			sepNavSelRange = "{7666, 0}";
-			sepNavVisRange = "{7004, 981}";
+			sepNavIntBoundsRect = "{{0, 0}, {1181, 7056}}";
+			sepNavSelRange = "{7810, 0}";
+			sepNavVisRange = "{6947, 1017}";
 		};
 	};
 	8357F4FF0FF831ED00F85065 /* loading.png */ = {
@@ -1618,9 +1634,9 @@
 	};
 	835E12650FEC921800923362 /* OpenHouses.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1081, 3200}}";
-			sepNavSelRange = "{422, 0}";
-			sepNavVisRange = "{20, 834}";
+			sepNavIntBoundsRect = "{{0, 0}, {1081, 2928}}";
+			sepNavSelRange = "{1926, 0}";
+			sepNavVisRange = "{1325, 1433}";
 		};
 	};
 	836107E610086F8A007082CD /* SpecsView.h */ = {
@@ -2156,8 +2172,8 @@
 	83EE513D0FECBD3C0099FC4E /* BrowseController.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1081, 6288}}";
-			sepNavSelRange = "{2440, 0}";
-			sepNavVisRange = "{2113, 967}";
+			sepNavSelRange = "{2365, 0}";
+			sepNavVisRange = "{2113, 1019}";
 		};
 	};
 	83FB814C101888E000936F2C /* PBXTextBookmark */ = {
@@ -2165,7 +2181,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 270";
 		rLen = 0;
-		rLoc = 8539;
+		rLoc = 8691;
 		rType = 0;
 		vrLen = 989;
 		vrLoc = 7869;
@@ -2175,7 +2191,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 270";
 		rLen = 0;
-		rLoc = 8539;
+		rLoc = 8691;
 		rType = 0;
 		vrLen = 989;
 		vrLoc = 7869;
@@ -2185,7 +2201,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 270";
 		rLen = 0;
-		rLoc = 8539;
+		rLoc = 8691;
 		rType = 0;
 		vrLen = 462;
 		vrLoc = 7869;
@@ -2195,7 +2211,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 270";
 		rLen = 0;
-		rLoc = 8539;
+		rLoc = 8691;
 		rType = 0;
 		vrLen = 740;
 		vrLoc = 7609;
@@ -2215,7 +2231,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 99";
 		rLen = 0;
-		rLoc = 3754;
+		rLoc = 3761;
 		rType = 0;
 		vrLen = 1190;
 		vrLoc = 2765;
@@ -2235,7 +2251,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 99";
 		rLen = 0;
-		rLoc = 3754;
+		rLoc = 3761;
 		rType = 0;
 		vrLen = 1190;
 		vrLoc = 2765;
@@ -2265,7 +2281,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 270";
 		rLen = 0;
-		rLoc = 8539;
+		rLoc = 8691;
 		rType = 0;
 		vrLen = 467;
 		vrLoc = 7764;
@@ -2946,7 +2962,7 @@
 		fRef = 83FBC9870FCD07320008C3BC /* Constants.h */;
 		name = "Constants.h: 18";
 		rLen = 22;
-		rLoc = 774;
+		rLoc = 786;
 		rType = 0;
 		vrLen = 1295;
 		vrLoc = 0;
@@ -2956,7 +2972,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 99";
 		rLen = 0;
-		rLoc = 3754;
+		rLoc = 3761;
 		rType = 0;
 		vrLen = 1190;
 		vrLoc = 2765;
@@ -2976,7 +2992,7 @@
 		fRef = 83FBC9870FCD07320008C3BC /* Constants.h */;
 		name = "Constants.h: 19";
 		rLen = 0;
-		rLoc = 800;
+		rLoc = 812;
 		rType = 0;
 		vrLen = 1294;
 		vrLoc = 0;
@@ -3006,7 +3022,7 @@
 		fRef = 83FBC9870FCD07320008C3BC /* Constants.h */;
 		name = "Constants.h: 18";
 		rLen = 22;
-		rLoc = 774;
+		rLoc = 786;
 		rType = 0;
 		vrLen = 1295;
 		vrLoc = 0;
@@ -3026,7 +3042,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 243";
 		rLen = 0;
-		rLoc = 7540;
+		rLoc = 7672;
 		rType = 0;
 		vrLen = 1047;
 		vrLoc = 7925;
@@ -3046,7 +3062,7 @@
 		fRef = 83FBC9870FCD07320008C3BC /* Constants.h */;
 		name = "Constants.h: 18";
 		rLen = 22;
-		rLoc = 774;
+		rLoc = 786;
 		rType = 0;
 		vrLen = 1295;
 		vrLoc = 0;
@@ -3056,7 +3072,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 243";
 		rLen = 0;
-		rLoc = 7540;
+		rLoc = 7672;
 		rType = 0;
 		vrLen = 1047;
 		vrLoc = 7925;
@@ -3076,7 +3092,7 @@
 		fRef = 83FBC9870FCD07320008C3BC /* Constants.h */;
 		name = "Constants.h: 18";
 		rLen = 22;
-		rLoc = 774;
+		rLoc = 786;
 		rType = 0;
 		vrLen = 1295;
 		vrLoc = 0;
@@ -3236,7 +3252,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 69";
 		rLen = 0;
-		rLoc = 2642;
+		rLoc = 2649;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 2104;
@@ -3266,7 +3282,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 69";
 		rLen = 0;
-		rLoc = 2642;
+		rLoc = 2649;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 2104;
@@ -3406,7 +3422,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 273";
 		rLen = 0;
-		rLoc = 8539;
+		rLoc = 8691;
 		rType = 0;
 		vrLen = 678;
 		vrLoc = 7536;
@@ -3416,7 +3432,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 248";
 		rLen = 0;
-		rLoc = 7540;
+		rLoc = 7672;
 		rType = 0;
 		vrLen = 868;
 		vrLoc = 6877;
@@ -3426,7 +3442,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 249";
 		rLen = 0;
-		rLoc = 7540;
+		rLoc = 7672;
 		rType = 0;
 		vrLen = 1005;
 		vrLoc = 7004;
@@ -3436,7 +3452,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 285";
 		rLen = 0;
-		rLoc = 8509;
+		rLoc = 8661;
 		rType = 0;
 		vrLen = 698;
 		vrLoc = 7982;
@@ -3446,7 +3462,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 288";
 		rLen = 0;
-		rLoc = 8558;
+		rLoc = 8710;
 		rType = 0;
 		vrLen = 1102;
 		vrLoc = 8117;
@@ -3456,7 +3472,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 280";
 		rLen = 0;
-		rLoc = 8304;
+		rLoc = 8456;
 		rType = 0;
 		vrLen = 1100;
 		vrLoc = 8117;
@@ -3466,7 +3482,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 283";
 		rLen = 0;
-		rLoc = 8416;
+		rLoc = 8568;
 		rType = 0;
 		vrLen = 968;
 		vrLoc = 7870;
@@ -3476,7 +3492,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 286";
 		rLen = 0;
-		rLoc = 8473;
+		rLoc = 8625;
 		rType = 0;
 		vrLen = 975;
 		vrLoc = 7870;
@@ -3486,7 +3502,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 286";
 		rLen = 0;
-		rLoc = 8473;
+		rLoc = 8625;
 		rType = 0;
 		vrLen = 903;
 		vrLoc = 6750;
@@ -3516,7 +3532,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 69";
 		rLen = 0;
-		rLoc = 2642;
+		rLoc = 2649;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 2104;
@@ -3586,7 +3602,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 198";
 		rLen = 0;
-		rLoc = 5881;
+		rLoc = 5962;
 		rType = 0;
 		vrLen = 917;
 		vrLoc = 5517;
@@ -3596,7 +3612,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 200";
 		rLen = 0;
-		rLoc = 5918;
+		rLoc = 5999;
 		rType = 0;
 		vrLen = 947;
 		vrLoc = 5517;
@@ -3606,7 +3622,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 224";
 		rLen = 0;
-		rLoc = 6709;
+		rLoc = 6808;
 		rType = 0;
 		vrLen = 935;
 		vrLoc = 6047;
@@ -3616,7 +3632,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 227";
 		rLen = 0;
-		rLoc = 6826;
+		rLoc = 6945;
 		rType = 0;
 		vrLen = 834;
 		vrLoc = 6171;
@@ -3626,7 +3642,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 253";
 		rLen = 0;
-		rLoc = 7570;
+		rLoc = 7702;
 		rType = 0;
 		vrLen = 979;
 		vrLoc = 8112;
@@ -3636,7 +3652,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 57";
 		rLen = 5;
-		rLoc = 1768;
+		rLoc = 1844;
 		rType = 0;
 		vrLen = 1074;
 		vrLoc = 420;
@@ -3646,7 +3662,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 61";
 		rLen = 0;
-		rLoc = 1888;
+		rLoc = 1969;
 		rType = 0;
 		vrLen = 944;
 		vrLoc = 1229;
@@ -3666,7 +3682,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 197";
 		rLen = 0;
-		rLoc = 5880;
+		rLoc = 5961;
 		rType = 0;
 		vrLen = 967;
 		vrLoc = 5350;
@@ -3676,7 +3692,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 198";
 		rLen = 0;
-		rLoc = 5881;
+		rLoc = 5962;
 		rType = 0;
 		vrLen = 967;
 		vrLoc = 5370;
@@ -3686,7 +3702,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 197";
 		rLen = 0;
-		rLoc = 5881;
+		rLoc = 5962;
 		rType = 0;
 		vrLen = 982;
 		vrLoc = 5370;
@@ -3856,7 +3872,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 250";
 		rLen = 0;
-		rLoc = 7540;
+		rLoc = 7672;
 		rType = 0;
 		vrLen = 959;
 		vrLoc = 11275;
@@ -3866,7 +3882,7 @@
 		fRef = 83FBC9870FCD07320008C3BC /* Constants.h */;
 		name = "Constants.h: 22";
 		rLen = 0;
-		rLoc = 899;
+		rLoc = 911;
 		rType = 0;
 		vrLen = 1256;
 		vrLoc = 0;
@@ -3886,7 +3902,7 @@
 		fRef = 83FBC9870FCD07320008C3BC /* Constants.h */;
 		name = "Constants.h: 18";
 		rLen = 22;
-		rLoc = 774;
+		rLoc = 786;
 		rType = 0;
 		vrLen = 1295;
 		vrLoc = 0;
@@ -3906,7 +3922,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 250";
 		rLen = 0;
-		rLoc = 7540;
+		rLoc = 7672;
 		rType = 0;
 		vrLen = 959;
 		vrLoc = 11275;
@@ -3916,7 +3932,7 @@
 		fRef = 83FBC9870FCD07320008C3BC /* Constants.h */;
 		name = "Constants.h: 22";
 		rLen = 0;
-		rLoc = 899;
+		rLoc = 911;
 		rType = 0;
 		vrLen = 1256;
 		vrLoc = 0;
@@ -4873,7 +4889,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 250";
 		rLen = 0;
-		rLoc = 7540;
+		rLoc = 7672;
 		rType = 0;
 		vrLen = 920;
 		vrLoc = 8106;
@@ -7290,7 +7306,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 107";
 		rLen = 0;
-		rLoc = 4120;
+		rLoc = 4127;
 		rType = 0;
 		vrLen = 973;
 		vrLoc = 3264;
@@ -7300,7 +7316,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 107";
 		rLen = 0;
-		rLoc = 4120;
+		rLoc = 4127;
 		rType = 0;
 		vrLen = 973;
 		vrLoc = 3264;
@@ -7320,7 +7336,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 107";
 		rLen = 0;
-		rLoc = 4120;
+		rLoc = 4127;
 		rType = 0;
 		vrLen = 719;
 		vrLoc = 3424;
@@ -7330,7 +7346,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 107";
 		rLen = 0;
-		rLoc = 4120;
+		rLoc = 4127;
 		rType = 0;
 		vrLen = 1230;
 		vrLoc = 3056;
@@ -7340,7 +7356,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 107";
 		rLen = 0;
-		rLoc = 4120;
+		rLoc = 4127;
 		rType = 0;
 		vrLen = 1189;
 		vrLoc = 3048;
@@ -7350,7 +7366,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 107";
 		rLen = 0;
-		rLoc = 4120;
+		rLoc = 4127;
 		rType = 0;
 		vrLen = 774;
 		vrLoc = 3309;
@@ -7360,7 +7376,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 156";
 		rLen = 0;
-		rLoc = 5318;
+		rLoc = 5325;
 		rType = 0;
 		vrLen = 615;
 		vrLoc = 4850;
@@ -7370,7 +7386,7 @@
 		fRef = 83FBC9870FCD07320008C3BC /* Constants.h */;
 		name = "Constants.h: 22";
 		rLen = 0;
-		rLoc = 899;
+		rLoc = 911;
 		rType = 0;
 		vrLen = 1256;
 		vrLoc = 0;
@@ -7380,7 +7396,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 156";
 		rLen = 0;
-		rLoc = 5318;
+		rLoc = 5325;
 		rType = 0;
 		vrLen = 615;
 		vrLoc = 4850;
@@ -7390,7 +7406,7 @@
 		fRef = 83FBC9870FCD07320008C3BC /* Constants.h */;
 		name = "Constants.h: 18";
 		rLen = 0;
-		rLoc = 798;
+		rLoc = 810;
 		rType = 0;
 		vrLen = 1255;
 		vrLoc = 0;
@@ -7400,7 +7416,7 @@
 		fRef = 83FBC9870FCD07320008C3BC /* Constants.h */;
 		name = "Constants.h: 18";
 		rLen = 0;
-		rLoc = 798;
+		rLoc = 810;
 		rType = 0;
 		vrLen = 1255;
 		vrLoc = 0;
@@ -7430,7 +7446,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 102";
 		rLen = 0;
-		rLoc = 3931;
+		rLoc = 3938;
 		rType = 0;
 		vrLen = 615;
 		vrLoc = 4850;
@@ -7440,7 +7456,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 153";
 		rLen = 0;
-		rLoc = 5157;
+		rLoc = 5164;
 		rType = 0;
 		vrLen = 656;
 		vrLoc = 4809;
@@ -7480,7 +7496,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 102";
 		rLen = 0;
-		rLoc = 3931;
+		rLoc = 3938;
 		rType = 0;
 		vrLen = 615;
 		vrLoc = 4850;
@@ -7490,7 +7506,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 228";
 		rLen = 0;
-		rLoc = 6844;
+		rLoc = 6963;
 		rType = 0;
 		vrLen = 768;
 		vrLoc = 6257;
@@ -7500,7 +7516,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 252";
 		rLen = 0;
-		rLoc = 7666;
+		rLoc = 7818;
 		rType = 0;
 		vrLen = 918;
 		vrLoc = 6807;
@@ -7510,7 +7526,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 243";
 		rLen = 0;
-		rLoc = 7318;
+		rLoc = 7442;
 		rType = 0;
 		vrLen = 946;
 		vrLoc = 6807;
@@ -7530,7 +7546,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 243";
 		rLen = 0;
-		rLoc = 7318;
+		rLoc = 7442;
 		rType = 0;
 		vrLen = 946;
 		vrLoc = 6807;
@@ -7570,7 +7586,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 102";
 		rLen = 0;
-		rLoc = 3931;
+		rLoc = 3938;
 		rType = 0;
 		vrLen = 618;
 		vrLoc = 4847;
@@ -7590,7 +7606,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 94";
 		rLen = 9;
-		rLoc = 3488;
+		rLoc = 3495;
 		rType = 0;
 		vrLen = 1256;
 		vrLoc = 2627;
@@ -7600,7 +7616,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 94";
 		rLen = 9;
-		rLoc = 3488;
+		rLoc = 3495;
 		rType = 0;
 		vrLen = 1256;
 		vrLoc = 2627;
@@ -7610,7 +7626,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 94";
 		rLen = 9;
-		rLoc = 3488;
+		rLoc = 3495;
 		rType = 0;
 		vrLen = 1256;
 		vrLoc = 2627;
@@ -7620,7 +7636,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 94";
 		rLen = 9;
-		rLoc = 3488;
+		rLoc = 3495;
 		rType = 0;
 		vrLen = 1256;
 		vrLoc = 2627;
@@ -7630,7 +7646,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 94";
 		rLen = 9;
-		rLoc = 3488;
+		rLoc = 3495;
 		rType = 0;
 		vrLen = 1256;
 		vrLoc = 2627;
@@ -7640,7 +7656,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 94";
 		rLen = 0;
-		rLoc = 3570;
+		rLoc = 3577;
 		rType = 0;
 		vrLen = 835;
 		vrLoc = 3048;
@@ -7650,7 +7666,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 98";
 		rLen = 0;
-		rLoc = 3640;
+		rLoc = 3647;
 		rType = 0;
 		vrLen = 1245;
 		vrLoc = 2768;
@@ -7677,7 +7693,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 98";
 		rLen = 0;
-		rLoc = 3640;
+		rLoc = 3647;
 		rType = 0;
 		vrLen = 1245;
 		vrLoc = 2768;
@@ -7754,7 +7770,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 156";
 		rLen = 0;
-		rLoc = 5318;
+		rLoc = 5325;
 		rType = 0;
 		vrLen = 694;
 		vrLoc = 4709;
@@ -7764,7 +7780,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 156";
 		rLen = 0;
-		rLoc = 5318;
+		rLoc = 5325;
 		rType = 0;
 		vrLen = 694;
 		vrLoc = 4709;
@@ -7784,7 +7800,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 156";
 		rLen = 0;
-		rLoc = 5318;
+		rLoc = 5325;
 		rType = 0;
 		vrLen = 650;
 		vrLoc = 4709;
@@ -7794,7 +7810,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 156";
 		rLen = 0;
-		rLoc = 5318;
+		rLoc = 5325;
 		rType = 0;
 		vrLen = 694;
 		vrLoc = 4709;
@@ -7814,7 +7830,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 156";
 		rLen = 0;
-		rLoc = 5318;
+		rLoc = 5325;
 		rType = 0;
 		vrLen = 650;
 		vrLoc = 4709;
@@ -7841,7 +7857,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 156";
 		rLen = 0;
-		rLoc = 5318;
+		rLoc = 5325;
 		rType = 0;
 		vrLen = 650;
 		vrLoc = 4709;
@@ -7861,7 +7877,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 159";
 		rLen = 0;
-		rLoc = 5365;
+		rLoc = 5372;
 		rType = 0;
 		vrLen = 650;
 		vrLoc = 4709;
@@ -7871,7 +7887,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 159";
 		rLen = 0;
-		rLoc = 5437;
+		rLoc = 5444;
 		rType = 0;
 		vrLen = 663;
 		vrLoc = 4709;
@@ -7896,7 +7912,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 94";
 		rLen = 0;
-		rLoc = 3570;
+		rLoc = 3577;
 		rType = 0;
 		vrLen = 975;
 		vrLoc = 2768;
@@ -7906,7 +7922,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 159";
 		rLen = 0;
-		rLoc = 5437;
+		rLoc = 5444;
 		rType = 0;
 		vrLen = 480;
 		vrLoc = 4852;
@@ -7916,7 +7932,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 156";
 		rLen = 0;
-		rLoc = 5270;
+		rLoc = 5277;
 		rType = 0;
 		vrLen = 700;
 		vrLoc = 4749;
@@ -7926,7 +7942,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 252";
 		rLen = 0;
-		rLoc = 7666;
+		rLoc = 7818;
 		rType = 0;
 		vrLen = 981;
 		vrLoc = 7004;
@@ -7936,7 +7952,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 156";
 		rLen = 0;
-		rLoc = 5270;
+		rLoc = 5277;
 		rType = 0;
 		vrLen = 700;
 		vrLoc = 4749;
@@ -7946,7 +7962,7 @@
 		fRef = 835044DD10174B26005F857D /* service.py */;
 		name = "service.py: 252";
 		rLen = 0;
-		rLoc = 7666;
+		rLoc = 7818;
 		rType = 0;
 		vrLen = 981;
 		vrLoc = 7004;
@@ -7956,7 +7972,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 156";
 		rLen = 0;
-		rLoc = 5270;
+		rLoc = 5277;
 		rType = 0;
 		vrLen = 746;
 		vrLoc = 4749;
@@ -7966,7 +7982,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 159";
 		rLen = 0;
-		rLoc = 5438;
+		rLoc = 5445;
 		rType = 0;
 		vrLen = 700;
 		vrLoc = 4749;
@@ -7976,7 +7992,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 154";
 		rLen = 0;
-		rLoc = 5196;
+		rLoc = 5203;
 		rType = 0;
 		vrLen = 700;
 		vrLoc = 4749;
@@ -8006,7 +8022,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 154";
 		rLen = 0;
-		rLoc = 5196;
+		rLoc = 5203;
 		rType = 0;
 		vrLen = 700;
 		vrLoc = 4749;
@@ -8233,7 +8249,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 159";
 		rLen = 0;
-		rLoc = 5437;
+		rLoc = 5444;
 		rType = 0;
 		vrLen = 511;
 		vrLoc = 4898;
@@ -8323,7 +8339,7 @@
 		fRef = 83FBC9870FCD07320008C3BC /* Constants.h */;
 		name = "Constants.h: 16";
 		rLen = 23;
-		rLoc = 589;
+		rLoc = 601;
 		rType = 0;
 		vrLen = 1402;
 		vrLoc = 0;
@@ -8343,7 +8359,7 @@
 		fRef = 83FBC9870FCD07320008C3BC /* Constants.h */;
 		name = "Constants.h: 16";
 		rLen = 23;
-		rLoc = 589;
+		rLoc = 601;
 		rType = 0;
 		vrLen = 1402;
 		vrLoc = 0;
@@ -8363,7 +8379,7 @@
 		fRef = 83FBC9870FCD07320008C3BC /* Constants.h */;
 		name = "Constants.h: 16";
 		rLen = 0;
-		rLoc = 614;
+		rLoc = 626;
 		rType = 0;
 		vrLen = 1403;
 		vrLoc = 0;
@@ -8383,7 +8399,7 @@
 		fRef = 83FBC9870FCD07320008C3BC /* Constants.h */;
 		name = "Constants.h: 16";
 		rLen = 0;
-		rLoc = 614;
+		rLoc = 626;
 		rType = 0;
 		vrLen = 1403;
 		vrLoc = 0;
@@ -8553,7 +8569,7 @@
 		fRef = 83FBC9870FCD07320008C3BC /* Constants.h */;
 		name = "Constants.h: 16";
 		rLen = 0;
-		rLoc = 614;
+		rLoc = 626;
 		rType = 0;
 		vrLen = 1403;
 		vrLoc = 0;
@@ -8573,7 +8589,7 @@
 		fRef = 83FBC9870FCD07320008C3BC /* Constants.h */;
 		name = "Constants.h: 16";
 		rLen = 0;
-		rLoc = 668;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 1403;
 		vrLoc = 0;
@@ -8593,7 +8609,7 @@
 		fRef = 83FBC9870FCD07320008C3BC /* Constants.h */;
 		name = "Constants.h: 18";
 		rLen = 0;
-		rLoc = 855;
+		rLoc = 867;
 		rType = 0;
 		vrLen = 1031;
 		vrLoc = 0;
@@ -8893,7 +8909,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 105";
 		rLen = 0;
-		rLoc = 4120;
+		rLoc = 4127;
 		rType = 0;
 		vrLen = 1147;
 		vrLoc = 3048;
@@ -8963,7 +8979,7 @@
 		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
 		name = "OpenHouses.m: 105";
 		rLen = 0;
-		rLoc = 4120;
+		rLoc = 4127;
 		rType = 0;
 		vrLen = 1147;
 		vrLoc = 3048;
@@ -10338,6 +10354,166 @@
 		vrLen = 967;
 		vrLoc = 2113;
 	};
+	83FB8687101C29A800936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 76";
+		rLen = 0;
+		rLoc = 2440;
+		rType = 0;
+		vrLen = 967;
+		vrLoc = 2113;
+	};
+	83FB8689101C2EA400936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 74";
+		rLen = 0;
+		rLoc = 2365;
+		rType = 0;
+		vrLen = 1019;
+		vrLoc = 2113;
+	};
+	83FB868A101C2EA400936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83FBC9870FCD07320008C3BC /* Constants.h */;
+		name = "Constants.h: 12";
+		rLen = 22;
+		rLoc = 449;
+		rType = 0;
+		vrLen = 1043;
+		vrLoc = 0;
+	};
+	83FB868B101C2EA400936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
+		name = "OpenHouses.m: 63";
+		rLen = 0;
+		rLoc = 1817;
+		rType = 0;
+		vrLen = 1542;
+		vrLoc = 1325;
+	};
+	83FB868C101C2EA400936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 74";
+		rLen = 0;
+		rLoc = 2365;
+		rType = 0;
+		vrLen = 1019;
+		vrLoc = 2113;
+	};
+	83FB868D101C2EA400936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83FBC9870FCD07320008C3BC /* Constants.h */;
+		name = "Constants.h: 12";
+		rLen = 22;
+		rLoc = 449;
+		rType = 0;
+		vrLen = 1043;
+		vrLoc = 0;
+	};
+	83FB868E101C2EA400936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
+		name = "OpenHouses.m: 63";
+		rLen = 0;
+		rLoc = 1817;
+		rType = 0;
+		vrLen = 1542;
+		vrLoc = 1325;
+	};
+	83FB868F101C2EA400936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 835044DD10174B26005F857D /* service.py */;
+		name = "service.py: 34";
+		rLen = 0;
+		rLoc = 880;
+		rType = 0;
+		vrLen = 1219;
+		vrLoc = 560;
+	};
+	83FB8691101C2F1B00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 835044DD10174B26005F857D /* service.py */;
+		name = "service.py: 253";
+		rLen = 0;
+		rLoc = 7810;
+		rType = 0;
+		vrLen = 994;
+		vrLoc = 6947;
+	};
+	83FB8693101C2F6F00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 835044DD10174B26005F857D /* service.py */;
+		name = "service.py: 253";
+		rLen = 0;
+		rLoc = 7810;
+		rType = 0;
+		vrLen = 1017;
+		vrLoc = 6947;
+	};
+	83FB8694101C2F6F00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83FBC9870FCD07320008C3BC /* Constants.h */;
+		name = "Constants.h: 14";
+		rLen = 0;
+		rLoc = 741;
+		rType = 0;
+		vrLen = 1043;
+		vrLoc = 0;
+	};
+	83FB8695101C2F6F00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
+		name = "OpenHouses.m: 63";
+		rLen = 0;
+		rLoc = 1817;
+		rType = 0;
+		vrLen = 1441;
+		vrLoc = 1325;
+	};
+	83FB8696101C2F6F00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 835044DD10174B26005F857D /* service.py */;
+		name = "service.py: 253";
+		rLen = 0;
+		rLoc = 7810;
+		rType = 0;
+		vrLen = 1017;
+		vrLoc = 6947;
+	};
+	83FB8697101C2F6F00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83FBC9870FCD07320008C3BC /* Constants.h */;
+		name = "Constants.h: 14";
+		rLen = 0;
+		rLoc = 741;
+		rType = 0;
+		vrLen = 1043;
+		vrLoc = 0;
+	};
+	83FB8698101C2F6F00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
+		name = "OpenHouses.m: 63";
+		rLen = 0;
+		rLoc = 1929;
+		rType = 0;
+		vrLen = 1432;
+		vrLoc = 1325;
+	};
+	83FB869A101C2F9A00936F2C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 835E12650FEC921800923362 /* OpenHouses.m */;
+		name = "OpenHouses.m: 63";
+		rLen = 0;
+		rLoc = 1926;
+		rType = 0;
+		vrLen = 1433;
+		vrLoc = 1325;
+	};
 	83FBC87B0FCCFAED0008C3BC /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 1D3623240D0F684500981E51 /* OpenHousesAppDelegate.h */;
@@ -10350,9 +10526,9 @@
 	};
 	83FBC9870FCD07320008C3BC /* Constants.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1286, 476}}";
-			sepNavSelRange = "{855, 0}";
-			sepNavVisRange = "{0, 1031}";
+			sepNavIntBoundsRect = "{{0, 0}, {1286, 499}}";
+			sepNavSelRange = "{741, 0}";
+			sepNavVisRange = "{0, 1043}";
 			sepNavWindowFrame = "{{15, -1}, {1023, 874}}";
 		};
 	};
