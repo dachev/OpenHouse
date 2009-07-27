@@ -185,6 +185,32 @@ static MyCLController *sharedCLDelegate = nil;
 	[self.delegate newError:errorString];
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #pragma mark ---- singleton object methods ----
 
 // See "Creating a Singleton Instance" in the Cocoa Fundamentals Guide for more info

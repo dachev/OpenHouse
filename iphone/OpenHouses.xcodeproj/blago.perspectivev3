@@ -337,7 +337,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>83FB86ED101C3E6000936F2C</string>
+										<string>8368EB91101D43910032CFDB</string>
 										<key>history</key>
 										<array>
 											<string>835B0FA20FC13181007F818F</string>
@@ -359,8 +359,6 @@
 											<string>83C547A11001DCA800BC7067</string>
 											<string>83C547A21001DCA800BC7067</string>
 											<string>834A9DF0100467B100B87E53</string>
-											<string>83E4D9DA100ADF6600E8FE1E</string>
-											<string>83E4D9DC100ADF6600E8FE1E</string>
 											<string>83E4DA18100C4FB500E8FE1E</string>
 											<string>83E4DACA100D7F2800E8FE1E</string>
 											<string>83FB827A10198F8B00936F2C</string>
@@ -385,7 +383,7 @@
 											<string>83FB8693101C2F6F00936F2C</string>
 											<string>83FB86C7101C3BD100936F2C</string>
 											<string>83FB86DA101C3D3400936F2C</string>
-											<string>83FB86DB101C3D3400936F2C</string>
+											<string>83FB86ED101C3E6000936F2C</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -410,80 +408,19 @@
 											<string>835044501016E353005F857D</string>
 											<string>8357F6FD0FF86D7800F85065</string>
 											<string>83FB827C10198F8B00936F2C</string>
-											<string>83FB827E10198F8B00936F2C</string>
-											<string>83FB828E1019996D00936F2C</string>
-											<string>83FB82901019996D00936F2C</string>
 											<string>83E4D99F100AD62200E8FE1E</string>
-											<string>83FB82F81019A3C800936F2C</string>
-											<string>83FB83351019A8D600936F2C</string>
 											<string>83FB83411019A94900936F2C</string>
-											<string>83FB8361101AA15900936F2C</string>
 											<string>83FBCAC50FCD0F000008C3BC</string>
-											<string>83FB8379101AA53E00936F2C</string>
-											<string>83FB838C101AA7A800936F2C</string>
 											<string>83FB83BA101AAE3200936F2C</string>
-											<string>83FB83BB101AAE3200936F2C</string>
-											<string>83FB83C5101AB4EF00936F2C</string>
-											<string>83FB83C6101AB4EF00936F2C</string>
 											<string>83FB83C7101AB4EF00936F2C</string>
-											<string>83FB83C8101AB4EF00936F2C</string>
-											<string>83FB83C9101AB4EF00936F2C</string>
-											<string>83FB83CA101AB4EF00936F2C</string>
-											<string>83FB83CF101AB51600936F2C</string>
-											<string>83FB83D8101ABE4900936F2C</string>
-											<string>83FB83FD101AC85400936F2C</string>
-											<string>83FB841B101B70A900936F2C</string>
-											<string>83FB8432101B728200936F2C</string>
-											<string>83FB848E101BA42100936F2C</string>
-											<string>83FB848F101BA42100936F2C</string>
-											<string>83FB8491101BA42100936F2C</string>
-											<string>83FB8493101BA42100936F2C</string>
-											<string>83FB849B101BA45100936F2C</string>
-											<string>83FB84B6101BBAD900936F2C</string>
-											<string>83FB84B7101BBAD900936F2C</string>
-											<string>83FB84C2101BBDD800936F2C</string>
 											<string>83FB8552101BD12700936F2C</string>
 											<string>83FB858B101BEABE00936F2C</string>
-											<string>83FB8598101BEB9800936F2C</string>
-											<string>83FB85A5101BED2F00936F2C</string>
-											<string>83FB85B6101BEDDB00936F2C</string>
-											<string>83FB85B8101BEDDB00936F2C</string>
-											<string>83FB85B9101BEDDB00936F2C</string>
 											<string>83FB85D3101BF09700936F2C</string>
 											<string>83FB85E3101BF1E600936F2C</string>
 											<string>83FB85E4101BF1E600936F2C</string>
-											<string>83FB85E5101BF1E600936F2C</string>
-											<string>83FB85E7101BF1E600936F2C</string>
-											<string>83FB85E9101BF1E600936F2C</string>
-											<string>83FB860D101BF42400936F2C</string>
-											<string>83FB860F101BF42400936F2C</string>
-											<string>83FB8610101BF42400936F2C</string>
-											<string>83FB8611101BF42400936F2C</string>
-											<string>83FB8612101BF42400936F2C</string>
-											<string>83FB8614101BF42400936F2C</string>
-											<string>83FB8616101BF42400936F2C</string>
-											<string>83FB8617101BF42400936F2C</string>
-											<string>83FB8618101BF42400936F2C</string>
-											<string>83FB861A101BF42400936F2C</string>
-											<string>83FB861B101BF42400936F2C</string>
-											<string>83FB861C101BF42400936F2C</string>
-											<string>83FB861D101BF42400936F2C</string>
-											<string>83FB861E101BF42400936F2C</string>
-											<string>83FB8625101C186400936F2C</string>
-											<string>83FB8626101C186400936F2C</string>
-											<string>83FB8627101C186400936F2C</string>
-											<string>83FB862F101C1E9C00936F2C</string>
-											<string>83FB8630101C1E9C00936F2C</string>
-											<string>83FB8636101C203700936F2C</string>
-											<string>83FB863D101C205300936F2C</string>
-											<string>83FB864A101C222A00936F2C</string>
-											<string>83FB864C101C222A00936F2C</string>
 											<string>83FB8679101C259500936F2C</string>
-											<string>83FB868D101C2EA400936F2C</string>
-											<string>83FB8696101C2F6F00936F2C</string>
 											<string>83FB86A4101C32FB00936F2C</string>
 											<string>83FB86D1101C3C6F00936F2C</string>
-											<string>83FB86DC101C3D3400936F2C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -522,7 +459,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1142, 226}}</string>
+										<string>{{10, 27}, {1142, 215}}</string>
+										<key>RubberWindowFrame</key>
+										<string>0 59 1440 819 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -539,8 +478,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1142, 215}}</string>
-										<key>RubberWindowFrame</key>
-										<string>0 59 1440 819 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXProjectFindModule</string>
@@ -606,11 +543,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>83FB814D101888E000936F2C</string>
+				<string>8368EB92101D43910032CFDB</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>83FB814E101888E000936F2C</string>
+				<string>8368EB93101D43910032CFDB</string>
 				<string>83E55D200FB7F8FC00ED0E37</string>
-				<string>83FB814F101888E000936F2C</string>
+				<string>8368EB94101D43910032CFDB</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -794,8 +731,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>83FB81831019316000936F2C</string>
-		<string>83FB81841019316000936F2C</string>
 		<string>/Users/blago/Desktop/OpenHouses/iphone/OpenHouses.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
