@@ -1,7 +1,7 @@
 CXX           = g++
 DEFINES       = -DDARWIN -DSIGPROCMASK_SETS_THREAD_MASK
 CXXFLAGS      = -no-cpp-precomp -fPIC
-INCPATH       = -I/opt/local/include/apr-1 -I/opt/local/apache2/include -I`pkg-config --variable=includedir GraphicsMagick++` -I`pkg-config --variable=includedir libcurl` -I/opt/local/libexec/qt4-mac/mkspecs/macx-g++ -I. -I/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers -I/opt/local/libexec/qt4-mac/include/QtCore -I/opt/local/libexec/qt4-mac/lib/QtNetwork.framework/Versions/4/Headers -I/opt/local/libexec/qt4-mac/include/QtNetwork -I/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers -I/opt/local/libexec/qt4-mac/include/QtGui -I/opt/local/libexec/qt4-mac/include -I. -I. -F/opt/local/libexec/qt4-mac/lib
+INCPATH       = -I/usr/include/apr-1.0 -I/usr/include/apache2 -I`pkg-config --variable=includedir GraphicsMagick++` -I`pkg-config --variable=includedir libcurl` -I`pkg-config --cflags QtCore` -I. -I.
 LIBS          = -F/opt/local/libexec/qt4-mac/lib -L/opt/local/libexec/qt4-mac/lib -framework QtCore `pkg-config --libs libcurl` `pkg-config --libs GraphicsMagick++`
 
 all: mod_image.os UrlLibrary.os md5.os md5wrapper.os
