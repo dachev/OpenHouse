@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include "UrlLibrary.h"
 
 UrlLibrary::UrlLibrary() {}
@@ -32,7 +33,6 @@ string UrlLibrary::UrlDecode(string stringToDecode)
 {
   string retString = "";
   string::iterator stringIterator;
-  char tmpChar[5];
 
   for (stringIterator = stringToDecode.begin(); stringIterator != stringToDecode.end(); stringIterator++)
     {

@@ -39,7 +39,7 @@ using namespace std;
 using namespace boost;
 using namespace Magick;
 
-extern module AP_MODULE_DECLARE_DATA image_module;
+extern "C" module AP_MODULE_DECLARE_DATA image_module;
 
 typedef vector< string > split_vector_type;
 
@@ -90,7 +90,7 @@ map<string, string> GetQueryParameters(string query) {
     
     split_vector_type split_params;
     split(split_params, query, is_any_of("&") );
-    for (int i=0; i<split_params.size(); i++) {
+    for (unsigned int i=0; i<split_params.size(); i++) {
         string name   = split_params[i];
         string value  = "";
         size_t val_idx = name.find("=");
@@ -309,7 +309,8 @@ int image_handler(request_rec *r) {
 
 static void* image_module_create_dir_cfg(apr_pool_t* pool, char* x) {
     image_module_dir_config_t* cfg = (image_module_dir_config_t*)apr_palloc(pool, sizeof(image_module_dir_config_t));
-    cfg->command="";
+    char command[] = "";
+    cfg->command=command;
     return cfg;
 }
 

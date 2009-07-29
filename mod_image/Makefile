@@ -1,24 +1,71 @@
-CXX           = g++
-DEFINES       = -DDARWIN -DSIGPROCMASK_SETS_THREAD_MASK
-CXXFLAGS      = -no-cpp-precomp -fPIC
-#INCPATH       = -I/opt/local/include/apr-1 -I/opt/local/apache2/include -I`pkg-config --variable=includedir GraphicsMagick++` -I`pkg-config --variable=includedir libcurl` -I/opt/local/libexec/qt4-mac/mkspecs/macx-g++ -I. -I/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers -I/opt/local/libexec/qt4-mac/include/QtCore -I/opt/local/libexec/qt4-mac/lib/QtNetwork.framework/Versions/4/Headers -I/opt/local/libexec/qt4-mac/include/QtNetwork -I/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers -I/opt/local/libexec/qt4-mac/include/QtGui -I/opt/local/libexec/qt4-mac/include -I. -I. -F/opt/local/libexec/qt4-mac/lib
-INCPATH       = -I/usr/include/apr-1.0 -I/usr/include/apache2 -I`pkg-config --variable=includedir GraphicsMagick++` -I`pkg-config --variable=includedir libcurl` -I`pkg-config --cflags QtCore` -I. -I.
-LIBS          = -F/opt/local/libexec/qt4-mac/lib -L/opt/local/libexec/qt4-mac/lib -framework QtCore `pkg-config --libs libcurl` `pkg-config --libs GraphicsMagick++`
+##
+##  Makefile -- Build procedure for fast3lpoad Apache module
+##
+##  This is a C++ module so things have to be handled a little differently.
 
-all: mod_image.os UrlLibrary.os md5.os md5wrapper.os
-	g++ -o mod_image.so -undefined dynamic_lookup -bundle mod_image.os UrlLibrary.os md5.os md5wrapper.os $(LIBS)
+#   the used tools
+APXS=apxs2
+APACHECTL=apache2ctl
 
-mod_image.os: mod_image.cpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mod_image.os mod_image.cpp
+# Get all of apxs's internal values.
+APXS_CC=`$(APXS) -q CC`   
+APXS_TARGET=`$(APXS) -q TARGET`   
+APXS_CFLAGS=`$(APXS) -q CFLAGS`   
+APXS_SBINDIR=`$(APXS) -q SBINDIR`   
+APXS_CFLAGS_SHLIB=`$(APXS) -q CFLAGS_SHLIB`   
+APXS_INCLUDEDIR=`$(APXS) -q INCLUDEDIR`   
+APXS_LD_SHLIB=`$(APXS) -q LD_SHLIB`
+APXS_LIBEXECDIR=`$(APXS) -q LIBEXECDIR`
+APXS_LDFLAGS_SHLIB=`$(APXS) -q LDFLAGS_SHLIB`
+APXS_SYSCONFDIR=`$(APXS) -q SYSCONFDIR`
+APXS_LIBS_SHLIB=`$(APXS) -q LIBS_SHLIB`
+APP_INCLUDES = `pkg-config --cflags GraphicsMagick++` `pkg-config --cflags libcurl` `pkg-config --cflags QtCore`
+APP_LIBS = `pkg-config --libs GraphicsMagick++` `pkg-config --libs libcurl` `pkg-config --libs QtCore`
+OBJECTS = mod_image.o md5.o md5wrapper.o UrlLibrary.o
 
-UrlLibrary.os: UrlLibrary.cpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o UrlLibrary.os UrlLibrary.cpp
+# the default target
+all: mod_image.so
 
-md5.os: md5.cpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o md5.os md5.cpp
+# link
+mod_image.so: $(OBJECTS)
+	g++ -fPIC -shared -o $@ $(OBJECTS) $(APXS_LIBS_SHLIB) $(APP_LIBS)
 
-md5wrapper.os: md5wrapper.cpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o md5wrapper.os md5wrapper.cpp
+# compile
+%.o:%.cpp
+	g++ -c -fPIC $(APP_INCLUDES) -I$(APXS_INCLUDEDIR) -I. $(APXS_CFLAGS) $(APXS_CFLAGS_SHLIB) -Wall -o $@ $<
 
+# install the shared object file into Apache 
+install: all
+	$(APXS) -i -n 'image' mod_image.so
+
+# display the apxs variables
+check_apxs_vars:
+	@echo APXS_CC $(APXS_CC);\
+	echo APXS_TARGET $(APXS_TARGET);\
+	echo APXS_CFLAGS $(APXS_CFLAGS);\
+	echo APXS_SBINDIR $(APXS_SBINDIR);\
+	echo APXS_CFLAGS_SHLIB $(APXS_CFLAGS_SHLIB);\
+	echo APXS_INCLUDEDIR $(APXS_INCLUDEDIR);\
+	echo APXS_LD_SHLIB $(APXS_LD_SHLIB);\
+	echo APXS_LIBEXECDIR $(APXS_LIBEXECDIR);\
+	echo APXS_LDFLAGS_SHLIB $(APXS_LDFLAGS_SHLIB);\
+	echo APXS_SYSCONFDIR $(APXS_SYSCONFDIR);\
+	echo APXS_LIBS_SHLIB $(APXS_LIBS_SHLIB)
+
+#   cleanup
 clean:
-	rm -f *.so *.os
+	-rm -f *.so *.o *~ ._*
+
+#   install and activate shared object by reloading Apache to
+#   force a reload of the shared object file
+reload: install restart
+
+#   the general Apache start/restart/stop
+#   procedures
+start:
+	$(APACHECTL) start
+restart:
+	$(APACHECTL) restart
+stop:
+	$(APACHECTL) stop
+
