@@ -3,7 +3,6 @@ import sys
 import urllib
 import libxml2
 import re
-import locale
 import Queue
 import json
 import time
@@ -395,10 +394,21 @@ def formatPrice(price):
     if price == '' or price == '.':
         return p
 
-    locale.setlocale(locale.LC_ALL, '')
-    p = '$' + locale.format('%.2f', float(price), 1)
+    p = '$' + comma(float(price))
 
     return p
+    
+def comma(d):
+    s = '%0.2f' % d
+    a,b = s.split('.')
+    l = []
+    while len(a) > 3:
+        l.insert(0,a[-3:])
+        a = a[0:-3]
+    if a:
+        l.insert(0,a)
+    return ','.join(l)+'.'+b
+
 
 def extractDates(date):
     d = []
