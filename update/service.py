@@ -184,6 +184,8 @@ def images_action():
     images.close()
 
 def cleanup_action():
+    return
+    
     now    = datetime.today()
     houses = Houses.select(Houses.c.edate<now).execute()
     for house in houses:
