@@ -73,6 +73,9 @@
 #pragma mark -
 #pragma mark Custom methods
 -(void) setLocation:(CLLocation *)loc {
+	[mapView removeAnnotations:currentAnnotations];
+    [self setCurrentAnnotations:[NSArray array]];
+    
 	/*Region and Zoom*/
 	MKCoordinateRegion region;
 	MKCoordinateSpan span;

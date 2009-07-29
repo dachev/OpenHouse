@@ -22,7 +22,7 @@
 
 
 @implementation BrowseController
-@synthesize mapController, tableController, activeController, page, origin, currentAnnotations, navButtons, toolbar, mapIconImage, listIconImage;
+@synthesize mapController, tableController, activeController, page, origin, currentAnnotations, statusView, navButtons, toolbar, mapIconImage, listIconImage;
 
 #pragma mark -
 #pragma mark Instantiation and tear down
@@ -63,6 +63,7 @@
 	[page release];
 	[origin release];
 	[currentAnnotations release];
+    [statusView release];
 	[navButtons release];
 	[toolbar release];
 	[mapIconImage release];
@@ -98,24 +99,8 @@
 	[self.view addSubview:toolbar];
  	
 	/* Initialize toolbar items */
-    int viewWidth      = 225;
-    int spinnerWidth   = 20;
-    UIView *statusView = [[[UIView alloc] initWithFrame:CGRectMake(0,0,viewWidth,20)] autorelease];
-    
-    NSString *statusText = @"Loading Data...";
-    int labelWidth       = (int) [statusText sizeWithFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]].width;
-    int labelOffset      = (int) (viewWidth - (labelWidth + spinnerWidth + 6)) / 2;
-    int spinnerOffset    = labelOffset + labelWidth + 6;
-    UILabel *statusLabel = [[[UILabel alloc] initWithFrame:CGRectMake(labelOffset,0,labelWidth,20)] autorelease];
-    [statusLabel setBackgroundColor:[UIColor clearColor]];
-    [statusLabel setTextColor:[UIColor whiteColor]];
-    [statusLabel setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]];
-    //[statusLabel setTextAlignment:UITextAlignmentCenter];
-    [statusLabel setText:statusText];
-    UIActivityIndicatorView *spinner = [[[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(spinnerOffset,0,spinnerWidth,20)] autorelease];
-    [spinner startAnimating];
-    [statusView addSubview:spinner];
-    [statusView addSubview:statusLabel];
+    StatusView *sv = [[[StatusView alloc] initWithFrame:CGRectMake(0,0,225,20)] autorelease];
+    [self setStatusView:sv];
 	
     UIBarButtonItem *statusButton  = [[UIBarButtonItem alloc] initWithCustomView:statusView];
     UIBarButtonItem *actionButton  = [[UIBarButtonItem alloc]
@@ -129,7 +114,6 @@
 									  action:@selector(changeView:)];
 
 	[toolbar setItems:[NSArray arrayWithObjects:actionButton, statusButton,flipButton,nil]];
-    [[[[toolbar items] objectAtIndex:1] view] setAlpha:0.0f];
     [statusButton release];
 	[flipButton release];
     
@@ -221,7 +205,7 @@
 }
 
 -(void) getPage:(NSNumber *)p {
-    [[[[toolbar items] objectAtIndex:1] view] setAlpha:1.0f];
+    [statusView showLabel:@"Loading Data..."];
     
 	OpenHouses *openHouses = [OpenHouses sharedOpenHouses];
 	[openHouses loadMoreData];
@@ -369,7 +353,7 @@
 
 #pragma mark ---- OpenHousesApiDelegate methods ----
 -(void) finishedWithPage:(NSNumber *)p {
-    [[[[toolbar items] objectAtIndex:1] view] setAlpha:0.0f];
+    [statusView hideLabel];
     
     OpenHouses *openHouses = [OpenHouses sharedOpenHouses];
     if ([p intValue] == 1 && [[openHouses totalResults] intValue] < 1) {
@@ -390,7 +374,7 @@
 }
 
 -(void) failedWithError:(NSError *)error {
-    [[[[toolbar items] objectAtIndex:1] view] setAlpha:0.0f];
+    [statusView hideLabel];
     
 	UIAlertView *alert = [[UIAlertView alloc]
                           initWithTitle:nil

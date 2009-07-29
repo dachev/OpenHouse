@@ -23,7 +23,7 @@
 	};
 	28D7ACF60DDB3853001CB0EB /* MapViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1081, 476}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1081, 526}}";
 			sepNavSelRange = "{528, 11}";
 			sepNavVisRange = "{0, 679}";
 			sepNavWindowFrame = "{{15, -1}, {1023, 874}}";
@@ -31,9 +31,9 @@
 	};
 	28D7ACF70DDB3853001CB0EB /* MapViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {964, 2848}}";
-			sepNavSelRange = "{816, 94}";
-			sepNavVisRange = "{304, 1230}";
+			sepNavIntBoundsRect = "{{0, 0}, {1081, 2928}}";
+			sepNavSelRange = "{1839, 0}";
+			sepNavVisRange = "{1407, 846}";
 			sepNavWindowFrame = "{{15, -1}, {1023, 874}}";
 		};
 	};
@@ -46,7 +46,6 @@
 		);
 		breakpoints = (
 			83E4DAD6100D7F9000E8FE1E /* [NSException raise] */,
-			83FB86B7101C399700936F2C /* BrowseController.m:372 */,
 		);
 		codeSenseManager = 83E55D090FB7F64F00ED0E37 /* Code sense */;
 		executables = (
@@ -264,6 +263,62 @@
 			8368EC1C102023D80032CFDB /* PBXTextBookmark */ = 8368EC1C102023D80032CFDB /* PBXTextBookmark */;
 			8368EC1D102023D80032CFDB /* PBXTextBookmark */ = 8368EC1D102023D80032CFDB /* PBXTextBookmark */;
 			8368EC1E102023D80032CFDB /* PBXTextBookmark */ = 8368EC1E102023D80032CFDB /* PBXTextBookmark */;
+			8368EC2910202AC50032CFDB /* PBXTextBookmark */ = 8368EC2910202AC50032CFDB /* PBXTextBookmark */;
+			8368EC2A10202AC50032CFDB /* PBXTextBookmark */ = 8368EC2A10202AC50032CFDB /* PBXTextBookmark */;
+			8368EC2B10202AC50032CFDB /* PBXTextBookmark */ = 8368EC2B10202AC50032CFDB /* PBXTextBookmark */;
+			8368EC2C10202AC50032CFDB /* PBXTextBookmark */ = 8368EC2C10202AC50032CFDB /* PBXTextBookmark */;
+			8368EC2D10202AC50032CFDB /* PBXTextBookmark */ = 8368EC2D10202AC50032CFDB /* PBXTextBookmark */;
+			8368EC2E10202AC50032CFDB /* PBXTextBookmark */ = 8368EC2E10202AC50032CFDB /* PBXTextBookmark */;
+			8368EC2F10202AC50032CFDB /* PBXTextBookmark */ = 8368EC2F10202AC50032CFDB /* PBXTextBookmark */;
+			8368EC3010202AC50032CFDB /* PBXTextBookmark */ = 8368EC3010202AC50032CFDB /* PBXTextBookmark */;
+			8368EC3110202AC50032CFDB /* PBXTextBookmark */ = 8368EC3110202AC50032CFDB /* PBXTextBookmark */;
+			8368EC3210202AC50032CFDB /* PBXTextBookmark */ = 8368EC3210202AC50032CFDB /* PBXTextBookmark */;
+			8368EC3310202AC50032CFDB /* PBXTextBookmark */ = 8368EC3310202AC50032CFDB /* PBXTextBookmark */;
+			8368EC3410202AC50032CFDB /* PBXTextBookmark */ = 8368EC3410202AC50032CFDB /* PBXTextBookmark */;
+			8368EC3510202AC50032CFDB /* PBXTextBookmark */ = 8368EC3510202AC50032CFDB /* PBXTextBookmark */;
+			8368EC3610202AC50032CFDB /* PBXTextBookmark */ = 8368EC3610202AC50032CFDB /* PBXTextBookmark */;
+			8368EC3710202AC50032CFDB /* PBXTextBookmark */ = 8368EC3710202AC50032CFDB /* PBXTextBookmark */;
+			8368EC3810202AC50032CFDB /* PBXTextBookmark */ = 8368EC3810202AC50032CFDB /* PBXTextBookmark */;
+			8368EC3910202AC50032CFDB /* PBXTextBookmark */ = 8368EC3910202AC50032CFDB /* PBXTextBookmark */;
+			8368EC3A10202AC50032CFDB /* PBXTextBookmark */ = 8368EC3A10202AC50032CFDB /* PBXTextBookmark */;
+			8368EC3D10202AD40032CFDB /* PBXTextBookmark */ = 8368EC3D10202AD40032CFDB /* PBXTextBookmark */;
+			8368EC3F10202B140032CFDB /* PBXTextBookmark */ = 8368EC3F10202B140032CFDB /* PBXTextBookmark */;
+			8368EC4010202B140032CFDB /* PBXTextBookmark */ = 8368EC4010202B140032CFDB /* PBXTextBookmark */;
+			8368EC4110202B140032CFDB /* PBXTextBookmark */ = 8368EC4110202B140032CFDB /* PBXTextBookmark */;
+			8368EC4210202B140032CFDB /* PBXTextBookmark */ = 8368EC4210202B140032CFDB /* PBXTextBookmark */;
+			8368EC4310202B140032CFDB /* PBXTextBookmark */ = 8368EC4310202B140032CFDB /* PBXTextBookmark */;
+			8368EC4410202B140032CFDB /* PBXTextBookmark */ = 8368EC4410202B140032CFDB /* PBXTextBookmark */;
+			8368EC4A10202C3A0032CFDB /* PBXTextBookmark */ = 8368EC4A10202C3A0032CFDB /* PBXTextBookmark */;
+			8368EC4B10202C3A0032CFDB /* PBXTextBookmark */ = 8368EC4B10202C3A0032CFDB /* PBXTextBookmark */;
+			8368EC4C10202C3A0032CFDB /* PBXTextBookmark */ = 8368EC4C10202C3A0032CFDB /* PBXTextBookmark */;
+			8368EC4D10202C3A0032CFDB /* PBXTextBookmark */ = 8368EC4D10202C3A0032CFDB /* PBXTextBookmark */;
+			8368EC4E10202C3B0032CFDB /* PBXTextBookmark */ = 8368EC4E10202C3B0032CFDB /* PBXTextBookmark */;
+			8368EC4F10202C3B0032CFDB /* PBXTextBookmark */ = 8368EC4F10202C3B0032CFDB /* PBXTextBookmark */;
+			8368EC5010202C3B0032CFDB /* PBXTextBookmark */ = 8368EC5010202C3B0032CFDB /* PBXTextBookmark */;
+			8368EC5110202C3B0032CFDB /* PBXTextBookmark */ = 8368EC5110202C3B0032CFDB /* PBXTextBookmark */;
+			8368EC5210202C3B0032CFDB /* PBXTextBookmark */ = 8368EC5210202C3B0032CFDB /* PBXTextBookmark */;
+			8368EC5410202C440032CFDB /* PBXTextBookmark */ = 8368EC5410202C440032CFDB /* PBXTextBookmark */;
+			8368EC5510202C4E0032CFDB /* PBXTextBookmark */ = 8368EC5510202C4E0032CFDB /* PBXTextBookmark */;
+			8368EC5710202C4E0032CFDB /* PBXTextBookmark */ = 8368EC5710202C4E0032CFDB /* PBXTextBookmark */;
+			8368EC5810202C4E0032CFDB /* PBXTextBookmark */ = 8368EC5810202C4E0032CFDB /* PBXTextBookmark */;
+			8368EC5A10202C610032CFDB /* PBXTextBookmark */ = 8368EC5A10202C610032CFDB /* PBXTextBookmark */;
+			8368EC5E10202D050032CFDB /* PBXTextBookmark */ = 8368EC5E10202D050032CFDB /* PBXTextBookmark */;
+			8368EC5F10202D050032CFDB /* PBXTextBookmark */ = 8368EC5F10202D050032CFDB /* PBXTextBookmark */;
+			8368EC6010202D050032CFDB /* PBXTextBookmark */ = 8368EC6010202D050032CFDB /* PBXTextBookmark */;
+			8368EC6110202D050032CFDB /* PBXTextBookmark */ = 8368EC6110202D050032CFDB /* PBXTextBookmark */;
+			8368EC6210202D050032CFDB /* PBXTextBookmark */ = 8368EC6210202D050032CFDB /* PBXTextBookmark */;
+			8368EC6410202D220032CFDB /* PBXTextBookmark */ = 8368EC6410202D220032CFDB /* PBXTextBookmark */;
+			8368EC6510202D220032CFDB /* PBXTextBookmark */ = 8368EC6510202D220032CFDB /* PBXTextBookmark */;
+			8368EC6610202D220032CFDB /* PBXTextBookmark */ = 8368EC6610202D220032CFDB /* PBXTextBookmark */;
+			8368EC6710202D220032CFDB /* PBXTextBookmark */ = 8368EC6710202D220032CFDB /* PBXTextBookmark */;
+			8368EC6B10202D610032CFDB /* PBXTextBookmark */ = 8368EC6B10202D610032CFDB /* PBXTextBookmark */;
+			8368EC6D10202D6F0032CFDB /* PBXTextBookmark */ = 8368EC6D10202D6F0032CFDB /* PBXTextBookmark */;
+			8368EC6F10202D840032CFDB /* PBXTextBookmark */ = 8368EC6F10202D840032CFDB /* PBXTextBookmark */;
+			8368EC7010202D840032CFDB /* PBXTextBookmark */ = 8368EC7010202D840032CFDB /* PBXTextBookmark */;
+			8368EC7110202D840032CFDB /* PBXTextBookmark */ = 8368EC7110202D840032CFDB /* PBXTextBookmark */;
+			8368EC7210202D840032CFDB /* PBXTextBookmark */ = 8368EC7210202D840032CFDB /* PBXTextBookmark */;
+			8368EC7410202D940032CFDB /* PBXTextBookmark */ = 8368EC7410202D940032CFDB /* PBXTextBookmark */;
+			8368EC7510202DAF0032CFDB /* PBXTextBookmark */ = 8368EC7510202DAF0032CFDB /* PBXTextBookmark */;
 			838815910FE0DC7300294F62 = 838815910FE0DC7300294F62 /* PBXTextBookmark */;
 			838816A60FE0F21D00294F62 = 838816A60FE0F21D00294F62 /* PBXTextBookmark */;
 			83B4F3030FDE381600360E7D = 83B4F3030FDE381600360E7D /* PBXTextBookmark */;
@@ -1360,7 +1415,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 203";
 		rLen = 0;
-		rLoc = 13205;
+		rLoc = 12098;
 		rType = 0;
 		vrLen = 769;
 		vrLoc = 6720;
@@ -1513,7 +1568,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MapViewController.m */;
 		name = "MapViewController.m: 145";
 		rLen = 0;
-		rLoc = 4564;
+		rLoc = 4668;
 		rType = 0;
 		vrLen = 833;
 		vrLoc = 3396;
@@ -1523,7 +1578,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 22";
 		rLen = 0;
-		rLoc = 650;
+		rLoc = 673;
 		rType = 0;
 		vrLen = 925;
 		vrLoc = 0;
@@ -1751,7 +1806,7 @@
 		rLen = 0;
 		rLoc = 406;
 		rType = 0;
-		vrLen = 254;
+		vrLen = 249;
 		vrLoc = 430;
 	};
 	835E12640FEC921800923362 /* OpenHouses.h */ = {
@@ -1807,7 +1862,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 99";
 		rLen = 0;
-		rLoc = 4906;
+		rLoc = 3944;
 		rType = 0;
 		vrLen = 1695;
 		vrLoc = 2561;
@@ -1856,8 +1911,8 @@
 		isa = PBXTextBookmark;
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 375";
-		rLen = 39;
-		rLoc = 12390;
+		rLen = 0;
+		rLoc = 10991;
 		rType = 0;
 		vrLen = 1115;
 		vrLoc = 12006;
@@ -1877,7 +1932,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 376";
 		rLen = 0;
-		rLoc = 12486;
+		rLoc = 10991;
 		rType = 0;
 		vrLen = 1119;
 		vrLoc = 12001;
@@ -1887,7 +1942,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 376";
 		rLen = 0;
-		rLoc = 12486;
+		rLoc = 10991;
 		rType = 0;
 		vrLen = 1112;
 		vrLoc = 12006;
@@ -1907,7 +1962,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 247";
 		rLen = 0;
-		rLoc = 8279;
+		rLoc = 7240;
 		rType = 0;
 		vrLen = 1049;
 		vrLoc = 7572;
@@ -1933,7 +1988,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 247";
 		rLen = 0;
-		rLoc = 8274;
+		rLoc = 7235;
 		rType = 0;
 		vrLen = 1371;
 		vrLoc = 7458;
@@ -2007,7 +2062,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 247";
 		rLen = 0;
-		rLoc = 8274;
+		rLoc = 7235;
 		rType = 0;
 		vrLen = 1371;
 		vrLoc = 7458;
@@ -2099,7 +2154,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 336";
 		rLen = 0;
-		rLoc = 11050;
+		rLoc = 10011;
 		rType = 0;
 		vrLen = 1449;
 		vrLoc = 10278;
@@ -2109,7 +2164,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 336";
 		rLen = 0;
-		rLoc = 11050;
+		rLoc = 10011;
 		rType = 0;
 		vrLen = 1447;
 		vrLoc = 10280;
@@ -2141,7 +2196,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 336";
 		rLen = 0;
-		rLoc = 11050;
+		rLoc = 10011;
 		rType = 0;
 		vrLen = 1447;
 		vrLoc = 10280;
@@ -2217,7 +2272,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 336";
 		rLen = 0;
-		rLoc = 11050;
+		rLoc = 10011;
 		rType = 0;
 		vrLen = 994;
 		vrLoc = 6223;
@@ -2257,7 +2312,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 336";
 		rLen = 0;
-		rLoc = 11050;
+		rLoc = 10011;
 		rType = 0;
 		vrLen = 994;
 		vrLoc = 6223;
@@ -2587,7 +2642,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 336";
 		rLen = 0;
-		rLoc = 11050;
+		rLoc = 10011;
 		rType = 0;
 		vrLen = 1216;
 		vrLoc = 0;
@@ -2597,7 +2652,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 26";
 		rLen = 0;
-		rLoc = 680;
+		rLoc = 703;
 		rType = 0;
 		vrLen = 1183;
 		vrLoc = 190;
@@ -2617,7 +2672,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 336";
 		rLen = 0;
-		rLoc = 11050;
+		rLoc = 10011;
 		rType = 0;
 		vrLen = 1216;
 		vrLoc = 0;
@@ -2627,7 +2682,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 26";
 		rLen = 0;
-		rLoc = 680;
+		rLoc = 703;
 		rType = 0;
 		vrLen = 1183;
 		vrLoc = 190;
@@ -2724,7 +2779,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 439";
 		rLen = 0;
-		rLoc = 14434;
+		rLoc = 13327;
 		rType = 0;
 		vrLen = 1135;
 		vrLoc = 13214;
@@ -2839,6 +2894,583 @@
 		vrLen = 1659;
 		vrLoc = 4351;
 	};
+	8368EC22102029920032CFDB /* StatusView.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1081, 526}}";
+			sepNavSelRange = "{251, 0}";
+			sepNavVisRange = "{0, 259}";
+		};
+	};
+	8368EC23102029920032CFDB /* StatusView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1081, 864}}";
+			sepNavSelRange = "{448, 0}";
+			sepNavVisRange = "{159, 1302}";
+		};
+	};
+	8368EC2910202AC50032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83C544D60FFC40C700BC7067 /* DetailsController.m */;
+		name = "DetailsController.m: 134";
+		rLen = 0;
+		rLoc = 4864;
+		rType = 0;
+		vrLen = 1659;
+		vrLoc = 4351;
+	};
+	8368EC2A10202AC50032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* MapViewController.h */;
+		name = "MapViewController.h: 23";
+		rLen = 11;
+		rLoc = 528;
+		rType = 0;
+		vrLen = 679;
+		vrLoc = 0;
+	};
+	8368EC2B10202AC50032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* MapViewController.m */;
+		name = "MapViewController.m: 76";
+		rLen = 0;
+		rLoc = 1839;
+		rType = 0;
+		vrLen = 846;
+		vrLoc = 1407;
+	};
+	8368EC2C10202AC50032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8368EC22102029920032CFDB /* StatusView.h */;
+		name = "StatusView.h: 16";
+		rLen = 0;
+		rLoc = 252;
+		rType = 0;
+		vrLen = 240;
+		vrLoc = 0;
+	};
+	8368EC2D10202AC50032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8368EC23102029920032CFDB /* StatusView.m */;
+		name = "StatusView.m: 9";
+		rLen = 0;
+		rLoc = 156;
+		rType = 0;
+		vrLen = 1249;
+		vrLoc = 0;
+	};
+	8368EC2E10202AC50032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
+		name = "BrowseController.h: 15";
+		rLen = 0;
+		rLoc = 335;
+		rType = 0;
+		vrLen = 1071;
+		vrLoc = 41;
+	};
+	8368EC2F10202AC50032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 101";
+		rLen = 93;
+		rLoc = 3350;
+		rType = 0;
+		vrLen = 1214;
+		vrLoc = 3218;
+	};
+	8368EC3010202AC50032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83C544D60FFC40C700BC7067 /* DetailsController.m */;
+		name = "DetailsController.m: 134";
+		rLen = 0;
+		rLoc = 4864;
+		rType = 0;
+		vrLen = 1659;
+		vrLoc = 4351;
+	};
+	8368EC3110202AC50032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* MapViewController.m */;
+		name = "MapViewController.m: 76";
+		rLen = 37;
+		rLoc = 1850;
+		rType = 0;
+		vrLen = 960;
+		vrLoc = 1932;
+	};
+	8368EC3210202AC50032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* MapViewController.h */;
+		name = "MapViewController.h: 23";
+		rLen = 11;
+		rLoc = 528;
+		rType = 0;
+		vrLen = 679;
+		vrLoc = 0;
+	};
+	8368EC3310202AC50032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* MapViewController.m */;
+		name = "MapViewController.m: 76";
+		rLen = 0;
+		rLoc = 1839;
+		rType = 0;
+		vrLen = 846;
+		vrLoc = 1407;
+	};
+	8368EC3410202AC50032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 102";
+		rLen = 0;
+		rLoc = 3472;
+		rType = 0;
+		vrLen = 1220;
+		vrLoc = 3218;
+	};
+	8368EC3510202AC50032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8368EC23102029920032CFDB /* StatusView.m */;
+		name = "StatusView.m: 9";
+		rLen = 0;
+		rLoc = 156;
+		rType = 0;
+		vrLen = 1065;
+		vrLoc = 0;
+	};
+	8368EC3610202AC50032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8368EC22102029920032CFDB /* StatusView.h */;
+		name = "StatusView.h: 16";
+		rLen = 0;
+		rLoc = 252;
+		rType = 0;
+		vrLen = 240;
+		vrLoc = 0;
+	};
+	8368EC3710202AC50032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8368EC23102029920032CFDB /* StatusView.m */;
+		name = "StatusView.m: 9";
+		rLen = 0;
+		rLoc = 156;
+		rType = 0;
+		vrLen = 1249;
+		vrLoc = 0;
+	};
+	8368EC3810202AC50032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 101";
+		rLen = 93;
+		rLoc = 3350;
+		rType = 0;
+		vrLen = 1214;
+		vrLoc = 3218;
+	};
+	8368EC3910202AC50032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
+		name = "BrowseController.h: 15";
+		rLen = 0;
+		rLoc = 335;
+		rType = 0;
+		vrLen = 1071;
+		vrLoc = 41;
+	};
+	8368EC3A10202AC50032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 101";
+		rLen = 93;
+		rLoc = 3350;
+		rType = 0;
+		vrLen = 1140;
+		vrLoc = 3218;
+	};
+	8368EC3D10202AD40032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 101";
+		rLen = 0;
+		rLoc = 3364;
+		rType = 0;
+		vrLen = 1223;
+		vrLoc = 3218;
+	};
+	8368EC3F10202B140032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
+		name = "BrowseController.h: 15";
+		rLen = 10;
+		rLoc = 323;
+		rType = 0;
+		vrLen = 1082;
+		vrLoc = 314;
+	};
+	8368EC4010202B140032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8368EC23102029920032CFDB /* StatusView.m */;
+		name = "StatusView.m: 9";
+		rLen = 0;
+		rLoc = 156;
+		rType = 0;
+		vrLen = 1218;
+		vrLoc = 133;
+	};
+	8368EC4110202B140032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 103";
+		rLen = 0;
+		rLoc = 3474;
+		rType = 0;
+		vrLen = 1368;
+		vrLoc = 2990;
+	};
+	8368EC4210202B140032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
+		name = "BrowseController.h: 15";
+		rLen = 10;
+		rLoc = 323;
+		rType = 0;
+		vrLen = 1082;
+		vrLoc = 314;
+	};
+	8368EC4310202B140032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8368EC23102029920032CFDB /* StatusView.m */;
+		name = "StatusView.m: 9";
+		rLen = 0;
+		rLoc = 156;
+		rType = 0;
+		vrLen = 1218;
+		vrLoc = 133;
+	};
+	8368EC4410202B140032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 101";
+		rLen = 0;
+		rLoc = 3472;
+		rType = 0;
+		vrLen = 1325;
+		vrLoc = 2990;
+	};
+	8368EC4A10202C3A0032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
+		name = "BrowseController.h: 15";
+		rLen = 10;
+		rLoc = 323;
+		rType = 0;
+		vrLen = 1112;
+		vrLoc = 284;
+	};
+	8368EC4B10202C3A0032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8368EC22102029920032CFDB /* StatusView.h */;
+		name = "StatusView.h: 17";
+		rLen = 0;
+		rLoc = 251;
+		rType = 0;
+		vrLen = 259;
+		vrLoc = 0;
+	};
+	8368EC4C10202C3A0032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8368EC23102029920032CFDB /* StatusView.m */;
+		name = "StatusView.m: 42";
+		rLen = 0;
+		rLoc = 1412;
+		rType = 0;
+		vrLen = 1259;
+		vrLoc = 224;
+	};
+	8368EC4D10202C3A0032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "error: 'statusView' undeclared (first use in this function)";
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		rLen = 0;
+		rLoc = 206;
+		rType = 1;
+	};
+	8368EC4E10202C3B0032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
+		name = "BrowseController.h: 15";
+		rLen = 10;
+		rLoc = 323;
+		rType = 0;
+		vrLen = 1112;
+		vrLoc = 284;
+	};
+	8368EC4F10202C3B0032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8368EC23102029920032CFDB /* StatusView.m */;
+		name = "StatusView.m: 9";
+		rLen = 0;
+		rLoc = 156;
+		rType = 0;
+		vrLen = 1215;
+		vrLoc = 133;
+	};
+	8368EC5010202C3B0032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8368EC22102029920032CFDB /* StatusView.h */;
+		name = "StatusView.h: 17";
+		rLen = 0;
+		rLoc = 251;
+		rType = 0;
+		vrLen = 259;
+		vrLoc = 0;
+	};
+	8368EC5110202C3B0032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8368EC23102029920032CFDB /* StatusView.m */;
+		name = "StatusView.m: 42";
+		rLen = 0;
+		rLoc = 1412;
+		rType = 0;
+		vrLen = 1259;
+		vrLoc = 224;
+	};
+	8368EC5210202C3B0032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 206";
+		rLen = 0;
+		rLoc = 6325;
+		rType = 0;
+		vrLen = 837;
+		vrLoc = 5814;
+	};
+	8368EC5410202C440032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 206";
+		rLen = 0;
+		rLoc = 6325;
+		rType = 0;
+		vrLen = 991;
+		vrLoc = 5814;
+	};
+	8368EC5510202C4E0032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8368EC5610202C4E0032CFDB /* asm ___TERMINATING_DUE_TO_UNCAUGHT_EXCEPTION___  0x302ac920 */;
+		name = "asm ___TERMINATING_DUE_TO_UNCAUGHT_EXCEPTION___  0x302ac920: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 206;
+		vrLoc = 0;
+	};
+	8368EC5610202C4E0032CFDB /* asm ___TERMINATING_DUE_TO_UNCAUGHT_EXCEPTION___  0x302ac920 */ = {
+		isa = PBXFileReference;
+		path = "asm ___TERMINATING_DUE_TO_UNCAUGHT_EXCEPTION___  0x302ac920";
+		sourceTree = "<group>";
+	};
+	8368EC5710202C4E0032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 13";
+		rLen = 0;
+		rLoc = 255;
+		rType = 0;
+		vrLen = 298;
+		vrLoc = 136;
+	};
+	8368EC5810202C4E0032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 206";
+		rLen = 0;
+		rLoc = 6325;
+		rType = 0;
+		vrLen = 396;
+		vrLoc = 5986;
+	};
+	8368EC5A10202C610032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 206";
+		rLen = 0;
+		rLoc = 6325;
+		rType = 0;
+		vrLen = 903;
+		vrLoc = 5816;
+	};
+	8368EC5E10202D050032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
+		name = "BrowseController.h: 42";
+		rLen = 10;
+		rLoc = 1241;
+		rType = 0;
+		vrLen = 1188;
+		vrLoc = 284;
+	};
+	8368EC5F10202D050032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 205";
+		rLen = 0;
+		rLoc = 6278;
+		rType = 0;
+		vrLen = 873;
+		vrLoc = 5816;
+	};
+	8368EC6010202D050032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 205";
+		rLen = 0;
+		rLoc = 6278;
+		rType = 0;
+		vrLen = 873;
+		vrLoc = 5816;
+	};
+	8368EC6110202D050032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
+		name = "BrowseController.h: 42";
+		rLen = 10;
+		rLoc = 1241;
+		rType = 0;
+		vrLen = 1188;
+		vrLoc = 284;
+	};
+	8368EC6210202D050032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 355";
+		rLen = 0;
+		rLoc = 10985;
+		rType = 0;
+		vrLen = 1191;
+		vrLoc = 10447;
+	};
+	8368EC6410202D220032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 355";
+		rLen = 0;
+		rLoc = 10985;
+		rType = 0;
+		vrLen = 1191;
+		vrLoc = 10447;
+	};
+	8368EC6510202D220032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8368EC23102029920032CFDB /* StatusView.m */;
+		name = "StatusView.m: 42";
+		rLen = 0;
+		rLoc = 1412;
+		rType = 0;
+		vrLen = 1207;
+		vrLoc = 276;
+	};
+	8368EC6610202D220032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 355";
+		rLen = 0;
+		rLoc = 10985;
+		rType = 0;
+		vrLen = 1191;
+		vrLoc = 10447;
+	};
+	8368EC6710202D220032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8368EC23102029920032CFDB /* StatusView.m */;
+		name = "StatusView.m: 43";
+		rLen = 0;
+		rLoc = 1450;
+		rType = 0;
+		vrLen = 1224;
+		vrLoc = 293;
+	};
+	8368EC6B10202D610032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8368EC23102029920032CFDB /* StatusView.m */;
+		name = "StatusView.m: 22";
+		rLen = 0;
+		rLoc = 359;
+		rType = 0;
+		vrLen = 1315;
+		vrLoc = 159;
+	};
+	8368EC6D10202D6F0032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8368EC23102029920032CFDB /* StatusView.m */;
+		name = "StatusView.m: 25";
+		rLen = 0;
+		rLoc = 448;
+		rType = 0;
+		vrLen = 1302;
+		vrLoc = 159;
+	};
+	8368EC6F10202D840032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8368EC23102029920032CFDB /* StatusView.m */;
+		name = "StatusView.m: 25";
+		rLen = 0;
+		rLoc = 448;
+		rType = 0;
+		vrLen = 1302;
+		vrLoc = 159;
+	};
+	8368EC7010202D840032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 355";
+		rLen = 0;
+		rLoc = 10985;
+		rType = 0;
+		vrLen = 1191;
+		vrLoc = 10447;
+	};
+	8368EC7110202D840032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8368EC23102029920032CFDB /* StatusView.m */;
+		name = "StatusView.m: 25";
+		rLen = 0;
+		rLoc = 448;
+		rType = 0;
+		vrLen = 1302;
+		vrLoc = 159;
+	};
+	8368EC7210202D840032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 208";
+		rLen = 0;
+		rLoc = 6314;
+		rType = 0;
+		vrLen = 975;
+		vrLoc = 5876;
+	};
+	8368EC7410202D940032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 208";
+		rLen = 0;
+		rLoc = 6314;
+		rType = 0;
+		vrLen = 980;
+		vrLoc = 5876;
+	};
+	8368EC7510202DAF0032CFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 208";
+		rLen = 0;
+		rLoc = 6325;
+		rType = 0;
+		vrLen = 1207;
+		vrLoc = 10453;
+	};
 	838815910FE0DC7300294F62 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 83B4F2DB0FDE34A000360E7D /* MainViewController.m */;
@@ -2916,8 +3548,8 @@
 	};
 	83C544D60FFC40C700BC7067 /* DetailsController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1081, 5408}}";
-			sepNavSelRange = "{4862, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1081, 5056}}";
+			sepNavSelRange = "{4864, 0}";
 			sepNavVisRange = "{4351, 1659}";
 		};
 	};
@@ -2956,7 +3588,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MapViewController.m */;
 		name = "MapViewController.m: 145";
 		rLen = 0;
-		rLoc = 4564;
+		rLoc = 4668;
 		rType = 0;
 		vrLen = 925;
 		vrLoc = 633;
@@ -3026,7 +3658,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 36";
 		rLen = 0;
-		rLoc = 1209;
+		rLoc = 1314;
 		rType = 0;
 		vrLen = 934;
 		vrLoc = 164;
@@ -3167,7 +3799,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		location = CoreFoundation;
-		modificationTime = 270526934.941485;
+		modificationTime = 270543974.779015;
 		state = 1;
 		symbolName = "[NSException raise]";
 	};
@@ -3275,21 +3907,21 @@
 		rLen = 0;
 		rLoc = 632;
 		rType = 0;
-		vrLen = 684;
+		vrLen = 679;
 		vrLoc = 0;
 	};
 	83EE513C0FECBD3C0099FC4E /* BrowseController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1081, 736}}";
-			sepNavSelRange = "{680, 0}";
-			sepNavVisRange = "{190, 1183}";
+			sepNavIntBoundsRect = "{{0, 0}, {1081, 784}}";
+			sepNavSelRange = "{1241, 10}";
+			sepNavVisRange = "{284, 1188}";
 		};
 	};
 	83EE513D0FECBD3C0099FC4E /* BrowseController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1081, 6960}}";
-			sepNavSelRange = "{168, 87}";
-			sepNavVisRange = "{0, 953}";
+			sepNavIntBoundsRect = "{{0, 0}, {1125, 7136}}";
+			sepNavSelRange = "{6325, 0}";
+			sepNavVisRange = "{10453, 1207}";
 		};
 	};
 	83FB814C101888E000936F2C /* PBXTextBookmark */ = {
@@ -5625,7 +6257,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 48";
 		rLen = 0;
-		rLoc = 2060;
+		rLoc = 2072;
 		rType = 0;
 		vrLen = 872;
 		vrLoc = 1115;
@@ -5645,7 +6277,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 48";
 		rLen = 0;
-		rLoc = 2060;
+		rLoc = 2072;
 		rType = 0;
 		vrLen = 872;
 		vrLoc = 1115;
@@ -5805,7 +6437,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 288";
 		rLen = 0;
-		rLoc = 13205;
+		rLoc = 12098;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 8256;
@@ -5825,7 +6457,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 288";
 		rLen = 0;
-		rLoc = 13205;
+		rLoc = 12098;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 8256;
@@ -5885,7 +6517,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MapViewController.m */;
 		name = "MapViewController.m: 145";
 		rLen = 0;
-		rLoc = 4564;
+		rLoc = 4668;
 		rType = 0;
 		vrLen = 993;
 		vrLoc = 1285;
@@ -5915,7 +6547,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 279";
 		rLen = 0;
-		rLoc = 13205;
+		rLoc = 12098;
 		rType = 0;
 		vrLen = 1002;
 		vrLoc = 7565;
@@ -5935,7 +6567,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MapViewController.m */;
 		name = "MapViewController.m: 145";
 		rLen = 0;
-		rLoc = 4564;
+		rLoc = 4668;
 		rType = 0;
 		vrLen = 993;
 		vrLoc = 1285;
@@ -5945,7 +6577,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 131";
 		rLen = 13;
-		rLoc = 5516;
+		rLoc = 4492;
 		rType = 0;
 		vrLen = 512;
 		vrLoc = 4270;
@@ -5975,7 +6607,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 279";
 		rLen = 0;
-		rLoc = 13205;
+		rLoc = 12098;
 		rType = 0;
 		vrLen = 1002;
 		vrLoc = 7565;
@@ -6045,7 +6677,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 279";
 		rLen = 0;
-		rLoc = 13205;
+		rLoc = 12098;
 		rType = 0;
 		vrLen = 987;
 		vrLoc = 7655;
@@ -6075,7 +6707,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 279";
 		rLen = 0;
-		rLoc = 13205;
+		rLoc = 12098;
 		rType = 0;
 		vrLen = 987;
 		vrLoc = 7655;
@@ -6145,7 +6777,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 279";
 		rLen = 0;
-		rLoc = 13205;
+		rLoc = 12098;
 		rType = 0;
 		vrLen = 987;
 		vrLoc = 7655;
@@ -6165,7 +6797,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 279";
 		rLen = 0;
-		rLoc = 13205;
+		rLoc = 12098;
 		rType = 0;
 		vrLen = 989;
 		vrLoc = 7655;
@@ -6175,7 +6807,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 263";
 		rLen = 0;
-		rLoc = 13205;
+		rLoc = 12098;
 		rType = 0;
 		vrLen = 1005;
 		vrLoc = 7655;
@@ -6185,7 +6817,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 263";
 		rLen = 0;
-		rLoc = 13205;
+		rLoc = 12098;
 		rType = 0;
 		vrLen = 1005;
 		vrLoc = 7655;
@@ -6195,7 +6827,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 263";
 		rLen = 0;
-		rLoc = 13205;
+		rLoc = 12098;
 		rType = 0;
 		vrLen = 946;
 		vrLoc = 7488;
@@ -6215,7 +6847,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 263";
 		rLen = 0;
-		rLoc = 13205;
+		rLoc = 12098;
 		rType = 0;
 		vrLen = 667;
 		vrLoc = 7655;
@@ -6225,7 +6857,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 294";
 		rLen = 0;
-		rLoc = 13205;
+		rLoc = 12098;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 8256;
@@ -6235,7 +6867,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 268";
 		rLen = 0;
-		rLoc = 13205;
+		rLoc = 12098;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 7565;
@@ -6255,7 +6887,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 268";
 		rLen = 0;
-		rLoc = 13205;
+		rLoc = 12098;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 7565;
@@ -6375,7 +7007,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 268";
 		rLen = 0;
-		rLoc = 13205;
+		rLoc = 12098;
 		rType = 0;
 		vrLen = 968;
 		vrLoc = 7608;
@@ -6425,7 +7057,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 170";
 		rLen = 0;
-		rLoc = 11824;
+		rLoc = 10785;
 		rType = 0;
 		vrLen = 985;
 		vrLoc = 4785;
@@ -6435,7 +7067,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 170";
 		rLen = 0;
-		rLoc = 11824;
+		rLoc = 10785;
 		rType = 0;
 		vrLen = 862;
 		vrLoc = 5076;
@@ -6445,7 +7077,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 170";
 		rLen = 0;
-		rLoc = 11824;
+		rLoc = 10785;
 		rType = 0;
 		vrLen = 561;
 		vrLoc = 5209;
@@ -6455,7 +7087,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 170";
 		rLen = 0;
-		rLoc = 11824;
+		rLoc = 10785;
 		rType = 0;
 		vrLen = 891;
 		vrLoc = 5079;
@@ -6465,7 +7097,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 169";
 		rLen = 21;
-		rLoc = 11680;
+		rLoc = 10641;
 		rType = 0;
 		vrLen = 891;
 		vrLoc = 5079;
@@ -6475,7 +7107,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 169";
 		rLen = 21;
-		rLoc = 11680;
+		rLoc = 10641;
 		rType = 0;
 		vrLen = 891;
 		vrLoc = 5079;
@@ -6485,7 +7117,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 17";
 		rLen = 0;
-		rLoc = 455;
+		rLoc = 478;
 		rType = 0;
 		vrLen = 990;
 		vrLoc = 140;
@@ -6495,7 +7127,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 170";
 		rLen = 0;
-		rLoc = 11824;
+		rLoc = 10785;
 		rType = 0;
 		vrLen = 561;
 		vrLoc = 5211;
@@ -6505,7 +7137,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 17";
 		rLen = 0;
-		rLoc = 455;
+		rLoc = 478;
 		rType = 0;
 		vrLen = 516;
 		vrLoc = 140;
@@ -6515,7 +7147,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 17";
 		rLen = 0;
-		rLoc = 455;
+		rLoc = 478;
 		rType = 0;
 		vrLen = 854;
 		vrLoc = 3;
@@ -6525,7 +7157,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 17";
 		rLen = 0;
-		rLoc = 455;
+		rLoc = 478;
 		rType = 0;
 		vrLen = 854;
 		vrLoc = 3;
@@ -6535,7 +7167,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 17";
 		rLen = 0;
-		rLoc = 455;
+		rLoc = 478;
 		rType = 0;
 		vrLen = 854;
 		vrLoc = 3;
@@ -6545,7 +7177,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 167";
 		rLen = 326;
-		rLoc = 11602;
+		rLoc = 10563;
 		rType = 0;
 		vrLen = 891;
 		vrLoc = 5079;
@@ -6555,7 +7187,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 117";
 		rLen = 5;
-		rLoc = 5235;
+		rLoc = 4211;
 		rType = 0;
 		vrLen = 978;
 		vrLoc = 3544;
@@ -6565,7 +7197,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 117";
 		rLen = 0;
-		rLoc = 5249;
+		rLoc = 4225;
 		rType = 0;
 		vrLen = 978;
 		vrLoc = 3544;
@@ -6575,7 +7207,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 117";
 		rLen = 0;
-		rLoc = 5249;
+		rLoc = 4225;
 		rType = 0;
 		vrLen = 827;
 		vrLoc = 3699;
@@ -6585,7 +7217,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 17";
 		rLen = 0;
-		rLoc = 455;
+		rLoc = 478;
 		rType = 0;
 		vrLen = 496;
 		vrLoc = 139;
@@ -6595,7 +7227,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 117";
 		rLen = 0;
-		rLoc = 5249;
+		rLoc = 4225;
 		rType = 0;
 		vrLen = 420;
 		vrLoc = 4099;
@@ -6605,7 +7237,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MapViewController.m */;
 		name = "MapViewController.m: 145";
 		rLen = 0;
-		rLoc = 4564;
+		rLoc = 4668;
 		rType = 0;
 		vrLen = 725;
 		vrLoc = 222;
@@ -6625,7 +7257,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 17";
 		rLen = 0;
-		rLoc = 455;
+		rLoc = 478;
 		rType = 0;
 		vrLen = 788;
 		vrLoc = 3;
@@ -6635,7 +7267,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 177";
 		rLen = 0;
-		rLoc = 6900;
+		rLoc = 5876;
 		rType = 0;
 		vrLen = 979;
 		vrLoc = 4964;
@@ -6645,7 +7277,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 172";
 		rLen = 0;
-		rLoc = 11270;
+		rLoc = 10231;
 		rType = 0;
 		vrLen = 1095;
 		vrLoc = 139;
@@ -6655,7 +7287,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MapViewController.m */;
 		name = "MapViewController.m: 145";
 		rLen = 0;
-		rLoc = 4564;
+		rLoc = 4668;
 		rType = 0;
 		vrLen = 725;
 		vrLoc = 222;
@@ -6675,7 +7307,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 177";
 		rLen = 0;
-		rLoc = 6900;
+		rLoc = 5876;
 		rType = 0;
 		vrLen = 979;
 		vrLoc = 4964;
@@ -6685,7 +7317,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 17";
 		rLen = 0;
-		rLoc = 455;
+		rLoc = 478;
 		rType = 0;
 		vrLen = 788;
 		vrLoc = 3;
@@ -6695,7 +7327,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 292";
 		rLen = 0;
-		rLoc = 11929;
+		rLoc = 10890;
 		rType = 0;
 		vrLen = 1234;
 		vrLoc = 8717;
@@ -6705,7 +7337,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 286";
 		rLen = 24;
-		rLoc = 11562;
+		rLoc = 10523;
 		rType = 0;
 		vrLen = 1295;
 		vrLoc = 8550;
@@ -6725,7 +7357,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 286";
 		rLen = 24;
-		rLoc = 11562;
+		rLoc = 10523;
 		rType = 0;
 		vrLen = 1295;
 		vrLoc = 8550;
@@ -6755,7 +7387,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 47";
 		rLen = 135;
-		rLoc = 1919;
+		rLoc = 1931;
 		rType = 0;
 		vrLen = 1266;
 		vrLoc = 171;
@@ -6785,7 +7417,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 47";
 		rLen = 135;
-		rLoc = 1919;
+		rLoc = 1931;
 		rType = 0;
 		vrLen = 1183;
 		vrLoc = 740;
@@ -6805,7 +7437,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 271";
 		rLen = 133;
-		rLoc = 10287;
+		rLoc = 9248;
 		rType = 0;
 		vrLen = 1097;
 		vrLoc = 7895;
@@ -6825,7 +7457,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 31";
 		rLen = 0;
-		rLoc = 1002;
+		rLoc = 1014;
 		rType = 0;
 		vrLen = 1183;
 		vrLoc = 740;
@@ -6835,7 +7467,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 271";
 		rLen = 133;
-		rLoc = 10287;
+		rLoc = 9248;
 		rType = 0;
 		vrLen = 1097;
 		vrLoc = 7895;
@@ -6875,7 +7507,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 121";
 		rLen = 0;
-		rLoc = 5249;
+		rLoc = 4225;
 		rType = 0;
 		vrLen = 447;
 		vrLoc = 4106;
@@ -6965,7 +7597,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 290";
 		rLen = 0;
-		rLoc = 11924;
+		rLoc = 10885;
 		rType = 0;
 		vrLen = 1347;
 		vrLoc = 8279;
@@ -6985,7 +7617,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 290";
 		rLen = 0;
-		rLoc = 11924;
+		rLoc = 10885;
 		rType = 0;
 		vrLen = 1347;
 		vrLoc = 8279;
@@ -7035,7 +7667,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 290";
 		rLen = 24;
-		rLoc = 11562;
+		rLoc = 10523;
 		rType = 0;
 		vrLen = 1174;
 		vrLoc = 8382;
@@ -7075,7 +7707,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 290";
 		rLen = 24;
-		rLoc = 11562;
+		rLoc = 10523;
 		rType = 0;
 		vrLen = 1174;
 		vrLoc = 8382;
@@ -7267,7 +7899,7 @@
 		rLen = 0;
 		rLoc = 319;
 		rType = 0;
-		vrLen = 684;
+		vrLen = 679;
 		vrLoc = 0;
 	};
 	83FB83D6101ABE4900936F2C /* PBXBookmark */ = {
@@ -7278,7 +7910,7 @@
 		isa = PBXTextBookmark;
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		rLen = 1;
-		rLoc = 125;
+		rLoc = 110;
 		rType = 1;
 	};
 	83FB83D8101ABE4900936F2C /* PBXTextBookmark */ = {
@@ -7298,7 +7930,7 @@
 		rLen = 0;
 		rLoc = 319;
 		rType = 0;
-		vrLen = 684;
+		vrLen = 679;
 		vrLoc = 0;
 	};
 	83FB83DA101ABE4900936F2C /* PBXBookmark */ = {
@@ -7310,7 +7942,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 111";
 		rLen = 0;
-		rLoc = 4893;
+		rLoc = 3931;
 		rType = 0;
 		vrLen = 1078;
 		vrLoc = 3554;
@@ -7320,7 +7952,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 111";
 		rLen = 0;
-		rLoc = 4893;
+		rLoc = 3931;
 		rType = 0;
 		vrLen = 1078;
 		vrLoc = 3554;
@@ -7330,7 +7962,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 114";
 		rLen = 0;
-		rLoc = 5015;
+		rLoc = 4053;
 		rType = 0;
 		vrLen = 1078;
 		vrLoc = 3554;
@@ -7362,7 +7994,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 17";
 		rLen = 0;
-		rLoc = 455;
+		rLoc = 478;
 		rType = 0;
 		vrLen = 857;
 		vrLoc = 0;
@@ -7372,7 +8004,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 241";
 		rLen = 0;
-		rLoc = 9368;
+		rLoc = 8329;
 		rType = 0;
 		vrLen = 1005;
 		vrLoc = 7087;
@@ -7382,7 +8014,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 241";
 		rLen = 0;
-		rLoc = 9368;
+		rLoc = 8329;
 		rType = 0;
 		vrLen = 1005;
 		vrLoc = 7087;
@@ -7392,7 +8024,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 17";
 		rLen = 0;
-		rLoc = 455;
+		rLoc = 478;
 		rType = 0;
 		vrLen = 857;
 		vrLoc = 0;
@@ -7402,7 +8034,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 31";
 		rLen = 3;
-		rLoc = 1059;
+		rLoc = 1071;
 		rType = 0;
 		vrLen = 902;
 		vrLoc = 1137;
@@ -7422,7 +8054,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 31";
 		rLen = 3;
-		rLoc = 1059;
+		rLoc = 1071;
 		rType = 0;
 		vrLen = 667;
 		vrLoc = 1137;
@@ -7432,7 +8064,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 31";
 		rLen = 3;
-		rLoc = 1059;
+		rLoc = 1071;
 		rType = 0;
 		vrLen = 887;
 		vrLoc = 1137;
@@ -7442,7 +8074,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 31";
 		rLen = 3;
-		rLoc = 1059;
+		rLoc = 1071;
 		rType = 0;
 		vrLen = 887;
 		vrLoc = 1137;
@@ -7452,7 +8084,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 31";
 		rLen = 3;
-		rLoc = 1059;
+		rLoc = 1071;
 		rType = 0;
 		vrLen = 667;
 		vrLoc = 1137;
@@ -7462,7 +8094,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 237";
 		rLen = 0;
-		rLoc = 8993;
+		rLoc = 7954;
 		rType = 0;
 		vrLen = 757;
 		vrLoc = 6742;
@@ -7472,7 +8104,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 237";
 		rLen = 0;
-		rLoc = 8993;
+		rLoc = 7954;
 		rType = 0;
 		vrLen = 757;
 		vrLoc = 6742;
@@ -7482,7 +8114,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 237";
 		rLen = 0;
-		rLoc = 8993;
+		rLoc = 7954;
 		rType = 0;
 		vrLen = 910;
 		vrLoc = 6807;
@@ -7492,7 +8124,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 237";
 		rLen = 0;
-		rLoc = 8993;
+		rLoc = 7954;
 		rType = 0;
 		vrLen = 348;
 		vrLoc = 6742;
@@ -7502,7 +8134,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 118";
 		rLen = 0;
-		rLoc = 5015;
+		rLoc = 4053;
 		rType = 0;
 		vrLen = 1468;
 		vrLoc = 3137;
@@ -7512,7 +8144,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 120";
 		rLen = 0;
-		rLoc = 5015;
+		rLoc = 4053;
 		rType = 0;
 		vrLen = 1501;
 		vrLoc = 3137;
@@ -7522,7 +8154,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 115";
 		rLen = 0;
-		rLoc = 5015;
+		rLoc = 4053;
 		rType = 0;
 		vrLen = 1501;
 		vrLoc = 3137;
@@ -7532,7 +8164,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 17";
 		rLen = 0;
-		rLoc = 455;
+		rLoc = 478;
 		rType = 0;
 		vrLen = 723;
 		vrLoc = 0;
@@ -7542,7 +8174,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 128";
 		rLen = 0;
-		rLoc = 5224;
+		rLoc = 4200;
 		rType = 0;
 		vrLen = 867;
 		vrLoc = 4048;
@@ -7552,7 +8184,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 128";
 		rLen = 0;
-		rLoc = 5224;
+		rLoc = 4200;
 		rType = 0;
 		vrLen = 867;
 		vrLoc = 4048;
@@ -7562,7 +8194,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 17";
 		rLen = 0;
-		rLoc = 455;
+		rLoc = 478;
 		rType = 0;
 		vrLen = 723;
 		vrLoc = 0;
@@ -7572,7 +8204,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 111";
 		rLen = 0;
-		rLoc = 4893;
+		rLoc = 3931;
 		rType = 0;
 		vrLen = 1040;
 		vrLoc = 3785;
@@ -7582,7 +8214,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 249";
 		rLen = 0;
-		rLoc = 9086;
+		rLoc = 8047;
 		rType = 0;
 		vrLen = 1050;
 		vrLoc = 7221;
@@ -7592,7 +8224,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 271";
 		rLen = 0;
-		rLoc = 9900;
+		rLoc = 8861;
 		rType = 0;
 		vrLen = 1227;
 		vrLoc = 7453;
@@ -7602,7 +8234,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 249";
 		rLen = 0;
-		rLoc = 9086;
+		rLoc = 8047;
 		rType = 0;
 		vrLen = 1227;
 		vrLoc = 7453;
@@ -7612,7 +8244,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 249";
 		rLen = 0;
-		rLoc = 9086;
+		rLoc = 8047;
 		rType = 0;
 		vrLen = 1227;
 		vrLoc = 7453;
@@ -7622,7 +8254,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 270";
 		rLen = 0;
-		rLoc = 9900;
+		rLoc = 8861;
 		rType = 0;
 		vrLen = 1274;
 		vrLoc = 7410;
@@ -7632,7 +8264,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 251";
 		rLen = 0;
-		rLoc = 9137;
+		rLoc = 8098;
 		rType = 0;
 		vrLen = 1277;
 		vrLoc = 7453;
@@ -7642,7 +8274,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 248";
 		rLen = 0;
-		rLoc = 9086;
+		rLoc = 8047;
 		rType = 0;
 		vrLen = 1253;
 		vrLoc = 7453;
@@ -7652,7 +8284,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 40";
 		rLen = 12;
-		rLoc = 1299;
+		rLoc = 1404;
 		rType = 0;
 		vrLen = 991;
 		vrLoc = 301;
@@ -7662,7 +8294,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 272";
 		rLen = 0;
-		rLoc = 9900;
+		rLoc = 8861;
 		rType = 0;
 		vrLen = 1094;
 		vrLoc = 7453;
@@ -7672,7 +8304,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 272";
 		rLen = 0;
-		rLoc = 9900;
+		rLoc = 8861;
 		rType = 0;
 		vrLen = 1094;
 		vrLoc = 7453;
@@ -7682,7 +8314,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 40";
 		rLen = 12;
-		rLoc = 1299;
+		rLoc = 1404;
 		rType = 0;
 		vrLen = 991;
 		vrLoc = 301;
@@ -7692,7 +8324,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 249";
 		rLen = 0;
-		rLoc = 9278;
+		rLoc = 8239;
 		rType = 0;
 		vrLen = 895;
 		vrLoc = 7002;
@@ -7702,7 +8334,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 121";
 		rLen = 0;
-		rLoc = 5111;
+		rLoc = 4144;
 		rType = 0;
 		vrLen = 1004;
 		vrLoc = 3827;
@@ -7712,7 +8344,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 316";
 		rLen = 0;
-		rLoc = 12029;
+		rLoc = 10990;
 		rType = 0;
 		vrLen = 1014;
 		vrLoc = 9463;
@@ -7722,7 +8354,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 102";
 		rLen = 0;
-		rLoc = 3821;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1610;
 		vrLoc = 3266;
@@ -7732,7 +8364,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 102";
 		rLen = 0;
-		rLoc = 3779;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1676;
 		vrLoc = 3266;
@@ -7742,7 +8374,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 101";
 		rLen = 0;
-		rLoc = 3779;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1676;
 		vrLoc = 3266;
@@ -7752,7 +8384,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 101";
 		rLen = 0;
-		rLoc = 3779;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1676;
 		vrLoc = 3266;
@@ -7762,7 +8394,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 109";
 		rLen = 0;
-		rLoc = 4356;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1677;
 		vrLoc = 3266;
@@ -7772,7 +8404,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 103";
 		rLen = 0;
-		rLoc = 3864;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1677;
 		vrLoc = 3266;
@@ -7781,8 +8413,8 @@
 		isa = PBXTextBookmark;
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 101";
-		rLen = 85;
-		rLoc = 3779;
+		rLen = 0;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1677;
 		vrLoc = 3266;
@@ -7792,7 +8424,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 101";
 		rLen = 0;
-		rLoc = 3779;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1677;
 		vrLoc = 3266;
@@ -7802,7 +8434,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 101";
 		rLen = 0;
-		rLoc = 3779;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1677;
 		vrLoc = 3266;
@@ -7812,7 +8444,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 101";
 		rLen = 0;
-		rLoc = 3779;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1677;
 		vrLoc = 3266;
@@ -7822,7 +8454,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 103";
 		rLen = 0;
-		rLoc = 3874;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1677;
 		vrLoc = 3266;
@@ -7832,7 +8464,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 109";
 		rLen = 0;
-		rLoc = 4356;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1677;
 		vrLoc = 3266;
@@ -7842,7 +8474,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 105";
 		rLen = 0;
-		rLoc = 4082;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1607;
 		vrLoc = 3266;
@@ -7852,7 +8484,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 105";
 		rLen = 0;
-		rLoc = 4082;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1002;
 		vrLoc = 3871;
@@ -7862,7 +8494,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 104";
 		rLen = 0;
-		rLoc = 3893;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1688;
 		vrLoc = 3350;
@@ -7872,7 +8504,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 104";
 		rLen = 0;
-		rLoc = 3893;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1688;
 		vrLoc = 3350;
@@ -7882,7 +8514,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 104";
 		rLen = 0;
-		rLoc = 3893;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1149;
 		vrLoc = 3350;
@@ -7892,7 +8524,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 104";
 		rLen = 0;
-		rLoc = 3893;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1597;
 		vrLoc = 3024;
@@ -7902,7 +8534,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 104";
 		rLen = 0;
-		rLoc = 3893;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1597;
 		vrLoc = 3024;
@@ -7912,7 +8544,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 104";
 		rLen = 0;
-		rLoc = 3893;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1008;
 		vrLoc = 3239;
@@ -7922,7 +8554,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 104";
 		rLen = 0;
-		rLoc = 3893;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1603;
 		vrLoc = 3024;
@@ -7932,7 +8564,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 104";
 		rLen = 0;
-		rLoc = 3893;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1603;
 		vrLoc = 3024;
@@ -7942,7 +8574,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 104";
 		rLen = 0;
-		rLoc = 3893;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1014;
 		vrLoc = 3239;
@@ -7952,7 +8584,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 113";
 		rLen = 0;
-		rLoc = 4292;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1525;
 		vrLoc = 3024;
@@ -7962,7 +8594,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 107";
 		rLen = 0;
-		rLoc = 3715;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1516;
 		vrLoc = 3024;
@@ -7972,7 +8604,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 108";
 		rLen = 0;
-		rLoc = 3850;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1521;
 		vrLoc = 3024;
@@ -7982,7 +8614,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 107";
 		rLen = 0;
-		rLoc = 3646;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1514;
 		vrLoc = 3024;
@@ -7992,7 +8624,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 114";
 		rLen = 0;
-		rLoc = 4292;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1520;
 		vrLoc = 3024;
@@ -8002,7 +8634,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 108";
 		rLen = 0;
-		rLoc = 3748;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1473;
 		vrLoc = 3024;
@@ -8012,7 +8644,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 101";
 		rLen = 0;
-		rLoc = 3335;
+		rLoc = 3472;
 		rType = 0;
 		vrLen = 1739;
 		vrLoc = 3350;
@@ -8022,7 +8654,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 327";
 		rLen = 0;
-		rLoc = 12029;
+		rLoc = 10990;
 		rType = 0;
 		vrLen = 1009;
 		vrLoc = 10152;
@@ -8032,7 +8664,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 132";
 		rLen = 0;
-		rLoc = 5145;
+		rLoc = 4144;
 		rType = 0;
 		vrLen = 1091;
 		vrLoc = 4430;
@@ -8042,7 +8674,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 208";
 		rLen = 0;
-		rLoc = 7364;
+		rLoc = 6325;
 		rType = 0;
 		vrLen = 929;
 		vrLoc = 6504;
@@ -8052,7 +8684,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 132";
 		rLen = 0;
-		rLoc = 5168;
+		rLoc = 4144;
 		rType = 0;
 		vrLen = 1091;
 		vrLoc = 4430;
@@ -8062,7 +8694,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 130";
 		rLen = 0;
-		rLoc = 5016;
+		rLoc = 4054;
 		rType = 0;
 		vrLen = 1089;
 		vrLoc = 4430;
@@ -8072,7 +8704,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 130";
 		rLen = 0;
-		rLoc = 5016;
+		rLoc = 4054;
 		rType = 0;
 		vrLen = 1087;
 		vrLoc = 4430;
@@ -8082,7 +8714,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 130";
 		rLen = 0;
-		rLoc = 5016;
+		rLoc = 4054;
 		rType = 0;
 		vrLen = 868;
 		vrLoc = 4430;
@@ -8092,7 +8724,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 130";
 		rLen = 0;
-		rLoc = 5016;
+		rLoc = 4054;
 		rType = 0;
 		vrLen = 1183;
 		vrLoc = 4254;
@@ -8102,7 +8734,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 130";
 		rLen = 0;
-		rLoc = 5016;
+		rLoc = 4054;
 		rType = 0;
 		vrLen = 1183;
 		vrLoc = 4254;
@@ -8112,7 +8744,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 130";
 		rLen = 0;
-		rLoc = 5016;
+		rLoc = 4054;
 		rType = 0;
 		vrLen = 1183;
 		vrLoc = 4254;
@@ -8122,7 +8754,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 130";
 		rLen = 0;
-		rLoc = 5016;
+		rLoc = 4054;
 		rType = 0;
 		vrLen = 750;
 		vrLoc = 4604;
@@ -8132,7 +8764,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 130";
 		rLen = 0;
-		rLoc = 5016;
+		rLoc = 4054;
 		rType = 0;
 		vrLen = 1183;
 		vrLoc = 4254;
@@ -8142,7 +8774,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 251";
 		rLen = 0;
-		rLoc = 8993;
+		rLoc = 7954;
 		rType = 0;
 		vrLen = 880;
 		vrLoc = 7692;
@@ -8152,7 +8784,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 247";
 		rLen = 0;
-		rLoc = 8949;
+		rLoc = 7910;
 		rType = 0;
 		vrLen = 932;
 		vrLoc = 7914;
@@ -8162,7 +8794,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 247";
 		rLen = 0;
-		rLoc = 8949;
+		rLoc = 7910;
 		rType = 0;
 		vrLen = 421;
 		vrLoc = 7914;
@@ -8172,7 +8804,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 40";
 		rLen = 12;
-		rLoc = 1299;
+		rLoc = 1404;
 		rType = 0;
 		vrLen = 1066;
 		vrLoc = 226;
@@ -8222,7 +8854,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 247";
 		rLen = 0;
-		rLoc = 8949;
+		rLoc = 7910;
 		rType = 0;
 		vrLen = 714;
 		vrLoc = 7490;
@@ -8242,7 +8874,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 247";
 		rLen = 0;
-		rLoc = 8949;
+		rLoc = 7910;
 		rType = 0;
 		vrLen = 714;
 		vrLoc = 7490;
@@ -8252,7 +8884,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 40";
 		rLen = 12;
-		rLoc = 1299;
+		rLoc = 1404;
 		rType = 0;
 		vrLen = 1066;
 		vrLoc = 226;
@@ -8312,7 +8944,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 247";
 		rLen = 0;
-		rLoc = 8949;
+		rLoc = 7910;
 		rType = 0;
 		vrLen = 714;
 		vrLoc = 7490;
@@ -8342,7 +8974,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 247";
 		rLen = 0;
-		rLoc = 8949;
+		rLoc = 7910;
 		rType = 0;
 		vrLen = 489;
 		vrLoc = 7709;
@@ -8372,7 +9004,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 247";
 		rLen = 0;
-		rLoc = 8949;
+		rLoc = 7910;
 		rType = 0;
 		vrLen = 711;
 		vrLoc = 7493;
@@ -8392,7 +9024,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 241";
 		rLen = 0;
-		rLoc = 8821;
+		rLoc = 7782;
 		rType = 0;
 		vrLen = 711;
 		vrLoc = 7493;
@@ -8402,7 +9034,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 238";
 		rLen = 0;
-		rLoc = 8775;
+		rLoc = 7736;
 		rType = 0;
 		vrLen = 711;
 		vrLoc = 7493;
@@ -8422,7 +9054,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 238";
 		rLen = 0;
-		rLoc = 8775;
+		rLoc = 7736;
 		rType = 0;
 		vrLen = 711;
 		vrLoc = 7493;
@@ -8552,7 +9184,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 26";
 		rLen = 10;
-		rLoc = 704;
+		rLoc = 755;
 		rType = 0;
 		vrLen = 1066;
 		vrLoc = 226;
@@ -8562,7 +9194,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 196";
 		rLen = 4;
-		rLoc = 7045;
+		rLoc = 6021;
 		rType = 0;
 		vrLen = 894;
 		vrLoc = 6439;
@@ -8592,7 +9224,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 26";
 		rLen = 10;
-		rLoc = 704;
+		rLoc = 755;
 		rType = 0;
 		vrLen = 1066;
 		vrLoc = 226;
@@ -8602,7 +9234,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 26";
 		rLen = 10;
-		rLoc = 704;
+		rLoc = 755;
 		rType = 0;
 		vrLen = 1066;
 		vrLoc = 226;
@@ -8612,7 +9244,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 196";
 		rLen = 4;
-		rLoc = 7045;
+		rLoc = 6021;
 		rType = 0;
 		vrLen = 894;
 		vrLoc = 6439;
@@ -8662,7 +9294,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 196";
 		rLen = 4;
-		rLoc = 7045;
+		rLoc = 6021;
 		rType = 0;
 		vrLen = 953;
 		vrLoc = 6438;
@@ -8682,7 +9314,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 203";
 		rLen = 0;
-		rLoc = 7241;
+		rLoc = 6217;
 		rType = 0;
 		vrLen = 900;
 		vrLoc = 6590;
@@ -8692,7 +9324,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 203";
 		rLen = 0;
-		rLoc = 7241;
+		rLoc = 6217;
 		rType = 0;
 		vrLen = 900;
 		vrLoc = 6590;
@@ -8702,7 +9334,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 203";
 		rLen = 0;
-		rLoc = 7241;
+		rLoc = 6217;
 		rType = 0;
 		vrLen = 900;
 		vrLoc = 6590;
@@ -8722,7 +9354,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 203";
 		rLen = 0;
-		rLoc = 7241;
+		rLoc = 6217;
 		rType = 0;
 		vrLen = 900;
 		vrLoc = 6590;
@@ -8801,7 +9433,7 @@
 		isa = PBXTextBookmark;
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		rLen = 0;
-		rLoc = 235;
+		rLoc = 219;
 		rType = 1;
 	};
 	83FB84DF101BBF0B00936F2C /* PBXTextBookmark */ = {
@@ -8809,7 +9441,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 203";
 		rLen = 0;
-		rLoc = 7241;
+		rLoc = 6217;
 		rType = 0;
 		vrLen = 829;
 		vrLoc = 6664;
@@ -8829,7 +9461,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 220";
 		rLen = 0;
-		rLoc = 7658;
+		rLoc = 6619;
 		rType = 0;
 		vrLen = 839;
 		vrLoc = 6654;
@@ -8839,7 +9471,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 228";
 		rLen = 10;
-		rLoc = 8499;
+		rLoc = 7460;
 		rType = 0;
 		vrLen = 690;
 		vrLoc = 7394;
@@ -8849,7 +9481,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 228";
 		rLen = 10;
-		rLoc = 8499;
+		rLoc = 7460;
 		rType = 0;
 		vrLen = 690;
 		vrLoc = 7394;
@@ -8859,7 +9491,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 228";
 		rLen = 10;
-		rLoc = 8499;
+		rLoc = 7460;
 		rType = 0;
 		vrLen = 690;
 		vrLoc = 7394;
@@ -8869,7 +9501,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 228";
 		rLen = 10;
-		rLoc = 8499;
+		rLoc = 7460;
 		rType = 0;
 		vrLen = 763;
 		vrLoc = 6329;
@@ -8886,7 +9518,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 228";
 		rLen = 10;
-		rLoc = 8499;
+		rLoc = 7460;
 		rType = 0;
 		vrLen = 763;
 		vrLoc = 6329;
@@ -8916,7 +9548,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 194";
 		rLen = 0;
-		rLoc = 6933;
+		rLoc = 5909;
 		rType = 0;
 		vrLen = 771;
 		vrLoc = 7149;
@@ -8946,7 +9578,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 194";
 		rLen = 0;
-		rLoc = 6933;
+		rLoc = 5909;
 		rType = 0;
 		vrLen = 771;
 		vrLoc = 7149;
@@ -8966,7 +9598,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 194";
 		rLen = 0;
-		rLoc = 6933;
+		rLoc = 5909;
 		rType = 0;
 		vrLen = 797;
 		vrLoc = 6173;
@@ -8993,7 +9625,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 194";
 		rLen = 0;
-		rLoc = 6933;
+		rLoc = 5909;
 		rType = 0;
 		vrLen = 797;
 		vrLoc = 6173;
@@ -9756,7 +10388,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 194";
 		rLen = 0;
-		rLoc = 6933;
+		rLoc = 5909;
 		rType = 0;
 		vrLen = 792;
 		vrLoc = 6173;
@@ -9776,7 +10408,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 229";
 		rLen = 13;
-		rLoc = 7926;
+		rLoc = 6887;
 		rType = 0;
 		vrLen = 820;
 		vrLoc = 7151;
@@ -9786,7 +10418,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 230";
 		rLen = 0;
-		rLoc = 8037;
+		rLoc = 6998;
 		rType = 0;
 		vrLen = 1021;
 		vrLoc = 7151;
@@ -9796,7 +10428,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 17";
 		rLen = 0;
-		rLoc = 453;
+		rLoc = 476;
 		rType = 0;
 		vrLen = 1083;
 		vrLoc = 226;
@@ -9806,7 +10438,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 239";
 		rLen = 0;
-		rLoc = 8487;
+		rLoc = 7448;
 		rType = 0;
 		vrLen = 915;
 		vrLoc = 7394;
@@ -9816,7 +10448,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 239";
 		rLen = 0;
-		rLoc = 8487;
+		rLoc = 7448;
 		rType = 0;
 		vrLen = 915;
 		vrLoc = 7394;
@@ -9826,7 +10458,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 17";
 		rLen = 0;
-		rLoc = 453;
+		rLoc = 476;
 		rType = 0;
 		vrLen = 1083;
 		vrLoc = 226;
@@ -9836,7 +10468,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 237";
 		rLen = 0;
-		rLoc = 8390;
+		rLoc = 7351;
 		rType = 0;
 		vrLen = 963;
 		vrLoc = 7394;
@@ -9846,7 +10478,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 230";
 		rLen = 0;
-		rLoc = 8036;
+		rLoc = 6997;
 		rType = 0;
 		vrLen = 967;
 		vrLoc = 7394;
@@ -9856,7 +10488,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 234";
 		rLen = 0;
-		rLoc = 8298;
+		rLoc = 7259;
 		rType = 0;
 		vrLen = 1012;
 		vrLoc = 7394;
@@ -9866,7 +10498,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 234";
 		rLen = 0;
-		rLoc = 8283;
+		rLoc = 7244;
 		rType = 0;
 		vrLen = 1013;
 		vrLoc = 7394;
@@ -9876,7 +10508,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 232";
 		rLen = 0;
-		rLoc = 8133;
+		rLoc = 7094;
 		rType = 0;
 		vrLen = 1013;
 		vrLoc = 7394;
@@ -9886,7 +10518,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 232";
 		rLen = 0;
-		rLoc = 8133;
+		rLoc = 7094;
 		rType = 0;
 		vrLen = 1013;
 		vrLoc = 7394;
@@ -9896,7 +10528,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 17";
 		rLen = 21;
-		rLoc = 432;
+		rLoc = 455;
 		rType = 0;
 		vrLen = 1083;
 		vrLoc = 226;
@@ -9906,7 +10538,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11209;
+		rLoc = 10170;
 		rType = 0;
 		vrLen = 1043;
 		vrLoc = 10200;
@@ -9916,7 +10548,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11209;
+		rLoc = 10170;
 		rType = 0;
 		vrLen = 1043;
 		vrLoc = 10200;
@@ -9926,7 +10558,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 17";
 		rLen = 21;
-		rLoc = 432;
+		rLoc = 455;
 		rType = 0;
 		vrLen = 1083;
 		vrLoc = 226;
@@ -9936,7 +10568,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 325";
 		rLen = 0;
-		rLoc = 11270;
+		rLoc = 10231;
 		rType = 0;
 		vrLen = 1054;
 		vrLoc = 10191;
@@ -9946,7 +10578,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 307";
 		rLen = 0;
-		rLoc = 10363;
+		rLoc = 9324;
 		rType = 0;
 		vrLen = 890;
 		vrLoc = 9497;
@@ -9956,7 +10588,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11193;
+		rLoc = 10154;
 		rType = 0;
 		vrLen = 1188;
 		vrLoc = 9928;
@@ -9966,7 +10598,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11193;
+		rLoc = 10154;
 		rType = 0;
 		vrLen = 1188;
 		vrLoc = 9928;
@@ -9986,7 +10618,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11193;
+		rLoc = 10154;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 10200;
@@ -10006,7 +10638,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MapViewController.m */;
 		name = "MapViewController.m: 92";
 		rLen = 0;
-		rLoc = 4564;
+		rLoc = 4668;
 		rType = 0;
 		vrLen = 816;
 		vrLoc = 2128;
@@ -10046,7 +10678,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 5;
-		rLoc = 11183;
+		rLoc = 10144;
 		rType = 0;
 		vrLen = 1188;
 		vrLoc = 9928;
@@ -10056,7 +10688,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 5;
-		rLoc = 11183;
+		rLoc = 10144;
 		rType = 0;
 		vrLen = 1251;
 		vrLoc = 9865;
@@ -10076,7 +10708,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MapViewController.m */;
 		name = "MapViewController.m: 92";
 		rLen = 0;
-		rLoc = 4564;
+		rLoc = 4668;
 		rType = 0;
 		vrLen = 816;
 		vrLoc = 2128;
@@ -10116,7 +10748,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11209;
+		rLoc = 10170;
 		rType = 0;
 		vrLen = 1199;
 		vrLoc = 9928;
@@ -10126,7 +10758,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11209;
+		rLoc = 10170;
 		rType = 0;
 		vrLen = 1188;
 		vrLoc = 9928;
@@ -10136,7 +10768,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11209;
+		rLoc = 10170;
 		rType = 0;
 		vrLen = 1251;
 		vrLoc = 9865;
@@ -10146,7 +10778,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11209;
+		rLoc = 10170;
 		rType = 0;
 		vrLen = 609;
 		vrLoc = 10191;
@@ -10156,7 +10788,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11209;
+		rLoc = 10170;
 		rType = 0;
 		vrLen = 1251;
 		vrLoc = 9865;
@@ -10166,7 +10798,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11209;
+		rLoc = 10170;
 		rType = 0;
 		vrLen = 609;
 		vrLoc = 10191;
@@ -10176,7 +10808,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11173;
+		rLoc = 10134;
 		rType = 0;
 		vrLen = 1091;
 		vrLoc = 9865;
@@ -10186,7 +10818,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11173;
+		rLoc = 10134;
 		rType = 0;
 		vrLen = 522;
 		vrLoc = 10327;
@@ -10196,7 +10828,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 324";
 		rLen = 0;
-		rLoc = 11178;
+		rLoc = 10139;
 		rType = 0;
 		vrLen = 1095;
 		vrLoc = 9865;
@@ -10206,7 +10838,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 324";
 		rLen = 0;
-		rLoc = 11178;
+		rLoc = 10139;
 		rType = 0;
 		vrLen = 1181;
 		vrLoc = 9973;
@@ -10216,7 +10848,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 324";
 		rLen = 0;
-		rLoc = 11178;
+		rLoc = 10139;
 		rType = 0;
 		vrLen = 602;
 		vrLoc = 10191;
@@ -10226,7 +10858,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 17";
 		rLen = 21;
-		rLoc = 432;
+		rLoc = 455;
 		rType = 0;
 		vrLen = 1083;
 		vrLoc = 226;
@@ -10236,7 +10868,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MapViewController.m */;
 		name = "MapViewController.m: 168";
 		rLen = 0;
-		rLoc = 4460;
+		rLoc = 4564;
 		rType = 0;
 		vrLen = 758;
 		vrLoc = 1534;
@@ -10248,7 +10880,7 @@
 		rLen = 0;
 		rLoc = 671;
 		rType = 0;
-		vrLen = 721;
+		vrLen = 679;
 		vrLoc = 0;
 	};
 	83FB85CF101BF09700936F2C /* PBXTextBookmark */ = {
@@ -10256,7 +10888,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 329";
 		rLen = 0;
-		rLoc = 11173;
+		rLoc = 10134;
 		rType = 0;
 		vrLen = 791;
 		vrLoc = 10174;
@@ -10268,7 +10900,7 @@
 		rLen = 0;
 		rLoc = 671;
 		rType = 0;
-		vrLen = 721;
+		vrLen = 679;
 		vrLoc = 0;
 	};
 	83FB85D1101BF09700936F2C /* PBXTextBookmark */ = {
@@ -10276,7 +10908,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 188";
 		rLen = 45;
-		rLoc = 6419;
+		rLoc = 5395;
 		rType = 0;
 		vrLen = 777;
 		vrLoc = 6065;
@@ -10288,7 +10920,7 @@
 		rLen = 0;
 		rLoc = 671;
 		rType = 0;
-		vrLen = 721;
+		vrLen = 679;
 		vrLoc = 0;
 	};
 	83FB85D3101BF09700936F2C /* PBXTextBookmark */ = {
@@ -10296,7 +10928,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MapViewController.m */;
 		name = "MapViewController.m: 168";
 		rLen = 0;
-		rLoc = 4460;
+		rLoc = 4564;
 		rType = 0;
 		vrLen = 758;
 		vrLoc = 1534;
@@ -10306,7 +10938,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 329";
 		rLen = 0;
-		rLoc = 11173;
+		rLoc = 10134;
 		rType = 0;
 		vrLen = 791;
 		vrLoc = 10174;
@@ -10318,7 +10950,7 @@
 		rLen = 0;
 		rLoc = 671;
 		rType = 0;
-		vrLen = 721;
+		vrLen = 679;
 		vrLoc = 0;
 	};
 	83FB85D6101BF09700936F2C /* PBXTextBookmark */ = {
@@ -10326,7 +10958,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 329";
 		rLen = 0;
-		rLoc = 11173;
+		rLoc = 10134;
 		rType = 0;
 		vrLen = 840;
 		vrLoc = 10174;
@@ -10348,7 +10980,7 @@
 		rLen = 25;
 		rLoc = 183;
 		rType = 0;
-		vrLen = 721;
+		vrLen = 679;
 		vrLoc = 0;
 	};
 	83FB85E1101BF1E600936F2C /* PBXTextBookmark */ = {
@@ -10366,7 +10998,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 325";
 		rLen = 0;
-		rLoc = 11173;
+		rLoc = 10134;
 		rType = 0;
 		vrLen = 1127;
 		vrLoc = 10011;
@@ -10388,7 +11020,7 @@
 		rLen = 11;
 		rLoc = 528;
 		rType = 0;
-		vrLen = 721;
+		vrLen = 679;
 		vrLoc = 0;
 	};
 	83FB85E5101BF1E600936F2C /* PBXTextBookmark */ = {
@@ -10406,7 +11038,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 325";
 		rLen = 0;
-		rLoc = 11173;
+		rLoc = 10134;
 		rType = 0;
 		vrLen = 1127;
 		vrLoc = 10011;
@@ -10426,7 +11058,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 325";
 		rLen = 0;
-		rLoc = 11173;
+		rLoc = 10134;
 		rType = 0;
 		vrLen = 1127;
 		vrLoc = 10011;
@@ -10446,7 +11078,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 325";
 		rLen = 0;
-		rLoc = 11173;
+		rLoc = 10134;
 		rType = 0;
 		vrLen = 1127;
 		vrLoc = 10011;
@@ -10456,7 +11088,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 327";
 		rLen = 0;
-		rLoc = 11173;
+		rLoc = 10134;
 		rType = 0;
 		vrLen = 1127;
 		vrLoc = 10011;
@@ -10466,7 +11098,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 321";
 		rLen = 0;
-		rLoc = 11173;
+		rLoc = 10134;
 		rType = 0;
 		vrLen = 1127;
 		vrLoc = 10011;
@@ -10476,7 +11108,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 322";
 		rLen = 0;
-		rLoc = 11173;
+		rLoc = 10134;
 		rType = 0;
 		vrLen = 991;
 		vrLoc = 10011;
@@ -10486,7 +11118,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 325";
 		rLen = 0;
-		rLoc = 11173;
+		rLoc = 10134;
 		rType = 0;
 		vrLen = 963;
 		vrLoc = 10011;
@@ -10496,7 +11128,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 326";
 		rLen = 0;
-		rLoc = 11173;
+		rLoc = 10134;
 		rType = 0;
 		vrLen = 960;
 		vrLoc = 10011;
@@ -10518,7 +11150,7 @@
 		rLen = 0;
 		rLoc = 285;
 		rType = 0;
-		vrLen = 684;
+		vrLen = 679;
 		vrLoc = 0;
 	};
 	83FB860A101BF42400936F2C /* PBXTextBookmark */ = {
@@ -10526,7 +11158,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MapViewController.m */;
 		name = "MapViewController.m: 140";
 		rLen = 0;
-		rLoc = 3612;
+		rLoc = 3716;
 		rType = 0;
 		vrLen = 1095;
 		vrLoc = 3217;
@@ -10536,7 +11168,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 324";
 		rLen = 0;
-		rLoc = 11089;
+		rLoc = 10050;
 		rType = 0;
 		vrLen = 938;
 		vrLoc = 10011;
@@ -10546,7 +11178,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 326";
 		rLen = 0;
-		rLoc = 11173;
+		rLoc = 10134;
 		rType = 0;
 		vrLen = 960;
 		vrLoc = 10011;
@@ -10566,7 +11198,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 326";
 		rLen = 0;
-		rLoc = 11173;
+		rLoc = 10134;
 		rType = 0;
 		vrLen = 959;
 		vrLoc = 10011;
@@ -10576,7 +11208,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MapViewController.m */;
 		name = "MapViewController.m: 168";
 		rLen = 0;
-		rLoc = 4460;
+		rLoc = 4564;
 		rType = 0;
 		vrLen = 697;
 		vrLoc = 1595;
@@ -10588,7 +11220,7 @@
 		rLen = 32;
 		rLoc = 208;
 		rType = 0;
-		vrLen = 721;
+		vrLen = 679;
 		vrLoc = 0;
 	};
 	83FB8611101BF42400936F2C /* PBXTextBookmark */ = {
@@ -10596,7 +11228,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MapViewController.m */;
 		name = "MapViewController.m: 168";
 		rLen = 0;
-		rLoc = 4460;
+		rLoc = 4564;
 		rType = 0;
 		vrLen = 697;
 		vrLoc = 1595;
@@ -10608,7 +11240,7 @@
 		rLen = 32;
 		rLoc = 208;
 		rType = 0;
-		vrLen = 721;
+		vrLen = 679;
 		vrLoc = 0;
 	};
 	83FB8613101BF42400936F2C /* PBXTextBookmark */ = {
@@ -10616,7 +11248,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 326";
 		rLen = 0;
-		rLoc = 11173;
+		rLoc = 10134;
 		rType = 0;
 		vrLen = 1013;
 		vrLoc = 9956;
@@ -10636,7 +11268,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 324";
 		rLen = 0;
-		rLoc = 11089;
+		rLoc = 10050;
 		rType = 0;
 		vrLen = 1093;
 		vrLoc = 10011;
@@ -10646,7 +11278,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MapViewController.m */;
 		name = "MapViewController.m: 140";
 		rLen = 0;
-		rLoc = 3612;
+		rLoc = 3716;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 3037;
@@ -10658,7 +11290,7 @@
 		rLen = 0;
 		rLoc = 671;
 		rType = 0;
-		vrLen = 684;
+		vrLen = 679;
 		vrLoc = 0;
 	};
 	83FB8618101BF42400936F2C /* PBXTextBookmark */ = {
@@ -10666,7 +11298,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MapViewController.m */;
 		name = "MapViewController.m: 140";
 		rLen = 0;
-		rLoc = 3612;
+		rLoc = 3716;
 		rType = 0;
 		vrLen = 982;
 		vrLoc = 3082;
@@ -10676,7 +11308,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 324";
 		rLen = 0;
-		rLoc = 11089;
+		rLoc = 10050;
 		rType = 0;
 		vrLen = 938;
 		vrLoc = 10011;
@@ -10686,7 +11318,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MapViewController.m */;
 		name = "MapViewController.m: 147";
 		rLen = 7;
-		rLoc = 3635;
+		rLoc = 3739;
 		rType = 0;
 		vrLen = 755;
 		vrLoc = 686;
@@ -10698,7 +11330,7 @@
 		rLen = 0;
 		rLoc = 671;
 		rType = 0;
-		vrLen = 684;
+		vrLen = 679;
 		vrLoc = 0;
 	};
 	83FB861C101BF42400936F2C /* PBXTextBookmark */ = {
@@ -10718,7 +11350,7 @@
 		rLen = 0;
 		rLoc = 285;
 		rType = 0;
-		vrLen = 684;
+		vrLen = 679;
 		vrLoc = 0;
 	};
 	83FB861E101BF42400936F2C /* PBXTextBookmark */ = {
@@ -10726,7 +11358,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MapViewController.m */;
 		name = "MapViewController.m: 140";
 		rLen = 0;
-		rLoc = 3612;
+		rLoc = 3716;
 		rType = 0;
 		vrLen = 1095;
 		vrLoc = 3217;
@@ -10736,7 +11368,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 325";
 		rLen = 0;
-		rLoc = 11089;
+		rLoc = 10050;
 		rType = 0;
 		vrLen = 1149;
 		vrLoc = 10011;
@@ -10768,7 +11400,7 @@
 		rLen = 0;
 		rLoc = 285;
 		rType = 0;
-		vrLen = 684;
+		vrLen = 679;
 		vrLoc = 0;
 	};
 	83FB8623101C186400936F2C /* PBXTextBookmark */ = {
@@ -10776,7 +11408,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 329";
 		rLen = 0;
-		rLoc = 11134;
+		rLoc = 10095;
 		rType = 0;
 		vrLen = 1149;
 		vrLoc = 10011;
@@ -10786,7 +11418,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 329";
 		rLen = 0;
-		rLoc = 11134;
+		rLoc = 10095;
 		rType = 0;
 		vrLen = 1149;
 		vrLoc = 10011;
@@ -10818,7 +11450,7 @@
 		rLen = 0;
 		rLoc = 285;
 		rType = 0;
-		vrLen = 684;
+		vrLen = 679;
 		vrLoc = 0;
 	};
 	83FB8628101C186400936F2C /* PBXTextBookmark */ = {
@@ -10826,7 +11458,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 346";
 		rLen = 0;
-		rLoc = 11604;
+		rLoc = 10565;
 		rType = 0;
 		vrLen = 1094;
 		vrLoc = 9769;
@@ -10856,7 +11488,7 @@
 		comments = "warning: 'MapViewController' may not respond to '-centerAtLocation:'";
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		rLen = 0;
-		rLoc = 340;
+		rLoc = 324;
 		rType = 1;
 	};
 	83FB862E101C1E9C00936F2C /* PBXTextBookmark */ = {
@@ -10864,7 +11496,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 308";
 		rLen = 0;
-		rLoc = 10365;
+		rLoc = 9326;
 		rType = 0;
 		vrLen = 1094;
 		vrLoc = 9769;
@@ -10894,7 +11526,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 323";
 		rLen = 0;
-		rLoc = 11089;
+		rLoc = 10050;
 		rType = 0;
 		vrLen = 1118;
 		vrLoc = 10053;
@@ -10914,7 +11546,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 189";
 		rLen = 0;
-		rLoc = 6899;
+		rLoc = 5875;
 		rType = 0;
 		vrLen = 859;
 		vrLoc = 5964;
@@ -10924,7 +11556,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 189";
 		rLen = 0;
-		rLoc = 6899;
+		rLoc = 5875;
 		rType = 0;
 		vrLen = 859;
 		vrLoc = 5964;
@@ -10944,7 +11576,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 134";
 		rLen = 0;
-		rLoc = 5327;
+		rLoc = 4303;
 		rType = 0;
 		vrLen = 982;
 		vrLoc = 4301;
@@ -10964,7 +11596,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 191";
 		rLen = 48;
-		rLoc = 6465;
+		rLoc = 5441;
 		rType = 0;
 		vrLen = 947;
 		vrLoc = 5774;
@@ -10974,7 +11606,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 191";
 		rLen = 48;
-		rLoc = 6465;
+		rLoc = 5441;
 		rType = 0;
 		vrLen = 947;
 		vrLoc = 5774;
@@ -10994,7 +11626,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 192";
 		rLen = 48;
-		rLoc = 6465;
+		rLoc = 5441;
 		rType = 0;
 		vrLen = 925;
 		vrLoc = 6035;
@@ -11004,7 +11636,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 330";
 		rLen = 0;
-		rLoc = 11089;
+		rLoc = 10050;
 		rType = 0;
 		vrLen = 1017;
 		vrLoc = 10213;
@@ -11044,7 +11676,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 26";
 		rLen = 0;
-		rLoc = 680;
+		rLoc = 703;
 		rType = 0;
 		vrLen = 1037;
 		vrLoc = 336;
@@ -11054,7 +11686,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 206";
 		rLen = 6;
-		rLoc = 7128;
+		rLoc = 6104;
 		rType = 0;
 		vrLen = 857;
 		vrLoc = 6250;
@@ -11074,7 +11706,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 206";
 		rLen = 6;
-		rLoc = 7128;
+		rLoc = 6104;
 		rType = 0;
 		vrLen = 857;
 		vrLoc = 6250;
@@ -11084,7 +11716,7 @@
 		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
 		name = "BrowseController.h: 26";
 		rLen = 0;
-		rLoc = 680;
+		rLoc = 703;
 		rType = 0;
 		vrLen = 1037;
 		vrLoc = 336;
@@ -11094,7 +11726,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 196";
 		rLen = 0;
-		rLoc = 6817;
+		rLoc = 5793;
 		rType = 0;
 		vrLen = 823;
 		vrLoc = 6035;
@@ -11104,7 +11736,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 208";
 		rLen = 0;
-		rLoc = 7094;
+		rLoc = 6070;
 		rType = 0;
 		vrLen = 881;
 		vrLoc = 6335;
@@ -11114,7 +11746,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 196";
 		rLen = 0;
-		rLoc = 6697;
+		rLoc = 5673;
 		rType = 0;
 		vrLen = 825;
 		vrLoc = 6334;
@@ -11144,7 +11776,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 196";
 		rLen = 0;
-		rLoc = 6697;
+		rLoc = 5673;
 		rType = 0;
 		vrLen = 825;
 		vrLoc = 6334;
@@ -11174,7 +11806,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 196";
 		rLen = 0;
-		rLoc = 6697;
+		rLoc = 5673;
 		rType = 0;
 		vrLen = 825;
 		vrLoc = 6334;
@@ -11193,7 +11825,7 @@
 		isa = PBXTextBookmark;
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		rLen = 0;
-		rLoc = 210;
+		rLoc = 194;
 		rType = 1;
 	};
 	83FB865C101C22F700936F2C /* PBXTextBookmark */ = {
@@ -11201,7 +11833,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 196";
 		rLen = 0;
-		rLoc = 6697;
+		rLoc = 5673;
 		rType = 0;
 		vrLen = 825;
 		vrLoc = 6334;
@@ -11221,7 +11853,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 206";
 		rLen = 0;
-		rLoc = 7063;
+		rLoc = 6039;
 		rType = 0;
 		vrLen = 825;
 		vrLoc = 6334;
@@ -11251,7 +11883,7 @@
 		comments = "warning: 'OpenHouses' may not respond to '-loadMoreData:'";
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		rLen = 1;
-		rLoc = 226;
+		rLoc = 210;
 		rType = 1;
 	};
 	83FB8665101C247F00936F2C /* PBXTextBookmark */ = {
@@ -11259,7 +11891,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 220";
 		rLen = 12;
-		rLoc = 7440;
+		rLoc = 6401;
 		rType = 0;
 		vrLen = 895;
 		vrLoc = 6693;
@@ -11329,7 +11961,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 220";
 		rLen = 0;
-		rLoc = 7452;
+		rLoc = 6413;
 		rType = 0;
 		vrLen = 947;
 		vrLoc = 6727;
@@ -11339,7 +11971,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 332";
 		rLen = 0;
-		rLoc = 11089;
+		rLoc = 10050;
 		rType = 0;
 		vrLen = 1071;
 		vrLoc = 10215;
@@ -11369,7 +12001,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 332";
 		rLen = 0;
-		rLoc = 11089;
+		rLoc = 10050;
 		rType = 0;
 		vrLen = 1071;
 		vrLoc = 10215;
@@ -11429,7 +12061,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 332";
 		rLen = 0;
-		rLoc = 11089;
+		rLoc = 10050;
 		rType = 0;
 		vrLen = 1131;
 		vrLoc = 10160;
@@ -11449,7 +12081,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 200";
 		rLen = 0;
-		rLoc = 6815;
+		rLoc = 5791;
 		rType = 0;
 		vrLen = 829;
 		vrLoc = 6123;
@@ -11459,7 +12091,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 200";
 		rLen = 0;
-		rLoc = 6815;
+		rLoc = 5791;
 		rType = 0;
 		vrLen = 828;
 		vrLoc = 6302;
@@ -11468,7 +12100,7 @@
 		isa = PBXTextBookmark;
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		rLen = 1;
-		rLoc = 82;
+		rLoc = 83;
 		rType = 1;
 	};
 	83FB8686101C28C100936F2C /* PBXTextBookmark */ = {
@@ -11476,7 +12108,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 76";
 		rLen = 0;
-		rLoc = 2526;
+		rLoc = 2564;
 		rType = 0;
 		vrLen = 967;
 		vrLoc = 2113;
@@ -11486,7 +12118,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 76";
 		rLen = 0;
-		rLoc = 2526;
+		rLoc = 2564;
 		rType = 0;
 		vrLen = 967;
 		vrLoc = 2113;
@@ -11496,7 +12128,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 74";
 		rLen = 0;
-		rLoc = 2451;
+		rLoc = 2489;
 		rType = 0;
 		vrLen = 1019;
 		vrLoc = 2113;
@@ -11526,7 +12158,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 74";
 		rLen = 0;
-		rLoc = 2451;
+		rLoc = 2489;
 		rType = 0;
 		vrLen = 1019;
 		vrLoc = 2113;
@@ -11696,7 +12328,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 74";
 		rLen = 0;
-		rLoc = 2451;
+		rLoc = 2489;
 		rType = 0;
 		vrLen = 934;
 		vrLoc = 2113;
@@ -11716,7 +12348,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 368";
 		rLen = 0;
-		rLoc = 12044;
+		rLoc = 10991;
 		rType = 0;
 		vrLen = 830;
 		vrLoc = 11651;
@@ -11726,7 +12358,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 357";
 		rLen = 1;
-		rLoc = 11679;
+		rLoc = 10640;
 		rType = 0;
 		vrLen = 989;
 		vrLoc = 11492;
@@ -11736,7 +12368,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 357";
 		rLen = 1;
-		rLoc = 11679;
+		rLoc = 10640;
 		rType = 0;
 		vrLen = 989;
 		vrLoc = 11492;
@@ -11746,7 +12378,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 205";
 		rLen = 8;
-		rLoc = 6908;
+		rLoc = 5884;
 		rType = 0;
 		vrLen = 868;
 		vrLoc = 6477;
@@ -11756,34 +12388,17 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 205";
 		rLen = 8;
-		rLoc = 6908;
+		rLoc = 5884;
 		rType = 0;
 		vrLen = 868;
 		vrLoc = 6477;
-	};
-	83FB86B7101C399700936F2C /* BrowseController.m:372 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		fileReference = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
-		functionName = "-finishedWithPage:";
-		hitCount = 0;
-		ignoreCount = 0;
-		lineNumber = 372;
-		location = OpenHouses;
-		modificationTime = 270526934.923738;
-		state = 1;
 	};
 	83FB86B9101C399B00936F2C /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 205";
 		rLen = 8;
-		rLoc = 6908;
+		rLoc = 5884;
 		rType = 0;
 		vrLen = 989;
 		vrLoc = 11492;
@@ -11793,7 +12408,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 205";
 		rLen = 8;
-		rLoc = 6908;
+		rLoc = 5884;
 		rType = 0;
 		vrLen = 989;
 		vrLoc = 11492;
@@ -11803,7 +12418,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 205";
 		rLen = 8;
-		rLoc = 6908;
+		rLoc = 5884;
 		rType = 0;
 		vrLen = 989;
 		vrLoc = 11492;
@@ -11813,7 +12428,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 205";
 		rLen = 8;
-		rLoc = 6908;
+		rLoc = 5884;
 		rType = 0;
 		vrLen = 989;
 		vrLoc = 11492;
@@ -11823,7 +12438,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 202";
 		rLen = 0;
-		rLoc = 6848;
+		rLoc = 5824;
 		rType = 0;
 		vrLen = 885;
 		vrLoc = 6250;
@@ -11843,7 +12458,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 375";
 		rLen = 0;
-		rLoc = 12429;
+		rLoc = 10991;
 		rType = 0;
 		vrLen = 1098;
 		vrLoc = 11738;
@@ -11863,7 +12478,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 375";
 		rLen = 0;
-		rLoc = 12461;
+		rLoc = 10991;
 		rType = 0;
 		vrLen = 1019;
 		vrLoc = 11738;
@@ -11873,7 +12488,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 372";
 		rLen = 0;
-		rLoc = 12220;
+		rLoc = 10991;
 		rType = 0;
 		vrLen = 996;
 		vrLoc = 11738;
@@ -11883,7 +12498,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 372";
 		rLen = 0;
-		rLoc = 12182;
+		rLoc = 10991;
 		rType = 0;
 		vrLen = 1044;
 		vrLoc = 11738;
@@ -11903,7 +12518,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 372";
 		rLen = 0;
-		rLoc = 12182;
+		rLoc = 10991;
 		rType = 0;
 		vrLen = 1044;
 		vrLoc = 11738;
@@ -11923,7 +12538,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 344";
 		rLen = 0;
-		rLoc = 11178;
+		rLoc = 10139;
 		rType = 0;
 		vrLen = 732;
 		vrLoc = 10278;
@@ -11972,7 +12587,7 @@
 		isa = PBXTextBookmark;
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		rLen = 0;
-		rLoc = 371;
+		rLoc = 355;
 		rType = 1;
 	};
 	83FB86DC101C3D3400936F2C /* PBXTextBookmark */ = {
@@ -11990,7 +12605,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 372";
 		rLen = 0;
-		rLoc = 12217;
+		rLoc = 10991;
 		rType = 0;
 		vrLen = 1143;
 		vrLoc = 11844;
@@ -12000,7 +12615,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 375";
 		rLen = 0;
-		rLoc = 12437;
+		rLoc = 10991;
 		rType = 0;
 		vrLen = 1148;
 		vrLoc = 11844;
@@ -12010,7 +12625,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 372";
 		rLen = 0;
-		rLoc = 12171;
+		rLoc = 10991;
 		rType = 0;
 		vrLen = 1172;
 		vrLoc = 11844;
@@ -12020,7 +12635,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 373";
 		rLen = 0;
-		rLoc = 12274;
+		rLoc = 10991;
 		rType = 0;
 		vrLen = 1229;
 		vrLoc = 11844;
@@ -12030,7 +12645,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 373";
 		rLen = 0;
-		rLoc = 12274;
+		rLoc = 10991;
 		rType = 0;
 		vrLen = 1172;
 		vrLoc = 11844;
@@ -12040,7 +12655,7 @@
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 372";
 		rLen = 0;
-		rLoc = 12162;
+		rLoc = 10991;
 		rType = 0;
 		vrLen = 1169;
 		vrLoc = 11844;
@@ -12049,8 +12664,8 @@
 		isa = PBXTextBookmark;
 		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
 		name = "BrowseController.m: 375";
-		rLen = 39;
-		rLoc = 12390;
+		rLen = 0;
+		rLoc = 10991;
 		rType = 0;
 		vrLen = 1114;
 		vrLoc = 12006;

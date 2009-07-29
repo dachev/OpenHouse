@@ -283,8 +283,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>28</integer>
-									<integer>26</integer>
+									<integer>27</integer>
+									<integer>15</integer>
 									<integer>10</integer>
 									<integer>1</integer>
 									<integer>0</integer>
@@ -326,7 +326,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>83E55D200FB7F8FC00ED0E37</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DetailsController.m</string>
+								<string>BrowseController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -334,11 +334,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>83E55D210FB7F8FC00ED0E37</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DetailsController.m</string>
+										<string>BrowseController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>8368EC1E102023D80032CFDB</string>
+										<string>8368EC7510202DAF0032CFDB</string>
 										<key>history</key>
 										<array>
 											<string>835B0FA20FC13181007F818F</string>
@@ -374,8 +374,6 @@
 											<string>83FB85B2101BEDDB00936F2C</string>
 											<string>83FB8620101C186400936F2C</string>
 											<string>83FB8621101C186400936F2C</string>
-											<string>83FB862B101C1E9C00936F2C</string>
-											<string>83FB862C101C1E9C00936F2C</string>
 											<string>83FB8645101C222A00936F2C</string>
 											<string>83FB8677101C259500936F2C</string>
 											<string>83FB8693101C2F6F00936F2C</string>
@@ -386,10 +384,14 @@
 											<string>8368EBE410201D200032CFDB</string>
 											<string>8368EBE510201D200032CFDB</string>
 											<string>8368EBE610201D200032CFDB</string>
-											<string>8368EBF8102021520032CFDB</string>
-											<string>8368EC19102023D80032CFDB</string>
 											<string>8368EC1A102023D80032CFDB</string>
-											<string>8368EC1B102023D80032CFDB</string>
+											<string>8368EC2910202AC50032CFDB</string>
+											<string>8368EC2A10202AC50032CFDB</string>
+											<string>8368EC2B10202AC50032CFDB</string>
+											<string>8368EC4B10202C3A0032CFDB</string>
+											<string>8368EC5E10202D050032CFDB</string>
+											<string>8368EC6F10202D840032CFDB</string>
+											<string>8368EC7010202D840032CFDB</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -419,7 +421,6 @@
 											<string>83FB83C7101AB4EF00936F2C</string>
 											<string>83FB8552101BD12700936F2C</string>
 											<string>83FB858B101BEABE00936F2C</string>
-											<string>83FB85D3101BF09700936F2C</string>
 											<string>83FB85E3101BF1E600936F2C</string>
 											<string>83FB85E4101BF1E600936F2C</string>
 											<string>83FB8679101C259500936F2C</string>
@@ -429,10 +430,24 @@
 											<string>8368EBE810201D200032CFDB</string>
 											<string>8368EBE910201D200032CFDB</string>
 											<string>8368EBEA10201D200032CFDB</string>
-											<string>8357F6F40FF86D7800F85065</string>
 											<string>8368EC0E1020234E0032CFDB</string>
-											<string>8368EC1C102023D80032CFDB</string>
 											<string>8368EC1D102023D80032CFDB</string>
+											<string>8368EC3010202AC50032CFDB</string>
+											<string>8368EC3110202AC50032CFDB</string>
+											<string>8368EC3210202AC50032CFDB</string>
+											<string>8368EC3310202AC50032CFDB</string>
+											<string>8368EC3510202AC50032CFDB</string>
+											<string>8368EC3610202AC50032CFDB</string>
+											<string>8368EC3710202AC50032CFDB</string>
+											<string>8368EC4E10202C3B0032CFDB</string>
+											<string>8368EC4F10202C3B0032CFDB</string>
+											<string>8368EC5010202C3B0032CFDB</string>
+											<string>8368EC5110202C3B0032CFDB</string>
+											<string>8368EBD1102009CF0032CFDB</string>
+											<string>8368EC6010202D050032CFDB</string>
+											<string>8368EC6110202D050032CFDB</string>
+											<string>8368EC6610202D220032CFDB</string>
+											<string>8368EC7110202D840032CFDB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -488,8 +503,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1142, 165}}</string>
-										<key>RubberWindowFrame</key>
-										<string>0 59 1440 819 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXProjectFindModule</string>
@@ -527,7 +540,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1142, 215}}</string>
+										<string>{{10, 27}, {1142, 165}}</string>
+										<key>RubberWindowFrame</key>
+										<string>0 59 1440 819 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>

@@ -12,6 +12,7 @@
 #import "MapViewController.h"
 #import "TableViewController.h"
 #import "DetailsController.h"
+#import "StatusView.h"
 #import "OpenHouse.h"
 #import "OpenHouses.h"
 
@@ -25,6 +26,7 @@
 	CLLocation *origin;
 	NSArray *currentAnnotations;
 	
+    StatusView *statusView;
 	UISegmentedControl *navButtons;
 	UIToolbar *toolbar;
     UIImage *mapIconImage;
@@ -37,6 +39,7 @@
 @property (nonatomic, retain) NSNumber *page;
 @property (nonatomic, retain) CLLocation *origin;
 @property (nonatomic, retain) NSArray *currentAnnotations;
+@property (nonatomic, retain) StatusView *statusView;
 @property (nonatomic, retain) UISegmentedControl *navButtons;
 @property (nonatomic, retain) UIToolbar *toolbar;
 @property (nonatomic, retain) UIImage *mapIconImage;
