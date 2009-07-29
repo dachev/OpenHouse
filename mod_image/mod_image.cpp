@@ -290,7 +290,7 @@ int image_handler(request_rec *r) {
             image = makeThumb(&data);
         }
 
-        if (image == NULL || !saveImage(&full_path, image)) {
+        if (image == NULL || !image->isValid() || !saveImage(&full_path, image)) {
             delete image;
             return 404;
         }
