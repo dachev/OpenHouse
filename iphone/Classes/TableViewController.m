@@ -8,6 +8,9 @@
 
 #import "TableViewController.h"
 
+@interface NSString (Custom)
++(NSString *) encodeURIComponent: (NSString *) url;
+@end
 
 @implementation TableViewController
 @synthesize currentAnnotations, thumbnails;
@@ -102,7 +105,7 @@
 			continue;
 		}
 		
-		NSString *thumbLink = [[[house imageLinks] objectAtIndex:0] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+		NSString *thumbLink = [NSString encodeURIComponent:[[house imageLinks] objectAtIndex:0]];
 		NSString *url       = [NSString stringWithFormat:IMAGE_API_REQUEST_URL, @"t", thumbLink];
 		
 		NSString *identifier = [NSString stringWithFormat:@"%d", idx];
@@ -238,7 +241,6 @@
 	//NSLog(@"%@:%@", [connection tag], error);
 	//[[NSNotificationCenter defaultCenter] postNotificationName:@"thumbRequestFailed" object:error];
 }
-
 
 @end
 

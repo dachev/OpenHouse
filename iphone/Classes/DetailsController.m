@@ -8,6 +8,10 @@
 
 #import "DetailsController.h"
 
+@interface NSString (Custom)
++(NSString *) encodeURIComponent: (NSString *) url;
+@end
+
 @interface DetailsController (Private)
 -(void) loadScrollView:(UIView *)view withPage:(int)page;
 @end
@@ -127,7 +131,7 @@
     
     int idx = 0;
 	for (NSString *link in [house imageLinks]) {
-		NSString *photoLink = [link stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+		NSString *photoLink = [NSString encodeURIComponent:link];
 		NSString *url       = [NSString stringWithFormat:IMAGE_API_REQUEST_URL, @"f", photoLink];
 		
 		NSString *identifier = [NSString stringWithFormat:@"%d", idx];

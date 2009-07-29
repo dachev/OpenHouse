@@ -8,6 +8,9 @@
 
 #import "BrowseController.h"
 
+@interface NSString (Custom)
++(NSString *) encodeURIComponent: (NSString *) url;
+@end
 
 @interface BrowseController (Private)
 -(void) setOriginAtLat:(float)lat lng:(float)lng;
@@ -244,7 +247,7 @@
                            delegate:self
                            cancelButtonTitle:@"Cancel"
                            destructiveButtonTitle:nil
-                           otherButtonTitles:@"Current Location", @"Map Center", @"Browse History", @"Address", nil];
+                           otherButtonTitles:@"Map Center", @"Current Location", @"Address", @"Browse History", nil];
     menu.tag = 1;
     menu.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     id delegate = [[UIApplication sharedApplication] delegate];
@@ -332,10 +335,10 @@
 #pragma mark ---- UIActionSheetDelegate methods ----
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0) {
-    }
-    else if (buttonIndex == 1) {
         CLLocationCoordinate2D center = mapController.mapView.centerCoordinate;
         [self setOriginAtLat:center.latitude lng:center.longitude];
+    }
+    else if (buttonIndex == 1) {
     }
     else if (buttonIndex == 2) {
     }
@@ -401,3 +404,39 @@
 }
 
 @end
+
+@implementation NSString (Custom)
++(NSString *) encodeURIComponent: (NSString *) url {
+    NSArray *escapeChars = [NSArray arrayWithObjects:@";" , @"/" , @"?" , @":" ,
+                            @"@" , @"&" , @"=" , @"+" ,
+                            @"$" , @"," , @"[" , @"]",
+                            @"#", @"!", @"'", @"(", 
+                            @")", @"*", nil];
+    
+    NSArray *replaceChars = [NSArray arrayWithObjects:@"%3B" , @"%2F" , @"%3F" ,
+                             @"%3A" , @"%40" , @"%26" ,
+                             @"%3D" , @"%2B" , @"%24" ,
+                             @"%2C" , @"%5B" , @"%5D", 
+                             @"%23", @"%21", @"%27",
+                             @"%28", @"%29", @"%2A", nil];
+    
+    int len = [escapeChars count];
+    
+    NSMutableString *temp = [url mutableCopy];
+    
+    int i;
+    for(i = 0; i < len; i++)
+    {
+        
+        [temp replaceOccurrencesOfString: [escapeChars objectAtIndex:i]
+                              withString:[replaceChars objectAtIndex:i]
+                                 options:NSLiteralSearch
+                                   range:NSMakeRange(0, [temp length])];
+    }
+    
+    return [temp autorelease];
+}
+
+@end
+
+
