@@ -19,6 +19,10 @@
 #define OPEN_HOUSE_DATE_DATE @"EEEE MMMM d"
 #define OPEN_HOUSE_DATE_TIME @"hh:mm aaa"
 
+
+/* DB */
+#define DB_NAME @"openhouses.db"
+
 /* Misc config */
 #define CONFIG_NETWORK_TIMEOUT 10
 #define CONFIG_PAGE_VIEW_HEIGHT 253

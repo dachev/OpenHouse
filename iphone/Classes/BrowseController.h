@@ -17,7 +17,7 @@
 #import "OpenHouses.h"
 
 
-@interface BrowseController : UIViewController <OpenHousesApiDelegate, UIActionSheetDelegate, UINavigationControllerDelegate> {
+@interface BrowseController : UIViewController <OpenHousesApiDelegate, UIActionSheetDelegate, UINavigationControllerDelegate, MKReverseGeocoderDelegate> {
     MapViewController   *mapController;
     TableViewController *tableController;
     UIViewController *activeController;
@@ -25,6 +25,7 @@
 	NSNumber *page;
 	CLLocation *origin;
 	NSArray *currentAnnotations;
+    MKReverseGeocoder *geoCoder;
 	
     StatusView *statusView;
 	UISegmentedControl *navButtons;
@@ -39,6 +40,7 @@
 @property (nonatomic, retain) NSNumber *page;
 @property (nonatomic, retain) CLLocation *origin;
 @property (nonatomic, retain) NSArray *currentAnnotations;
+@property (nonatomic, retain) MKReverseGeocoder *geoCoder;
 @property (nonatomic, retain) StatusView *statusView;
 @property (nonatomic, retain) UISegmentedControl *navButtons;
 @property (nonatomic, retain) UIToolbar *toolbar;

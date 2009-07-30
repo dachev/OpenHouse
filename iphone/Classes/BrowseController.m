@@ -18,11 +18,12 @@
 -(void) showPage:(NSNumber *)p;
 -(void) updateNavButtons;
 -(void) toggleView;
+-(void) getAddressAtLocations:(CLLocationCoordinate2D)location;
 @end
 
 
 @implementation BrowseController
-@synthesize mapController, tableController, activeController, page, origin, currentAnnotations, statusView, navButtons, toolbar, mapIconImage, listIconImage;
+@synthesize mapController, tableController, activeController, page, origin, currentAnnotations, geoCoder, statusView, navButtons, toolbar, mapIconImage, listIconImage;
 
 #pragma mark -
 #pragma mark Instantiation and tear down
@@ -63,6 +64,7 @@
 	[page release];
 	[origin release];
 	[currentAnnotations release];
+    [geoCoder release];
     [statusView release];
 	[navButtons release];
 	[toolbar release];
@@ -188,6 +190,14 @@
     
 	[self updateNavButtons];
     [self showPage:[NSNumber numberWithInt:1]];
+    
+    [self getAddressAtLocations:mapController.mapView.centerCoordinate];
+}
+
+-(void) getAddressAtLocations:(CLLocationCoordinate2D)location {
+    [self setGeoCoder:[[[MKReverseGeocoder alloc] init] initWithCoordinate:location]];
+    geoCoder.delegate = self;
+    [geoCoder start];
 }
 
 -(void) showPage:(NSNumber *)p {
@@ -226,8 +236,12 @@
 }
 
 -(void) selectAction:(id)sender {
+    //NSURL *url = [NSURL URLWithString:@"http://maps.google.com/maps?daddr=San+Francisco,+CA&saddr=cupertino"];
+    //[[UIApplication sharedApplication] openURL:url];
+    //return;
+    
     UIActionSheet *menu = [[UIActionSheet alloc]
-                           initWithTitle:@"New browse localion from"
+                           initWithTitle:@"Start over from"
                            delegate:self
                            cancelButtonTitle:@"Cancel"
                            destructiveButtonTitle:nil
@@ -387,7 +401,17 @@
     [alert release];
 }
 
+
+#pragma mark ---- MKReverseGeocoderDelegate methods ----
+-(void) reverseGeocoder:(MKReverseGeocoder *)geocoder didFindPlacemark:(MKPlacemark *)placemark {
+    NSLog(@"%@", [placemark.addressDictionary valueForKey:@"FormattedAddressLines"]);
+}
+
+-(void) reverseGeocoder:(MKReverseGeocoder *)geocoder didFailWithError:(NSError *)error {
+
+}
 @end
+
 
 @implementation NSString (Custom)
 +(NSString *) encodeURIComponent: (NSString *) url {

@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <sqlite3.h>
+#import "FMDatabase.h"
+#import "FmdbMigrationManager.h"
+#import "CreateLocations.h"
 #import "MainViewController.h"
 
 @interface OpenHousesAppDelegate : NSObject <UIApplicationDelegate> {
