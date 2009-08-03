@@ -53,6 +53,7 @@
         [self setMapIconImage:[UIImage imageNamed:@"map.png"]];
 		
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectedHouseCallback:) name:@"selectedHouse" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectedLocationCallback:) name:@"selectedLocationFromHistory" object:nil];
     }
     return self;
 }
@@ -333,6 +334,19 @@
         
         [detailsController setHouse:house];
 		[[self navigationController] pushViewController:detailsController animated:YES];
+	}
+}
+
+-(void) selectedLocationCallback:(NSNotification *)notification {
+	NSObject *object = [notification object];
+	
+	if([object isKindOfClass:[NSDictionary class]] == YES) {
+        NSDictionary *location = (NSDictionary *)object;
+        
+        float lat = [[location valueForKey:@"lat"] floatValue];
+        float lng = [[location valueForKey:@"lng"] floatValue];
+        
+        [self setOriginAtLat:lat lng:lng];
 	}
 }
 

@@ -12,6 +12,7 @@
 -(void) createEditableCopyOfDatabaseIfNeeded;
 -(void) initializeDatabase;
 -(void) performMigrationsOn:(NSString *)file;
+-(NSDictionary *)makeLocationFromResultSetRow:(FMResultSet *)rs;
 @end
 
 @implementation Database
@@ -57,7 +58,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(Database);
 }
 
 -(NSDictionary *) getLocationForAddress:(NSString *)address {
-	NSMutableDictionary *location = nil;
+	NSDictionary *location = nil;
     
 	FMResultSet *rs = [fmdb executeQuery:@"SELECT * FROM locations WHERE address=?", address];
 	if ([fmdb hadError]) {
@@ -65,17 +66,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(Database);
 	}
 	
     if ([rs next]) {
-        NSNumber *lat   = [NSNumber numberWithFloat:[[rs stringForColumn:@"lat"] floatValue]];
-        NSNumber *lng   = [NSNumber numberWithFloat:[[rs stringForColumn:@"lng"] floatValue]];
-        NSNumber *count = [NSNumber numberWithInt:[rs doubleForColumn:@"count"]];
-        location        = [NSMutableDictionary dictionary];
-        
-        [location setObject:lat forKey:@"lat"];
-        [location setObject:lng forKey:@"lng"];
-        [location setObject:[rs stringForColumn:@"address"] forKey:@"address"];
-        [location setObject:[rs dateForColumn:@"created_on"] forKey:@"created_on"];
-        [location setObject:[rs dateForColumn:@"updated_on"] forKey:@"updated_on"];
-        [location setObject:count forKey:@"count"];
+        location = [self makeLocationFromResultSetRow:rs];
     }
     [rs close];
 	
@@ -83,7 +74,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(Database);
 }
 
 -(NSDictionary *) getLocationForLat:(float)latitude lng:(float)longitude {
-	NSMutableDictionary *location = nil;
+	NSDictionary *location = nil;
     
     NSNumber *lat = [NSString stringWithFormat:@"%.5f",latitude];
     NSNumber *lng = [NSString stringWithFormat:@"%.5f",longitude];
@@ -94,21 +85,35 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(Database);
 	}
 	
     if ([rs next]) {
-        NSNumber *lat   = [NSNumber numberWithFloat:[[rs stringForColumn:@"lat"] floatValue]];
-        NSNumber *lng   = [NSNumber numberWithFloat:[[rs stringForColumn:@"lng"] floatValue]];
-        NSNumber *count = [NSNumber numberWithInt:[rs doubleForColumn:@"count"]];
-        location        = [NSMutableDictionary dictionary];
-        
-        [location setObject:lat forKey:@"lat"];
-        [location setObject:lng forKey:@"lng"];
-        [location setObject:[rs stringForColumn:@"address"] forKey:@"address"];
-        [location setObject:[rs dateForColumn:@"created_on"] forKey:@"created_on"];
-        [location setObject:[rs dateForColumn:@"updated_on"] forKey:@"updated_on"];
-        [location setObject:count forKey:@"count"];
+        location = [self makeLocationFromResultSetRow:rs];
     }
     [rs close];
 	
 	return location;
+}
+
+-(NSArray *) getLocationsSortedBy:(NSString *)column {
+    NSMutableArray *locations = [NSMutableArray array];
+    
+	NSString *sql = [column isEqualToString:@"count"] ?
+        @"SELECT * FROM locations ORDER BY count DESC" :
+        @"SELECT * FROM locations ORDER BY updated_on DESC";
+    
+    NSLog(@"%@", sql);
+    
+    FMResultSet *rs = [fmdb executeQuery:sql];
+	if ([fmdb hadError]) {
+		NSLog(@"Error: %@", [fmdb lastErrorMessage]);
+	}
+	
+    while ([rs next]) {
+        NSDictionary *location = [self makeLocationFromResultSetRow:rs];
+        NSLog(@"%d", [[location valueForKey:@"id"] intValue]);
+        [locations addObject:location];
+    }
+    [rs close];
+	
+	return locations;
 }
 
 -(void) updateTimestampForLat:(float)latitude lng:(float)longitude {
@@ -132,13 +137,32 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(Database);
     NSString *sql = @"UPDATE locations SET count=count+1 WHERE lat=? AND lng=?";
     NSNumber *lat = [NSString stringWithFormat:@"%.5f",latitude];
     NSNumber *lng = [NSString stringWithFormat:@"%.5f",longitude];
-    NSLog(@"UPDATE locations SET count=count+1 WHERE lat='%@' AND lng='%@'", lat, lng);
+    
     [fmdb executeUpdate:sql, lat, lng];
 }
 
 -(void) deleteAllLocations {
     NSString *sql = @"DELETE FROM locations";
     [fmdb executeUpdate:sql];
+}
+
+-(NSDictionary *)makeLocationFromResultSetRow:(FMResultSet *)rs {
+    NSMutableDictionary *location = [NSMutableDictionary dictionary];
+    
+    NSNumber *lid   = [NSNumber numberWithInt:[[rs stringForColumn:@"id"] intValue]];
+    NSNumber *lat   = [NSNumber numberWithFloat:[[rs stringForColumn:@"lat"] floatValue]];
+    NSNumber *lng   = [NSNumber numberWithFloat:[[rs stringForColumn:@"lng"] floatValue]];
+    NSNumber *count = [NSNumber numberWithInt:[rs doubleForColumn:@"count"]];
+    
+    [location setObject:lid forKey:@"id"];
+    [location setObject:lat forKey:@"lat"];
+    [location setObject:lng forKey:@"lng"];
+    [location setObject:[rs stringForColumn:@"address"] forKey:@"address"];
+    [location setObject:[rs dateForColumn:@"created_on"] forKey:@"created_on"];
+    [location setObject:[rs dateForColumn:@"updated_on"] forKey:@"updated_on"];
+    [location setObject:count forKey:@"count"];
+    
+    return location;
 }
 
 

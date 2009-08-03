@@ -28,6 +28,7 @@
 -(BOOL) hasLocationForLat:(float)latitude lng:(float)longitude;
 -(NSDictionary *) getLocationForAddress:(NSString *)address;
 -(NSDictionary *) getLocationForLat:(float)latitude lng:(float)longitude;
+-(NSArray *) getLocationsSortedBy:(NSString *)column;
 -(void) updateTimestampForLat:(float)latitude lng:(float)longitude;
 -(void) updateAddress:(NSString *)address forLat:(float)latitude lng:(float)longitude;
 -(void) incrementCountForLat:(float)latitude lng:(float)longitude;

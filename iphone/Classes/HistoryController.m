@@ -10,7 +10,7 @@
 
 
 @implementation HistoryController
-@synthesize sortButtons;
+@synthesize locations, sortButtons, sortIdx;
 
 #pragma mark -
 #pragma mark Instantiation and tear down
@@ -46,20 +46,23 @@
 		[[self navigationItem] setRightBarButtonItem:barCancelButton];
 		[[self navigationItem] setLeftBarButtonItem:barClearButton];
         
-        int sortIdx = 0;
+        [self setLocations:[NSArray array]];
+        
+        [self setSortIdx:0];
         NSNumber *sortMethod = [[NSUserDefaults standardUserDefaults] objectForKey:@"sort_location_history_idx"];
         if (sortMethod != nil) {
-            sortIdx = [sortMethod intValue];
+            [self setSortIdx:[sortMethod intValue]];
         }
         
         [sortButtons setSelectedSegmentIndex:sortIdx];
-        [self sortWithIndex:sortIdx];
+        [self sort];
     }
     
     return self;
 }
 
 -(void) dealloc {
+    [locations release];
     [sortButtons release];
     
     [super dealloc];
@@ -125,22 +128,28 @@
 	NSInteger idx = [sender selectedSegmentIndex];
     
 	if (idx == 0) {
-        [self sortWithIndex:0];
+        [self setSortIdx:0];
 	}
 	else if (idx == 1) {
-        [self sortWithIndex:1];
+        [self setSortIdx:1];
 	}
+    
+    [self sort];
 }
 
--(void) sortWithIndex:(int)idx {
-    if (idx == 0) {
+-(void) sort {
+    Database *db = [Database sharedDatabase];
+    
+    if (sortIdx == 0) {
+        [self setLocations:[db getLocationsSortedBy:@"updated_on"]];
         self.navigationItem.title = @"Last Updated";
     }
-    else if (idx == 1) {
+    else if (sortIdx == 1) {
+        [self setLocations:[db getLocationsSortedBy:@"count"]];
         self.navigationItem.title = @"Most Frequent";
     }
     
-    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:idx] forKey:@"sort_location_history_idx"];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:sortIdx] forKey:@"sort_location_history_idx"];
     [self.tableView reloadData];
 }
 
@@ -171,20 +180,34 @@
 
 // Customize the number of rows in the table view.
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return [locations count];
 }
 
 // Customize the appearance of table view cells.
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	NSDictionary *location = [locations objectAtIndex:indexPath.row];
     
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"] autorelease];
+        
+        [cell.textLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:15]];
+        [cell.detailTextLabel setFont:[UIFont fontWithName:@"HelveticaNeue" size:13]];
+    }
+
+    NSDateFormatter *formatter = [[[NSDateFormatter alloc] init] autorelease];
+    [formatter setDateFormat:LOCATION_HISTORY_DATETIME];
+    NSString *updatedText = [formatter stringFromDate:[location valueForKey:@"updated_on"]];
+    
+    NSString *addressText = [location valueForKey:@"address"];
+    if ([addressText isEqualToString:@""]) {
+        NSString *lat = [location valueForKey:@"lat"];
+        NSString *lng = [location valueForKey:@"lng"];
+        addressText = [NSString stringWithFormat:@"%@, %@", lat, lng];
     }
     
-    // Set up the cell...
+	[cell.textLabel setText:addressText];
+    [cell.detailTextLabel setText:updatedText];
 	
     return cell;
 }
@@ -193,10 +216,8 @@
 #pragma mark -
 #pragma mark UITableViewDelegate methods
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
-	// [self.navigationController pushViewController:anotherViewController];
-	// [anotherViewController release];
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"selectedLocationFromHistory" object:[locations objectAtIndex:indexPath.row]];
+    [self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
 
@@ -239,13 +260,17 @@
 }
  */
 
+-(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return 50.0f;
+}
+
 
 #pragma mark ---- UIActionSheetDelegate methods ----
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0) {
         Database *db = [Database sharedDatabase];
         [db deleteAllLocations];
-        [self.tableView reloadData];
+        [self sort];
     }
 }
 
