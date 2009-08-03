@@ -18,7 +18,7 @@
 -(void) showPage:(NSNumber *)p;
 -(void) updateNavButtons;
 -(void) toggleView;
--(void) getAddressAtLocations:(CLLocationCoordinate2D)location;
+-(void) getAddressAtLocation:(CLLocation *)location;
 @end
 
 
@@ -191,11 +191,22 @@
 	[self updateNavButtons];
     [self showPage:[NSNumber numberWithInt:1]];
     
-    [self getAddressAtLocations:mapController.mapView.centerCoordinate];
+    
+    Database *db = [Database sharedDatabase];
+    
+    if ([db hasLocationForLat:lat lng:lng] == NO) {
+        [db createLocationForLat:lat lng:lng];
+        [self getAddressAtLocation:loc];
+    }
+    else {
+        [db updateTimestampForLat:lat lng:lng];
+    }
+    
+    [db incrementCountForLat:lat lng:lng];
 }
 
--(void) getAddressAtLocations:(CLLocationCoordinate2D)location {
-    [self setGeoCoder:[[[MKReverseGeocoder alloc] init] initWithCoordinate:location]];
+-(void) getAddressAtLocation:(CLLocation *)location {
+    [self setGeoCoder:[TaggedReverseGeocoder requestWithLocation:location]];
     geoCoder.delegate = self;
     [geoCoder start];
 }
@@ -236,16 +247,12 @@
 }
 
 -(void) selectAction:(id)sender {
-    //NSURL *url = [NSURL URLWithString:@"http://maps.google.com/maps?daddr=San+Francisco,+CA&saddr=cupertino"];
-    //[[UIApplication sharedApplication] openURL:url];
-    //return;
-    
     UIActionSheet *menu = [[UIActionSheet alloc]
                            initWithTitle:@"Start over from"
                            delegate:self
                            cancelButtonTitle:@"Cancel"
                            destructiveButtonTitle:nil
-                           otherButtonTitles:@"Map Center", @"Current Location", @"Address", @"Browse History", nil];
+                           otherButtonTitles:@"Map Center", @"Current Location", @"Address", @"History", nil];
     menu.tag = 1;
     menu.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     id delegate = [[UIApplication sharedApplication] delegate];
@@ -341,9 +348,13 @@
     else if (buttonIndex == 2) {
     }
     else if (buttonIndex == 3) {
+        HistoryController *historyCotroller   = [[[HistoryController alloc] initWithStyle:UITableViewStylePlain] autorelease];
+        UINavigationController *navController = [[[UINavigationController alloc] initWithRootViewController:historyCotroller] autorelease];
+
+        [navController setToolbarHidden:NO animated:NO];
+
+        [self.navigationController presentModalViewController:navController animated:YES];
     }
-    
-    NSLog(@"%d", buttonIndex);
 }
 
 
@@ -403,12 +414,15 @@
 
 
 #pragma mark ---- MKReverseGeocoderDelegate methods ----
--(void) reverseGeocoder:(MKReverseGeocoder *)geocoder didFindPlacemark:(MKPlacemark *)placemark {
-    NSLog(@"%@", [placemark.addressDictionary valueForKey:@"FormattedAddressLines"]);
+-(void) reverseGeocoder:(TaggedReverseGeocoder *)geocoder didFindPlacemark:(MKPlacemark *)placemark {
+    Database *db   = [Database sharedDatabase];
+    NSString *addr = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@" "];
+    
+    [db updateAddress:addr forLat:geocoder.lat lng:geocoder.lng];
 }
 
--(void) reverseGeocoder:(MKReverseGeocoder *)geocoder didFailWithError:(NSError *)error {
-
+-(void) reverseGeocoder:(TaggedReverseGeocoder *)geocoder didFailWithError:(NSError *)error {
+    
 }
 @end
 

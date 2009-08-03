@@ -15,12 +15,19 @@
 	[self createTable:@"locations" withColumns:
 	 [NSArray arrayWithObjects:
 	  [FmdbMigrationColumn columnWithColumnName:@"id" columnType:@"integer"],
-	  [FmdbMigrationColumn columnWithColumnName:@"lat" columnType:@"float"],
-	  [FmdbMigrationColumn columnWithColumnName:@"lng" columnType:@"float"],
+	  [FmdbMigrationColumn columnWithColumnName:@"lat" columnType:@"string"],
+	  [FmdbMigrationColumn columnWithColumnName:@"lng" columnType:@"string"],
 	  [FmdbMigrationColumn columnWithColumnName:@"address" columnType:@"string"],
 	  [FmdbMigrationColumn columnWithColumnName:@"created_on" columnType:@"double"],
 	  [FmdbMigrationColumn columnWithColumnName:@"updated_on" columnType:@"double"],
 	  nil]];
+    
+	[db_ executeUpdate:@"ALTER TABLE locations ADD COLUMN count INTEGER NOT NULL DEFAULT 0"];
+    [db_ executeUpdate:@"CREATE INDEX idx_locations_lat ON locations(lat)"];
+    [db_ executeUpdate:@"CREATE INDEX idx_locations_lng ON locations(lng)"];
+    [db_ executeUpdate:@"CREATE INDEX idx_locations_updated_on ON locations(updated_on)"];
+    [db_ executeUpdate:@"CREATE INDEX idx_locations_created_on ON locations(created_on)"];
+    [db_ executeUpdate:@"CREATE INDEX idx_locations_count ON locations(count)"];
 }
 
 - (void) down {

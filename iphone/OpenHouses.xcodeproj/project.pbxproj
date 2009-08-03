@@ -27,6 +27,8 @@
 		8357F56C0FF8421A00F85065 /* TaggedURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8357F5670FF8421A00F85065 /* TaggedURLConnection.m */; };
 		8357F56D0FF8421A00F85065 /* TaggedRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8357F5690FF8421A00F85065 /* TaggedRequest.m */; };
 		8357F56E0FF8421A00F85065 /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8357F56B0FF8421A00F85065 /* ConnectionManager.m */; };
+		8359082810260C1000292900 /* TaggedReverseGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8359082710260C1000292900 /* TaggedReverseGeocoder.m */; };
+		8359093E1026548000292900 /* HistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8359093D1026548000292900 /* HistoryController.m */; };
 		835B0EDE0FC12DF9007F818F /* MyCLController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835B0EDD0FC12DF9007F818F /* MyCLController.m */; };
 		835B0F920FC13108007F818F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 835B0F910FC13108007F818F /* CoreLocation.framework */; };
 		835E12660FEC921800923362 /* OpenHouses.m in Sources */ = {isa = PBXBuildFile; fileRef = 835E12650FEC921800923362 /* OpenHouses.m */; };
@@ -46,6 +48,7 @@
 		83DAD82A10216668008CFD01 /* FmdbMigrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DAD82310216668008CFD01 /* FmdbMigrationManager.m */; };
 		83DAD86810217537008CFD01 /* CreateLocations.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DAD86710217537008CFD01 /* CreateLocations.m */; };
 		83DAD8AE10217B78008CFD01 /* openhouses.db in Resources */ = {isa = PBXBuildFile; fileRef = 83DAD8AD10217B78008CFD01 /* openhouses.db */; };
+		83DAD92310228D85008CFD01 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DAD92210228D85008CFD01 /* Database.m */; };
 		83E55D0D0FB7F8C800ED0E37 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E55D0C0FB7F8C800ED0E37 /* MapKit.framework */; };
 		83E8D6FF0FEF2EC800573934 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E8D6FE0FEF2EC800573934 /* TableViewController.m */; };
 		83E8DA7F0FF1E4ED00573934 /* HouseTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E8DA7E0FF1E4ED00573934 /* HouseTableCell.m */; };
@@ -92,6 +95,10 @@
 		8357F5690FF8421A00F85065 /* TaggedRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaggedRequest.m; sourceTree = "<group>"; };
 		8357F56A0FF8421A00F85065 /* ConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionManager.h; sourceTree = "<group>"; };
 		8357F56B0FF8421A00F85065 /* ConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionManager.m; sourceTree = "<group>"; };
+		8359082610260C1000292900 /* TaggedReverseGeocoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaggedReverseGeocoder.h; sourceTree = "<group>"; };
+		8359082710260C1000292900 /* TaggedReverseGeocoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaggedReverseGeocoder.m; sourceTree = "<group>"; };
+		8359093C1026548000292900 /* HistoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryController.h; sourceTree = "<group>"; };
+		8359093D1026548000292900 /* HistoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryController.m; sourceTree = "<group>"; };
 		835B0EDC0FC12DF9007F818F /* MyCLController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCLController.h; sourceTree = "<group>"; };
 		835B0EDD0FC12DF9007F818F /* MyCLController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCLController.m; sourceTree = "<group>"; };
 		835B0F910FC13108007F818F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -124,6 +131,8 @@
 		83DAD86610217537008CFD01 /* CreateLocations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateLocations.h; sourceTree = "<group>"; };
 		83DAD86710217537008CFD01 /* CreateLocations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateLocations.m; sourceTree = "<group>"; };
 		83DAD8AD10217B78008CFD01 /* openhouses.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = openhouses.db; path = resources/openhouses.db; sourceTree = "<group>"; };
+		83DAD92110228D85008CFD01 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
+		83DAD92210228D85008CFD01 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
 		83E55D0C0FB7F8C800ED0E37 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		83E8D6FD0FEF2EC800573934 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		83E8D6FE0FEF2EC800573934 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
@@ -273,13 +282,14 @@
 		8357F5640FF8420600F85065 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				8359081F10260A4D00292900 /* GeocoderManager */,
 				835043811016D267005F857D /* TouchJSON */,
-				8357F5650FF8421A00F85065 /* Network */,
+				8357F5650FF8421A00F85065 /* REST */,
 			);
 			name = API;
 			sourceTree = "<group>";
 		};
-		8357F5650FF8421A00F85065 /* Network */ = {
+		8357F5650FF8421A00F85065 /* REST */ = {
 			isa = PBXGroup;
 			children = (
 				8357F5660FF8421A00F85065 /* TaggedURLConnection.h */,
@@ -289,7 +299,16 @@
 				8357F56A0FF8421A00F85065 /* ConnectionManager.h */,
 				8357F56B0FF8421A00F85065 /* ConnectionManager.m */,
 			);
-			name = Network;
+			name = REST;
+			sourceTree = "<group>";
+		};
+		8359081F10260A4D00292900 /* GeocoderManager */ = {
+			isa = PBXGroup;
+			children = (
+				8359082610260C1000292900 /* TaggedReverseGeocoder.h */,
+				8359082710260C1000292900 /* TaggedReverseGeocoder.m */,
+			);
+			name = GeocoderManager;
 			sourceTree = "<group>";
 		};
 		835E0EED0FE5DF3C00923362 /* Model */ = {
@@ -331,6 +350,8 @@
 		83DAD81410216668008CFD01 /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				83DAD92110228D85008CFD01 /* Database.h */,
+				83DAD92210228D85008CFD01 /* Database.m */,
 				83DAD81510216668008CFD01 /* FMDB */,
 				83DAD81D10216668008CFD01 /* MigrationManager */,
 				83DAD86510217537008CFD01 /* Migrations */,
@@ -381,6 +402,8 @@
 				83E8DA7C0FF1E4AE00573934 /* Table */,
 				83EE513C0FECBD3C0099FC4E /* BrowseController.h */,
 				83EE513D0FECBD3C0099FC4E /* BrowseController.m */,
+				8359093C1026548000292900 /* HistoryController.h */,
+				8359093D1026548000292900 /* HistoryController.m */,
 			);
 			name = Browse;
 			sourceTree = "<group>";
@@ -500,6 +523,9 @@
 				83DAD82910216668008CFD01 /* FmdbMigrationColumn.m in Sources */,
 				83DAD82A10216668008CFD01 /* FmdbMigrationManager.m in Sources */,
 				83DAD86810217537008CFD01 /* CreateLocations.m in Sources */,
+				83DAD92310228D85008CFD01 /* Database.m in Sources */,
+				8359082810260C1000292900 /* TaggedReverseGeocoder.m in Sources */,
+				8359093E1026548000292900 /* HistoryController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
