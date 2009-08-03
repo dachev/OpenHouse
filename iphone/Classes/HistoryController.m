@@ -243,7 +243,9 @@
 #pragma mark ---- UIActionSheetDelegate methods ----
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0) {
-        //delete history
+        Database *db = [Database sharedDatabase];
+        [db deleteAllLocations];
+        [self.tableView reloadData];
     }
 }
 

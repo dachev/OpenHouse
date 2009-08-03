@@ -31,4 +31,5 @@
 -(void) updateTimestampForLat:(float)latitude lng:(float)longitude;
 -(void) updateAddress:(NSString *)address forLat:(float)latitude lng:(float)longitude;
 -(void) incrementCountForLat:(float)latitude lng:(float)longitude;
+-(void) deleteAllLocations;
 @end

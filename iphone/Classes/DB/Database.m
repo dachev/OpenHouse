@@ -136,6 +136,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(Database);
     [fmdb executeUpdate:sql, lat, lng];
 }
 
+-(void) deleteAllLocations {
+    NSString *sql = @"DELETE FROM locations";
+    [fmdb executeUpdate:sql];
+}
+
 
 #pragma mark -
 #pragma mark Housekeeping

@@ -1194,6 +1194,22 @@
 			83590B3D1026A76700292900 /* PBXTextBookmark */ = 83590B3D1026A76700292900 /* PBXTextBookmark */;
 			83590B3E1026A76700292900 /* PBXTextBookmark */ = 83590B3E1026A76700292900 /* PBXTextBookmark */;
 			83590B3F1026A76700292900 /* PBXTextBookmark */ = 83590B3F1026A76700292900 /* PBXTextBookmark */;
+			83590B421026A91900292900 /* PBXTextBookmark */ = 83590B421026A91900292900 /* PBXTextBookmark */;
+			83590B431026A91900292900 /* PBXTextBookmark */ = 83590B431026A91900292900 /* PBXTextBookmark */;
+			83590B441026A91900292900 /* PBXTextBookmark */ = 83590B441026A91900292900 /* PBXTextBookmark */;
+			83590B451026A91900292900 /* PBXTextBookmark */ = 83590B451026A91900292900 /* PBXTextBookmark */;
+			83590B461026A91900292900 /* PBXTextBookmark */ = 83590B461026A91900292900 /* PBXTextBookmark */;
+			83590B471026A91900292900 /* PBXTextBookmark */ = 83590B471026A91900292900 /* PBXTextBookmark */;
+			83590B481026A91900292900 /* PBXTextBookmark */ = 83590B481026A91900292900 /* PBXTextBookmark */;
+			83590B491026A91900292900 /* PBXTextBookmark */ = 83590B491026A91900292900 /* PBXTextBookmark */;
+			83590B4A1026A91900292900 /* PBXTextBookmark */ = 83590B4A1026A91900292900 /* PBXTextBookmark */;
+			83590B4B1026A91900292900 /* PBXTextBookmark */ = 83590B4B1026A91900292900 /* PBXTextBookmark */;
+			83590B4C1026A91900292900 /* PBXTextBookmark */ = 83590B4C1026A91900292900 /* PBXTextBookmark */;
+			83590B4D1026A91900292900 /* PBXTextBookmark */ = 83590B4D1026A91900292900 /* PBXTextBookmark */;
+			83590B4F1026A91F00292900 /* PBXTextBookmark */ = 83590B4F1026A91F00292900 /* PBXTextBookmark */;
+			83590B501026A91F00292900 /* PBXTextBookmark */ = 83590B501026A91F00292900 /* PBXTextBookmark */;
+			83590B511026A91F00292900 /* PBXTextBookmark */ = 83590B511026A91F00292900 /* PBXTextBookmark */;
+			83590B521026A95700292900 /* PBXTextBookmark */ = 83590B521026A95700292900 /* PBXTextBookmark */;
 			835B0FA20FC13181007F818F = 835B0FA20FC13181007F818F /* PBXTextBookmark */;
 			835B0FA40FC13181007F818F = 835B0FA40FC13181007F818F /* PBXTextBookmark */;
 			835B0FA80FC13181007F818F = 835B0FA80FC13181007F818F /* PBXTextBookmark */;
@@ -1642,7 +1658,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 65";
 		rLen = 0;
-		rLoc = 5413;
+		rLoc = 5521;
 		rType = 0;
 		vrLen = 1074;
 		vrLoc = 1120;
@@ -1902,7 +1918,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 65";
 		rLen = 0;
-		rLoc = 5410;
+		rLoc = 5518;
 		rType = 0;
 		vrLen = 1244;
 		vrLoc = 729;
@@ -1912,7 +1928,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 65";
 		rLen = 0;
-		rLoc = 5410;
+		rLoc = 5518;
 		rType = 0;
 		vrLen = 1244;
 		vrLoc = 729;
@@ -1922,7 +1938,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 65";
 		rLen = 0;
-		rLoc = 5410;
+		rLoc = 5518;
 		rType = 0;
 		vrLen = 1047;
 		vrLoc = 1120;
@@ -1932,7 +1948,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 65";
 		rLen = 0;
-		rLoc = 5410;
+		rLoc = 5518;
 		rType = 0;
 		vrLen = 466;
 		vrLoc = 729;
@@ -1942,7 +1958,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 75";
 		rLen = 0;
-		rLoc = 5629;
+		rLoc = 5737;
 		rType = 0;
 		vrLen = 986;
 		vrLoc = 1115;
@@ -1952,7 +1968,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 75";
 		rLen = 0;
-		rLoc = 5629;
+		rLoc = 5737;
 		rType = 0;
 		vrLen = 1038;
 		vrLoc = 1115;
@@ -1962,7 +1978,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 75";
 		rLen = 0;
-		rLoc = 5629;
+		rLoc = 5737;
 		rType = 0;
 		vrLen = 381;
 		vrLoc = 1115;
@@ -1972,7 +1988,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 75";
 		rLen = 0;
-		rLoc = 5629;
+		rLoc = 5737;
 		rType = 0;
 		vrLen = 1179;
 		vrLoc = 685;
@@ -1982,7 +1998,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 75";
 		rLen = 0;
-		rLoc = 5629;
+		rLoc = 5737;
 		rType = 0;
 		vrLen = 381;
 		vrLoc = 1115;
@@ -2002,7 +2018,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 64";
 		rLen = 4;
-		rLoc = 5404;
+		rLoc = 5512;
 		rType = 0;
 		vrLen = 1127;
 		vrLoc = 685;
@@ -2019,7 +2035,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 63";
 		rLen = 10;
-		rLoc = 5318;
+		rLoc = 5426;
 		rType = 0;
 		vrLen = 1153;
 		vrLoc = 685;
@@ -2039,7 +2055,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 64";
 		rLen = 4;
-		rLoc = 5404;
+		rLoc = 5512;
 		rType = 0;
 		vrLen = 1127;
 		vrLoc = 685;
@@ -2059,7 +2075,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 76";
 		rLen = 0;
-		rLoc = 5629;
+		rLoc = 5737;
 		rType = 0;
 		vrLen = 381;
 		vrLoc = 1115;
@@ -2099,7 +2115,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 64";
 		rLen = 0;
-		rLoc = 5389;
+		rLoc = 5497;
 		rType = 0;
 		vrLen = 1148;
 		vrLoc = 664;
@@ -2109,7 +2125,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 64";
 		rLen = 0;
-		rLoc = 5389;
+		rLoc = 5497;
 		rType = 0;
 		vrLen = 1148;
 		vrLoc = 664;
@@ -2129,7 +2145,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 64";
 		rLen = 0;
-		rLoc = 5389;
+		rLoc = 5497;
 		rType = 0;
 		vrLen = 459;
 		vrLoc = 1352;
@@ -2139,7 +2155,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 64";
 		rLen = 0;
-		rLoc = 5389;
+		rLoc = 5497;
 		rType = 0;
 		vrLen = 1147;
 		vrLoc = 664;
@@ -2159,7 +2175,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 64";
 		rLen = 0;
-		rLoc = 5389;
+		rLoc = 5497;
 		rType = 0;
 		vrLen = 1147;
 		vrLoc = 664;
@@ -2189,7 +2205,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 64";
 		rLen = 0;
-		rLoc = 5389;
+		rLoc = 5497;
 		rType = 0;
 		vrLen = 447;
 		vrLoc = 1412;
@@ -2214,7 +2230,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 64";
 		rLen = 0;
-		rLoc = 5389;
+		rLoc = 5497;
 		rType = 0;
 		vrLen = 447;
 		vrLoc = 1412;
@@ -2234,7 +2250,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 75";
 		rLen = 0;
-		rLoc = 5629;
+		rLoc = 5737;
 		rType = 0;
 		vrLen = 1419;
 		vrLoc = 1250;
@@ -2264,7 +2280,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 75";
 		rLen = 0;
-		rLoc = 5629;
+		rLoc = 5737;
 		rType = 0;
 		vrLen = 1419;
 		vrLoc = 1250;
@@ -2638,7 +2654,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 75";
 		rLen = 0;
-		rLoc = 5629;
+		rLoc = 5737;
 		rType = 0;
 		vrLen = 1329;
 		vrLoc = 1240;
@@ -3585,7 +3601,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 102";
 		rLen = 0;
-		rLoc = 5364;
+		rLoc = 5472;
 		rType = 0;
 		vrLen = 1161;
 		vrLoc = 2713;
@@ -3595,7 +3611,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 102";
 		rLen = 0;
-		rLoc = 5364;
+		rLoc = 5472;
 		rType = 0;
 		vrLen = 1161;
 		vrLoc = 2713;
@@ -3605,7 +3621,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 102";
 		rLen = 0;
-		rLoc = 5364;
+		rLoc = 5472;
 		rType = 0;
 		vrLen = 461;
 		vrLoc = 2713;
@@ -3655,7 +3671,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 102";
 		rLen = 0;
-		rLoc = 5364;
+		rLoc = 5472;
 		rType = 0;
 		vrLen = 461;
 		vrLoc = 2713;
@@ -6248,7 +6264,7 @@
 		fRef = 83DAD92110228D85008CFD01 /* Database.h */;
 		name = "Database.h: 29";
 		rLen = 0;
-		rLoc = 1027;
+		rLoc = 1055;
 		rType = 0;
 		vrLen = 716;
 		vrLoc = 3;
@@ -6268,7 +6284,7 @@
 		fRef = 83DAD92110228D85008CFD01 /* Database.h */;
 		name = "Database.h: 29";
 		rLen = 0;
-		rLoc = 1027;
+		rLoc = 1055;
 		rType = 0;
 		vrLen = 716;
 		vrLoc = 3;
@@ -6288,7 +6304,7 @@
 		fRef = 83DAD92110228D85008CFD01 /* Database.h */;
 		name = "Database.h: 29";
 		rLen = 0;
-		rLoc = 1027;
+		rLoc = 1055;
 		rType = 0;
 		vrLen = 716;
 		vrLoc = 3;
@@ -6383,7 +6399,7 @@
 		comments = "warning: method definition for '-hasLocationForLat:lng:' not found";
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		rLen = 1;
-		rLoc = 183;
+		rLoc = 188;
 		rType = 1;
 	};
 	835907BA102600AA00292900 /* PBXTextBookmark */ = {
@@ -6651,7 +6667,7 @@
 		fRef = 83DAD92110228D85008CFD01 /* Database.h */;
 		name = "Database.h: 31";
 		rLen = 0;
-		rLoc = 1027;
+		rLoc = 1055;
 		rType = 0;
 		vrLen = 843;
 		vrLoc = 33;
@@ -9001,15 +9017,15 @@
 	8359093C1026548000292900 /* HistoryController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1081, 473}}";
-			sepNavSelRange = "{241, 0}";
-			sepNavVisRange = "{0, 387}";
+			sepNavSelRange = "{183, 0}";
+			sepNavVisRange = "{0, 408}";
 		};
 	};
 	8359093D1026548000292900 /* HistoryController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1209, 4112}}";
-			sepNavSelRange = "{4549, 0}";
-			sepNavVisRange = "{4002, 818}";
+			sepNavIntBoundsRect = "{{0, 0}, {1209, 3872}}";
+			sepNavSelRange = "{7943, 0}";
+			sepNavVisRange = "{7388, 757}";
 		};
 	};
 	83590963102656C800292900 /* PBXTextBookmark */ = {
@@ -9047,7 +9063,7 @@
 		fRef = 8359093C1026548000292900 /* HistoryController.h */;
 		name = "HistoryController.h: 16";
 		rLen = 0;
-		rLoc = 347;
+		rLoc = 368;
 		rType = 0;
 		vrLen = 310;
 		vrLoc = 0;
@@ -9097,7 +9113,7 @@
 		fRef = 8359093C1026548000292900 /* HistoryController.h */;
 		name = "HistoryCotroller.h: 17";
 		rLen = 0;
-		rLoc = 387;
+		rLoc = 408;
 		rType = 0;
 		vrLen = 228;
 		vrLoc = 0;
@@ -9167,7 +9183,7 @@
 		fRef = 8359093C1026548000292900 /* HistoryController.h */;
 		name = "HistoryController.h: 17";
 		rLen = 0;
-		rLoc = 387;
+		rLoc = 408;
 		rType = 0;
 		vrLen = 228;
 		vrLoc = 0;
@@ -9207,7 +9223,7 @@
 		fRef = 8359093C1026548000292900 /* HistoryController.h */;
 		name = "HistoryController.h: 12";
 		rLen = 21;
-		rLoc = 197;
+		rLoc = 218;
 		rType = 0;
 		vrLen = 230;
 		vrLoc = 0;
@@ -9227,7 +9243,7 @@
 		fRef = 8359093C1026548000292900 /* HistoryController.h */;
 		name = "HistoryController.h: 16";
 		rLen = 0;
-		rLoc = 347;
+		rLoc = 368;
 		rType = 0;
 		vrLen = 310;
 		vrLoc = 0;
@@ -9292,7 +9308,7 @@
 		fRef = 8359093C1026548000292900 /* HistoryController.h */;
 		name = "HistoryController.h: 16";
 		rLen = 0;
-		rLoc = 317;
+		rLoc = 338;
 		rType = 0;
 		vrLen = 310;
 		vrLoc = 0;
@@ -9322,7 +9338,7 @@
 		fRef = 8359093C1026548000292900 /* HistoryController.h */;
 		name = "HistoryController.h: 16";
 		rLen = 0;
-		rLoc = 317;
+		rLoc = 338;
 		rType = 0;
 		vrLen = 310;
 		vrLoc = 0;
@@ -10017,7 +10033,7 @@
 		fRef = 8359093C1026548000292900 /* HistoryController.h */;
 		name = "HistoryController.h: 16";
 		rLen = 0;
-		rLoc = 317;
+		rLoc = 338;
 		rType = 0;
 		vrLen = 310;
 		vrLoc = 0;
@@ -10057,7 +10073,7 @@
 		fRef = 8359093C1026548000292900 /* HistoryController.h */;
 		name = "HistoryController.h: 16";
 		rLen = 0;
-		rLoc = 317;
+		rLoc = 338;
 		rType = 0;
 		vrLen = 310;
 		vrLoc = 0;
@@ -10537,7 +10553,7 @@
 		fRef = 8359093C1026548000292900 /* HistoryController.h */;
 		name = "HistoryController.h: 12";
 		rLen = 21;
-		rLoc = 197;
+		rLoc = 218;
 		rType = 0;
 		vrLen = 310;
 		vrLoc = 0;
@@ -10577,7 +10593,7 @@
 		fRef = 8359093C1026548000292900 /* HistoryController.h */;
 		name = "HistoryController.h: 12";
 		rLen = 21;
-		rLoc = 197;
+		rLoc = 218;
 		rType = 0;
 		vrLen = 310;
 		vrLoc = 0;
@@ -10657,7 +10673,7 @@
 		fRef = 8359093C1026548000292900 /* HistoryController.h */;
 		name = "HistoryController.h: 18";
 		rLen = 0;
-		rLoc = 380;
+		rLoc = 401;
 		rType = 0;
 		vrLen = 343;
 		vrLoc = 0;
@@ -10687,7 +10703,7 @@
 		fRef = 8359093C1026548000292900 /* HistoryController.h */;
 		name = "HistoryController.h: 18";
 		rLen = 0;
-		rLoc = 380;
+		rLoc = 401;
 		rType = 0;
 		vrLen = 343;
 		vrLoc = 0;
@@ -10707,7 +10723,7 @@
 		fRef = 8359093C1026548000292900 /* HistoryController.h */;
 		name = "HistoryController.h: 16";
 		rLen = 11;
-		rLoc = 335;
+		rLoc = 356;
 		rType = 0;
 		vrLen = 363;
 		vrLoc = 0;
@@ -10737,7 +10753,7 @@
 		fRef = 8359093C1026548000292900 /* HistoryController.h */;
 		name = "HistoryController.h: 16";
 		rLen = 11;
-		rLoc = 335;
+		rLoc = 356;
 		rType = 0;
 		vrLen = 363;
 		vrLoc = 0;
@@ -11160,7 +11176,7 @@
 		fRef = 8359093C1026548000292900 /* HistoryController.h */;
 		name = "HistoryController.h: 12";
 		rLen = 0;
-		rLoc = 241;
+		rLoc = 262;
 		rType = 0;
 		vrLen = 387;
 		vrLoc = 0;
@@ -11190,7 +11206,7 @@
 		fRef = 8359093C1026548000292900 /* HistoryController.h */;
 		name = "HistoryController.h: 12";
 		rLen = 0;
-		rLoc = 241;
+		rLoc = 262;
 		rType = 0;
 		vrLen = 387;
 		vrLoc = 0;
@@ -11210,7 +11226,7 @@
 		fRef = 8359093D1026548000292900 /* HistoryController.m */;
 		name = "HistoryController.m: 243";
 		rLen = 0;
-		rLoc = 8038;
+		rLoc = 8133;
 		rType = 0;
 		vrLen = 601;
 		vrLoc = 6802;
@@ -11220,7 +11236,7 @@
 		fRef = 8359093D1026548000292900 /* HistoryController.m */;
 		name = "HistoryController.m: 243";
 		rLen = 0;
-		rLoc = 8038;
+		rLoc = 8133;
 		rType = 0;
 		vrLen = 601;
 		vrLoc = 6802;
@@ -11230,7 +11246,7 @@
 		fRef = 8359093D1026548000292900 /* HistoryController.m */;
 		name = "HistoryController.m: 243";
 		rLen = 0;
-		rLoc = 8038;
+		rLoc = 8133;
 		rType = 0;
 		vrLen = 598;
 		vrLoc = 6805;
@@ -11240,7 +11256,7 @@
 		fRef = 8359093D1026548000292900 /* HistoryController.m */;
 		name = "HistoryController.m: 243";
 		rLen = 0;
-		rLoc = 8038;
+		rLoc = 8133;
 		rType = 0;
 		vrLen = 255;
 		vrLoc = 6802;
@@ -11520,7 +11536,7 @@
 		fRef = 8359093D1026548000292900 /* HistoryController.m */;
 		name = "HistoryController.m: 240";
 		rLen = 0;
-		rLoc = 8038;
+		rLoc = 8133;
 		rType = 0;
 		vrLen = 302;
 		vrLoc = 6140;
@@ -11877,7 +11893,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 135";
 		rLen = 0;
-		rLoc = 4882;
+		rLoc = 4990;
 		rType = 0;
 		vrLen = 1036;
 		vrLoc = 4095;
@@ -11887,7 +11903,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 135";
 		rLen = 0;
-		rLoc = 4882;
+		rLoc = 4990;
 		rType = 0;
 		vrLen = 420;
 		vrLoc = 4095;
@@ -12276,6 +12292,166 @@
 		rType = 0;
 		vrLen = 818;
 		vrLoc = 4002;
+	};
+	83590B421026A91900292900 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
+		name = "Database.m: 139";
+		rLen = 26;
+		rLoc = 4841;
+		rType = 0;
+		vrLen = 1205;
+		vrLoc = 4376;
+	};
+	83590B431026A91900292900 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83DAD92110228D85008CFD01 /* Database.h */;
+		name = "Database.h: 34";
+		rLen = 0;
+		rLoc = 1055;
+		rType = 0;
+		vrLen = 1025;
+		vrLoc = 36;
+	};
+	83590B441026A91900292900 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513D0FECBD3C0099FC4E /* BrowseController.m */;
+		name = "BrowseController.m: 195";
+		rLen = 41;
+		rLoc = 5974;
+		rType = 0;
+		vrLen = 966;
+		vrLoc = 5500;
+	};
+	83590B451026A91900292900 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
+		name = "BrowseController.h: 23";
+		rLen = 21;
+		rLoc = 540;
+		rType = 0;
+		vrLen = 891;
+		vrLoc = 164;
+	};
+	83590B461026A91900292900 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8359093D1026548000292900 /* HistoryController.m */;
+		name = "HistoryController.m: 246";
+		rLen = 8;
+		rLoc = 8032;
+		rType = 0;
+		vrLen = 756;
+		vrLoc = 7389;
+	};
+	83590B471026A91900292900 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8359093D1026548000292900 /* HistoryController.m */;
+		name = "HistoryController.m: 154";
+		rLen = 0;
+		rLoc = 4860;
+		rType = 0;
+		vrLen = 1007;
+		vrLoc = 4365;
+	};
+	83590B481026A91900292900 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
+		name = "Database.m: 139";
+		rLen = 26;
+		rLoc = 4841;
+		rType = 0;
+		vrLen = 1205;
+		vrLoc = 4376;
+	};
+	83590B491026A91900292900 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83DAD92110228D85008CFD01 /* Database.h */;
+		name = "Database.h: 34";
+		rLen = 0;
+		rLoc = 1055;
+		rType = 0;
+		vrLen = 1025;
+		vrLoc = 36;
+	};
+	83590B4A1026A91900292900 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8359093D1026548000292900 /* HistoryController.m */;
+		name = "HistoryController.m: 246";
+		rLen = 25;
+		rLoc = 8031;
+		rType = 0;
+		vrLen = 699;
+		vrLoc = 7384;
+	};
+	83590B4B1026A91900292900 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83EE513C0FECBD3C0099FC4E /* BrowseController.h */;
+		name = "BrowseController.h: 23";
+		rLen = 21;
+		rLoc = 540;
+		rType = 0;
+		vrLen = 891;
+		vrLoc = 164;
+	};
+	83590B4C1026A91900292900 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8359093D1026548000292900 /* HistoryController.m */;
+		name = "HistoryController.m: 246";
+		rLen = 8;
+		rLoc = 8032;
+		rType = 0;
+		vrLen = 756;
+		vrLoc = 7389;
+	};
+	83590B4D1026A91900292900 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8359093C1026548000292900 /* HistoryController.h */;
+		name = "HistoryController.h: 10";
+		rLen = 0;
+		rLoc = 183;
+		rType = 0;
+		vrLen = 408;
+		vrLoc = 0;
+	};
+	83590B4F1026A91F00292900 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8359093C1026548000292900 /* HistoryController.h */;
+		name = "HistoryController.h: 10";
+		rLen = 0;
+		rLoc = 183;
+		rType = 0;
+		vrLen = 408;
+		vrLoc = 0;
+	};
+	83590B501026A91F00292900 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8359093C1026548000292900 /* HistoryController.h */;
+		name = "HistoryController.h: 10";
+		rLen = 0;
+		rLoc = 183;
+		rType = 0;
+		vrLen = 408;
+		vrLoc = 0;
+	};
+	83590B511026A91F00292900 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8359093D1026548000292900 /* HistoryController.m */;
+		name = "HistoryController.m: 246";
+		rLen = 8;
+		rLoc = 8032;
+		rType = 0;
+		vrLen = 757;
+		vrLoc = 7388;
+	};
+	83590B521026A95700292900 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8359093D1026548000292900 /* HistoryController.m */;
+		name = "HistoryController.m: 244";
+		rLen = 0;
+		rLoc = 7943;
+		rType = 0;
+		vrLen = 757;
+		vrLoc = 7388;
 	};
 	835B0EDC0FC12DF9007F818F /* MyCLController.h */ = {
 		uiCtxt = {
@@ -13076,16 +13252,16 @@
 	};
 	83DAD92110228D85008CFD01 /* Database.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1081, 560}}";
-			sepNavSelRange = "{989, 0}";
-			sepNavVisRange = "{36, 997}";
+			sepNavIntBoundsRect = "{{0, 0}, {1081, 576}}";
+			sepNavSelRange = "{1055, 0}";
+			sepNavVisRange = "{36, 1025}";
 		};
 	};
 	83DAD92210228D85008CFD01 /* Database.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1379, 2960}}";
-			sepNavSelRange = "{4436, 20}";
-			sepNavVisRange = "{4425, 432}";
+			sepNavIntBoundsRect = "{{0, 0}, {1081, 3136}}";
+			sepNavSelRange = "{4841, 26}";
+			sepNavVisRange = "{4376, 1205}";
 		};
 	};
 	83DAD93410229D5C008CFD01 /* PBXTextBookmark */ = {
@@ -13413,7 +13589,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 65";
 		rLen = 0;
-		rLoc = 5413;
+		rLoc = 5521;
 		rType = 0;
 		vrLen = 1074;
 		vrLoc = 1120;
@@ -13433,7 +13609,7 @@
 		fRef = 83DAD92210228D85008CFD01 /* Database.m */;
 		name = "Database.m: 65";
 		rLen = 0;
-		rLoc = 5413;
+		rLoc = 5521;
 		rType = 0;
 		vrLen = 1074;
 		vrLoc = 1120;
@@ -13583,16 +13759,16 @@
 	};
 	83EE513C0FECBD3C0099FC4E /* BrowseController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1090, 848}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1090, 944}}";
 			sepNavSelRange = "{540, 21}";
-			sepNavVisRange = "{190, 865}";
+			sepNavVisRange = "{164, 891}";
 		};
 	};
 	83EE513D0FECBD3C0099FC4E /* BrowseController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1181, 7824}}";
-			sepNavSelRange = "{5880, 0}";
-			sepNavVisRange = "{5528, 916}";
+			sepNavIntBoundsRect = "{{0, 0}, {1181, 7792}}";
+			sepNavSelRange = "{5974, 41}";
+			sepNavVisRange = "{5500, 966}";
 		};
 	};
 	83FB827A10198F8B00936F2C /* PBXTextBookmark */ = {
