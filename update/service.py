@@ -394,20 +394,19 @@ def formatPrice(price):
     if price == '' or price == '.':
         return p
 
-    p = '$' + comma(float(price))
+    p = '$' + comma(int(float(price)))
 
     return p
     
 def comma(d):
-    s = '%0.2f' % d
-    a,b = s.split('.')
+    s = '%d' % d
     l = []
-    while len(a) > 3:
-        l.insert(0,a[-3:])
-        a = a[0:-3]
-    if a:
-        l.insert(0,a)
-    return ','.join(l)+'.'+b
+    while len(s) > 3:
+        l.insert(0,s[-3:])
+        s = s[0:-3]
+    if s:
+        l.insert(0,s)
+    return ','.join(l)
 
 
 def extractDates(date):
