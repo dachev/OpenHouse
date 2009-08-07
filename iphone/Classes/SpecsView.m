@@ -37,35 +37,36 @@
     house = v;
     
     NSString *range = [self makeRangeLabelforBegin:[house begin] end:[house end]];
-    NSString *date  = [self makeRangeLabelforBegin:[house expirationDate] end:nil];
+    //NSString *date  = [self makeRangeLabelforBegin:[house expirationDate] end:nil];
     
     [self makeLineWithLabel:@"Price" andValue:[house price]];
     [self makeLineWithLabel:@"Address" andValue:[house title]];
     [self makeLineWithLabel:@"Time" andValue:range];
     [self makeLineWithLabel:@"Description" andValue:[house content]];
-    [self makeLineWithLabel:@"Expires" andValue:date];
+    //[self makeLineWithLabel:@"Expires" andValue:date];
     [self makeLineWithLabel:@"Prop Taxes" andValue:[house propertyTaxes]];
     [self makeLineWithLabel:@"HOA Dues" andValue:[house hoaDues]];
     [self makeLineWithLabel:@"Bedrooms" andValue:[house bedrooms]];
     [self makeLineWithLabel:@"Bathrooms" andValue:[house bathrooms]];
+    [self makeLineWithLabel:@"Year" andValue:[house year]];
     [self makeLineWithLabel:@"Area" andValue:[house area]];
     [self makeLineWithLabel:@"Lot Size" andValue:[house lotSize]];
-    [self makeLineWithLabel:@"Year" andValue:[house year]];
     [self makeLineWithLabel:@"Prop Type" andValue:[house propertyType]];
-    [self makeLineWithLabel:@"Model" andValue:[house model]];
-    [self makeLineWithLabel:@"Style" andValue:[house style]];
+    //[self makeLineWithLabel:@"Model" andValue:[house model]];
+    //[self makeLineWithLabel:@"Style" andValue:[house style]];
     [self makeLineWithLabel:@"Zoning" andValue:[house zoning]];
-    [self makeLineWithLabel:@"School" andValue:[house school]];
+    //[self makeLineWithLabel:@"School" andValue:[house school]];
     [self makeLineWithLabel:@"School Dist" andValue:[house schoolDistrict]];
-    [self makeLineWithLabel:@"MLS Id" andValue:[house mlsId]];
+    [self makeLineWithLabel:@"Listing Type" andValue:[house listingType]];
+    [self makeLineWithLabel:@"MLS ID" andValue:[house mlsId]];
     [self makeLineWithLabel:@"MLS Name" andValue:[house mlsName]];
     [self makeLineWithLabel:@"Broker" andValue:[house broker]];
     [self makeLineWithLabel:@"Agent" andValue:[house agent]];
 }
 
 -(void) makeLineWithLabel:(NSString *)attr andValue:(NSString *)value {
-    UILabel *l11 = [[[UILabel alloc] initWithFrame:CGRectMake(10, vOffset+3, 80, 14)] autorelease];
-    UILabel *l12 = [[[UILabel alloc] initWithFrame:CGRectMake(100, vOffset, 210, 0)] autorelease];
+    UILabel *l11 = [[[UILabel alloc] initWithFrame:CGRectMake(10, vOffset+3, 85, 14)] autorelease];
+    UILabel *l12 = [[[UILabel alloc] initWithFrame:CGRectMake(105, vOffset, 205, 0)] autorelease];
     [l11 setText:attr];
     [l12 setText:value];
     [l11 setBackgroundColor:[UIColor clearColor]];

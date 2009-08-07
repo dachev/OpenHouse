@@ -87,7 +87,7 @@
 
 
 #pragma mark -
-#pragma mark Custom UITableViewController methods
+#pragma mark Custom methods
 -(void) setCurrentAnnotations:(NSArray *)v {
 	[v retain];
 	[currentAnnotations release];
@@ -132,18 +132,18 @@
 
 
 #pragma mark -
-#pragma mark Table view data source methods
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+#pragma mark UITableViewDataSource methods
+-(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
 // Customize the number of rows in the table view.
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+-(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [currentAnnotations count];
 }
 
 // Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+-(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	OpenHouse *house = [currentAnnotations objectAtIndex:indexPath.row];
     
     HouseTableCell *cell = (HouseTableCell *)[tableView dequeueReusableCellWithIdentifier:@"cell"];
@@ -163,7 +163,7 @@
 
 
 #pragma mark -
-#pragma mark Table view methods
+#pragma mark UITableViewDelegate methods
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	OpenHouse *house = [currentAnnotations objectAtIndex:indexPath.row];
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"selectedHouse" object:house];

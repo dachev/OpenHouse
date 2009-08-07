@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MainViewController.h"
+#import "Database.h"
 
 @interface OpenHousesAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;

@@ -18,6 +18,11 @@
 #define OPEN_HOUSE_DATE_RANGE @"yyyy-MM-dd'T'HH:mm:ss"
 #define OPEN_HOUSE_DATE_DATE @"EEEE MMMM d"
 #define OPEN_HOUSE_DATE_TIME @"hh:mm aaa"
+#define LOCATION_HISTORY_DATETIME @"hh:mm aaa, EEEE MMMM d"
+
+
+/* DB */
+#define DB_NAME @"openhouses.db"
 
 /* Misc config */
 #define CONFIG_NETWORK_TIMEOUT 10

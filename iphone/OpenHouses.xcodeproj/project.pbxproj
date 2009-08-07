@@ -14,7 +14,6 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* MapViewController.m */; };
-		830C822A0FF2A07E0045741F /* housing.xml in Resources */ = {isa = PBXBuildFile; fileRef = 830C82280FF2A07E0045741F /* housing.xml */; };
 		834A9F2F1005C7EC00B87E53 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = 834A9F2E1005C7EC00B87E53 /* list.png */; };
 		835043941016D267005F857D /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 835043831016D267005F857D /* CDataScanner.m */; };
 		835043951016D267005F857D /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 835043861016D267005F857D /* CDataScanner_Extensions.m */; };
@@ -28,14 +27,28 @@
 		8357F56C0FF8421A00F85065 /* TaggedURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8357F5670FF8421A00F85065 /* TaggedURLConnection.m */; };
 		8357F56D0FF8421A00F85065 /* TaggedRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8357F5690FF8421A00F85065 /* TaggedRequest.m */; };
 		8357F56E0FF8421A00F85065 /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8357F56B0FF8421A00F85065 /* ConnectionManager.m */; };
+		8359082810260C1000292900 /* TaggedReverseGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8359082710260C1000292900 /* TaggedReverseGeocoder.m */; };
+		8359093E1026548000292900 /* HistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8359093D1026548000292900 /* HistoryController.m */; };
 		835B0EDE0FC12DF9007F818F /* MyCLController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835B0EDD0FC12DF9007F818F /* MyCLController.m */; };
 		835B0F920FC13108007F818F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 835B0F910FC13108007F818F /* CoreLocation.framework */; };
 		835E12660FEC921800923362 /* OpenHouses.m in Sources */ = {isa = PBXBuildFile; fileRef = 835E12650FEC921800923362 /* OpenHouses.m */; };
 		8361078B1006D596007082CD /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = 836107891006D596007082CD /* down.png */; };
 		8361078C1006D596007082CD /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 8361078A1006D596007082CD /* up.png */; };
 		836107E810086F8A007082CD /* SpecsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 836107E710086F8A007082CD /* SpecsView.m */; };
+		8368EC24102029920032CFDB /* StatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8368EC23102029920032CFDB /* StatusView.m */; };
 		83B4F2DC0FDE34A000360E7D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B4F2DB0FDE34A000360E7D /* MainViewController.m */; };
 		83C544D70FFC40C700BC7067 /* DetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C544D60FFC40C700BC7067 /* DetailsController.m */; };
+		83DAD803102164F9008CFD01 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 83DAD802102164F9008CFD01 /* libsqlite3.dylib */; };
+		83DAD82410216668008CFD01 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DAD81710216668008CFD01 /* FMDatabase.m */; };
+		83DAD82510216668008CFD01 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DAD81910216668008CFD01 /* FMDatabaseAdditions.m */; };
+		83DAD82610216668008CFD01 /* fmdb.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DAD81A10216668008CFD01 /* fmdb.m */; };
+		83DAD82710216668008CFD01 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DAD81C10216668008CFD01 /* FMResultSet.m */; };
+		83DAD82810216668008CFD01 /* FmdbMigration.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DAD81F10216668008CFD01 /* FmdbMigration.m */; };
+		83DAD82910216668008CFD01 /* FmdbMigrationColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DAD82110216668008CFD01 /* FmdbMigrationColumn.m */; };
+		83DAD82A10216668008CFD01 /* FmdbMigrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DAD82310216668008CFD01 /* FmdbMigrationManager.m */; };
+		83DAD86810217537008CFD01 /* CreateLocations.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DAD86710217537008CFD01 /* CreateLocations.m */; };
+		83DAD8AE10217B78008CFD01 /* openhouses.db in Resources */ = {isa = PBXBuildFile; fileRef = 83DAD8AD10217B78008CFD01 /* openhouses.db */; };
+		83DAD92310228D85008CFD01 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DAD92210228D85008CFD01 /* Database.m */; };
 		83E55D0D0FB7F8C800ED0E37 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E55D0C0FB7F8C800ED0E37 /* MapKit.framework */; };
 		83E8D6FF0FEF2EC800573934 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E8D6FE0FEF2EC800573934 /* TableViewController.m */; };
 		83E8DA7F0FF1E4ED00573934 /* HouseTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E8DA7E0FF1E4ED00573934 /* HouseTableCell.m */; };
@@ -58,7 +71,6 @@
 		28D7ACF70DDB3853001CB0EB /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* OpenHouses_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenHouses_Prefix.pch; sourceTree = "<group>"; };
-		830C82280FF2A07E0045741F /* housing.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = housing.xml; path = resources/housing.xml; sourceTree = "<group>"; };
 		834A9F2E1005C7EC00B87E53 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = list.png; path = resources/list.png; sourceTree = "<group>"; };
 		835043821016D267005F857D /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
 		835043831016D267005F857D /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
@@ -83,6 +95,10 @@
 		8357F5690FF8421A00F85065 /* TaggedRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaggedRequest.m; sourceTree = "<group>"; };
 		8357F56A0FF8421A00F85065 /* ConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionManager.h; sourceTree = "<group>"; };
 		8357F56B0FF8421A00F85065 /* ConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionManager.m; sourceTree = "<group>"; };
+		8359082610260C1000292900 /* TaggedReverseGeocoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaggedReverseGeocoder.h; sourceTree = "<group>"; };
+		8359082710260C1000292900 /* TaggedReverseGeocoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaggedReverseGeocoder.m; sourceTree = "<group>"; };
+		8359093C1026548000292900 /* HistoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryController.h; sourceTree = "<group>"; };
+		8359093D1026548000292900 /* HistoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryController.m; sourceTree = "<group>"; };
 		835B0EDC0FC12DF9007F818F /* MyCLController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCLController.h; sourceTree = "<group>"; };
 		835B0EDD0FC12DF9007F818F /* MyCLController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCLController.m; sourceTree = "<group>"; };
 		835B0F910FC13108007F818F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -92,10 +108,31 @@
 		8361078A1006D596007082CD /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = up.png; path = resources/up.png; sourceTree = "<group>"; };
 		836107E610086F8A007082CD /* SpecsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecsView.h; sourceTree = "<group>"; };
 		836107E710086F8A007082CD /* SpecsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecsView.m; sourceTree = "<group>"; };
+		8368EC22102029920032CFDB /* StatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusView.h; sourceTree = "<group>"; };
+		8368EC23102029920032CFDB /* StatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusView.m; sourceTree = "<group>"; };
 		83B4F2DA0FDE34A000360E7D /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		83B4F2DB0FDE34A000360E7D /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		83C544D50FFC40C700BC7067 /* DetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsController.h; sourceTree = "<group>"; };
 		83C544D60FFC40C700BC7067 /* DetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsController.m; sourceTree = "<group>"; };
+		83DAD802102164F9008CFD01 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = /usr/lib/libsqlite3.dylib; sourceTree = "<absolute>"; };
+		83DAD81610216668008CFD01 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		83DAD81710216668008CFD01 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		83DAD81810216668008CFD01 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		83DAD81910216668008CFD01 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		83DAD81A10216668008CFD01 /* fmdb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fmdb.m; sourceTree = "<group>"; };
+		83DAD81B10216668008CFD01 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		83DAD81C10216668008CFD01 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		83DAD81E10216668008CFD01 /* FmdbMigration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FmdbMigration.h; sourceTree = "<group>"; };
+		83DAD81F10216668008CFD01 /* FmdbMigration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FmdbMigration.m; sourceTree = "<group>"; };
+		83DAD82010216668008CFD01 /* FmdbMigrationColumn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FmdbMigrationColumn.h; sourceTree = "<group>"; };
+		83DAD82110216668008CFD01 /* FmdbMigrationColumn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FmdbMigrationColumn.m; sourceTree = "<group>"; };
+		83DAD82210216668008CFD01 /* FmdbMigrationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FmdbMigrationManager.h; sourceTree = "<group>"; };
+		83DAD82310216668008CFD01 /* FmdbMigrationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FmdbMigrationManager.m; sourceTree = "<group>"; };
+		83DAD86610217537008CFD01 /* CreateLocations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateLocations.h; sourceTree = "<group>"; };
+		83DAD86710217537008CFD01 /* CreateLocations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateLocations.m; sourceTree = "<group>"; };
+		83DAD8AD10217B78008CFD01 /* openhouses.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = openhouses.db; path = resources/openhouses.db; sourceTree = "<group>"; };
+		83DAD92110228D85008CFD01 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
+		83DAD92210228D85008CFD01 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
 		83E55D0C0FB7F8C800ED0E37 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		83E8D6FD0FEF2EC800573934 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		83E8D6FE0FEF2EC800573934 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
@@ -123,6 +160,7 @@
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				83E55D0D0FB7F8C800ED0E37 /* MapKit.framework in Frameworks */,
 				835B0F920FC13108007F818F /* CoreLocation.framework in Frameworks */,
+				83DAD803102164F9008CFD01 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,13 +213,13 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				83DAD8AD10217B78008CFD01 /* openhouses.db */,
 				83FB83F1101AC16700936F2C /* logo.png */,
 				83FB83E4101ABF7600936F2C /* map.png */,
 				836107891006D596007082CD /* down.png */,
 				8361078A1006D596007082CD /* up.png */,
 				834A9F2E1005C7EC00B87E53 /* list.png */,
 				8357F4FF0FF831ED00F85065 /* loading.png */,
-				830C82280FF2A07E0045741F /* housing.xml */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* OpenHouses-Info.plist */,
 				83FB854D101BD10500936F2C /* map.html */,
@@ -192,6 +230,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				83DAD802102164F9008CFD01 /* libsqlite3.dylib */,
 				835B0F910FC13108007F818F /* CoreLocation.framework */,
 				83E55D0C0FB7F8C800ED0E37 /* MapKit.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
@@ -243,13 +282,14 @@
 		8357F5640FF8420600F85065 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				8359081F10260A4D00292900 /* GeocoderManager */,
 				835043811016D267005F857D /* TouchJSON */,
-				8357F5650FF8421A00F85065 /* Network */,
+				8357F5650FF8421A00F85065 /* REST */,
 			);
 			name = API;
 			sourceTree = "<group>";
 		};
-		8357F5650FF8421A00F85065 /* Network */ = {
+		8357F5650FF8421A00F85065 /* REST */ = {
 			isa = PBXGroup;
 			children = (
 				8357F5660FF8421A00F85065 /* TaggedURLConnection.h */,
@@ -259,12 +299,22 @@
 				8357F56A0FF8421A00F85065 /* ConnectionManager.h */,
 				8357F56B0FF8421A00F85065 /* ConnectionManager.m */,
 			);
-			name = Network;
+			name = REST;
+			sourceTree = "<group>";
+		};
+		8359081F10260A4D00292900 /* GeocoderManager */ = {
+			isa = PBXGroup;
+			children = (
+				8359082610260C1000292900 /* TaggedReverseGeocoder.h */,
+				8359082710260C1000292900 /* TaggedReverseGeocoder.m */,
+			);
+			name = GeocoderManager;
 			sourceTree = "<group>";
 		};
 		835E0EED0FE5DF3C00923362 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				83DAD81410216668008CFD01 /* DB */,
 				83FBD24C0FCE71FA0008C3BC /* OpenHouse.h */,
 				83FBD24D0FCE71FA0008C3BC /* OpenHouse.m */,
 				835E12640FEC921800923362 /* OpenHouses.h */,
@@ -297,6 +347,54 @@
 			name = Details;
 			sourceTree = "<group>";
 		};
+		83DAD81410216668008CFD01 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				83DAD92110228D85008CFD01 /* Database.h */,
+				83DAD92210228D85008CFD01 /* Database.m */,
+				83DAD81510216668008CFD01 /* FMDB */,
+				83DAD81D10216668008CFD01 /* MigrationManager */,
+				83DAD86510217537008CFD01 /* Migrations */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		83DAD81510216668008CFD01 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				83DAD81610216668008CFD01 /* FMDatabase.h */,
+				83DAD81710216668008CFD01 /* FMDatabase.m */,
+				83DAD81810216668008CFD01 /* FMDatabaseAdditions.h */,
+				83DAD81910216668008CFD01 /* FMDatabaseAdditions.m */,
+				83DAD81A10216668008CFD01 /* fmdb.m */,
+				83DAD81B10216668008CFD01 /* FMResultSet.h */,
+				83DAD81C10216668008CFD01 /* FMResultSet.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		83DAD81D10216668008CFD01 /* MigrationManager */ = {
+			isa = PBXGroup;
+			children = (
+				83DAD81E10216668008CFD01 /* FmdbMigration.h */,
+				83DAD81F10216668008CFD01 /* FmdbMigration.m */,
+				83DAD82010216668008CFD01 /* FmdbMigrationColumn.h */,
+				83DAD82110216668008CFD01 /* FmdbMigrationColumn.m */,
+				83DAD82210216668008CFD01 /* FmdbMigrationManager.h */,
+				83DAD82310216668008CFD01 /* FmdbMigrationManager.m */,
+			);
+			path = MigrationManager;
+			sourceTree = "<group>";
+		};
+		83DAD86510217537008CFD01 /* Migrations */ = {
+			isa = PBXGroup;
+			children = (
+				83DAD86610217537008CFD01 /* CreateLocations.h */,
+				83DAD86710217537008CFD01 /* CreateLocations.m */,
+			);
+			path = Migrations;
+			sourceTree = "<group>";
+		};
 		83E8DA7A0FF1E48B00573934 /* Browse */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +402,8 @@
 				83E8DA7C0FF1E4AE00573934 /* Table */,
 				83EE513C0FECBD3C0099FC4E /* BrowseController.h */,
 				83EE513D0FECBD3C0099FC4E /* BrowseController.m */,
+				8359093C1026548000292900 /* HistoryController.h */,
+				8359093D1026548000292900 /* HistoryController.m */,
 			);
 			name = Browse;
 			sourceTree = "<group>";
@@ -324,6 +424,8 @@
 				83E8D6FE0FEF2EC800573934 /* TableViewController.m */,
 				83E8DA7D0FF1E4ED00573934 /* HouseTableCell.h */,
 				83E8DA7E0FF1E4ED00573934 /* HouseTableCell.m */,
+				8368EC22102029920032CFDB /* StatusView.h */,
+				8368EC23102029920032CFDB /* StatusView.m */,
 			);
 			name = Table;
 			sourceTree = "<group>";
@@ -371,7 +473,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
-				830C822A0FF2A07E0045741F /* housing.xml in Resources */,
 				8357F5000FF831ED00F85065 /* loading.png in Resources */,
 				834A9F2F1005C7EC00B87E53 /* list.png in Resources */,
 				8361078B1006D596007082CD /* down.png in Resources */,
@@ -379,6 +480,7 @@
 				83FB83E5101ABF7600936F2C /* map.png in Resources */,
 				83FB83F2101AC16700936F2C /* logo.png in Resources */,
 				83FB854E101BD10500936F2C /* map.html in Resources */,
+				83DAD8AE10217B78008CFD01 /* openhouses.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +514,18 @@
 				835043991016D267005F857D /* CJSONDeserializer.m in Sources */,
 				8350439A1016D267005F857D /* CJSONScanner.m in Sources */,
 				8350439B1016D267005F857D /* CJSONSerializer.m in Sources */,
+				8368EC24102029920032CFDB /* StatusView.m in Sources */,
+				83DAD82410216668008CFD01 /* FMDatabase.m in Sources */,
+				83DAD82510216668008CFD01 /* FMDatabaseAdditions.m in Sources */,
+				83DAD82610216668008CFD01 /* fmdb.m in Sources */,
+				83DAD82710216668008CFD01 /* FMResultSet.m in Sources */,
+				83DAD82810216668008CFD01 /* FmdbMigration.m in Sources */,
+				83DAD82910216668008CFD01 /* FmdbMigrationColumn.m in Sources */,
+				83DAD82A10216668008CFD01 /* FmdbMigrationManager.m in Sources */,
+				83DAD86810217537008CFD01 /* CreateLocations.m in Sources */,
+				83DAD92310228D85008CFD01 /* Database.m in Sources */,
+				8359082810260C1000292900 /* TaggedReverseGeocoder.m in Sources */,
+				8359093E1026548000292900 /* HistoryController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

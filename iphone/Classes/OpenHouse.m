@@ -107,10 +107,10 @@
 		[self setSubtitle:[NSString stringWithFormat:@"%@", price]];
 		
 		if ([bedrooms isEqualToString:@""] == NO) {
-			[self setSubtitle:[NSString stringWithFormat:@"%@, %@ bd", subtitle, bedrooms]];
+			[self setSubtitle:[NSString stringWithFormat:@"%@, %@ BD", subtitle, bedrooms]];
 		}
 		if ([bathrooms isEqualToString:@""] == NO) {
-			[self setSubtitle:[NSString stringWithFormat:@"%@, %@ bath", subtitle, bathrooms]];
+			[self setSubtitle:[NSString stringWithFormat:@"%@, %@ BA", subtitle, bathrooms]];
 		}
 		[self setSubtitle:[NSString stringWithFormat:@"%@, %@", subtitle, propertyType]];
 

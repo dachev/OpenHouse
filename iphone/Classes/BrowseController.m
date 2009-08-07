@@ -18,11 +18,12 @@
 -(void) showPage:(NSNumber *)p;
 -(void) updateNavButtons;
 -(void) toggleView;
+-(void) getAddressAtLocation:(CLLocation *)location;
 @end
 
 
 @implementation BrowseController
-@synthesize mapController, tableController, activeController, page, origin, currentAnnotations, navButtons, toolbar, mapIconImage, listIconImage;
+@synthesize mapController, tableController, activeController, page, origin, currentAnnotations, geoCoder, statusView, navButtons, toolbar, mapIconImage, listIconImage;
 
 #pragma mark -
 #pragma mark Instantiation and tear down
@@ -52,6 +53,7 @@
         [self setMapIconImage:[UIImage imageNamed:@"map.png"]];
 		
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectedHouseCallback:) name:@"selectedHouse" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectedLocationCallback:) name:@"selectedLocationFromHistory" object:nil];
     }
     return self;
 }
@@ -63,6 +65,8 @@
 	[page release];
 	[origin release];
 	[currentAnnotations release];
+    [geoCoder release];
+    [statusView release];
 	[navButtons release];
 	[toolbar release];
 	[mapIconImage release];
@@ -98,24 +102,8 @@
 	[self.view addSubview:toolbar];
  	
 	/* Initialize toolbar items */
-    int viewWidth      = 225;
-    int spinnerWidth   = 20;
-    UIView *statusView = [[[UIView alloc] initWithFrame:CGRectMake(0,0,viewWidth,20)] autorelease];
-    
-    NSString *statusText = @"Loading Data...";
-    int labelWidth       = (int) [statusText sizeWithFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]].width;
-    int labelOffset      = (int) (viewWidth - (labelWidth + spinnerWidth + 6)) / 2;
-    int spinnerOffset    = labelOffset + labelWidth + 6;
-    UILabel *statusLabel = [[[UILabel alloc] initWithFrame:CGRectMake(labelOffset,0,labelWidth,20)] autorelease];
-    [statusLabel setBackgroundColor:[UIColor clearColor]];
-    [statusLabel setTextColor:[UIColor whiteColor]];
-    [statusLabel setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]];
-    //[statusLabel setTextAlignment:UITextAlignmentCenter];
-    [statusLabel setText:statusText];
-    UIActivityIndicatorView *spinner = [[[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(spinnerOffset,0,spinnerWidth,20)] autorelease];
-    [spinner startAnimating];
-    [statusView addSubview:spinner];
-    [statusView addSubview:statusLabel];
+    StatusView *sv = [[[StatusView alloc] initWithFrame:CGRectMake(0,0,225,20)] autorelease];
+    [self setStatusView:sv];
 	
     UIBarButtonItem *statusButton  = [[UIBarButtonItem alloc] initWithCustomView:statusView];
     UIBarButtonItem *actionButton  = [[UIBarButtonItem alloc]
@@ -129,7 +117,6 @@
 									  action:@selector(changeView:)];
 
 	[toolbar setItems:[NSArray arrayWithObjects:actionButton, statusButton,flipButton,nil]];
-    [[[[toolbar items] objectAtIndex:1] view] setAlpha:0.0f];
     [statusButton release];
 	[flipButton release];
     
@@ -204,6 +191,25 @@
     
 	[self updateNavButtons];
     [self showPage:[NSNumber numberWithInt:1]];
+    
+    
+    Database *db = [Database sharedDatabase];
+    
+    if ([db hasLocationForLat:lat lng:lng] == NO) {
+        [db createLocationForLat:lat lng:lng];
+        [self getAddressAtLocation:loc];
+    }
+    else {
+        [db updateTimestampForLat:lat lng:lng];
+    }
+    
+    [db incrementCountForLat:lat lng:lng];
+}
+
+-(void) getAddressAtLocation:(CLLocation *)location {
+    [self setGeoCoder:[TaggedReverseGeocoder requestWithLocation:location]];
+    geoCoder.delegate = self;
+    [geoCoder start];
 }
 
 -(void) showPage:(NSNumber *)p {
@@ -221,7 +227,7 @@
 }
 
 -(void) getPage:(NSNumber *)p {
-    [[[[toolbar items] objectAtIndex:1] view] setAlpha:1.0f];
+    [statusView showLabel:@"Loading Data..."];
     
 	OpenHouses *openHouses = [OpenHouses sharedOpenHouses];
 	[openHouses loadMoreData];
@@ -243,11 +249,11 @@
 
 -(void) selectAction:(id)sender {
     UIActionSheet *menu = [[UIActionSheet alloc]
-                           initWithTitle:@"New browse localion from"
+                           initWithTitle:@"Start over from"
                            delegate:self
                            cancelButtonTitle:@"Cancel"
                            destructiveButtonTitle:nil
-                           otherButtonTitles:@"Map Center", @"Current Location", @"Address", @"Browse History", nil];
+                           otherButtonTitles:@"Map Center", @"Current Location", @"Address", @"History", nil];
     menu.tag = 1;
     menu.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     id delegate = [[UIApplication sharedApplication] delegate];
@@ -331,6 +337,19 @@
 	}
 }
 
+-(void) selectedLocationCallback:(NSNotification *)notification {
+	NSObject *object = [notification object];
+	
+	if([object isKindOfClass:[NSDictionary class]] == YES) {
+        NSDictionary *location = (NSDictionary *)object;
+        
+        float lat = [[location valueForKey:@"lat"] floatValue];
+        float lng = [[location valueForKey:@"lng"] floatValue];
+        
+        [self setOriginAtLat:lat lng:lng];
+	}
+}
+
 
 #pragma mark ---- UIActionSheetDelegate methods ----
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -343,9 +362,13 @@
     else if (buttonIndex == 2) {
     }
     else if (buttonIndex == 3) {
+        HistoryController *historyCotroller   = [[[HistoryController alloc] initWithStyle:UITableViewStylePlain] autorelease];
+        UINavigationController *navController = [[[UINavigationController alloc] initWithRootViewController:historyCotroller] autorelease];
+
+        [navController setToolbarHidden:NO animated:NO];
+
+        [self.navigationController presentModalViewController:navController animated:YES];
     }
-    
-    NSLog(@"%d", buttonIndex);
 }
 
 
@@ -369,7 +392,7 @@
 
 #pragma mark ---- OpenHousesApiDelegate methods ----
 -(void) finishedWithPage:(NSNumber *)p {
-    [[[[toolbar items] objectAtIndex:1] view] setAlpha:0.0f];
+    [statusView hideLabel];
     
     OpenHouses *openHouses = [OpenHouses sharedOpenHouses];
     if ([p intValue] == 1 && [[openHouses totalResults] intValue] < 1) {
@@ -390,7 +413,7 @@
 }
 
 -(void) failedWithError:(NSError *)error {
-    [[[[toolbar items] objectAtIndex:1] view] setAlpha:0.0f];
+    [statusView hideLabel];
     
 	UIAlertView *alert = [[UIAlertView alloc]
                           initWithTitle:nil
@@ -403,7 +426,20 @@
     [alert release];
 }
 
+
+#pragma mark ---- MKReverseGeocoderDelegate methods ----
+-(void) reverseGeocoder:(TaggedReverseGeocoder *)geocoder didFindPlacemark:(MKPlacemark *)placemark {
+    Database *db   = [Database sharedDatabase];
+    NSString *addr = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@" "];
+    
+    [db updateAddress:addr forLat:geocoder.lat lng:geocoder.lng];
+}
+
+-(void) reverseGeocoder:(TaggedReverseGeocoder *)geocoder didFailWithError:(NSError *)error {
+    
+}
 @end
+
 
 @implementation NSString (Custom)
 +(NSString *) encodeURIComponent: (NSString *) url {
