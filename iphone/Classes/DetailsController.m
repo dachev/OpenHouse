@@ -38,10 +38,6 @@
 
 -(void) loadView {
 	[self setView:[[[UIScrollView alloc] initWithFrame:CGRectZero] autorelease]];
-	//[self setView:[[[UIScrollView alloc] initWithFrame:CGRectMake(0,0,320,372)] autorelease]];
-    //((UIScrollView *)self.view).contentSize = CGSizeZero;
-    //((UIScrollView *)self.view).contentSize = CGSizeMake(320, 700);
-    //[self.view setBackgroundColor:[UIColor whiteColor]];
     self.view.backgroundColor = [UIColor colorWithRed:202/255.0 green:202/255.0 blue:202/255.0 alpha:1.0];
 }
 
@@ -156,71 +152,6 @@
     // Add map view
     [mapView loadHTMLString:html baseURL:nil];
     [self loadScrollView:mapView withPage:pages];
-}
-
-#pragma mark -
-#pragma mark scrollView delegate
--(void) loadScrollViewWithPageOld:(int)page {
-    if (page < 0) return;
-    if (page >= pages) return;
-	
-    
-    NSString *thumbLink = [[[house imageLinks] objectAtIndex:page] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSString *url       = [NSString stringWithFormat:IMAGE_API_REQUEST_URL, @"f", thumbLink];
-    UIImage *image      = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
-	//UIImage *image = [UIImage imageNamed:@"loading.png"];
-    UIImageView *imageView = [[[UIImageView alloc] initWithImage:image] autorelease];
-    if (nil == imageView.superview) {
-        CGRect frame = scrollView.frame;
-        
-        int pageXOrigin = frame.size.width * page;
-        int pageYOrigin = 0;
-        int xDiff = (320 - [image size].width);
-        int yDiff = (CONFIG_PAGE_VIEW_HEIGHT - [image size].height);
-        
-        frame.origin.x = pageXOrigin + xDiff/2.0;
-        frame.origin.y = pageYOrigin + yDiff/2.0;
-        frame.size.width  = [image size].width;
-        frame.size.height = [image size].height;
-        imageView.frame = frame;
-        
-        UIView *separator1 = [[[UIView alloc] initWithFrame:CGRectMake(imageView.frame.origin.x, imageView.frame.origin.y, [image size].width, 1)] autorelease];
-        UIView *separator2 = [[[UIView alloc] initWithFrame:CGRectMake(imageView.frame.origin.x, imageView.frame.origin.y+[image size].height-1, [image size].width, 1)] autorelease];
-        UIView *separator3 = [[[UIView alloc] initWithFrame:CGRectMake(imageView.frame.origin.x, imageView.frame.origin.y, 1, [image size].height)] autorelease];
-        UIView *separator4 = [[[UIView alloc] initWithFrame:CGRectMake(imageView.frame.origin.x+[image size].width-1, imageView.frame.origin.y, 1, [image size].height)] autorelease];
-        separator1.backgroundColor = [UIColor colorWithRed:218/255.0 green:218/255.0 blue:218/255.0 alpha:1.0];
-        separator2.backgroundColor = [UIColor colorWithRed:218/255.0 green:218/255.0 blue:218/255.0 alpha:1.0];
-        separator3.backgroundColor = [UIColor colorWithRed:218/255.0 green:218/255.0 blue:218/255.0 alpha:1.0];
-        separator4.backgroundColor = [UIColor colorWithRed:218/255.0 green:218/255.0 blue:218/255.0 alpha:1.0];
-        
-        [scrollView addSubview:imageView];
-        [scrollView addSubview:separator1];
-        [scrollView addSubview:separator2];
-        [scrollView addSubview:separator3];
-        [scrollView addSubview:separator4];
-    }
-    
-    /*
-    // replace the placeholder if necessary
-    OrderPaperDetailsPageViewController *controller = [viewControllers objectAtIndex:page];
-    if ((NSNull *)controller == [NSNull null]) {
-		DataPaperWeight *paperWeight = [finishes objectAtIndex:page];
-		DataPaperAttributes *paperAttributes = [attributesMap objectForKey:[NSString stringWithFormat:@"%d",paperWeight.bid]];
-		//finish here!
-        controller = [[OrderPaperDetailsPageViewController alloc] initWithNibName:@"OrderPaperDetailsPageView" bundle:nil andPaper:paper attributes:paperAttributes finish:paperWeight.finish];
-        [viewControllers replaceObjectAtIndex:page withObject:controller];
-        [controller release];
-    }
-	
-    // add the controller's view to the scroll view
-    if (nil == controller.view.superview) {
-        CGRect frame = scrollView.frame;
-        frame.origin.x = frame.size.width * page;
-        frame.origin.y = 0;
-        controller.view.frame = frame;
-        [scrollView addSubview:controller.view];
-    }
-    */
 }
 
 -(void) scrollViewDidScroll:(UIScrollView *)sender {

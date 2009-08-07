@@ -23,7 +23,8 @@
 
 
 @implementation BrowseController
-@synthesize mapController, tableController, activeController, page, origin, currentAnnotations, geoCoder, statusView, navButtons, toolbar, mapIconImage, listIconImage;
+@synthesize mapController, tableController, activeController, page, origin, currentAnnotations,
+            geoCoder, statusView, navButtons, toolbar, mapIconImage, listIconImage;
 
 #pragma mark -
 #pragma mark Instantiation and tear down
@@ -54,6 +55,7 @@
 		
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectedHouseCallback:) name:@"selectedHouse" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectedLocationCallback:) name:@"selectedLocationFromHistory" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectedAddressCallback:) name:@"selectedAddressFromGeocoding" object:nil];
     }
     return self;
 }
@@ -183,8 +185,9 @@
     [self setPage:[NSNumber numberWithInt:0]];
     
     CLLocation *loc = [[[CLLocation alloc] initWithLatitude:lat longitude:lng] autorelease];
-    [mapController setLocation:loc];
     [self setOrigin:loc];
+    [mapController setLocation:loc];
+    [self.tableController showPage:[NSArray array] withOrigin:loc];
     
 	OpenHouses *openHouses = [OpenHouses sharedOpenHouses];
     [openHouses setOrigin:loc];
@@ -192,9 +195,7 @@
 	[self updateNavButtons];
     [self showPage:[NSNumber numberWithInt:1]];
     
-    
     Database *db = [Database sharedDatabase];
-    
     if ([db hasLocationForLat:lat lng:lng] == NO) {
         [db createLocationForLat:lat lng:lng];
         [self getAddressAtLocation:loc];
@@ -202,7 +203,6 @@
     else {
         [db updateTimestampForLat:lat lng:lng];
     }
-    
     [db incrementCountForLat:lat lng:lng];
 }
 
@@ -350,8 +350,22 @@
 	}
 }
 
+-(void) selectedAddressCallback:(NSNotification *)notification {
+	NSObject *object = [notification object];
+	
+	if([object isKindOfClass:[NSDictionary class]] == YES) {
+        NSDictionary *address = (NSDictionary *)object;
 
-#pragma mark ---- UIActionSheetDelegate methods ----
+        float lat = [[address valueForKey:@"lat"] floatValue];
+        float lng = [[address valueForKey:@"lng"] floatValue];
+
+        [self setOriginAtLat:lat lng:lng];
+	}
+}
+
+
+#pragma mark -
+#pragma mark UIActionSheetDelegate methods
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0) {
         CLLocationCoordinate2D center = mapController.mapView.centerCoordinate;
@@ -360,6 +374,13 @@
     else if (buttonIndex == 1) {
     }
     else if (buttonIndex == 2) {
+        AddressController *addressCotroller   = [[[AddressController alloc] initWithStyle:UITableViewStylePlain] autorelease];
+        UINavigationController *navController = [[[UINavigationController alloc] initWithRootViewController:addressCotroller] autorelease];
+        
+        [navController setToolbarHidden:NO animated:NO];
+        [navController setNavigationBarHidden:NO animated:NO];
+        
+        [self.navigationController presentModalViewController:navController animated:YES];
     }
     else if (buttonIndex == 3) {
         HistoryController *historyCotroller   = [[[HistoryController alloc] initWithStyle:UITableViewStylePlain] autorelease];
@@ -372,7 +393,8 @@
 }
 
 
-#pragma mark ---- UINavigationControllerDelegate methods ----
+#pragma mark -
+#pragma mark UINavigationControllerDelegate methods
 -(void) navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     if (viewController != self) {
         return;
@@ -390,7 +412,8 @@
 }
 
 
-#pragma mark ---- OpenHousesApiDelegate methods ----
+#pragma mark -
+#pragma mark OpenHousesApiDelegate methods
 -(void) finishedWithPage:(NSNumber *)p {
     [statusView hideLabel];
     
@@ -427,7 +450,8 @@
 }
 
 
-#pragma mark ---- MKReverseGeocoderDelegate methods ----
+#pragma mark -
+#pragma mark MKReverseGeocoderDelegate methods
 -(void) reverseGeocoder:(TaggedReverseGeocoder *)geocoder didFindPlacemark:(MKPlacemark *)placemark {
     Database *db   = [Database sharedDatabase];
     NSString *addr = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@" "];
@@ -447,14 +471,15 @@
                             @"@" , @"&" , @"=" , @"+" ,
                             @"$" , @"," , @"[" , @"]",
                             @"#", @"!", @"'", @"(", 
-                            @")", @"*", nil];
+                            @")", @"*", @" ", nil];
     
     NSArray *replaceChars = [NSArray arrayWithObjects:@"%3B" , @"%2F" , @"%3F" ,
                              @"%3A" , @"%40" , @"%26" ,
                              @"%3D" , @"%2B" , @"%24" ,
                              @"%2C" , @"%5B" , @"%5D", 
                              @"%23", @"%21", @"%27",
-                             @"%28", @"%29", @"%2A", nil];
+                             @"%28", @"%29", @"%2A",
+                             @"%20", nil];
     
     int len = [escapeChars count];
     

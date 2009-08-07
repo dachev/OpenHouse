@@ -8,9 +8,7 @@
 
 #import "StatusView.h"
 
-
 @implementation StatusView
-
 
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {

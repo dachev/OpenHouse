@@ -19,7 +19,7 @@
         self.navigationItem.prompt = @"Select a location";
         
         // Set bottom buttons
-		NSArray *sortItems = [NSArray arrayWithObjects:@"Last Updated", @"Most Frequent", nil];
+		NSArray *sortItems = [NSArray arrayWithObjects:@"Latest", @"Most Frequent", nil];
 		[self setSortButtons:[[[UISegmentedControl alloc] initWithItems:sortItems] autorelease]];
         
 		[sortButtons addTarget:self action:@selector(changeOrder:) forControlEvents:UIControlEventValueChanged];
@@ -142,7 +142,7 @@
     
     if (sortIdx == 0) {
         [self setLocations:[db getLocationsSortedBy:@"updated_on"]];
-        self.navigationItem.title = @"Last Updated";
+        self.navigationItem.title = @"Latest";
     }
     else if (sortIdx == 1) {
         [self setLocations:[db getLocationsSortedBy:@"count"]];
@@ -265,7 +265,8 @@
 }
 
 
-#pragma mark ---- UIActionSheetDelegate methods ----
+#pragma mark -
+#pragma mark UIActionSheetDelegate methods
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0) {
         Database *db = [Database sharedDatabase];
