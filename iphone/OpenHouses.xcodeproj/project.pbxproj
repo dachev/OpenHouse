@@ -29,6 +29,7 @@
 		8357F56E0FF8421A00F85065 /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8357F56B0FF8421A00F85065 /* ConnectionManager.m */; };
 		8359082810260C1000292900 /* TaggedReverseGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8359082710260C1000292900 /* TaggedReverseGeocoder.m */; };
 		8359093E1026548000292900 /* HistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8359093D1026548000292900 /* HistoryController.m */; };
+		83590C451027E20D00292900 /* AddressController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83590C441027E20D00292900 /* AddressController.m */; };
 		835B0EDE0FC12DF9007F818F /* MyCLController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835B0EDD0FC12DF9007F818F /* MyCLController.m */; };
 		835B0F920FC13108007F818F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 835B0F910FC13108007F818F /* CoreLocation.framework */; };
 		835E12660FEC921800923362 /* OpenHouses.m in Sources */ = {isa = PBXBuildFile; fileRef = 835E12650FEC921800923362 /* OpenHouses.m */; };
@@ -99,6 +100,8 @@
 		8359082710260C1000292900 /* TaggedReverseGeocoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaggedReverseGeocoder.m; sourceTree = "<group>"; };
 		8359093C1026548000292900 /* HistoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryController.h; sourceTree = "<group>"; };
 		8359093D1026548000292900 /* HistoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryController.m; sourceTree = "<group>"; };
+		83590C431027E20D00292900 /* AddressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressController.h; sourceTree = "<group>"; };
+		83590C441027E20D00292900 /* AddressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressController.m; sourceTree = "<group>"; };
 		835B0EDC0FC12DF9007F818F /* MyCLController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCLController.h; sourceTree = "<group>"; };
 		835B0EDD0FC12DF9007F818F /* MyCLController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCLController.m; sourceTree = "<group>"; };
 		835B0F910FC13108007F818F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -404,6 +407,8 @@
 				83EE513D0FECBD3C0099FC4E /* BrowseController.m */,
 				8359093C1026548000292900 /* HistoryController.h */,
 				8359093D1026548000292900 /* HistoryController.m */,
+				83590C431027E20D00292900 /* AddressController.h */,
+				83590C441027E20D00292900 /* AddressController.m */,
 			);
 			name = Browse;
 			sourceTree = "<group>";
@@ -526,6 +531,7 @@
 				83DAD92310228D85008CFD01 /* Database.m in Sources */,
 				8359082810260C1000292900 /* TaggedReverseGeocoder.m in Sources */,
 				8359093E1026548000292900 /* HistoryController.m in Sources */,
+				83590C451027E20D00292900 /* AddressController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

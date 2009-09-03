@@ -11,6 +11,7 @@
 #define IMAGE_API_REQUEST_URL @"http://blago.dachev.com/service/image/resize.png?size=%@&location=%@"
 #define SEARCH_API_REQUEST_URL @"http://blago.dachev.com/~blago/openhouses/service.py/search?offset=%d&records=%d&lat=%f&lng=%f&distance=%f&bdate=%@&edate=%@"
 #define STATIC_MAPS_REQUEST_URL @"http://maps.google.com/staticmap?center=%f,%f&zoom=15&size=310x233&maptype=mobile&markers=%f,%f,red&sensor=false"
+#define GOOGLE_GEOCODING_URL @"http://maps.google.com/maps/geo?q=%@"
 
 #define RESULTS_PER_PAGE_DISPLAY 10
 #define RESULTS_PER_PAGE_FETCH 50
