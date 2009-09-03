@@ -220,6 +220,7 @@ def count_houses(lat, lng, distance, bdate, edate):
         SELECT count(*)
         FROM houses
         WHERE (3959 * ACOS(SIN(RADIANS(:alat)) * SIN(RADIANS(lat)) + COS(RADIANS(:alat)) * COS(RADIANS(lat)) * COS(RADIANS(lng) - RADIANS(:alng)))) < :adistance
+        AND ltype = 'for sale'
         AND bdate > :abdate
         AND edate < :aedate
     """)
@@ -241,7 +242,8 @@ def get_houses(lat, lng, distance, bdate, edate, offset, records):
         SELECT h.*, i.url FROM (
             SELECT *, (3959 * ACOS(SIN(RADIANS(:alat)) * SIN(RADIANS(lat)) + COS(RADIANS(:alat)) * COS(RADIANS(lat)) * COS(RADIANS(lng) - RADIANS(:alng)))) AS distance
             FROM houses
-            WHERE bdate > :abdate
+            WHERE ltype = 'for sale'
+            AND bdate > :abdate
             AND edate < :aedate
             HAVING distance < :adistance
             ORDER BY distance
