@@ -13,18 +13,20 @@
 @end
 
 @interface AddressController (Private)
+-(void) cancelRequests;
 -(void) getAddressesFinish:(TaggedURLConnection *)connection withData:(NSData *)data;
 -(void) getAddressesFail:(TaggedURLConnection *)connection withError:(NSString *)error;
 -(void) showAlertWithText:(NSString *)text;
 @end
 
 @implementation AddressController
-@synthesize statusView, searchBar, addresses;
+@synthesize statusView, searchBar, addresses, requests;
 
 #pragma mark -
 #pragma mark Instantiation and tear down
 -(id) initWithStyle:(UITableViewStyle)style {
     if (self = [super initWithStyle:style]) {
+		[self setRequests:[NSMutableDictionary dictionary]];
         [self setAddresses:[NSArray array]];
         
         NSString *query = [[NSUserDefaults standardUserDefaults] objectForKey:@"address_search_query"];
@@ -65,11 +67,21 @@
 }
 
 -(void) dealloc {
+	[self cancelRequests];
+    
     [statusView release];
     [searchBar release];
     [addresses release];
+    [requests release];
     
     [super dealloc];
+}
+
+-(void) cancelRequests {
+	for (id key in requests) {
+        TaggedRequest *request = [requests objectForKey:key];
+        [request delegate:nil didFinishSelector:nil didFailSelector:nil];
+    }
 }
 
 
@@ -232,6 +244,7 @@
     TaggedRequest *request = [TaggedRequest requestWithId:identifier url:url];
     [request setTimeoutInterval:CONFIG_NETWORK_TIMEOUT];
     [request delegate:self didFinishSelector:@selector(getAddressesFinish:withData:) didFailSelector:@selector(getAddressesFail:withError:)];
+    [requests setObject:request forKey:identifier];
     
     ConnectionManager *manager = [ConnectionManager sharedConnectionManager];
     [manager add:request];
@@ -253,6 +266,9 @@
 #pragma mark -
 #pragma mark Geocoding API delegates
 -(void) getAddressesFinish:(TaggedURLConnection *)connection withData:(NSData *)data {
+    // remove request from container
+    [requests removeObjectForKey:[connection tag]];
+    
     [statusView hideLabel];
     
     if([connection status] != 200) {
@@ -327,6 +343,9 @@
 }
 
 -(void) getAddressesFail:(TaggedURLConnection *)connection withError:(NSString *)error {
+    // remove request from container
+    [requests removeObjectForKey:[connection tag]];
+    
     [self showAlertWithText:error];
     
     [statusView hideLabel];

@@ -26,7 +26,7 @@
     CLLocation *origin;
 	NSNumber *totalResults;
 	NSNumber *totalPages;
-	BOOL pendingRequest;
+	NSMutableDictionary *requests;
 	
 	NSMutableArray *allAnnotations;
 	
@@ -36,7 +36,7 @@
 @property (nonatomic, retain) CLLocation *origin;
 @property (nonatomic, retain) NSNumber *totalResults;
 @property (nonatomic, retain) NSNumber *totalPages;
-@property (nonatomic, assign) BOOL pendingRequest;
+@property (nonatomic, retain) NSMutableDictionary *requests;
 @property (nonatomic, retain) NSMutableArray *allAnnotations;
 @property (nonatomic, assign) id <OpenHousesApiDelegate> delegate;
 

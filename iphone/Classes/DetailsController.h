@@ -20,6 +20,7 @@
     SpecsView *specsView;
     OpenHouse *house;
     NSUInteger pages;
+	NSMutableDictionary *requests;
 	BOOL pageControlUsed;
 }
 
@@ -28,6 +29,7 @@
 @property (nonatomic, retain) SpecsView *specsView;
 @property (nonatomic, retain) OpenHouse *house;
 @property (nonatomic, assign) NSUInteger pages;
+@property (nonatomic, retain) NSMutableDictionary *requests;
 @property (nonatomic, assign) BOOL pageControlUsed;
 
 -(void) setHouse:(OpenHouse *)v;

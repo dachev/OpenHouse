@@ -107,12 +107,12 @@
 		[self setSubtitle:[NSString stringWithFormat:@"%@", price]];
 		
 		if ([bedrooms isEqualToString:@""] == NO) {
-			[self setSubtitle:[NSString stringWithFormat:@"%@, %@ BD", subtitle, bedrooms]];
+			[self setSubtitle:[NSString stringWithFormat:@"%@ | %@ BD", subtitle, bedrooms]];
 		}
 		if ([bathrooms isEqualToString:@""] == NO) {
-			[self setSubtitle:[NSString stringWithFormat:@"%@, %@ BA", subtitle, bathrooms]];
+			[self setSubtitle:[NSString stringWithFormat:@"%@ | %@ BA", subtitle, bathrooms]];
 		}
-		[self setSubtitle:[NSString stringWithFormat:@"%@, %@", subtitle, propertyType]];
+		[self setSubtitle:[NSString stringWithFormat:@"%@ | %@", subtitle, propertyType]];
 
 		/* Sort image links so we always use the same as a thumbnail */
 		NSArray *fred = [imageLinks sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];

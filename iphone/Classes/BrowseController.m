@@ -263,7 +263,7 @@
 -(void) changePage:(id)sender {
 	OpenHouses *openHouses = [OpenHouses sharedOpenHouses];
 	
-	if ([openHouses pendingRequest] == YES) {
+	if ([openHouses.requests count] > 0) {
 		return;
 	}
 	

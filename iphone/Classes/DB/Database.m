@@ -108,7 +108,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(Database);
 	
     while ([rs next]) {
         NSDictionary *location = [self makeLocationFromResultSetRow:rs];
-        NSLog(@"%d", [[location valueForKey:@"id"] intValue]);
         [locations addObject:location];
     }
     [rs close];

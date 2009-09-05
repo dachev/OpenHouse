@@ -14,22 +14,26 @@
 
 @interface DetailsController (Private)
 -(void) loadScrollView:(UIView *)view withPage:(int)page;
+-(void) cancelRequests;
 @end
 
 @implementation DetailsController
-@synthesize pageControl, scrollView, specsView, house, pages, pageControlUsed;
+@synthesize pageControl, scrollView, specsView, house, pages, requests, pageControlUsed;
 
 -(id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+		[self setRequests:[NSMutableDictionary dictionary]];
     }
     
     return self;
 }
 
 -(void) dealloc {
+	[self cancelRequests];
+    
     [pageControl release];
     [scrollView release];
-    //[specsController release];
+    [requests release];
     [specsView release];
     [house release];
     
@@ -66,6 +70,13 @@
 - (void)viewDidUnload {
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
+}
+
+-(void) cancelRequests {
+	for (id key in requests) {
+        TaggedRequest *request = [requests objectForKey:key];
+        [request delegate:nil didFinishSelector:nil didFailSelector:nil];
+    }
 }
 
 -(void) setHouse:(OpenHouse *)v {
@@ -130,11 +141,12 @@
 		NSString *photoLink = [NSString encodeURIComponent:link];
 		NSString *url       = [NSString stringWithFormat:IMAGE_API_REQUEST_URL, @"f", photoLink];
 		
-		NSString *identifier = [NSString stringWithFormat:@"%d", idx];
+		NSString *identifier   = [NSString stringWithFormat:@"%d", idx];
 		TaggedRequest *request = [TaggedRequest requestWithId:identifier url:url];
 		[request setTimeoutInterval:CONFIG_NETWORK_TIMEOUT];
 		//[request setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
 		[request delegate:self didFinishSelector:@selector(getPhotoFinish:withData:) didFailSelector:@selector(getPhotoFail:withError:)];
+        [requests setObject:request forKey:identifier];
 		
 		ConnectionManager *manager = [ConnectionManager sharedConnectionManager];
 		[manager add:request];
@@ -227,6 +239,9 @@
 #pragma mark -
 #pragma mark Image API delegates
 -(void) getPhotoFinish:(TaggedURLConnection *)connection withData:(NSData *)data {
+    // remove request from container
+    [requests removeObjectForKey:[connection tag]];
+    
     if([connection status] != 200) {
         return;
     }
@@ -247,6 +262,8 @@
 }
 
 -(void) getPhotoFail:(TaggedURLConnection *)connection withError:(NSString *)error {
+    [requests removeObjectForKey:[connection tag]];
+    
 	//NSLog(@"%@:%@", [connection tag], error);
 	//[[NSNotificationCenter defaultCenter] postNotificationName:@"thumbRequestFailed" object:error];
 }

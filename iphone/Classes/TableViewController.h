@@ -19,10 +19,12 @@
 @interface TableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource> {
 	NSArray *currentAnnotations;
 	NSMutableArray *thumbnails;
+	NSMutableDictionary *requests;
 }
 
 @property (nonatomic, retain) NSArray *currentAnnotations;
 @property (nonatomic, retain) NSMutableArray *thumbnails;
+@property (nonatomic, retain) NSMutableDictionary *requests;
 
 -(void) showPage:(NSArray *)annotations withOrigin:(CLLocation *)origin;
 

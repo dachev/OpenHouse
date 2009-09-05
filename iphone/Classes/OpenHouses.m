@@ -10,6 +10,7 @@
 
 
 @interface OpenHouses (Private)
+-(void) cancelRequests;
 -(NSNumber *) calculatePageFromStartIndex:(NSNumber *)idx;
 -(void) getHousesFinish:(TaggedURLConnection *)connection withData:(NSData *)data;
 -(void) getHousesFail:(TaggedURLConnection *)connection withError:(NSString *)error;
@@ -17,10 +18,12 @@
 
 @implementation OpenHouses
 SYNTHESIZE_SINGLETON_FOR_CLASS(OpenHouses);
-@synthesize origin, totalResults, totalPages, pendingRequest, allAnnotations, delegate;
+@synthesize origin, totalResults, totalPages, requests, allAnnotations, delegate;
 
 -(id) init {
 	if (self = [super init]) {
+		[self setRequests:[NSMutableDictionary dictionary]];
+        
         CLLocation *o = [[[CLLocation alloc] initWithLatitude:0 longitude:0] autorelease];
         [self setOrigin:o];
 	}
@@ -29,12 +32,22 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(OpenHouses);
 }
 
 -(void) dealloc {
+	[self cancelRequests];
+    
     [origin release];
 	[totalResults release];
 	[totalPages release];
+    [requests release];
 	[allAnnotations release];
 	
 	[super dealloc];
+}
+
+-(void) cancelRequests {
+	for (id key in requests) {
+        TaggedRequest *request = [requests objectForKey:key];
+        [request delegate:nil didFinishSelector:nil didFailSelector:nil];
+    }
 }
 
 -(void) setOrigin:(CLLocation *)v {
@@ -45,7 +58,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(OpenHouses);
 	[self setTotalResults:[NSNumber numberWithInt:0]];
 	[self setTotalPages:[NSNumber numberWithInt:0]];
     [self setAllAnnotations:[NSMutableArray array]];
-    [self setPendingRequest:NO];
+    
+	[self cancelRequests];
+    [self setRequests:[NSMutableDictionary dictionary]];
 }
 
 -(void) loadMoreData {
@@ -62,22 +77,25 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(OpenHouses);
     float lng              = origin.coordinate.longitude;
     NSString *url          = [NSString stringWithFormat:SEARCH_API_REQUEST_URL, offset, records, lat, lng, CONFIG_SEARCH_DISTANCE, beginString, endString];
     NSString *identifier   = [NSString stringWithFormat:@"%d", [beginDate timeIntervalSince1970]];
-
+    
+	[self cancelRequests];
+    [self setRequests:[NSMutableDictionary dictionary]];    
+    
     TaggedRequest *request = [TaggedRequest requestWithId:identifier url:url];
     [request setTimeoutInterval:CONFIG_NETWORK_TIMEOUT];
     [request delegate:self didFinishSelector:@selector(getHousesFinish:withData:) didFailSelector:@selector(getHousesFail:withError:)];
+    [requests setObject:request forKey:identifier];
     
     ConnectionManager *manager = [ConnectionManager sharedConnectionManager];
     [manager add:request];
-	
-	[self setPendingRequest:YES];
 }
 
 
 #pragma mark -
 #pragma mark Search API delegates
 -(void) getHousesFinish:(TaggedURLConnection *)connection withData:(NSData *)data {
-    [self setPendingRequest:NO];
+    // remove request from container
+    [requests removeObjectForKey:[connection tag]];
     
     if([connection status] != 200) {
         [self getHousesFail:connection withError:@""];
@@ -118,7 +136,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(OpenHouses);
 }
 
 -(void) getHousesFail:(TaggedURLConnection *)connection withError:(NSString *)error {
-     [self setPendingRequest:NO];
+    // remove request from container
+    [requests removeObjectForKey:[connection tag]];
     
 	/*
      UIAlertView *alert = [[UIAlertView alloc]

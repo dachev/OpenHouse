@@ -10,16 +10,22 @@
 
 @interface NSString (Custom)
 +(NSString *) encodeURIComponent: (NSString *) url;
+-(void) cancelRequests;
+@end
+
+@interface TableViewController (Private)
+-(void) cancelRequests;
 @end
 
 @implementation TableViewController
-@synthesize currentAnnotations, thumbnails;
+@synthesize currentAnnotations, thumbnails, requests;
 
 #pragma mark -
 #pragma mark Instantiation and tear down
 -(id) initWithStyle:(UITableViewStyle)style {
     if (self = [super initWithStyle:style]) {
 		[self setCurrentAnnotations:[NSArray array]];
+		[self setRequests:[NSMutableDictionary dictionary]];
         
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(browseControllerCallback) name:@"browseControllerWillShow" object:nil];
     }
@@ -28,8 +34,11 @@
 }
 
 -(void) dealloc {
+	[self cancelRequests];
+    
 	[currentAnnotations release];
 	[thumbnails release];
+    [requests release];
 	
     [super dealloc];
 }
@@ -88,6 +97,13 @@
 
 #pragma mark -
 #pragma mark Custom methods
+-(void) cancelRequests {
+	for (id key in requests) {
+        TaggedRequest *request = [requests objectForKey:key];
+        [request delegate:nil didFinishSelector:nil didFailSelector:nil];
+    }
+}
+
 -(void) setCurrentAnnotations:(NSArray *)v {
 	[v retain];
 	[currentAnnotations release];
@@ -113,6 +129,7 @@
 		[request setTimeoutInterval:CONFIG_NETWORK_TIMEOUT];
 		//[request setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
 		[request delegate:self didFinishSelector:@selector(getThumbFinish:withData:) didFailSelector:@selector(getThumbFail:withError:)];
+        [requests setObject:request forKey:identifier];
 		
 		ConnectionManager *manager = [ConnectionManager sharedConnectionManager];
 		[manager add:request];
@@ -120,6 +137,8 @@
 }
 
 -(void) showPage:(NSArray *)annotations withOrigin:(CLLocation *)origin {
+	[self cancelRequests];
+    [self setRequests:[NSMutableDictionary dictionary]];
 	[self setCurrentAnnotations:annotations];
     [self.tableView setContentOffset:CGPointMake(0,0)];
 	[self.tableView reloadData];
@@ -223,6 +242,9 @@
 #pragma mark -
 #pragma mark Image API delegates
 -(void) getThumbFinish:(TaggedURLConnection *)connection withData:(NSData *)data {
+    // remove request from container
+    [requests removeObjectForKey:[connection tag]];
+    
     if([connection status] != 200) {
         return;
     }
@@ -233,11 +255,19 @@
 	UITableViewCell *cell = [[self tableView] cellForRowAtIndexPath:indexPath];
 	
 	UIImage *thumb = [UIImage imageWithData:data];
+    
+    if (thumb == nil) {
+        return;
+    }
+    
 	[thumbnails replaceObjectAtIndex:idx withObject:thumb];
 	cell.imageView.image = thumb;
 }
 
 -(void) getThumbFail:(TaggedURLConnection *)connection withError:(NSString *)error {
+    // remove request from container
+    [requests removeObjectForKey:[connection tag]];
+    
 	//NSLog(@"%@:%@", [connection tag], error);
 	//[[NSNotificationCenter defaultCenter] postNotificationName:@"thumbRequestFailed" object:error];
 }

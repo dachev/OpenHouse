@@ -18,11 +18,13 @@
     StatusView *statusView;
     UISearchBar *searchBar;
 	NSArray *addresses;
+	NSMutableDictionary *requests;
 }
 
 @property (nonatomic, retain) StatusView *statusView;
 @property (nonatomic, retain) UISearchBar *searchBar;
 @property (nonatomic, retain) NSArray *addresses;
+@property (nonatomic, retain) NSMutableDictionary *requests;
 
 -(float) calculateHeightFromWidth:(float)width text:(NSString *)text font:(UIFont *)font lineBreakMode:(UILineBreakMode)lineBreakMode;
 
