@@ -12,6 +12,10 @@
 +(NSString *) encodeURIComponent: (NSString *) url;
 @end
 
+@interface UITableViewCell (Custom)
++(float) calculateHeightFromWidth:(float)width text:(NSString *)text font:(UIFont *)font lineBreakMode:(UILineBreakMode)lineBreakMode;
+@end
+
 @interface AddressController (Private)
 -(void) cancelRequests;
 -(void) getAddressesFinish:(TaggedURLConnection *)connection withData:(NSData *)data;
@@ -150,18 +154,6 @@
     [self.tableView reloadData];
 }
 
--(float) calculateHeightFromWidth:(float)width text:(NSString *)text font:(UIFont *)font lineBreakMode:(UILineBreakMode)lineBreakMode {
-    [text retain];
-    [font retain];
-    
-    CGSize suggestedSize = [text sizeWithFont:font constrainedToSize:CGSizeMake(width, FLT_MAX) lineBreakMode:lineBreakMode];
-    
-    [text release];
-    [font release];
-    
-    return suggestedSize.height;
-}
-
 -(void) showAlertWithText:(NSString *)text {
     UIAlertView *alert = [[UIAlertView alloc]
                           initWithTitle:nil
@@ -184,25 +176,22 @@
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID"];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:@"cellID"] autorelease];
+        cell = [[[AddressResultCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:@"cellID"] autorelease];
         
         //cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        cell.textLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize]-1];
+        cell.textLabel.font       = [UIFont systemFontOfSize:[UIFont systemFontSize]-1];
         cell.detailTextLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:15];
         
-        cell.textLabel.textColor = [UIColor grayColor];
+        cell.textLabel.textColor       = [UIColor grayColor];
         cell.detailTextLabel.textColor = [UIColor blackColor];
     }
     
-    NSDictionary *address = [addresses objectAtIndex:indexPath.row];
+    NSDictionary *address     = [addresses objectAtIndex:indexPath.row];
     cell.detailTextLabel.text = [address valueForKey:@"address"];
-    cell.textLabel.text = [cell.detailTextLabel.text isEqualToString:@""] ? @"" : @"Location:";
+    cell.textLabel.text       = @"Location:";
     
     cell.detailTextLabel.numberOfLines = 0;
-    cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
-    cell.detailTextLabel.backgroundColor = [UIColor blackColor];
-    cell.textLabel.backgroundColor = [UIColor blackColor];
     [cell.detailTextLabel sizeToFit];
     
     return cell;
@@ -223,7 +212,7 @@
     UIFont *font          = [UIFont fontWithName:@"HelveticaNeue-Bold" size:15];
     UILineBreakMode bMode = UILineBreakModeWordWrap;
     
-    CGFloat height    = [self calculateHeightFromWidth:227.0f text:text font:font lineBreakMode:bMode] + 25;
+    CGFloat height    = [UITableViewCell calculateHeightFromWidth:227.0f text:text font:font lineBreakMode:bMode] + 25;
     if (height < 45.0f) {
         height = 45.0f;
     }
@@ -352,8 +341,26 @@
     [self setAddresses:[NSArray array]];
 }
 
+@end
 
 
+
+@implementation UITableViewCell (Custom)
+
++(float) calculateHeightFromWidth:(float)width text:(NSString *)text font:(UIFont *)font lineBreakMode:(UILineBreakMode)lineBreakMode {
+    [text retain];
+    [font retain];
+    
+    CGSize suggestedSize = [text sizeWithFont:font constrainedToSize:CGSizeMake(width, FLT_MAX) lineBreakMode:lineBreakMode];
+    
+    [text release];
+    [font release];
+    
+    return suggestedSize.height;
+}
 
 @end
+
+
+
 

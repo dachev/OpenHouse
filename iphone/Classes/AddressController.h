@@ -11,6 +11,7 @@
 #import "TaggedRequest.h"
 #import "ConnectionManager.h"
 #import "CJSONDeserializer.h"
+#import "AddressResultCell.h"
 #import "StatusView.h"
 
 
@@ -25,7 +26,5 @@
 @property (nonatomic, retain) UISearchBar *searchBar;
 @property (nonatomic, retain) NSArray *addresses;
 @property (nonatomic, retain) NSMutableDictionary *requests;
-
--(float) calculateHeightFromWidth:(float)width text:(NSString *)text font:(UIFont *)font lineBreakMode:(UILineBreakMode)lineBreakMode;
 
 @end
