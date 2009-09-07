@@ -13,12 +13,13 @@
 @end
 
 @interface DetailsController (Private)
+-(void) showHouse;
 -(void) loadScrollView:(UIView *)view withPage:(int)page;
 -(void) cancelRequests;
 @end
 
 @implementation DetailsController
-@synthesize pageControl, scrollView, specsView, house, pages, requests, pageControlUsed;
+@synthesize pageControl, scrollView, specsView, mapView, house, pages, requests, pageControlUsed;
 
 -(id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
@@ -35,6 +36,7 @@
     [scrollView release];
     [requests release];
     [specsView release];
+    [mapView release];
     [house release];
     
     [super dealloc];
@@ -111,7 +113,6 @@
     //UIView *separator = [[[UIView alloc] initWithFrame:CGRectMake(0,245,320,1)] autorelease];
     separator.backgroundColor = [UIColor colorWithRed:218/255.0 green:218/255.0 blue:218/255.0 alpha:1.0];
     
-    //[self loadScrollViewWithPage:0];
     SpecsView *sv = [[[SpecsView alloc] initWithFrame:CGRectZero] autorelease];
     //SpecsView *sv = [[[SpecsView alloc] initWithFrame:CGRectMake(0,263,320,437)] autorelease];
     [sv setHouse:house];
@@ -154,16 +155,42 @@
 	}
     
     // Create static map view
-    NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"map" ofType:@"html"];
-    float lat          = house.coordinate.latitude;
-    float lng          = house.coordinate.longitude;
-    NSString *url      = [NSString stringWithFormat:STATIC_MAPS_REQUEST_URL, lat, lng, lat, lng];
-    NSString *html     = [NSString stringWithFormat:[NSString stringWithContentsOfFile:htmlPath], url];
-    UIWebView *mapView = [[[UIWebView alloc] initWithFrame:CGRectMake(0,0,310,233)] autorelease];
+    //NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"map" ofType:@"html"];
+    //float lat          = house.coordinate.latitude;
+    //float lng          = house.coordinate.longitude;
+    //NSString *url      = [NSString stringWithFormat:STATIC_MAPS_REQUEST_URL, lat, lng, lat, lng];
+    //NSString *html     = [NSString stringWithFormat:[NSString stringWithContentsOfFile:htmlPath], url];
+    //UIWebView *mapView = [[[UIWebView alloc] initWithFrame:CGRectMake(0,0,310,233)] autorelease];
+    //[mapView loadHTMLString:html baseURL:nil];
     
+    // Create static map view
+	[self setMapView:[[[MKMapView alloc] initWithFrame:CGRectMake(0,0,310,233)] autorelease]];
+    
+	mapView.zoomEnabled   = NO;
+	mapView.scrollEnabled = NO;
+	mapView.mapType	      = MKMapTypeStandard;
+	
     // Add map view
-    [mapView loadHTMLString:html baseURL:nil];
+    [self showHouse];
     [self loadScrollView:mapView withPage:pages];
+}
+
+-(void) showHouse {
+	// Set region and zoom
+	MKCoordinateRegion region;
+	MKCoordinateSpan span;
+    CLLocationCoordinate2D coord;
+    
+    coord.latitude      = house.coordinate.latitude;
+    coord.longitude     = house.coordinate.longitude;
+	span.latitudeDelta  = 0.005;
+	span.longitudeDelta = 0.005;
+	region.span         = span;
+	region.center       = coord;
+    
+	[mapView setRegion:region animated:TRUE];
+    
+	[mapView addAnnotation:house];
 }
 
 -(void) scrollViewDidScroll:(UIScrollView *)sender {
@@ -174,10 +201,6 @@
     CGFloat pageWidth = scrollView.frame.size.width;
     int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     pageControl.currentPage = page;
-    
-    //[self loadScrollViewWithPage:page - 1];
-    //[self loadScrollViewWithPage:page];
-    //[self loadScrollViewWithPage:page + 1];
 }
 
 // At the end of scroll animation, reset the boolean used when scrolls originate from the UIPageControl
@@ -191,9 +214,6 @@
 
 -(void) changePage:(id)sender {
     int page = pageControl.currentPage;
-    //[self loadScrollViewWithPage:page - 1];
-    //[self loadScrollViewWithPage:page];
-    //[self loadScrollViewWithPage:page + 1];
     
     // update the scroll view to the appropriate page
     CGRect frame = scrollView.frame;

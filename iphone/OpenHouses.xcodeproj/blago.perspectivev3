@@ -282,7 +282,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>37</integer>
+									<integer>36</integer>
 									<integer>30</integer>
 									<integer>25</integer>
 									<integer>1</integer>
@@ -321,7 +321,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>83E55D200FB7F8FC00ED0E37</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>AddressController.h</string>
+								<string>HistoryController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -329,11 +329,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>83E55D210FB7F8FC00ED0E37</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>AddressController.h</string>
+										<string>HistoryController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>831B373D105597C700CA6E29</string>
+										<string>831B374C1055A19700CA6E29</string>
 										<key>history</key>
 										<array>
 											<string>835B0FA20FC13181007F818F</string>
@@ -384,7 +384,6 @@
 											<string>834F0C31102BF488002B0951</string>
 											<string>834F0C79102C033E002B0951</string>
 											<string>834F0DE4102C215B002B0951</string>
-											<string>834F0E41102C7564002B0951</string>
 											<string>834F0E6D102C79DC002B0951</string>
 											<string>836F70BC104F7ACF005AE01C</string>
 											<string>836F70DE105223C6005AE01C</string>
@@ -404,9 +403,10 @@
 											<string>836F7293105247F4005AE01C</string>
 											<string>831B361D105486E600CA6E29</string>
 											<string>831B36B2105591B700CA6E29</string>
-											<string>831B37231055953D00CA6E29</string>
 											<string>831B3734105596C400CA6E29</string>
-											<string>831B373A105597BE00CA6E29</string>
+											<string>831B37461055A19400CA6E29</string>
+											<string>831B37471055A19400CA6E29</string>
+											<string>831B37481055A19400CA6E29</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -499,6 +499,8 @@
 											<string>831B371C1055951100CA6E29</string>
 											<string>831B37251055953D00CA6E29</string>
 											<string>831B3736105596C400CA6E29</string>
+											<string>831B37491055A19400CA6E29</string>
+											<string>831B374A1055A19400CA6E29</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

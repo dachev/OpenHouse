@@ -99,8 +99,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(Database);
         @"SELECT * FROM locations ORDER BY count DESC" :
         @"SELECT * FROM locations ORDER BY updated_on DESC";
     
-    NSLog(@"%@", sql);
-    
     FMResultSet *rs = [fmdb executeQuery:sql];
 	if ([fmdb hadError]) {
 		NSLog(@"Error: %@", [fmdb lastErrorMessage]);
