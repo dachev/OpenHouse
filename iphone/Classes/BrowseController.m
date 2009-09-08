@@ -117,6 +117,15 @@
     [self.navigationController setToolbarHidden:NO animated:NO];
     [self.navigationController setDelegate:self];
     
+    /* Set back button item */
+    UIBarButtonItem *backButton = [[[UIBarButtonItem alloc]
+                                    initWithTitle:@"Browse results"
+                                    style:UIBarButtonItemStylePlain
+                                    target:nil
+                                    action:nil] autorelease];
+    self.navigationItem.backBarButtonItem = backButton;
+    
+    /* Start the show */
     [self setOriginAtLat:44.97614 lng:-93.27704];
 }
 
