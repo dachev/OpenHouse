@@ -168,7 +168,8 @@
     HouseTableCell *cell = (HouseTableCell *)[tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell == nil) {
         cell = [[[HouseTableCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"] autorelease];
-		cell.accessoryType  = UITableViewCellAccessoryDetailDisclosureButton;
+		//cell.accessoryType  = UITableViewCellAccessoryDetailDisclosureButton;
+        cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
 		//cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
 	

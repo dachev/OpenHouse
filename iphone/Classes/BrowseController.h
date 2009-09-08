@@ -33,7 +33,6 @@
 	
     StatusView *statusView;
 	UISegmentedControl *navButtons;
-	UIToolbar *toolbar;
     UIImage *mapIconImage;
     UIImage *listIconImage;
 }
@@ -47,7 +46,6 @@
 @property (nonatomic, retain) MKReverseGeocoder *geoCoder;
 @property (nonatomic, retain) StatusView *statusView;
 @property (nonatomic, retain) UISegmentedControl *navButtons;
-@property (nonatomic, retain) UIToolbar *toolbar;
 @property (nonatomic, retain) UIImage *mapIconImage;
 @property (nonatomic, retain) UIImage *listIconImage;
 

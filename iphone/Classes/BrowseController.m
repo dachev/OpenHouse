@@ -24,7 +24,7 @@
 
 @implementation BrowseController
 @synthesize mapController, tableController, activeController, page, origin, currentAnnotations,
-            geoCoder, statusView, navButtons, toolbar, mapIconImage, listIconImage;
+            geoCoder, statusView, navButtons, mapIconImage, listIconImage;
 
 #pragma mark -
 #pragma mark Instantiation and tear down
@@ -70,7 +70,6 @@
     [geoCoder release];
     [statusView release];
 	[navButtons release];
-	[toolbar release];
 	[mapIconImage release];
 	[listIconImage release];
     
@@ -92,16 +91,6 @@
 	
 	OpenHouses *openHouses = [OpenHouses sharedOpenHouses];
 	[openHouses setDelegate:self];
-	
-	/* Initialize the bottom toolbar */
-	[self setToolbar:[[[UIToolbar alloc] initWithFrame:CGRectZero] autorelease]];
-	[toolbar setBarStyle:UIBarStyleDefault];
-	[toolbar sizeToFit];
-    CGRect rect = toolbar.frame;
-    //rect.origin.y = 436;
-    rect.origin.y = 372;
-    toolbar.frame = rect;
-	[self.view addSubview:toolbar];
  	
 	/* Initialize toolbar items */
     StatusView *sv = [[[StatusView alloc] initWithFrame:CGRectMake(0,0,225,20)] autorelease];
@@ -109,7 +98,8 @@
 	
     UIBarButtonItem *statusButton  = [[UIBarButtonItem alloc] initWithCustomView:statusView];
     UIBarButtonItem *actionButton  = [[UIBarButtonItem alloc]
-                                      initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                      //initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                      initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
                                       target:self
                                       action:@selector(selectAction:)];
 	UIBarButtonItem *flipButton    = [[UIBarButtonItem alloc]
@@ -118,10 +108,13 @@
 									  target:self
 									  action:@selector(changeView:)];
 
-	[toolbar setItems:[NSArray arrayWithObjects:actionButton, statusButton,flipButton,nil]];
+	NSArray *items = [NSArray arrayWithObjects:actionButton, statusButton,flipButton,nil];
     [statusButton release];
+	[actionButton release];
 	[flipButton release];
+    [self setToolbarItems:items];
     
+    [self.navigationController setToolbarHidden:NO animated:NO];
     [self.navigationController setDelegate:self];
     
     [self setOriginAtLat:44.97614 lng:-93.27704];
@@ -288,10 +281,10 @@
 	UIView *tableView = [tableController view];
     
 	if (activeController == mapController) {
-        [[[toolbar items] objectAtIndex:2] setImage:mapIconImage];
+        [[self.toolbarItems objectAtIndex:2] setImage:mapIconImage];
     }
     else {
-        [[[toolbar items] objectAtIndex:2] setImage:listIconImage];
+        [[self.toolbarItems objectAtIndex:2] setImage:listIconImage];
     }
 	
 	[UIView beginAnimations:nil context:NULL];
@@ -322,7 +315,6 @@
 	}
 	
 	[UIView commitAnimations];
-    [self.view bringSubviewToFront:toolbar];
 }
 
 -(void) selectedHouseCallback:(NSNotification *)notification {
