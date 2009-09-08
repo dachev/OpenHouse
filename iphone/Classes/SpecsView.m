@@ -40,8 +40,8 @@
     //NSString *date  = [self makeRangeLabelforBegin:[house expirationDate] end:nil];
     
     [self makeLineWithLabel:@"Price" andValue:[house price]];
-    [self makeLineWithLabel:@"Address" andValue:[house title]];
     [self makeLineWithLabel:@"Time" andValue:range];
+    [self makeLineWithLabel:@"Address" andValue:[house title]];
     [self makeLineWithLabel:@"Description" andValue:[house content]];
     //[self makeLineWithLabel:@"Expires" andValue:date];
     [self makeLineWithLabel:@"Prop Taxes" andValue:[house propertyTaxes]];

@@ -15,6 +15,7 @@
 #import "MapViewController.h"
 #import "TableViewController.h"
 #import "DetailsController.h"
+#import "ImageTableController.h"
 #import "AddressController.h"
 #import "HistoryController.h"
 #import "StatusView.h"

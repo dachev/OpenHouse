@@ -331,10 +331,19 @@
 	
 	if([object isKindOfClass:[OpenHouse class]] == YES) {
         OpenHouse *house = (OpenHouse *)object;
+        
+        ImageTableController *detailsController = [[ImageTableController alloc] initWithStyle:UITableViewStyleGrouped];
+        [detailsController setHouse:house];
+        
+		[[self navigationController] pushViewController:detailsController animated:YES];
+        return;
+        
+        /*
 		DetailsController *detailsController = [[[DetailsController alloc] initWithNibName:nil bundle:nil] autorelease];
         
         [detailsController setHouse:house];
 		[[self navigationController] pushViewController:detailsController animated:YES];
+        */
 	}
 }
 
