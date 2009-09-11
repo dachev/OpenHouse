@@ -9,9 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "Constants.h"
-#import "TaggedRequest.h"
-#import "TaggedURLConnection.h"
-#import "ConnectionManager.h"
+#import "NewConnectionManager.h"
 #import "OpenHouse.h"
 #import "HouseTableCell.h"
 

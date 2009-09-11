@@ -15,7 +15,7 @@
 
 -(id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-		[self setBrowseController:[[BrowseController alloc] initWithNibName:nil bundle:nil]];
+		[self setBrowseController:[[[BrowseController alloc] initWithNibName:nil bundle:nil] autorelease]];
 		[self pushViewController:browseController animated:NO];
     }
     return self;

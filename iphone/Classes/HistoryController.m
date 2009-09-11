@@ -32,16 +32,16 @@
         
         
         // Set top buttons
-		UIBarButtonItem *barCancelButton = [[UIBarButtonItem alloc]
-                                            initWithTitle:@"Cancel"
-                                            style:UIBarButtonItemStyleBordered
-                                            target:self
-                                            action:@selector(cencelHandler:)];
-		UIBarButtonItem *barClearButton  = [[UIBarButtonItem alloc]
-                                            initWithTitle:@"Clear"
-                                            style:UIBarButtonItemStyleBordered
-                                            target:self
-                                            action:@selector(clearHandler:)];
+		UIBarButtonItem *barCancelButton = [[[UIBarButtonItem alloc]
+                                             initWithTitle:@"Cancel"
+                                             style:UIBarButtonItemStyleBordered
+                                             target:self
+                                             action:@selector(cencelHandler:)] autorelease];
+		UIBarButtonItem *barClearButton  = [[[UIBarButtonItem alloc]
+                                             initWithTitle:@"Clear"
+                                             style:UIBarButtonItemStyleBordered
+                                             target:self
+                                             action:@selector(clearHandler:)] autorelease];
         
 		[[self navigationItem] setRightBarButtonItem:barCancelButton];
 		[[self navigationItem] setLeftBarButtonItem:barClearButton];
@@ -158,12 +158,12 @@
 }
 
 -(void) clearHandler:(int)idx {
-    UIActionSheet *menu = [[UIActionSheet alloc]
-                           initWithTitle:nil
-                           delegate:self
-                           cancelButtonTitle:@"Cancel"
-                           destructiveButtonTitle:@"Clear Locaion History"
-                           otherButtonTitles:nil];
+    UIActionSheet *menu = [[[UIActionSheet alloc]
+                            initWithTitle:nil
+                            delegate:self
+                            cancelButtonTitle:@"Cancel"
+                            destructiveButtonTitle:@"Clear Locaion History"
+                            otherButtonTitles:nil] autorelease];
     menu.tag = 1;
     menu.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     id delegate = [[UIApplication sharedApplication] delegate];

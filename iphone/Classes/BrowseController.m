@@ -250,12 +250,12 @@
 }
 
 -(void) selectAction:(id)sender {
-    UIActionSheet *menu = [[UIActionSheet alloc]
-                           initWithTitle:@"Start over from"
-                           delegate:self
-                           cancelButtonTitle:@"Cancel"
-                           destructiveButtonTitle:nil
-                           otherButtonTitles:@"Map Center", @"Current Location", @"Address", @"History", nil];
+    UIActionSheet *menu = [[[UIActionSheet alloc]
+                            initWithTitle:@"Start over from"
+                            delegate:self
+                            cancelButtonTitle:@"Cancel"
+                            destructiveButtonTitle:nil
+                            otherButtonTitles:@"Map Center", @"Current Location", @"Address", @"History", nil] autorelease];
     menu.tag = 1;
     menu.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     id delegate = [[UIApplication sharedApplication] delegate];
@@ -331,19 +331,18 @@
 	
 	if([object isKindOfClass:[OpenHouse class]] == YES) {
         OpenHouse *house = (OpenHouse *)object;
-        
+        /*
         ImageTableController *detailsController = [[ImageTableController alloc] initWithStyle:UITableViewStyleGrouped];
         [detailsController setHouse:house];
         
 		[[self navigationController] pushViewController:detailsController animated:YES];
         return;
+        */
         
-        /*
 		DetailsController *detailsController = [[[DetailsController alloc] initWithNibName:nil bundle:nil] autorelease];
         
         [detailsController setHouse:house];
 		[[self navigationController] pushViewController:detailsController animated:YES];
-        */
 	}
 }
 

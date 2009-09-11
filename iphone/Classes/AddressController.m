@@ -18,8 +18,6 @@
 
 @interface AddressController (Private)
 -(void) cancelRequests;
--(void) getAddressesFinish:(TaggedURLConnection *)connection withData:(NSData *)data;
--(void) getAddressesFail:(TaggedURLConnection *)connection withError:(NSString *)error;
 -(void) showAlertWithText:(NSString *)text;
 @end
 
@@ -38,7 +36,7 @@
             query = @"";
         }
         
-        [self setSearchBar:[[UISearchBar alloc] initWithFrame:CGRectMake(0,0,320,45)]];
+        [self setSearchBar:[[[UISearchBar alloc] initWithFrame:CGRectMake(0,0,320,45)] autorelease]];
         self.navigationItem.titleView = searchBar;
         [searchBar becomeFirstResponder];
         searchBar.text        = query;
@@ -48,19 +46,19 @@
         // Set bottom buttons
         
         StatusView *sv                   = [[[StatusView alloc] initWithFrame:CGRectMake(0,0,225,20)] autorelease];
-        StatusView *statusButton         = [[UIBarButtonItem alloc] initWithCustomView:sv];
+        StatusView *statusButton         = [[[UIBarButtonItem alloc] initWithCustomView:sv] autorelease];
         UIBarButtonItem *flexibleSpace1  = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease];
         UIBarButtonItem *flexibleSpace3  = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease];
-		UIBarButtonItem *barCancelButton = [[UIBarButtonItem alloc]
-                                            initWithTitle:@"Cancel"
-                                            style:UIBarButtonItemStyleBordered
-                                            target:self
-                                            action:@selector(cencelHandler:)];
-		UIBarButtonItem *barClearButton  = [[UIBarButtonItem alloc]
-                                            initWithTitle:@"Clear"
-                                            style:UIBarButtonItemStyleBordered
-                                            target:self
-                                            action:@selector(clearHandler:)];
+		UIBarButtonItem *barCancelButton = [[[UIBarButtonItem alloc]
+                                             initWithTitle:@"Cancel"
+                                             style:UIBarButtonItemStyleBordered
+                                             target:self
+                                             action:@selector(cencelHandler:)] autorelease];
+		UIBarButtonItem *barClearButton  = [[[UIBarButtonItem alloc]
+                                             initWithTitle:@"Clear"
+                                             style:UIBarButtonItemStyleBordered
+                                             target:self
+                                             action:@selector(clearHandler:)] autorelease];
 
         self.toolbarItems = [NSArray arrayWithObjects:barClearButton, flexibleSpace1, statusButton, flexibleSpace3, barCancelButton, nil];
         
@@ -82,9 +80,11 @@
 }
 
 -(void) cancelRequests {
+    NewConnectionManager *manager = [NewConnectionManager sharedNewConnectionManager];
+    
 	for (id key in requests) {
-        TaggedRequest *request = [requests objectForKey:key];
-        [request delegate:nil didFinishSelector:nil didFailSelector:nil];
+        NSURLRequest *request = [requests objectForKey:key];
+		[manager cancelRequest:request];
     }
 }
 
@@ -230,13 +230,19 @@
     NSString *url        = [NSString stringWithFormat:GOOGLE_GEOCODING_URL, [NSString encodeURIComponent:query]];
     NSString *identifier = [NSString stringWithFormat:@"%d", [[NSDate date] timeIntervalSince1970]];
     
-    TaggedRequest *request = [TaggedRequest requestWithId:identifier url:url];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     [request setTimeoutInterval:CONFIG_NETWORK_TIMEOUT];
-    [request delegate:self didFinishSelector:@selector(getAddressesFinish:withData:) didFailSelector:@selector(getAddressesFail:withError:)];
+    //[request setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
     [requests setObject:request forKey:identifier];
     
-    ConnectionManager *manager = [ConnectionManager sharedConnectionManager];
-    [manager add:request];
+    NewConnectionManager *manager = [NewConnectionManager sharedNewConnectionManager];
+    [manager
+     addRequest:request
+     withTag:identifier
+     delegate:self
+     didFinishSelector:@selector(getAddressesFinish:withData:)
+     didFailSelector:@selector(getAddressesFail:withData:)
+     ];
     
     [searchBar resignFirstResponder];
     
@@ -254,18 +260,21 @@
 
 #pragma mark -
 #pragma mark Geocoding API delegates
--(void) getAddressesFinish:(TaggedURLConnection *)connection withData:(NSData *)data {
-    // remove request from container
-    [requests removeObjectForKey:[connection tag]];
+-(void) getAddressesFinish:(NSURLConnection *)connection withData:(NSDictionary *)data {
+    NSUInteger code = [(NSHTTPURLResponse *)[data objectForKey:@"response"] statusCode];
+    NSData *payload = [data objectForKey:@"data"];
+    NSString *tag   = [data objectForKey:@"tag"];
+    
+    [requests removeObjectForKey:tag];
     
     [statusView hideLabel];
     
-    if([connection status] != 200) {
+    if(code != 200) {
         [self showAlertWithText:@"google geocoding API error"];
         return;
     }
     
-	NSDictionary *response = [[CJSONDeserializer deserializer] deserializeAsDictionary:data error:nil];
+	NSDictionary *response = [[CJSONDeserializer deserializer] deserializeAsDictionary:payload error:nil];
 	if (response == nil) {
         [self showAlertWithText:@"no results found"];
         return;
@@ -331,11 +340,13 @@
     [self showAlertWithText:@"no results found"];
 }
 
--(void) getAddressesFail:(TaggedURLConnection *)connection withError:(NSString *)error {
-    // remove request from container
-    [requests removeObjectForKey:[connection tag]];
+-(void) getAddressesFail:(NSURLConnection *)connection withData:(NSDictionary *)data {
+    NSString *tag  = [data objectForKey:@"tag"];
+    NSError *error = [data objectForKey:@"error"];
     
-    [self showAlertWithText:error];
+    [requests removeObjectForKey:tag];
+    
+    [self showAlertWithText:[error localizedDescription]];
     
     [statusView hideLabel];
     [self setAddresses:[NSArray array]];

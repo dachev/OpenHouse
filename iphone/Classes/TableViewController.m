@@ -10,7 +10,6 @@
 
 @interface NSString (Custom)
 +(NSString *) encodeURIComponent: (NSString *) url;
--(void) cancelRequests;
 @end
 
 @interface TableViewController (Private)
@@ -98,9 +97,11 @@
 #pragma mark -
 #pragma mark Custom methods
 -(void) cancelRequests {
+    NewConnectionManager *manager = [NewConnectionManager sharedNewConnectionManager];
+    
 	for (id key in requests) {
-        TaggedRequest *request = [requests objectForKey:key];
-        [request delegate:nil didFinishSelector:nil didFailSelector:nil];
+        NSURLRequest *request = [requests objectForKey:key];
+		[manager cancelRequest:request];
     }
 }
 
@@ -121,18 +122,23 @@
 			continue;
 		}
 		
-		NSString *thumbLink = [NSString encodeURIComponent:[[house imageLinks] objectAtIndex:0]];
-		NSString *url       = [NSString stringWithFormat:IMAGE_API_REQUEST_URL, @"t", thumbLink];
-		
+		NSString *thumbLink  = [NSString encodeURIComponent:[[house imageLinks] objectAtIndex:0]];
+		NSString *url        = [NSString stringWithFormat:IMAGE_API_REQUEST_URL, @"t", thumbLink];
 		NSString *identifier = [NSString stringWithFormat:@"%d", idx];
-		TaggedRequest *request = [TaggedRequest requestWithId:identifier url:url];
+        
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
 		[request setTimeoutInterval:CONFIG_NETWORK_TIMEOUT];
 		//[request setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
-		[request delegate:self didFinishSelector:@selector(getThumbFinish:withData:) didFailSelector:@selector(getThumbFail:withError:)];
         [requests setObject:request forKey:identifier];
-		
-		ConnectionManager *manager = [ConnectionManager sharedConnectionManager];
-		[manager add:request];
+        
+        NewConnectionManager *manager = [NewConnectionManager sharedNewConnectionManager];
+        [manager
+         addRequest:request
+         withTag:identifier
+         delegate:self
+         didFinishSelector:@selector(getThumbFinish:withData:)
+         didFailSelector:@selector(getThumbFail:withData:)
+         ];
 	}
 }
 
@@ -202,20 +208,22 @@
 
 #pragma mark -
 #pragma mark Image API delegates
--(void) getThumbFinish:(TaggedURLConnection *)connection withData:(NSData *)data {
-    // remove request from container
-    [requests removeObjectForKey:[connection tag]];
+-(void) getThumbFinish:(NSURLConnection *)connection withData:(NSDictionary *)data {
+    NSUInteger code         = [(NSHTTPURLResponse *)[data objectForKey:@"response"] statusCode];
+    NSData *payload         = [data objectForKey:@"data"];
+    NSString *tag           = [data objectForKey:@"tag"];
     
-    if([connection status] != 200) {
+    [requests removeObjectForKey:tag];
+    
+    if(code != 200) {
         return;
     }
     
-	NSUInteger idx = (NSUInteger) [[connection tag] intValue];
-	NSUInteger indexes[] = {0,idx};
+	NSUInteger idx         = (NSUInteger) [tag intValue];
+	NSUInteger indexes[]   = {0,idx};
 	NSIndexPath *indexPath = [NSIndexPath indexPathWithIndexes:indexes length:2];
-	UITableViewCell *cell = [[self tableView] cellForRowAtIndexPath:indexPath];
-	
-	UIImage *thumb = [UIImage imageWithData:data];
+	UITableViewCell *cell  = [[self tableView] cellForRowAtIndexPath:indexPath];
+	UIImage *thumb         = [UIImage imageWithData:payload];
     
     if (thumb == nil) {
         return;
@@ -225,11 +233,13 @@
 	cell.imageView.image = thumb;
 }
 
--(void) getThumbFail:(TaggedURLConnection *)connection withError:(NSString *)error {
-    // remove request from container
-    [requests removeObjectForKey:[connection tag]];
+-(void) getThumbFail:(NSURLConnection *)connection withData:(NSDictionary *)data {
+    NSString *tag  = [data objectForKey:@"tag"];
     
-	//NSLog(@"%@:%@", [connection tag], error);
+    [requests removeObjectForKey:tag];
+    
+    //NSError *error = [data objectForKey:@"error"];
+	//NSLog(@"%@:%@", tag, [error localizedDescription]);
 	//[[NSNotificationCenter defaultCenter] postNotificationName:@"thumbRequestFailed" object:error];
 }
 

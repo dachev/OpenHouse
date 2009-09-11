@@ -12,8 +12,6 @@
 @interface OpenHouses (Private)
 -(void) cancelRequests;
 -(NSNumber *) calculatePageFromStartIndex:(NSNumber *)idx;
--(void) getHousesFinish:(TaggedURLConnection *)connection withData:(NSData *)data;
--(void) getHousesFail:(TaggedURLConnection *)connection withError:(NSString *)error;
 @end
 
 @implementation OpenHouses
@@ -44,9 +42,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(OpenHouses);
 }
 
 -(void) cancelRequests {
+    NewConnectionManager *manager = [NewConnectionManager sharedNewConnectionManager];
+    
 	for (id key in requests) {
-        TaggedRequest *request = [requests objectForKey:key];
-        [request delegate:nil didFinishSelector:nil didFailSelector:nil];
+        NSURLRequest *request = [requests objectForKey:key];
+		[manager cancelRequest:request];
     }
 }
 
@@ -81,35 +81,44 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(OpenHouses);
 	[self cancelRequests];
     [self setRequests:[NSMutableDictionary dictionary]];    
     
-    TaggedRequest *request = [TaggedRequest requestWithId:identifier url:url];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     [request setTimeoutInterval:CONFIG_NETWORK_TIMEOUT];
-    [request delegate:self didFinishSelector:@selector(getHousesFinish:withData:) didFailSelector:@selector(getHousesFail:withError:)];
+    //[request setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
     [requests setObject:request forKey:identifier];
     
-    ConnectionManager *manager = [ConnectionManager sharedConnectionManager];
-    [manager add:request];
+    NewConnectionManager *manager = [NewConnectionManager sharedNewConnectionManager];
+    [manager
+     addRequest:request
+     withTag:identifier
+     delegate:self
+     didFinishSelector:@selector(getHousesFinish:withData:)
+     didFailSelector:@selector(getHousesFail:withData:)
+     ];
 }
 
 
 #pragma mark -
 #pragma mark Search API delegates
--(void) getHousesFinish:(TaggedURLConnection *)connection withData:(NSData *)data {
-    // remove request from container
-    [requests removeObjectForKey:[connection tag]];
+-(void) getHousesFinish:(NSURLConnection *)connection withData:(NSDictionary *)data {
+    NSUInteger code = [(NSHTTPURLResponse *)[data objectForKey:@"response"] statusCode];
+    NSData *payload = [data objectForKey:@"data"];
+    NSString *tag   = [data objectForKey:@"tag"];
     
-    if([connection status] != 200) {
-        [self getHousesFail:connection withError:@""];
+    [requests removeObjectForKey:tag];
+    
+    if(code != 200) {
+        //[self getHousesFail:connection withError:@""];
         return;
     }
     
-	NSDictionary *response = [[CJSONDeserializer deserializer] deserializeAsDictionary:data error:nil];
+	NSDictionary *response = [[CJSONDeserializer deserializer] deserializeAsDictionary:payload error:nil];
 	if (response == nil) {
-        [self getHousesFail:connection withError:@""];
+        //[self getHousesFail:connection withError:@""];
         return;
 	}
     
 	if ([[response objectForKey:@"success"] intValue] != 1) {
-        [self getHousesFail:connection withError:@""];
+        //[self getHousesFail:connection withError:@""];
         return;
 	}
     
@@ -135,9 +144,14 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(OpenHouses);
      }
 }
 
--(void) getHousesFail:(TaggedURLConnection *)connection withError:(NSString *)error {
-    // remove request from container
-    [requests removeObjectForKey:[connection tag]];
+-(void) getHousesFail:(NSURLConnection *)connection withData:(NSDictionary *)data {
+    NSString *tag  = [data objectForKey:@"tag"];
+    
+    [requests removeObjectForKey:tag];
+    
+    //NSError *error = [data objectForKey:@"error"];
+	//NSLog(@"%@:%@", tag, [error localizedDescription]);
+	//[[NSNotificationCenter defaultCenter] postNotificationName:@"thumbRequestFailed" object:error];
     
 	/*
      UIAlertView *alert = [[UIAlertView alloc]

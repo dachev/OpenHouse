@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SynthesizeSingleton.h"
-#import "TaggedRequest.h"
-#import "ConnectionManager.h"
+#import "NewConnectionManager.h"
 #import "CJSONDeserializer.h"
 #import "OpenHouse.h"
 #import "Constants.h"

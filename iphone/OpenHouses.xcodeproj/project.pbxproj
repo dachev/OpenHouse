@@ -16,6 +16,7 @@
 		28D7ACF80DDB3853001CB0EB /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* MapViewController.m */; };
 		831B36481055876000CA6E29 /* AddressResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 831B36471055876000CA6E29 /* AddressResultCell.m */; };
 		831B37A510562A6400CA6E29 /* ImageTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 831B37A410562A6400CA6E29 /* ImageTableController.m */; };
+		831B38BD1056436300CA6E29 /* NewConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 831B38BC1056436300CA6E29 /* NewConnectionManager.m */; };
 		834A9F2F1005C7EC00B87E53 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = 834A9F2E1005C7EC00B87E53 /* list.png */; };
 		835043941016D267005F857D /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 835043831016D267005F857D /* CDataScanner.m */; };
 		835043951016D267005F857D /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 835043861016D267005F857D /* CDataScanner_Extensions.m */; };
@@ -78,6 +79,8 @@
 		831B36471055876000CA6E29 /* AddressResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressResultCell.m; sourceTree = "<group>"; };
 		831B37A310562A6400CA6E29 /* ImageTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTableController.h; sourceTree = "<group>"; };
 		831B37A410562A6400CA6E29 /* ImageTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTableController.m; sourceTree = "<group>"; };
+		831B38BB1056436300CA6E29 /* NewConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewConnectionManager.h; sourceTree = "<group>"; };
+		831B38BC1056436300CA6E29 /* NewConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewConnectionManager.m; sourceTree = "<group>"; };
 		834A9F2E1005C7EC00B87E53 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = list.png; path = resources/list.png; sourceTree = "<group>"; };
 		835043821016D267005F857D /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
 		835043831016D267005F857D /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
@@ -307,6 +310,8 @@
 				8357F5690FF8421A00F85065 /* TaggedRequest.m */,
 				8357F56A0FF8421A00F85065 /* ConnectionManager.h */,
 				8357F56B0FF8421A00F85065 /* ConnectionManager.m */,
+				831B38BB1056436300CA6E29 /* NewConnectionManager.h */,
+				831B38BC1056436300CA6E29 /* NewConnectionManager.m */,
 			);
 			name = REST;
 			sourceTree = "<group>";
@@ -544,6 +549,7 @@
 				83590C451027E20D00292900 /* AddressController.m in Sources */,
 				831B36481055876000CA6E29 /* AddressResultCell.m in Sources */,
 				831B37A510562A6400CA6E29 /* ImageTableController.m in Sources */,
+				831B38BD1056436300CA6E29 /* NewConnectionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

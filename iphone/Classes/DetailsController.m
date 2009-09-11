@@ -75,9 +75,11 @@
 }
 
 -(void) cancelRequests {
+    NewConnectionManager *manager = [NewConnectionManager sharedNewConnectionManager];
+    
 	for (id key in requests) {
-        TaggedRequest *request = [requests objectForKey:key];
-        [request delegate:nil didFinishSelector:nil didFailSelector:nil];
+        NSURLRequest *request = [requests objectForKey:key];
+		[manager cancelRequest:request];
     }
 }
 
@@ -139,18 +141,24 @@
     
     int idx = 0;
 	for (NSString *link in [house imageLinks]) {
-		NSString *photoLink = [NSString encodeURIComponent:link];
-		NSString *url       = [NSString stringWithFormat:IMAGE_API_REQUEST_URL, @"f", photoLink];
-		
-		NSString *identifier   = [NSString stringWithFormat:@"%d", idx];
-		TaggedRequest *request = [TaggedRequest requestWithId:identifier url:url];
+		NSString *photoLink  = [NSString encodeURIComponent:link];
+		NSString *url        = [NSString stringWithFormat:IMAGE_API_REQUEST_URL, @"f", photoLink];
+		NSString *identifier = [NSString stringWithFormat:@"%d", idx];
+        
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
 		[request setTimeoutInterval:CONFIG_NETWORK_TIMEOUT];
 		//[request setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
-		[request delegate:self didFinishSelector:@selector(getPhotoFinish:withData:) didFailSelector:@selector(getPhotoFail:withError:)];
         [requests setObject:request forKey:identifier];
 		
-		ConnectionManager *manager = [ConnectionManager sharedConnectionManager];
-		[manager add:request];
+		NewConnectionManager *manager = [NewConnectionManager sharedNewConnectionManager];
+		[manager
+         addRequest:request
+         withTag:identifier
+         delegate:self
+         didFinishSelector:@selector(getPhotoFinish:withData:)
+         didFailSelector:@selector(getPhotoFail:withData:)
+        ];
+        
         idx++;
 	}
     
@@ -258,17 +266,22 @@
 
 #pragma mark -
 #pragma mark Image API delegates
--(void) getPhotoFinish:(TaggedURLConnection *)connection withData:(NSData *)data {
+-(void) getPhotoFinish:(NSURLConnection *)connection withData:(NSDictionary *)data {
     // remove request from container
-    [requests removeObjectForKey:[connection tag]];
+    NSURLResponse *response = [data objectForKey:@"response"];
+    NSUInteger code         = [(NSHTTPURLResponse *)response statusCode];
+    NSData *payload         = [data objectForKey:@"data"];
+    NSString *tag           = [data objectForKey:@"tag"];
     
-    if([connection status] != 200) {
+    [requests removeObjectForKey:tag];
+    
+    if(code != 200) {
         return;
     }
     
     // Create view
-	NSUInteger page        = (NSUInteger) [[connection tag] intValue];
-    UIImage *image         = [UIImage imageWithData:data];
+	NSUInteger page        = (NSUInteger) [tag intValue];
+    UIImage *image         = [UIImage imageWithData:payload];
     UIImageView *imageView = [[[UIImageView alloc] initWithImage:image] autorelease];
     
     // Adjust view size
@@ -281,10 +294,13 @@
     [self loadScrollView:imageView withPage:page];
 }
 
--(void) getPhotoFail:(TaggedURLConnection *)connection withError:(NSString *)error {
-    [requests removeObjectForKey:[connection tag]];
+-(void) getPhotoFail:(NSURLConnection *)connection withData:(NSDictionary *)data {
+    NSString *tag  = [data objectForKey:@"tag"];
     
-	//NSLog(@"%@:%@", [connection tag], error);
+    [requests removeObjectForKey:tag];
+    
+    //NSError *error = [data objectForKey:@"error"];
+	//NSLog(@"%@:%@", tag, [error localizedDescription]);
 	//[[NSNotificationCenter defaultCenter] postNotificationName:@"thumbRequestFailed" object:error];
 }
 

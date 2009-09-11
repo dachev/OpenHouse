@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TaggedRequest.h"
-#import "ConnectionManager.h"
 #import "OpenHouse.h"
 
 

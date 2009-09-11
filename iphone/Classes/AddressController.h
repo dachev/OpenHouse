@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Constants.h"
-#import "TaggedRequest.h"
-#import "ConnectionManager.h"
+#import "NewConnectionManager.h"
 #import "CJSONDeserializer.h"
 #import "AddressResultCell.h"
 #import "StatusView.h"
