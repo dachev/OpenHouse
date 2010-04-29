@@ -28,7 +28,7 @@
 #pragma mark Instantiation and tear down
 -(id) initWithStyle:(UITableViewStyle)style {
     if (self = [super initWithStyle:style]) {
-		[self setRequests:[NSMutableDictionary dictionary]];
+        [self setRequests:[NSMutableDictionary dictionary]];
         [self setAddresses:[NSArray array]];
         
         NSString *query = [[NSUserDefaults standardUserDefaults] objectForKey:@"address_search_query"];
@@ -38,29 +38,21 @@
         
         [self setSearchBar:[[[UISearchBar alloc] initWithFrame:CGRectMake(0,0,320,45)] autorelease]];
         self.navigationItem.titleView = searchBar;
+        
         [searchBar becomeFirstResponder];
-        searchBar.text        = query;
-        searchBar.delegate    = self;
-        searchBar.placeholder = @"US address, city, or zip";
+        [searchBar setDelegate:self];
+        
+        searchBar.text              = query;
+        searchBar.delegate          = self;
+        searchBar.placeholder       = @"US address, city, or zip";
+        searchBar.showsCancelButton = YES;
         
         // Set bottom buttons
-        
         StatusView *sv                   = [[[StatusView alloc] initWithFrame:CGRectMake(0,0,225,20)] autorelease];
         StatusView *statusButton         = [[[UIBarButtonItem alloc] initWithCustomView:sv] autorelease];
         UIBarButtonItem *flexibleSpace1  = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease];
         UIBarButtonItem *flexibleSpace3  = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease];
-		UIBarButtonItem *barCancelButton = [[[UIBarButtonItem alloc]
-                                             initWithTitle:@"Cancel"
-                                             style:UIBarButtonItemStyleBordered
-                                             target:self
-                                             action:@selector(cencelHandler:)] autorelease];
-		UIBarButtonItem *barClearButton  = [[[UIBarButtonItem alloc]
-                                             initWithTitle:@"Clear"
-                                             style:UIBarButtonItemStyleBordered
-                                             target:self
-                                             action:@selector(clearHandler:)] autorelease];
-
-        self.toolbarItems = [NSArray arrayWithObjects:barClearButton, flexibleSpace1, statusButton, flexibleSpace3, barCancelButton, nil];
+        self.toolbarItems = [NSArray arrayWithObjects:flexibleSpace1, statusButton, flexibleSpace3, nil];
         
         [self setStatusView:sv];
     }
@@ -69,7 +61,7 @@
 }
 
 -(void) dealloc {
-	[self cancelRequests];
+    [self cancelRequests];
     
     [statusView release];
     [searchBar release];
@@ -82,9 +74,9 @@
 -(void) cancelRequests {
     NewConnectionManager *manager = [NewConnectionManager sharedNewConnectionManager];
     
-	for (id key in requests) {
+    for (id key in requests) {
         NSURLRequest *request = [requests objectForKey:key];
-		[manager cancelRequest:request];
+        [manager cancelRequest:request];
     }
 }
 
@@ -112,12 +104,12 @@
 */
 /*
 - (void)viewWillDisappear:(BOOL)animated {
-	[super viewWillDisappear:animated];
+    [super viewWillDisappear:animated];
 }
 */
 /*
 - (void)viewDidDisappear:(BOOL)animated {
-	[super viewDidDisappear:animated];
+    [super viewDidDisappear:animated];
 }
 */
 
@@ -130,23 +122,25 @@
 */
 
 - (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
+    // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
+    
+    // Release any cached data, images, etc that aren't in use.
 }
 
 - (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
 }
 
 
 #pragma mark -
 #pragma mark Custom methods
+/*
 -(void) cencelHandler:(int)idx {
     [self.navigationController dismissModalViewControllerAnimated:YES];
 }
+*/
 
 -(void) clearHandler:(int)idx {
     [self setAddresses:[NSArray array]];
@@ -201,7 +195,7 @@
 #pragma mark -
 #pragma mark UITableViewDelegate methods
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	[[NSNotificationCenter defaultCenter] postNotificationName:@"selectedAddressFromGeocoding" object:[addresses objectAtIndex:indexPath.row]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"selectedAddressFromGeocoding" object:[addresses objectAtIndex:indexPath.row]];
     
     [self.navigationController dismissModalViewControllerAnimated:YES];
 }
@@ -246,8 +240,18 @@
     
     [searchBar resignFirstResponder];
     
+    for (id subview in [sBar subviews]) {
+        if ([subview isKindOfClass:[UIButton class]]) {
+            [subview setEnabled:TRUE];
+        }
+    }
+    
     [[NSUserDefaults standardUserDefaults] setObject:query forKey:@"address_search_query"];
     [statusView showLabel:@"Searching..."];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)sBar {
+    [self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
 -(void) searchBar:(UISearchBar *)sBar textDidChange:(NSString *)searchText {
@@ -274,52 +278,41 @@
         return;
     }
     
-	NSDictionary *response = [[CJSONDeserializer deserializer] deserializeAsDictionary:payload error:nil];
-	if (response == nil) {
-        [self showAlertWithText:@"no results found"];
-        return;
-	}
-    
-    NSDictionary *status = [response objectForKey:@"Status"];
-	if (status == nil || [[status objectForKey:@"code"] intValue] != 200) {
-        [self showAlertWithText:@"no results found"];
-        return;
-	}
-    
-    NSUInteger counter    = 0;
-    NSMutableArray *items = [NSMutableArray array];
-    NSArray *placemarks   = [response objectForKey:@"Placemark"];
-    
-    if (placemarks == nil || [placemarks count] < 1) {
+    NSDictionary *response = [[CJSONDeserializer deserializer] deserializeAsDictionary:payload error:nil];
+    if (response == nil) {
         [self showAlertWithText:@"no results found"];
         return;
     }
     
-    for (NSDictionary *placemark in placemarks) {
-        NSString *address     = [placemark valueForKey:@"address"];
-        NSDictionary *point   = [placemark valueForKey:@"Point"];
-        NSDictionary *details = [placemark valueForKey:@"AddressDetails"];
+    NSString *status = [response objectForKey:@"status"];
+    if (status == nil || ![status isEqualToString:@"OK"]) {
+        [self showAlertWithText:@"no results found"];
+        return;
+    }
+    
+    NSUInteger counter    = 0;
+    NSMutableArray *items = [NSMutableArray array];
+    NSArray *results      = [response objectForKey:@"results"];
+    
+    if (results == nil || [results count] < 1) {
+        [self showAlertWithText:@"no results found"];
+        return;
+    }
+    
+    for (NSDictionary *result in results) {
+        NSString *address      = [result valueForKey:@"formatted_address"];
+        NSDictionary *geometry = [result valueForKey:@"geometry"];
         
-        if (address == nil || point == nil || details == nil) {
+        if (address == nil || geometry == nil) {
             continue;
         }
         
-        NSArray *coordinates = [point valueForKey:@"coordinates"];
-        if ([coordinates count] != 3) {
+        NSDictionary *location = [geometry valueForKey:@"location"];
+        if (location == nil) {
             continue;
         }
-        float lat = [[coordinates objectAtIndex:1] floatValue];
-        float lng = [[coordinates objectAtIndex:0] floatValue];
-        
-        NSDictionary *country = [details valueForKey:@"Country"];
-        if (country == nil) {
-            continue;
-        }
-        
-        NSString *ccode = [country valueForKey:@"CountryNameCode"];
-        if (ccode == nil || ![ccode isEqualToString:@"US"]) {
-            continue;
-        }
+        float lat = [[location valueForKey:@"lat"] floatValue];
+        float lng = [[location valueForKey:@"lng"] floatValue];
         
         NSDictionary *item = [NSDictionary dictionaryWithObjectsAndKeys:
                               [NSNumber numberWithFloat:lat], @"lat",

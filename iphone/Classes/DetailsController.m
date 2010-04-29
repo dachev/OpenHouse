@@ -23,14 +23,14 @@
 
 -(id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-		[self setRequests:[NSMutableDictionary dictionary]];
+        [self setRequests:[NSMutableDictionary dictionary]];
     }
     
     return self;
 }
 
 -(void) dealloc {
-	[self cancelRequests];
+    [self cancelRequests];
     
     [pageControl release];
     [scrollView release];
@@ -43,7 +43,7 @@
 }
 
 -(void) loadView {
-	[self setView:[[[UIScrollView alloc] initWithFrame:CGRectZero] autorelease]];
+    [self setView:[[[UIScrollView alloc] initWithFrame:CGRectZero] autorelease]];
     self.view.backgroundColor = [UIColor colorWithRed:202/255.0 green:202/255.0 blue:202/255.0 alpha:1.0];
 }
 
@@ -63,23 +63,23 @@
 */
 
 -(void) didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
+    // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
+    
+    // Release any cached data, images, etc that aren't in use.
 }
 
 - (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
 }
 
 -(void) cancelRequests {
     NewConnectionManager *manager = [NewConnectionManager sharedNewConnectionManager];
     
-	for (id key in requests) {
+    for (id key in requests) {
         NSURLRequest *request = [requests objectForKey:key];
-		[manager cancelRequest:request];
+        [manager cancelRequest:request];
     }
 }
 
@@ -97,7 +97,7 @@
     //[self setScrollView:[[[UIScrollView alloc] initWithFrame:CGRectMake(0,0,320,253)] autorelease]];
     //scrollView.backgroundColor = [UIColor whiteColor];
     scrollView.backgroundColor = [UIColor colorWithRed:145/255.0 green:145/255.0 blue:145/255.0 alpha:1.0];
-	scrollView.pagingEnabled = YES;
+    scrollView.pagingEnabled = YES;
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * (pages+1), scrollView.frame.size.height);
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator = NO;
@@ -109,7 +109,7 @@
     //pageControl.backgroundColor = [UIColor clearColor];
     pageControl.backgroundColor = [UIColor colorWithRed:145/255.0 green:145/255.0 blue:145/255.0 alpha:1.0];
     pageControl.numberOfPages = pages+1;
-	pageControl.currentPage = 0;
+    pageControl.currentPage = 0;
     
     UIView *separator = [[[UIView alloc] initWithFrame:CGRectMake(0,CONFIG_PAGE_VIEW_HEIGHT+10,320,1)] autorelease];
     //UIView *separator = [[[UIView alloc] initWithFrame:CGRectMake(0,245,320,1)] autorelease];
@@ -140,18 +140,18 @@
     ((UIScrollView *)self.view).contentSize = CGSizeMake(320, CONFIG_PAGE_VIEW_HEIGHT+20+specsView.frame.size.height);
     
     int idx = 0;
-	for (NSString *link in [house imageLinks]) {
-		NSString *photoLink  = [NSString encodeURIComponent:link];
-		NSString *url        = [NSString stringWithFormat:IMAGE_API_REQUEST_URL, @"f", photoLink];
-		NSString *identifier = [NSString stringWithFormat:@"%d", idx];
+    for (NSString *link in [house imageLinks]) {
+        NSString *photoLink  = [NSString encodeURIComponent:link];
+        NSString *url        = [NSString stringWithFormat:IMAGE_API_REQUEST_URL, @"f", photoLink];
+        NSString *identifier = [NSString stringWithFormat:@"%d", idx];
         
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
-		[request setTimeoutInterval:CONFIG_NETWORK_TIMEOUT];
-		//[request setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
+        [request setTimeoutInterval:CONFIG_NETWORK_TIMEOUT];
+        //[request setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
         [requests setObject:request forKey:identifier];
-		
-		NewConnectionManager *manager = [NewConnectionManager sharedNewConnectionManager];
-		[manager
+        
+        NewConnectionManager *manager = [NewConnectionManager sharedNewConnectionManager];
+        [manager
          addRequest:request
          withTag:identifier
          delegate:self
@@ -160,7 +160,7 @@
         ];
         
         idx++;
-	}
+    }
     
     // Create static map view
     //NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"map" ofType:@"html"];
@@ -172,33 +172,35 @@
     //[mapView loadHTMLString:html baseURL:nil];
     
     // Create static map view
-	[self setMapView:[[[MKMapView alloc] initWithFrame:CGRectMake(0,0,310,233)] autorelease]];
+    [self setMapView:[[[MKMapView alloc] initWithFrame:CGRectMake(0,0,310,205)] autorelease]];
     
-	mapView.zoomEnabled   = NO;
-	mapView.scrollEnabled = NO;
-	mapView.mapType	      = MKMapTypeStandard;
-	
+    mapView.zoomEnabled   = NO;
+    mapView.scrollEnabled = NO;
+    mapView.mapType          = MKMapTypeStandard;
+    
     // Add map view
     [self showHouse];
-    [self loadScrollView:mapView withPage:pages];
+    [self loadScrollView:mapView withPage:0];
 }
 
 -(void) showHouse {
-	// Set region and zoom
-	MKCoordinateRegion region;
-	MKCoordinateSpan span;
+    // Set region and zoom
+    MKCoordinateRegion region;
+    MKCoordinateSpan span;
     CLLocationCoordinate2D coord;
     
     coord.latitude      = house.coordinate.latitude;
     coord.longitude     = house.coordinate.longitude;
-	span.latitudeDelta  = 0.005;
-	span.longitudeDelta = 0.005;
-	region.span         = span;
-	region.center       = coord;
+    span.latitudeDelta  = 0.005;
+    span.longitudeDelta = 0.005;
+    region.span         = span;
+    region.center       = coord;
     
-	[mapView setRegion:region animated:TRUE];
+    [mapView setRegion:region animated:TRUE];
     
-	[mapView addAnnotation:house];
+    OpenHouse *houseCopy = [[OpenHouse alloc] init];
+    houseCopy.coordinate = house.coordinate;
+    [mapView addAnnotation:houseCopy];
 }
 
 -(void) scrollViewDidScroll:(UIScrollView *)sender {
@@ -280,7 +282,7 @@
     }
     
     // Create view
-	NSUInteger page        = (NSUInteger) [tag intValue];
+    NSUInteger page        = (NSUInteger) [tag intValue];
     UIImage *image         = [UIImage imageWithData:payload];
     UIImageView *imageView = [[[UIImageView alloc] initWithImage:image] autorelease];
     
@@ -291,7 +293,7 @@
     imageView.frame   = frame;
     
     // Insert into scoll parent
-    [self loadScrollView:imageView withPage:page];
+    [self loadScrollView:imageView withPage:page+1];
 }
 
 -(void) getPhotoFail:(NSURLConnection *)connection withData:(NSDictionary *)data {
@@ -300,8 +302,8 @@
     [requests removeObjectForKey:tag];
     
     //NSError *error = [data objectForKey:@"error"];
-	//NSLog(@"%@:%@", tag, [error localizedDescription]);
-	//[[NSNotificationCenter defaultCenter] postNotificationName:@"thumbRequestFailed" object:error];
+    //NSLog(@"%@:%@", tag, [error localizedDescription]);
+    //[[NSNotificationCenter defaultCenter] postNotificationName:@"thumbRequestFailed" object:error];
 }
 
 
