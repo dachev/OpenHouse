@@ -172,7 +172,7 @@
     //[mapView loadHTMLString:html baseURL:nil];
     
     // Create static map view
-    [self setMapView:[[[MKMapView alloc] initWithFrame:CGRectMake(0,0,310,233)] autorelease]];
+    [self setMapView:[[[MKMapView alloc] initWithFrame:CGRectMake(0,0,310,205)] autorelease]];
     
     mapView.zoomEnabled   = NO;
     mapView.scrollEnabled = NO;
@@ -180,7 +180,7 @@
     
     // Add map view
     [self showHouse];
-    [self loadScrollView:mapView withPage:pages];
+    [self loadScrollView:mapView withPage:0];
 }
 
 -(void) showHouse {
@@ -293,7 +293,7 @@
     imageView.frame   = frame;
     
     // Insert into scoll parent
-    [self loadScrollView:imageView withPage:page];
+    [self loadScrollView:imageView withPage:page+1];
 }
 
 -(void) getPhotoFail:(NSURLConnection *)connection withData:(NSDictionary *)data {
