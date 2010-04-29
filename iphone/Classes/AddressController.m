@@ -284,46 +284,35 @@
         return;
     }
     
-    NSDictionary *status = [response objectForKey:@"Status"];
-    if (status == nil || [[status objectForKey:@"code"] intValue] != 200) {
+    NSString *status = [response objectForKey:@"status"];
+    if (status == nil || ![status isEqualToString:@"OK"]) {
         [self showAlertWithText:@"no results found"];
         return;
     }
     
     NSUInteger counter    = 0;
     NSMutableArray *items = [NSMutableArray array];
-    NSArray *placemarks   = [response objectForKey:@"Placemark"];
+    NSArray *results      = [response objectForKey:@"results"];
     
-    if (placemarks == nil || [placemarks count] < 1) {
+    if (results == nil || [results count] < 1) {
         [self showAlertWithText:@"no results found"];
         return;
     }
     
-    for (NSDictionary *placemark in placemarks) {
-        NSString *address     = [placemark valueForKey:@"address"];
-        NSDictionary *point   = [placemark valueForKey:@"Point"];
-        NSDictionary *details = [placemark valueForKey:@"AddressDetails"];
+    for (NSDictionary *result in results) {
+        NSString *address      = [result valueForKey:@"formatted_address"];
+        NSDictionary *geometry = [result valueForKey:@"geometry"];
         
-        if (address == nil || point == nil || details == nil) {
+        if (address == nil || geometry == nil) {
             continue;
         }
         
-        NSArray *coordinates = [point valueForKey:@"coordinates"];
-        if ([coordinates count] != 3) {
+        NSDictionary *location = [geometry valueForKey:@"location"];
+        if (location == nil) {
             continue;
         }
-        float lat = [[coordinates objectAtIndex:1] floatValue];
-        float lng = [[coordinates objectAtIndex:0] floatValue];
-        
-        NSDictionary *country = [details valueForKey:@"Country"];
-        if (country == nil) {
-            continue;
-        }
-        
-        NSString *ccode = [country valueForKey:@"CountryNameCode"];
-        if (ccode == nil || ![ccode isEqualToString:@"US"]) {
-            continue;
-        }
+        float lat = [[location valueForKey:@"lat"] floatValue];
+        float lng = [[location valueForKey:@"lng"] floatValue];
         
         NSDictionary *item = [NSDictionary dictionaryWithObjectsAndKeys:
                               [NSNumber numberWithFloat:lat], @"lat",
