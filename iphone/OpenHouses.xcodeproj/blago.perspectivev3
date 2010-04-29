@@ -273,6 +273,7 @@
 								<string>835E0EEE0FE5DF4B00923362</string>
 								<string>83E8DA7A0FF1E48B00573934</string>
 								<string>83E8DA7B0FF1E49E00573934</string>
+								<string>83C544D40FFC408200BC7067</string>
 								<string>29B97315FDCFA39411CA2CEA</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>1C77FABC04509CD000000102</string>
@@ -280,13 +281,15 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>31</integer>
-									<integer>30</integer>
+									<integer>29</integer>
+									<integer>27</integer>
+									<integer>9</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 72}, {276, 760}}</string>
+							<string>{{0, 61}, {276, 760}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -321,7 +324,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>83E55D200FB7F8FC00ED0E37</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>AddressController.m</string>
+								<string>DetailsController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -329,11 +332,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>83E55D210FB7F8FC00ED0E37</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>AddressController.m</string>
+										<string>DetailsController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>838F134911895E0600EFC84C</string>
+										<string>838F13611189614E00EFC84C</string>
 										<key>history</key>
 										<array>
 											<string>835B0FA20FC13181007F818F</string>
@@ -406,9 +409,9 @@
 											<string>83B423FF118946440048AE67</string>
 											<string>83B42400118946440048AE67</string>
 											<string>83B42401118946440048AE67</string>
-											<string>838F12F61189573D00EFC84C</string>
 											<string>838F130211895A4200EFC84C</string>
-											<string>838F134011895C9100EFC84C</string>
+											<string>838F134D118960DC00EFC84C</string>
+											<string>838F135D1189613700EFC84C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

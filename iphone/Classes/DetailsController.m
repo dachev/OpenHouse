@@ -172,7 +172,7 @@
     //[mapView loadHTMLString:html baseURL:nil];
     
     // Create static map view
-    [self setMapView:[[[MKMapView alloc] initWithFrame:CGRectMake(0,0,310,205)] autorelease]];
+    [self setMapView:[[[MKMapView alloc] initWithFrame:CGRectMake(0,0,310,233)] autorelease]];
     
     mapView.zoomEnabled   = NO;
     mapView.scrollEnabled = NO;
