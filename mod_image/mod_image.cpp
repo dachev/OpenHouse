@@ -122,18 +122,23 @@ int writer(char *data, size_t size, size_t nmemb, std::string *buffer) {
 bool getURL(QUrl *url, string *out) {
     CURL *curl;
     CURLcode result;
-    
+    struct curl_slist *slist = NULL;
+
     curl = curl_easy_init();
     
     if (!curl) {
         return false;
     }
+
+    std::string ua = "User-Agent:Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3; en-US) AppleWebKit/533.2 (KHTML, like Gecko) Chrome/5.0.342.9 Safari/533.2";
+    slist = curl_slist_append(slist, ua.c_str());
     
     curl_easy_setopt(curl, CURLOPT_URL, url->toEncoded().data());
     curl_easy_setopt(curl, CURLOPT_HEADER, 0);
     curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1);
     curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, writer);
     curl_easy_setopt(curl, CURLOPT_WRITEDATA, out);
+    curl_easy_setopt(curl, CURLOPT_HTTPHEADER, slist);
     //curl_easy_setopt(curl, CURLOPT_TIMEOUT, 1);
     curl_easy_setopt(curl, CURLOPT_NOSIGNAL, 1);
     
