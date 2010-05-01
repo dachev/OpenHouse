@@ -198,7 +198,7 @@
     
     [mapView setRegion:region animated:TRUE];
     
-    OpenHouse *houseCopy = [[OpenHouse alloc] init];
+    OpenHouse *houseCopy = [[[OpenHouse alloc] init] autorelease];
     houseCopy.coordinate = house.coordinate;
     [mapView addAnnotation:houseCopy];
 }

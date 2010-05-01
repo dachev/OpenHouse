@@ -22,7 +22,11 @@
 #import "OpenHouse.h"
 
 
-@interface BrowseController : UIViewController <OpenHousesApiDelegate, UIActionSheetDelegate, UINavigationControllerDelegate, MKReverseGeocoderDelegate> {
+@interface BrowseController : UIViewController <OpenHousesApiDelegate,
+                                                UIActionSheetDelegate,
+                                                UINavigationControllerDelegate,
+                                                MKReverseGeocoderDelegate,
+                                                CLLocationManagerDelegate> {
     MapViewController   *mapController;
     TableViewController *tableController;
     UIViewController *activeController;
@@ -36,6 +40,9 @@
 	UISegmentedControl *navButtons;
     UIImage *mapIconImage;
     UIImage *listIconImage;
+    
+    BOOL locationPendingSearch;
+    CLLocationManager *locationManager;
 }
 
 @property (nonatomic, retain) MapViewController *mapController;
@@ -49,5 +56,10 @@
 @property (nonatomic, retain) UISegmentedControl *navButtons;
 @property (nonatomic, retain) UIImage *mapIconImage;
 @property (nonatomic, retain) UIImage *listIconImage;
+@property (nonatomic, retain) CLLocationManager *locationManager;
+@property (nonatomic, assign) BOOL locationPendingSearch;
 
 @end
+
+
+
