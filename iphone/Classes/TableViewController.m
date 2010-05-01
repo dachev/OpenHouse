@@ -17,7 +17,7 @@
 @end
 
 @implementation TableViewController
-@synthesize currentAnnotations, thumbnails, requests;
+@synthesize currentAnnotations, thumbnails, requests, noResults;
 
 #pragma mark -
 #pragma mark Instantiation and tear down
@@ -145,8 +145,17 @@
 -(void) showPage:(NSArray *)annotations withOrigin:(CLLocation *)origin {
 	[self cancelRequests];
     [self setRequests:[NSMutableDictionary dictionary]];
-	[self setCurrentAnnotations:annotations];
     [self.tableView setContentOffset:CGPointMake(0,0)];
+    
+    if (annotations == nil) {
+        self.noResults = YES;
+        [self setCurrentAnnotations:[NSArray array]];
+    }
+    else {
+        self.noResults = NO;
+        [self setCurrentAnnotations:annotations];
+    }
+    
 	[self.tableView reloadData];
 }
 
@@ -164,16 +173,40 @@
 
 // Customize the number of rows in the table view.
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (self.noResults == YES) {
+        return 3;
+    }
+    
     return [currentAnnotations count];
 }
 
 // Customize the appearance of table view cells.
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	OpenHouse *house = [currentAnnotations objectAtIndex:indexPath.row];
+    if (self.noResults == YES) {
+        UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"noResultsCell"];
+        if (cell == nil) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"noResultsCell"] autorelease];
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        if (indexPath.row != 2) {
+            return cell;
+        }
+        
+        UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(0,12,320,20)] autorelease];
+        label.text = @"No Results";
+            
+        label.textAlignment = UITextAlignmentCenter;
+        label.textColor = [UIColor lightGrayColor];
+        [cell.contentView addSubview:label];
+            
+        return cell;
+    }
     
-    HouseTableCell *cell = (HouseTableCell *)[tableView dequeueReusableCellWithIdentifier:@"cell"];
+	OpenHouse *house = [currentAnnotations objectAtIndex:indexPath.row];
+    HouseTableCell *cell = (HouseTableCell *)[tableView dequeueReusableCellWithIdentifier:@"HouseCell"];
     if (cell == nil) {
-        cell = [[[HouseTableCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"] autorelease];
+        cell = [[[HouseTableCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"HouseCell"] autorelease];
 		//cell.accessoryType  = UITableViewCellAccessoryDetailDisclosureButton;
         cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
 		//cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -191,17 +224,28 @@
 #pragma mark -
 #pragma mark UITableViewDelegate methods
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.noResults == YES) {
+        return;
+    }
+    
 	OpenHouse *house = [currentAnnotations objectAtIndex:indexPath.row];
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"selectedHouse" object:house];
 }
 
 -(void) tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    if (self.noResults == YES) {
+        return;
+    }
+    
 	OpenHouse *house = [currentAnnotations objectAtIndex:indexPath.row];
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"selectedHouse" object:house];
 }
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	//return 93.0f;
+    if (self.noResults == YES) {
+        return 45.0f;
+    }
+    
 	return 60.0f;
 }
 

@@ -18,11 +18,13 @@
 	NSArray *currentAnnotations;
 	NSMutableArray *thumbnails;
 	NSMutableDictionary *requests;
+    BOOL noResults;
 }
 
 @property (nonatomic, retain) NSArray *currentAnnotations;
 @property (nonatomic, retain) NSMutableArray *thumbnails;
 @property (nonatomic, retain) NSMutableDictionary *requests;
+@property (nonatomic, assign) BOOL noResults;
 
 -(void) showPage:(NSArray *)annotations withOrigin:(CLLocation *)origin;
 

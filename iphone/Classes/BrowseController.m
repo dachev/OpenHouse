@@ -24,6 +24,7 @@
 -(NSDictionary *) makeDictionaryWithCLLocation:(CLLocation *)location;
 -(void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation;
 -(void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error;
+-(void) showAlertWithText:(NSString *)text;
 @end
 
 
@@ -287,7 +288,7 @@
 
 -(void) selectAction:(id)sender {
     UIActionSheet *menu = [[[UIActionSheet alloc]
-                            initWithTitle:@"Start over from"
+                            initWithTitle:@"Search"
                             delegate:self
                             cancelButtonTitle:@"Cancel"
                             destructiveButtonTitle:nil
@@ -429,6 +430,18 @@
     return dict;
 }
 
+-(void) showAlertWithText:(NSString *)text {
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:nil
+                          message:text
+                          delegate:self
+                          cancelButtonTitle:nil
+                          otherButtonTitles:@"OK", nil];
+    
+    [alert show];
+    [alert release];
+}
+
 
 #pragma mark -
 #pragma mark UIActionSheetDelegate methods
@@ -497,15 +510,14 @@
     
     OpenHouses *openHouses = [OpenHouses sharedOpenHouses];
     if ([p intValue] == 1 && [[openHouses totalResults] intValue] < 1) {
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle:nil
-                              message:[NSString stringWithFormat:@"No houses found within a %d mile radius.", (int)CONFIG_SEARCH_DISTANCE]
-                              delegate:self
-                              cancelButtonTitle:nil
-                              otherButtonTitles:@"OK", nil];
+        [self.tableController showPage:nil withOrigin:origin];
         
-        [alert show];
-        [alert release];
+        if (activeController == tableController) {
+            return;
+        }
+        
+        NSString *msg = [NSString stringWithFormat:@"No houses found within a %d mile radius.", (int)CONFIG_SEARCH_DISTANCE];
+        [self showAlertWithText:msg];
         
         return;
     }
@@ -516,15 +528,8 @@
 -(void) failedWithError:(NSError *)error {
     [statusView hideLabel];
     
-	UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle:nil
-                          message:@"An API error has ocurred. Please try again later."
-                          delegate:self
-                          cancelButtonTitle:nil
-                          otherButtonTitles:@"OK", nil];
-	
-    [alert show];
-    [alert release];
+    NSString *msg = @"An API error has ocurred. Please try again later.";
+    [self showAlertWithText:msg];
 }
 
 
@@ -558,15 +563,9 @@
     }
     
     self.locationPendingSearch = NO;
-    UIAlertView *alert = [[UIAlertView alloc]
-                            initWithTitle:nil
-                            message:@"Unable to determine your location."
-                            delegate:self
-                            cancelButtonTitle:nil
-                            otherButtonTitles:@"OK", nil];
     
-    [alert show];
-    [alert release];
+    NSString *msg = @"Unable to determine your location.";
+    [self showAlertWithText:msg];
 }
 @end
 
