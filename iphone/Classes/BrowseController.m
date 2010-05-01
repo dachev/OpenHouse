@@ -133,7 +133,7 @@
     
     /* Set back button item */
     UIBarButtonItem *backButton = [[[UIBarButtonItem alloc]
-                                    initWithTitle:@"Browse results"
+                                    initWithTitle:@"Browse"
                                     style:UIBarButtonItemStylePlain
                                     target:nil
                                     action:nil] autorelease];
@@ -214,6 +214,7 @@
      forKey:@"last_location_searched"];
      
     [statusView hideLabel];
+    [[self navigationItem] setTitle:@""];
     self.locationPendingSearch = NO;
     
     [self setPage:[NSNumber numberWithInt:0]];
@@ -252,6 +253,9 @@
 		[self getPage:p];
 		return;
 	}
+    
+    NSString *title = [NSString stringWithFormat:@"Browse (%d)", [[openHouses totalResults] intValue]];
+    [[self navigationItem] setTitle:title];
 	
 	[[self mapController] showPage:[openHouses getPage:p] withOrigin:origin];
 	[[self tableController] showPage:[openHouses getPage:p] withOrigin:origin];
