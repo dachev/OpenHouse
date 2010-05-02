@@ -443,6 +443,9 @@
 			8370FB00118CB3A400362232 /* PBXTextBookmark */ = 8370FB00118CB3A400362232 /* PBXTextBookmark */;
 			8370FB03118CB3BB00362232 /* PBXTextBookmark */ = 8370FB03118CB3BB00362232 /* PBXTextBookmark */;
 			8370FB04118CB3C800362232 /* PBXTextBookmark */ = 8370FB04118CB3C800362232 /* PBXTextBookmark */;
+			8370FB09118CB41700362232 /* PBXTextBookmark */ = 8370FB09118CB41700362232 /* PBXTextBookmark */;
+			8370FB0D118CB4B900362232 /* PBXTextBookmark */ = 8370FB0D118CB4B900362232 /* PBXTextBookmark */;
+			8370FB10118CD5B700362232 /* PBXTextBookmark */ = 8370FB10118CD5B700362232 /* PBXTextBookmark */;
 			838816A60FE0F21D00294F62 = 838816A60FE0F21D00294F62 /* PBXTextBookmark */;
 			83B4237A11892BBC0048AE67 = 83B4237A11892BBC0048AE67 /* PBXTextBookmark */;
 			83B4238111892E5D0048AE67 = 83B4238111892E5D0048AE67 /* PBXTextBookmark */;
@@ -1773,9 +1776,9 @@
 	};
 	8359093D1026548000292900 /* HistoryController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1081, 4485}}";
-			sepNavSelRange = "{4772, 0}";
-			sepNavVisRange = "{4300, 1261}";
+			sepNavIntBoundsRect = "{{0, 0}, {1081, 4576}}";
+			sepNavSelRange = "{4807, 0}";
+			sepNavVisRange = "{4359, 1310}";
 		};
 	};
 	83590ACC10269AF500292900 /* PBXTextBookmark */ = {
@@ -4015,6 +4018,36 @@
 		rType = 0;
 		vrLen = 1261;
 		vrLoc = 4300;
+	};
+	8370FB09118CB41700362232 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8359093D1026548000292900 /* HistoryController.m */;
+		name = "HistoryController.m: 154";
+		rLen = 0;
+		rLoc = 4816;
+		rType = 0;
+		vrLen = 1315;
+		vrLoc = 4351;
+	};
+	8370FB0D118CB4B900362232 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8359093D1026548000292900 /* HistoryController.m */;
+		name = "HistoryController.m: 151";
+		rLen = 0;
+		rLoc = 4748;
+		rType = 0;
+		vrLen = 1318;
+		vrLoc = 4351;
+	};
+	8370FB10118CD5B700362232 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8359093D1026548000292900 /* HistoryController.m */;
+		name = "HistoryController.m: 153";
+		rLen = 0;
+		rLoc = 4807;
+		rType = 0;
+		vrLen = 1310;
+		vrLoc = 4359;
 	};
 	838816A60FE0F21D00294F62 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
