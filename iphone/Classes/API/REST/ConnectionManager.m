@@ -1,16 +1,16 @@
 //
-//  NewConnectionManager.m
+//  ConnectionManager.m
 //  OpenHouses
 //
 //  Created by blago on 9/8/09.
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
-#import "NewConnectionManager.h"
+#import "ConnectionManager.h"
 
 
-@implementation NewConnectionManager
-SYNTHESIZE_SINGLETON_FOR_CLASS(NewConnectionManager);
+@implementation ConnectionManager
+SYNTHESIZE_SINGLETON_FOR_CLASS(ConnectionManager);
 
 -(id) init {
 	if (self = [super init]) {

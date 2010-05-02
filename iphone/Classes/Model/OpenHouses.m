@@ -42,7 +42,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(OpenHouses);
 }
 
 -(void) cancelRequests {
-    NewConnectionManager *manager = [NewConnectionManager sharedNewConnectionManager];
+    ConnectionManager *manager = [ConnectionManager sharedConnectionManager];
     
 	for (id key in requests) {
         NSURLRequest *request = [requests objectForKey:key];
@@ -86,7 +86,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(OpenHouses);
     //[request setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
     [requests setObject:request forKey:identifier];
     
-    NewConnectionManager *manager = [NewConnectionManager sharedNewConnectionManager];
+    ConnectionManager *manager = [ConnectionManager sharedConnectionManager];
     [manager
      addRequest:request
      withTag:identifier

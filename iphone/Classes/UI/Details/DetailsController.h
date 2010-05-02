@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NewConnectionManager.h"
+#import "ConnectionManager.h"
 #import "OpenHouse.h"
 #import "SpecsView.h"
 

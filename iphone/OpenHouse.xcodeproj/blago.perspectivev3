@@ -232,8 +232,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -271,6 +269,8 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>8381E81F118E2F9900A412EE</string>
+								<string>8381E824118E2F9900A412EE</string>
 								<string>29B97315FDCFA39411CA2CEA</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>1C77FABC04509CD000000102</string>
@@ -278,7 +278,9 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>4</integer>
+									<integer>6</integer>
+									<integer>5</integer>
+									<integer>2</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -312,12 +314,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>83E55D200FB7F8FC00ED0E37</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ConnectionManager.m</string>
+								<string>TableViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,11 +329,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>83E55D210FB7F8FC00ED0E37</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ConnectionManager.m</string>
+										<string>TableViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>8381E8B2118E323F00A412EE</string>
+										<string>8381E8C9118E33E900A412EE</string>
 										<key>history</key>
 										<array>
 											<string>835B0FA20FC13181007F818F</string>
@@ -403,9 +407,17 @@
 											<string>8370FAE7118CAEBD00362232</string>
 											<string>8370FAE8118CAEBD00362232</string>
 											<string>8370FB13118D3BD600362232</string>
-											<string>8381E80D118E0C9A00A412EE</string>
-											<string>8381E8AB118E323100A412EE</string>
-											<string>8381E8AC118E323100A412EE</string>
+											<string>8381E8BE118E33E900A412EE</string>
+											<string>8381E8BF118E33E900A412EE</string>
+											<string>8381E8C0118E33E900A412EE</string>
+											<string>8381E8C1118E33E900A412EE</string>
+											<string>8381E8C2118E33E900A412EE</string>
+											<string>8381E8C3118E33E900A412EE</string>
+											<string>8381E8C4118E33E900A412EE</string>
+											<string>8381E8C5118E33E900A412EE</string>
+											<string>8381E8C6118E33E900A412EE</string>
+											<string>8381E8C7118E33E900A412EE</string>
+											<string>8381E8C8118E33E900A412EE</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
