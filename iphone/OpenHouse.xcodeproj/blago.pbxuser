@@ -4547,9 +4547,15 @@
 		vrLoc = 2955;
 	};
 	8381E826118E2F9900A412EE /* ConnectionManager.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = ConnectionManager.m;
+		path = /Users/blago/Projects/openhouse/iphone/Classes/API/REST/ConnectionManager.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1081, 1222}}";
-			sepNavSelRange = "{521, 0}";
+			sepNavSelRange = "{136, 0}";
 			sepNavVisRange = "{0, 778}";
 		};
 	};

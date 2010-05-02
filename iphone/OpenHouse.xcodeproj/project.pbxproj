@@ -19,7 +19,6 @@
 		8361078B1006D596007082CD /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = 836107891006D596007082CD /* down.png */; };
 		8361078C1006D596007082CD /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 8361078A1006D596007082CD /* up.png */; };
 		8381E840118E2F9900A412EE /* TaggedReverseGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8381E823118E2F9900A412EE /* TaggedReverseGeocoder.m */; };
-		8381E841118E2F9900A412EE /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8381E826118E2F9900A412EE /* ConnectionManager.m */; };
 		8381E842118E2F9900A412EE /* NewConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8381E828118E2F9900A412EE /* NewConnectionManager.m */; };
 		8381E843118E2F9900A412EE /* TaggedRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8381E82A118E2F9900A412EE /* TaggedRequest.m */; };
 		8381E844118E2F9900A412EE /* TaggedURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8381E82C118E2F9900A412EE /* TaggedURLConnection.m */; };
@@ -54,7 +53,6 @@
 		8381E8A5118E321B00A412EE /* ImageTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8381E895118E321B00A412EE /* ImageTableController.m */; };
 		8381E8A6118E321B00A412EE /* SpecsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8381E897118E321B00A412EE /* SpecsView.m */; };
 		8381E8A7118E321B00A412EE /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8381E899118E321B00A412EE /* MainViewController.m */; };
-		8381E8A8118E321B00A412EE /* MyCLController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8381E89B118E321B00A412EE /* MyCLController.m */; };
 		83DAD803102164F9008CFD01 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 83DAD802102164F9008CFD01 /* libsqlite3.dylib */; };
 		83DAD8AE10217B78008CFD01 /* openhouses.db in Resources */ = {isa = PBXBuildFile; fileRef = 83DAD8AD10217B78008CFD01 /* openhouses.db */; };
 		83E55D0D0FB7F8C800ED0E37 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E55D0C0FB7F8C800ED0E37 /* MapKit.framework */; };
@@ -80,8 +78,6 @@
 		8361078A1006D596007082CD /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = up.png; path = resources/up.png; sourceTree = "<group>"; };
 		8381E822118E2F9900A412EE /* TaggedReverseGeocoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaggedReverseGeocoder.h; sourceTree = "<group>"; };
 		8381E823118E2F9900A412EE /* TaggedReverseGeocoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaggedReverseGeocoder.m; sourceTree = "<group>"; };
-		8381E825118E2F9900A412EE /* ConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionManager.h; sourceTree = "<group>"; };
-		8381E826118E2F9900A412EE /* ConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionManager.m; sourceTree = "<group>"; };
 		8381E827118E2F9900A412EE /* NewConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewConnectionManager.h; sourceTree = "<group>"; };
 		8381E828118E2F9900A412EE /* NewConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewConnectionManager.m; sourceTree = "<group>"; };
 		8381E829118E2F9900A412EE /* TaggedRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaggedRequest.h; sourceTree = "<group>"; };
@@ -149,8 +145,6 @@
 		8381E897118E321B00A412EE /* SpecsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecsView.m; sourceTree = "<group>"; };
 		8381E898118E321B00A412EE /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		8381E899118E321B00A412EE /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		8381E89A118E321B00A412EE /* MyCLController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCLController.h; sourceTree = "<group>"; };
-		8381E89B118E321B00A412EE /* MyCLController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCLController.m; sourceTree = "<group>"; };
 		83DAD802102164F9008CFD01 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = /usr/lib/libsqlite3.dylib; sourceTree = "<absolute>"; };
 		83DAD8AD10217B78008CFD01 /* openhouses.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = openhouses.db; path = resources/openhouses.db; sourceTree = "<group>"; };
 		83E55D0C0FB7F8C800ED0E37 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -282,8 +276,6 @@
 		8381E824118E2F9900A412EE /* REST */ = {
 			isa = PBXGroup;
 			children = (
-				8381E825118E2F9900A412EE /* ConnectionManager.h */,
-				8381E826118E2F9900A412EE /* ConnectionManager.m */,
 				8381E827118E2F9900A412EE /* NewConnectionManager.h */,
 				8381E828118E2F9900A412EE /* NewConnectionManager.m */,
 				8381E829118E2F9900A412EE /* TaggedRequest.h */,
@@ -400,8 +392,6 @@
 				8381E891118E321B00A412EE /* Details */,
 				8381E898118E321B00A412EE /* MainViewController.h */,
 				8381E899118E321B00A412EE /* MainViewController.m */,
-				8381E89A118E321B00A412EE /* MyCLController.h */,
-				8381E89B118E321B00A412EE /* MyCLController.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -522,7 +512,6 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* OpenHousesAppDelegate.m in Sources */,
 				8381E840118E2F9900A412EE /* TaggedReverseGeocoder.m in Sources */,
-				8381E841118E2F9900A412EE /* ConnectionManager.m in Sources */,
 				8381E842118E2F9900A412EE /* NewConnectionManager.m in Sources */,
 				8381E843118E2F9900A412EE /* TaggedRequest.m in Sources */,
 				8381E844118E2F9900A412EE /* TaggedURLConnection.m in Sources */,
@@ -557,7 +546,6 @@
 				8381E8A5118E321B00A412EE /* ImageTableController.m in Sources */,
 				8381E8A6118E321B00A412EE /* SpecsView.m in Sources */,
 				8381E8A7118E321B00A412EE /* MainViewController.m in Sources */,
-				8381E8A8118E321B00A412EE /* MyCLController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
