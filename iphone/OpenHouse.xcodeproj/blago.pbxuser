@@ -521,6 +521,13 @@
 			8381E8E3118E358C00A412EE /* PBXTextBookmark */ = 8381E8E3118E358C00A412EE /* PBXTextBookmark */;
 			8381E8E4118E358C00A412EE /* PBXTextBookmark */ = 8381E8E4118E358C00A412EE /* PBXTextBookmark */;
 			8381E8E5118E359F00A412EE /* PBXTextBookmark */ = 8381E8E5118E359F00A412EE /* PBXTextBookmark */;
+			8381E8EA118E371E00A412EE /* PBXTextBookmark */ = 8381E8EA118E371E00A412EE /* PBXTextBookmark */;
+			8381E8EB118E371E00A412EE /* PBXTextBookmark */ = 8381E8EB118E371E00A412EE /* PBXTextBookmark */;
+			8381E8EC118E371E00A412EE /* PBXTextBookmark */ = 8381E8EC118E371E00A412EE /* PBXTextBookmark */;
+			8381E8ED118E371E00A412EE /* PBXTextBookmark */ = 8381E8ED118E371E00A412EE /* PBXTextBookmark */;
+			8381E8F4118E379B00A412EE /* PBXTextBookmark */ = 8381E8F4118E379B00A412EE /* PBXTextBookmark */;
+			8381E8F5118E379B00A412EE /* PBXTextBookmark */ = 8381E8F5118E379B00A412EE /* PBXTextBookmark */;
+			8381E8F6118E379B00A412EE /* PBXTextBookmark */ = 8381E8F6118E379B00A412EE /* PBXTextBookmark */;
 			838816A60FE0F21D00294F62 = 838816A60FE0F21D00294F62 /* PBXTextBookmark */;
 			83B4237A11892BBC0048AE67 = 83B4237A11892BBC0048AE67 /* PBXTextBookmark */;
 			83B4238111892E5D0048AE67 = 83B4238111892E5D0048AE67 /* PBXTextBookmark */;
@@ -4656,8 +4663,8 @@
 	8381E882118E321B00A412EE /* AddressResultCell.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1081, 468}}";
-			sepNavSelRange = "{347, 0}";
-			sepNavVisRange = "{0, 931}";
+			sepNavSelRange = "{348, 0}";
+			sepNavVisRange = "{77, 854}";
 		};
 	};
 	8381E88F118E321B00A412EE /* TableViewController.h */ = {
@@ -4737,16 +4744,16 @@
 	};
 	8381E8B9118E338E00A412EE /* ConnectionManager.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1081, 463}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1081, 435}}";
 			sepNavSelRange = "{138, 0}";
 			sepNavVisRange = "{0, 605}";
 		};
 	};
 	8381E8BA118E338E00A412EE /* ConnectionManager.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1081, 1534}}";
-			sepNavSelRange = "{169, 0}";
-			sepNavVisRange = "{0, 1163}";
+			sepNavIntBoundsRect = "{{0, 0}, {1081, 1469}}";
+			sepNavSelRange = "{799, 0}";
+			sepNavVisRange = "{0, 846}";
 		};
 	};
 	8381E8BE118E33E900A412EE /* PBXTextBookmark */ = {
@@ -4999,6 +5006,73 @@
 		rType = 0;
 		vrLen = 931;
 		vrLoc = 0;
+	};
+	8381E8EA118E371E00A412EE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8381E882118E321B00A412EE /* AddressResultCell.m */;
+		name = "AddressResultCell.m: 12";
+		rLen = 0;
+		rLoc = 207;
+		rType = 0;
+		vrLen = 927;
+		vrLoc = 27;
+	};
+	8381E8EB118E371E00A412EE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8381E8B9118E338E00A412EE /* ConnectionManager.h */;
+		name = "ConnectionManager.h: 7";
+		rLen = 0;
+		rLoc = 138;
+		rType = 0;
+		vrLen = 605;
+		vrLoc = 0;
+	};
+	8381E8EC118E371E00A412EE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8381E8BA118E338E00A412EE /* ConnectionManager.m */;
+		name = "ConnectionManager.m: 26";
+		rLen = 0;
+		rLoc = 771;
+		rType = 0;
+		vrLen = 1725;
+		vrLoc = 571;
+	};
+	8381E8ED118E371E00A412EE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8381E8BA118E338E00A412EE /* ConnectionManager.m */;
+		name = "ConnectionManager.m: 26";
+		rLen = 0;
+		rLoc = 771;
+		rType = 0;
+		vrLen = 843;
+		vrLoc = 3;
+	};
+	8381E8F4118E379B00A412EE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8381E8BA118E338E00A412EE /* ConnectionManager.m */;
+		name = "ConnectionManager.m: 27";
+		rLen = 0;
+		rLoc = 799;
+		rType = 0;
+		vrLen = 846;
+		vrLoc = 0;
+	};
+	8381E8F5118E379B00A412EE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8381E882118E321B00A412EE /* AddressResultCell.m */;
+		rLen = 0;
+		rLoc = 348;
+		rType = 0;
+	};
+	8381E8F6118E379B00A412EE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8381E882118E321B00A412EE /* AddressResultCell.m */;
+		name = "AddressResultCell.m: 15";
+		rLen = 0;
+		rLoc = 348;
+		rType = 0;
+		vrLen = 854;
+		vrLoc = 77;
 	};
 	838816A60FE0F21D00294F62 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;

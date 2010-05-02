@@ -278,7 +278,6 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>6</integer>
 									<integer>5</integer>
 									<integer>2</integer>
 									<integer>1</integer>
@@ -333,7 +332,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>8381E8E5118E359F00A412EE</string>
+										<string>8381E8F6118E379B00A412EE</string>
 										<key>history</key>
 										<array>
 											<string>835B0FA20FC13181007F818F</string>
@@ -414,13 +413,13 @@
 											<string>8381E8C2118E33E900A412EE</string>
 											<string>8381E8C4118E33E900A412EE</string>
 											<string>8381E8C5118E33E900A412EE</string>
-											<string>8381E8C6118E33E900A412EE</string>
-											<string>8381E8C7118E33E900A412EE</string>
 											<string>8381E8D7118E353100A412EE</string>
 											<string>8381E8D8118E353100A412EE</string>
 											<string>8381E8DA118E353100A412EE</string>
 											<string>8381E8E2118E358C00A412EE</string>
-											<string>8381E8E3118E358C00A412EE</string>
+											<string>8381E8EB118E371E00A412EE</string>
+											<string>8381E8F4118E379B00A412EE</string>
+											<string>8381E8F5118E379B00A412EE</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -434,18 +433,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1142, 490}}</string>
+								<string>{{0, 0}, {1142, 445}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 59 1440 819 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>490pt</string>
+							<string>445pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>283pt</string>
+							<string>328pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -475,7 +474,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1142, 256}}</string>
+										<string>{{10, 27}, {1142, 301}}</string>
 										<key>RubberWindowFrame</key>
 										<string>0 59 1440 819 0 0 1440 878 </string>
 									</dict>

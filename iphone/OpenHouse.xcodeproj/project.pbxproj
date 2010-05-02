@@ -19,8 +19,6 @@
 		8361078B1006D596007082CD /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = 836107891006D596007082CD /* down.png */; };
 		8361078C1006D596007082CD /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 8361078A1006D596007082CD /* up.png */; };
 		8381E840118E2F9900A412EE /* TaggedReverseGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8381E823118E2F9900A412EE /* TaggedReverseGeocoder.m */; };
-		8381E843118E2F9900A412EE /* TaggedRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8381E82A118E2F9900A412EE /* TaggedRequest.m */; };
-		8381E844118E2F9900A412EE /* TaggedURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8381E82C118E2F9900A412EE /* TaggedURLConnection.m */; };
 		8381E845118E2F9900A412EE /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8381E82F118E2F9900A412EE /* CDataScanner.m */; };
 		8381E846118E2F9900A412EE /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8381E832118E2F9900A412EE /* CDataScanner_Extensions.m */; };
 		8381E847118E2F9900A412EE /* NSCharacterSet_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8381E834118E2F9900A412EE /* NSCharacterSet_Extensions.m */; };
@@ -78,10 +76,6 @@
 		8361078A1006D596007082CD /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = up.png; path = resources/up.png; sourceTree = "<group>"; };
 		8381E822118E2F9900A412EE /* TaggedReverseGeocoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaggedReverseGeocoder.h; sourceTree = "<group>"; };
 		8381E823118E2F9900A412EE /* TaggedReverseGeocoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaggedReverseGeocoder.m; sourceTree = "<group>"; };
-		8381E829118E2F9900A412EE /* TaggedRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaggedRequest.h; sourceTree = "<group>"; };
-		8381E82A118E2F9900A412EE /* TaggedRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaggedRequest.m; sourceTree = "<group>"; };
-		8381E82B118E2F9900A412EE /* TaggedURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaggedURLConnection.h; sourceTree = "<group>"; };
-		8381E82C118E2F9900A412EE /* TaggedURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaggedURLConnection.m; sourceTree = "<group>"; };
 		8381E82E118E2F9900A412EE /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
 		8381E82F118E2F9900A412EE /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
 		8381E831118E2F9900A412EE /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner_Extensions.h; sourceTree = "<group>"; };
@@ -278,10 +272,6 @@
 			children = (
 				8381E8B9118E338E00A412EE /* ConnectionManager.h */,
 				8381E8BA118E338E00A412EE /* ConnectionManager.m */,
-				8381E829118E2F9900A412EE /* TaggedRequest.h */,
-				8381E82A118E2F9900A412EE /* TaggedRequest.m */,
-				8381E82B118E2F9900A412EE /* TaggedURLConnection.h */,
-				8381E82C118E2F9900A412EE /* TaggedURLConnection.m */,
 			);
 			path = REST;
 			sourceTree = "<group>";
@@ -512,8 +502,6 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* OpenHousesAppDelegate.m in Sources */,
 				8381E840118E2F9900A412EE /* TaggedReverseGeocoder.m in Sources */,
-				8381E843118E2F9900A412EE /* TaggedRequest.m in Sources */,
-				8381E844118E2F9900A412EE /* TaggedURLConnection.m in Sources */,
 				8381E845118E2F9900A412EE /* CDataScanner.m in Sources */,
 				8381E846118E2F9900A412EE /* CDataScanner_Extensions.m in Sources */,
 				8381E847118E2F9900A412EE /* NSCharacterSet_Extensions.m in Sources */,
