@@ -20,7 +20,7 @@ APXS_LDFLAGS_SHLIB=`$(APXS) -q LDFLAGS_SHLIB`
 APXS_SYSCONFDIR=`$(APXS) -q SYSCONFDIR`
 APXS_LIBS_SHLIB=`$(APXS) -q LIBS_SHLIB`
 APP_INCLUDES = `pkg-config --cflags GraphicsMagick++` `pkg-config --cflags libcurl` `pkg-config --cflags QtCore`
-APP_LIBS = `pkg-config --libs GraphicsMagick++` `pkg-config --libs libcurl` `pkg-config --libs QtCore`
+APP_LIBS = `pkg-config --libs GraphicsMagick++` `pkg-config --libs libcurl` `pkg-config --libs QtCore` -lboost_filesystem-mt
 OBJECTS = mod_image.o md5.o md5wrapper.o UrlLibrary.o
 
 # the default target

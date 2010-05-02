@@ -17,6 +17,7 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <cctype>
 
 #include "httpd.h"
 #include "http_config.h"
@@ -25,8 +26,10 @@
 
 #include <math.h>
 #include <boost/algorithm/string.hpp>
+#include <boost/filesystem/convenience.hpp>
 #include <Magick++.h>
 #include <QUrl>
+#include <QDir>
 #include "curl/curl.h"
 #include "UrlLibrary.h"
 #include "md5wrapper.h"
@@ -47,27 +50,27 @@ typedef struct {
     char* command;
 } image_module_dir_config_t;
 
-apr_status_t send_local_file(const string *full_path, request_rec *r) {
+apr_status_t send_local_file(const string *path, request_rec *r) {
     apr_file_t *fd;
     apr_size_t offset=0, len, nbytes;
     apr_status_t status;
     apr_finfo_t finfo;
     
-    status=apr_stat(&finfo, full_path->c_str(), APR_FINFO_SIZE, r->pool);
+    status=apr_stat(&finfo, path->c_str(), APR_FINFO_SIZE, r->pool);
     if (status != APR_SUCCESS) {
         return 1;
     }
     
-    status=apr_file_open(&fd, full_path->c_str(), APR_READ, APR_OS_DEFAULT, r->pool);
+    status=apr_file_open(&fd, path->c_str(), APR_READ, APR_OS_DEFAULT, r->pool);
     if (status != APR_SUCCESS) {
         return 1;
     }
     
     len = finfo.size;
-    ap_set_content_type(r, "image/png");
+    ap_set_content_type(r, "image/jpeg");
     ap_set_content_length(r, finfo.size);
     //apr_table_set(r->headers_out, "Cache-Control", "no-cache, no-store");
-    apr_table_set(r->headers_out, "Expires", "01 Jul 2010 06:12:33 GMT");
+    apr_table_set(r->headers_out, "Expires", "01 Jul 2050 06:12:33 GMT");
     apr_table_set(r->headers_out, "Last-Modified", "Tue, 09 Jun 2009 19:40:16 GMT");
     apr_table_set(r->headers_out, "Cache-Control", "public, max-age=31536000");
     
@@ -166,7 +169,7 @@ Image* makeFull(string *data) {
     
     try {
         image->zoom(Geometry(FULL_HORIZONTAL_SIDE,FULL_VERTICAL_SIDE));
-        image->magick("PNG");
+        image->magick("JPG");
     }
     catch (Exception &error) {
         delete image;
@@ -206,7 +209,7 @@ Image* makeThumb(string *data) {
         image->zoom(Geometry(nx,ny));
         image->crop(Geometry(THUMBNAIL_HORIZONTAL_SIDE,THUMBNAIL_HORIZONTAL_SIDE, xo, yo));
         image->zoom(Geometry(THUMBNAIL_HORIZONTAL_SIDE,THUMBNAIL_HORIZONTAL_SIDE));
-        image->magick("PNG");
+        image->magick("JPG");
     }
     catch (Exception &error) {
         delete image;
@@ -216,11 +219,11 @@ Image* makeThumb(string *data) {
     return image;
 }
 
-bool saveImage(const string *full_path, Image *image) {
+bool saveImage(const string *path, Image *image) {
     bool ret = true;
     
     try {
-        image->write(full_path->c_str());
+        image->write(path->c_str());
     }
     catch(Exception &error) {
         fprintf(stderr, "%s\n", error.what());
@@ -228,6 +231,20 @@ bool saveImage(const string *full_path, Image *image) {
     }
     
     return ret;
+}
+
+bool ensurePath(string &basepath, string &imagepath) {
+    QDir basedir(QString(basepath.c_str()));
+    
+    if (basedir.exists() == false) {
+        return false;
+    }
+    
+    if (!basedir.mkpath(QString(imagepath.c_str()))) {
+        return false;
+    }
+    
+    return true;
 }
 
 int image_handler(request_rec *r) {
@@ -257,24 +274,29 @@ int image_handler(request_rec *r) {
         
         image_module_dir_config_t* config =
         (image_module_dir_config_t*)ap_get_module_config(r->per_dir_config, &image_module);
-        string path(config->command);
+        string basepath(config->command);
         if (size == "t") {
-            path.append("/thumb/");
+            basepath.append("/thumb");
         }
         else if (size == "f") {
-            path.append("/full/");
+            basepath.append("/full");
         }
         
         md5wrapper md5;
-        string hash = md5.getHashFromString(location).append(".png");
+        string hash = md5.getHashFromString(location).append(".jpg");
+        string nib1 = hash.substr(0,2);
+        string nib2 = hash.substr(2,2);
         
-        string full_path(path);
-        full_path.append(hash);
-        ap_log_rerror(APLOG_MARK, APLOG_NOTICE, NULL, r, "try:  %s", full_path.c_str());
+        to_upper(nib1);
+        to_upper(nib2);
+        
+        string imagepath = nib1 + "/" + nib2;
+        string fullpath  = basepath + "/" + imagepath + "/" + hash;
+        ap_log_rerror(APLOG_MARK, APLOG_NOTICE, NULL, r, "try:  %s", fullpath.c_str());
         
         
         
-        rv = send_local_file(&full_path, r);
+        rv = send_local_file(&fullpath, r);
         if (!rv) {
             return APR_SUCCESS;
         }
@@ -295,7 +317,7 @@ int image_handler(request_rec *r) {
             image = makeThumb(&data);
         }
 
-        if (image == NULL || !image->isValid() || !saveImage(&full_path, image)) {
+        if (image == NULL || !image->isValid() || !ensurePath(basepath, imagepath) || !saveImage(&fullpath, image)) {
             delete image;
             return 404;
         }
@@ -303,7 +325,7 @@ int image_handler(request_rec *r) {
         ap_log_rerror(APLOG_MARK, APLOG_NOTICE, NULL, r, "done: %s", url.toEncoded().data());
             
         delete image;
-        rv = send_local_file(&full_path, r);
+        rv = send_local_file(&fullpath, r);
         if (!rv) {
             return APR_SUCCESS;
         }
