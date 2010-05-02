@@ -19,12 +19,19 @@
 -(void) updateNavButtons;
 -(void) toggleView;
 -(void) getAddressAtLocation:(CLLocation *)location;
+-(void) selectAction:(id)sender;
+-(NSDictionary *) makeDictionaryWithLat:(double)lat lng:(double)lng;
+-(NSDictionary *) makeDictionaryWithCLLocation:(CLLocation *)location;
+-(void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation;
+-(void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error;
+-(void) showAlertWithText:(NSString *)text;
 @end
 
 
 @implementation BrowseController
 @synthesize mapController, tableController, activeController, page, origin, currentAnnotations,
-            geoCoder, statusView, navButtons, mapIconImage, listIconImage;
+            geoCoder, statusView, navButtons, mapIconImage, listIconImage, locationManager,
+            locationPendingSearch;
 
 #pragma mark -
 #pragma mark Instantiation and tear down
@@ -52,6 +59,13 @@
 		
         [self setListIconImage:[UIImage imageNamed:@"list.png"]];
         [self setMapIconImage:[UIImage imageNamed:@"map.png"]];
+        
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"last_location_update"];
+        self.locationManager = [[[CLLocationManager alloc] init] autorelease];
+        self.locationManager.delegate = self;
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+        self.locationManager.distanceFilter = 100;
+        [self.locationManager startUpdatingLocation];
 		
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectedHouseCallback:) name:@"selectedHouse" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectedLocationCallback:) name:@"selectedLocationFromHistory" object:nil];
@@ -72,6 +86,7 @@
 	[navButtons release];
 	[mapIconImage release];
 	[listIconImage release];
+    [locationManager release];
     
     [super dealloc];
 }
@@ -119,14 +134,25 @@
     
     /* Set back button item */
     UIBarButtonItem *backButton = [[[UIBarButtonItem alloc]
-                                    initWithTitle:@"Browse results"
+                                    initWithTitle:@"Browse"
                                     style:UIBarButtonItemStylePlain
                                     target:nil
                                     action:nil] autorelease];
     self.navigationItem.backBarButtonItem = backButton;
     
     /* Start the show */
-    [self setOriginAtLat:44.97614 lng:-93.27704];
+    NSDictionary *lastLocationSearched = (NSDictionary*)
+        [[NSUserDefaults standardUserDefaults] objectForKey:@"last_location_searched"];
+        
+    if (lastLocationSearched) {
+        NSNumber *lat = [lastLocationSearched objectForKey:@"lat"];
+        NSNumber *lng = [lastLocationSearched objectForKey:@"lng"];
+            
+        [self setOriginAtLat:[lat doubleValue] lng:[lng doubleValue]];
+    }
+    else {
+        [self selectAction:actionButton];
+    }
 }
 
 /*
@@ -184,6 +210,14 @@
 #pragma mark -
 #pragma mark Custom methods
 -(void) setOriginAtLat:(float)lat lng:(float)lng {
+    [[NSUserDefaults standardUserDefaults]
+     setObject:[self makeDictionaryWithLat:lat lng:lng]
+     forKey:@"last_location_searched"];
+     
+    [statusView hideLabel];
+    [[self navigationItem] setTitle:@""];
+    self.locationPendingSearch = NO;
+    
     [self setPage:[NSNumber numberWithInt:0]];
     
     CLLocation *loc = [[[CLLocation alloc] initWithLatitude:lat longitude:lng] autorelease];
@@ -220,6 +254,9 @@
 		[self getPage:p];
 		return;
 	}
+    
+    NSString *title = [NSString stringWithFormat:@"Browse (%d)", [[openHouses totalResults] intValue]];
+    [[self navigationItem] setTitle:title];
 	
 	[[self mapController] showPage:[openHouses getPage:p] withOrigin:origin];
 	[[self tableController] showPage:[openHouses getPage:p] withOrigin:origin];
@@ -251,7 +288,7 @@
 
 -(void) selectAction:(id)sender {
     UIActionSheet *menu = [[[UIActionSheet alloc]
-                            initWithTitle:@"Start over from"
+                            initWithTitle:@"Search"
                             delegate:self
                             cancelButtonTitle:@"Cancel"
                             destructiveButtonTitle:nil
@@ -297,10 +334,13 @@
     }
 	
 	[UIView beginAnimations:nil context:NULL];
-	[UIView setAnimationDuration:0.5];
+	[UIView setAnimationDuration:1.0];
+	//[UIView setAnimationTransition:((activeController == mapController) ?
+	//								UIViewAnimationTransitionFlipFromRight :
+	//								UIViewAnimationTransitionFlipFromLeft) forView:self.view cache:YES];
 	[UIView setAnimationTransition:((activeController == mapController) ?
-									UIViewAnimationTransitionFlipFromRight :
-									UIViewAnimationTransitionFlipFromLeft) forView:self.view cache:YES];
+									UIViewAnimationTransitionCurlUp :
+									UIViewAnimationTransitionCurlDown) forView:self.view cache:YES];
 	
 	if (activeController == mapController) {
 		[tableController viewWillAppear:YES];
@@ -372,6 +412,36 @@
 	}
 }
 
+-(NSDictionary *) makeDictionaryWithCLLocation:(CLLocation *)location {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    
+    [dict setObject:[NSNumber numberWithDouble:location.coordinate.latitude] forKey:@"lat"];
+    [dict setObject:[NSNumber numberWithDouble:location.coordinate.longitude] forKey:@"lng"];
+    
+    return dict;
+}
+
+-(NSDictionary *) makeDictionaryWithLat:(double)lat lng:(double)lng {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    
+    [dict setObject:[NSNumber numberWithDouble:lat] forKey:@"lat"];
+    [dict setObject:[NSNumber numberWithDouble:lng] forKey:@"lng"];
+    
+    return dict;
+}
+
+-(void) showAlertWithText:(NSString *)text {
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:nil
+                          message:text
+                          delegate:self
+                          cancelButtonTitle:nil
+                          otherButtonTitles:@"OK", nil];
+    
+    [alert show];
+    [alert release];
+}
+
 
 #pragma mark -
 #pragma mark UIActionSheetDelegate methods
@@ -381,6 +451,18 @@
         [self setOriginAtLat:center.latitude lng:center.longitude];
     }
     else if (buttonIndex == 1) {
+        NSDictionary *lastLocationUpdate = (NSDictionary*)[[NSUserDefaults standardUserDefaults] objectForKey:@"last_location_update"];
+        if (lastLocationUpdate) {
+            NSNumber *lat = [lastLocationUpdate objectForKey:@"lat"];
+            NSNumber *lng = [lastLocationUpdate objectForKey:@"lng"];
+            
+            [self setOriginAtLat:[lat doubleValue] lng:[lng doubleValue]];
+            
+            return;
+        }
+        
+        [statusView showLabel:@"Locating..."];
+        self.locationPendingSearch = YES;
     }
     else if (buttonIndex == 2) {
         AddressController *addressCotroller   = [[[AddressController alloc] initWithStyle:UITableViewStylePlain] autorelease];
@@ -428,15 +510,14 @@
     
     OpenHouses *openHouses = [OpenHouses sharedOpenHouses];
     if ([p intValue] == 1 && [[openHouses totalResults] intValue] < 1) {
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle:nil
-                              message:[NSString stringWithFormat:@"No houses found within a %d mile radius.", (int)CONFIG_SEARCH_DISTANCE]
-                              delegate:self
-                              cancelButtonTitle:nil
-                              otherButtonTitles:@"OK", nil];
+        [self.tableController showPage:nil withOrigin:origin];
         
-        [alert show];
-        [alert release];
+        if (activeController == tableController) {
+            return;
+        }
+        
+        NSString *msg = [NSString stringWithFormat:@"No houses found within a %d mile radius.", (int)CONFIG_SEARCH_DISTANCE];
+        [self showAlertWithText:msg];
         
         return;
     }
@@ -447,15 +528,8 @@
 -(void) failedWithError:(NSError *)error {
     [statusView hideLabel];
     
-	UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle:nil
-                          message:@"An API error has ocurred. Please try again later."
-                          delegate:self
-                          cancelButtonTitle:nil
-                          otherButtonTitles:@"OK", nil];
-	
-    [alert show];
-    [alert release];
+    NSString *msg = @"An API error has ocurred. Please try again later.";
+    [self showAlertWithText:msg];
 }
 
 
@@ -470,6 +544,28 @@
 
 -(void) reverseGeocoder:(TaggedReverseGeocoder *)geocoder didFailWithError:(NSError *)error {
     
+}
+
+
+#pragma mark -
+#pragma mark CLLocationManagerDelegate methods
+-(void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+    NSDictionary *location = [self makeDictionaryWithCLLocation:newLocation];
+    [[NSUserDefaults standardUserDefaults] setObject:location forKey:@"last_location_update"];
+    if (self.locationPendingSearch == YES) {
+        [self setOriginAtLat:newLocation.coordinate.latitude lng:newLocation.coordinate.longitude];
+    }
+}
+
+-(void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    if (self.locationPendingSearch == NO) {
+        return;
+    }
+    
+    self.locationPendingSearch = NO;
+    
+    NSString *msg = @"Unable to determine your location.";
+    [self showAlertWithText:msg];
 }
 @end
 

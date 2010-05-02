@@ -22,7 +22,7 @@
 @end
 
 @implementation AddressController
-@synthesize statusView, searchBar, addresses, requests;
+@synthesize statusView, searchBar, addresses, requests, noResults;
 
 #pragma mark -
 #pragma mark Instantiation and tear down
@@ -164,13 +164,38 @@
 #pragma mark -
 #pragma mark UITableViewDataSource methods
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (self.noResults == YES) {
+        return 3;
+    }
+
     return [addresses count];
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID"];
+    if (self.noResults == YES) {
+        UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"noResultsCell"];
+        if (cell == nil) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"noResultsCell"] autorelease];
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        if (indexPath.row != 2) {
+            return cell;
+        }
+        
+        UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(0,12,320,20)] autorelease];
+        label.text = @"No Results";
+            
+        label.textAlignment = UITextAlignmentCenter;
+        label.textColor = [UIColor lightGrayColor];
+        [cell.contentView addSubview:label];
+            
+        return cell;
+    }
+
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"addressCell"];
     if (cell == nil) {
-        cell = [[[AddressResultCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:@"cellID"] autorelease];
+        cell = [[[AddressResultCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:@"addressCell"] autorelease];
         
         //cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
@@ -195,12 +220,20 @@
 #pragma mark -
 #pragma mark UITableViewDelegate methods
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.noResults == YES) {
+        return;
+    }
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:@"selectedAddressFromGeocoding" object:[addresses objectAtIndex:indexPath.row]];
     
     [self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.noResults == YES) {
+        return 45.0f;
+    }
+
     NSDictionary *address = [addresses objectAtIndex:indexPath.row];
     NSString *text        = [address valueForKey:@"address"];
     UIFont *font          = [UIFont fontWithName:@"HelveticaNeue-Bold" size:15];
@@ -261,6 +294,13 @@
     }
 }
 
+-(void) showNoResults {
+    self.noResults = YES;
+    [self setAddresses:[NSArray array]];
+    [self.tableView reloadData];
+    return;
+}
+
 
 #pragma mark -
 #pragma mark Geocoding API delegates
@@ -274,19 +314,19 @@
     [statusView hideLabel];
     
     if(code != 200) {
-        [self showAlertWithText:@"google geocoding API error"];
+        [self showAlertWithText:@"API error"];
         return;
     }
     
     NSDictionary *response = [[CJSONDeserializer deserializer] deserializeAsDictionary:payload error:nil];
     if (response == nil) {
-        [self showAlertWithText:@"no results found"];
+        [self showNoResults];
         return;
     }
     
     NSString *status = [response objectForKey:@"status"];
     if (status == nil || ![status isEqualToString:@"OK"]) {
-        [self showAlertWithText:@"no results found"];
+        [self showNoResults];
         return;
     }
     
@@ -295,10 +335,13 @@
     NSArray *results      = [response objectForKey:@"results"];
     
     if (results == nil || [results count] < 1) {
-        [self showAlertWithText:@"no results found"];
+        self.noResults = YES;
+        [self setAddresses:[NSArray array]];
+        [self.tableView reloadData];
         return;
     }
     
+    self.noResults = NO;
     for (NSDictionary *result in results) {
         NSString *address      = [result valueForKey:@"formatted_address"];
         NSDictionary *geometry = [result valueForKey:@"geometry"];
@@ -330,7 +373,7 @@
         return;
     }
     
-    [self showAlertWithText:@"no results found"];
+    [self showNoResults];
 }
 
 -(void) getAddressesFail:(NSURLConnection *)connection withData:(NSDictionary *)data {

@@ -10,7 +10,7 @@
 
 
 @implementation HistoryController
-@synthesize locations, sortButtons, sortIdx;
+@synthesize locations, sortButtons, sortIdx, noResults;
 
 #pragma mark -
 #pragma mark Instantiation and tear down
@@ -149,6 +149,11 @@
         self.navigationItem.title = @"Most Frequent";
     }
     
+    self.noResults = NO;
+    if ([locations count] == 0) {
+        self.noResults = YES;
+    }
+    
     [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:sortIdx] forKey:@"sort_location_history_idx"];
     [self.tableView reloadData];
 }
@@ -180,13 +185,38 @@
 
 // Customize the number of rows in the table view.
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (self.noResults == YES) {
+        return 3;
+    }
+    
     return [locations count];
 }
 
 // Customize the appearance of table view cells.
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSDictionary *location = [locations objectAtIndex:indexPath.row];
+    if (self.noResults == YES) {
+        UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"noResultsCell"];
+        if (cell == nil) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"noResultsCell"] autorelease];
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        if (indexPath.row != 2) {
+            return cell;
+        }
+        
+        UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(0,12,320,20)] autorelease];
+        label.text = @"Empty";
+            
+        label.textAlignment = UITextAlignmentCenter;
+        label.textColor = [UIColor lightGrayColor];
+        [cell.contentView addSubview:label];
+            
+        return cell;
+    }
     
+    
+	NSDictionary *location = [locations objectAtIndex:indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"] autorelease];
@@ -216,6 +246,10 @@
 #pragma mark -
 #pragma mark UITableViewDelegate methods
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.noResults == YES) {
+        return;
+    }
+    
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"selectedLocationFromHistory" object:[locations objectAtIndex:indexPath.row]];
     [self.navigationController dismissModalViewControllerAnimated:YES];
 }
@@ -261,6 +295,10 @@
  */
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.noResults == YES) {
+        return 45.0f;
+    }
+    
 	return 50.0f;
 }
 

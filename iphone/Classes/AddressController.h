@@ -19,11 +19,13 @@
     UISearchBar *searchBar;
 	NSArray *addresses;
 	NSMutableDictionary *requests;
+    BOOL noResults;
 }
 
 @property (nonatomic, retain) StatusView *statusView;
 @property (nonatomic, retain) UISearchBar *searchBar;
 @property (nonatomic, retain) NSArray *addresses;
 @property (nonatomic, retain) NSMutableDictionary *requests;
+@property (nonatomic, assign) BOOL noResults;
 
 @end

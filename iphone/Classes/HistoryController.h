@@ -15,11 +15,13 @@
     NSArray *locations;
     UISegmentedControl *sortButtons;
     NSInteger sortIdx;
+    BOOL noResults;
 }
 
 @property (nonatomic, retain) NSArray *locations;
 @property (nonatomic, retain) UISegmentedControl *sortButtons;
 @property (nonatomic, assign) NSInteger sortIdx;
+@property (nonatomic, assign) BOOL noResults;
 
 -(void) sort;
 
