@@ -321,7 +321,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>83E55D200FB7F8FC00ED0E37</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>TableViewController.m</string>
+								<string>AddressResultCell.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -329,11 +329,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>83E55D210FB7F8FC00ED0E37</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>TableViewController.m</string>
+										<string>AddressResultCell.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>8381E8C9118E33E900A412EE</string>
+										<string>8381E8E5118E359F00A412EE</string>
 										<key>history</key>
 										<array>
 											<string>835B0FA20FC13181007F818F</string>
@@ -412,12 +412,15 @@
 											<string>8381E8C0118E33E900A412EE</string>
 											<string>8381E8C1118E33E900A412EE</string>
 											<string>8381E8C2118E33E900A412EE</string>
-											<string>8381E8C3118E33E900A412EE</string>
 											<string>8381E8C4118E33E900A412EE</string>
 											<string>8381E8C5118E33E900A412EE</string>
 											<string>8381E8C6118E33E900A412EE</string>
 											<string>8381E8C7118E33E900A412EE</string>
-											<string>8381E8C8118E33E900A412EE</string>
+											<string>8381E8D7118E353100A412EE</string>
+											<string>8381E8D8118E353100A412EE</string>
+											<string>8381E8DA118E353100A412EE</string>
+											<string>8381E8E2118E358C00A412EE</string>
+											<string>8381E8E3118E358C00A412EE</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -431,18 +434,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1142, 518}}</string>
+								<string>{{0, 0}, {1142, 490}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 59 1440 819 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>518pt</string>
+							<string>490pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>255pt</string>
+							<string>283pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -472,7 +475,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1142, 228}}</string>
+										<string>{{10, 27}, {1142, 256}}</string>
 										<key>RubberWindowFrame</key>
 										<string>0 59 1440 819 0 0 1440 878 </string>
 									</dict>
@@ -512,7 +515,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1142, 146}}</string>
+										<string>{{10, 27}, {1142, 228}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
