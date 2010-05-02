@@ -13,7 +13,7 @@ from sqlalchemy.pool import NullPool
 from ThreadUrl import ThreadUrl
 
 SEARCH_BASE = 'http://base.google.com/base/feeds/snippets'
-IMAGE_BASE  = 'http://localhost/service/image/resize.png'
+IMAGE_BASE  = 'http://localhost/service/image/resize.jpg'
 Houses = Images = engine = None
 
 def search(req):
