@@ -15,9 +15,6 @@
  */
 
 #include <string>
-#include <map>
-#include <vector>
-#include <cctype>
 
 #include "httpd.h"
 #include "http_config.h"
@@ -25,43 +22,37 @@
 #include "http_log.h"
 
 #include <math.h>
-#include <boost/algorithm/string.hpp>
-#include <boost/filesystem/convenience.hpp>
 #include <Magick++.h>
 #include <QUrl>
 #include <QDir>
+#include <QCryptographicHash>
 #include "curl/curl.h"
-#include "UrlLibrary.h"
-#include "md5wrapper.h"
 
 #define THUMBNAIL_HORIZONTAL_SIDE 50
 #define FULL_HORIZONTAL_SIDE 310
 #define FULL_VERTICAL_SIDE 233
 
 using namespace std;
-using namespace boost;
 using namespace Magick;
 
 extern "C" module AP_MODULE_DECLARE_DATA image_module;
-
-typedef vector< string > split_vector_type;
 
 typedef struct {
     char* command;
 } image_module_dir_config_t;
 
-apr_status_t send_local_file(const string *path, request_rec *r) {
+apr_status_t send_local_file(const QString &fullpath, request_rec *r) {
     apr_file_t *fd;
     apr_size_t offset=0, len, nbytes;
     apr_status_t status;
     apr_finfo_t finfo;
     
-    status=apr_stat(&finfo, path->c_str(), APR_FINFO_SIZE, r->pool);
+    status=apr_stat(&finfo, fullpath.toAscii().data(), APR_FINFO_SIZE, r->pool);
     if (status != APR_SUCCESS) {
         return 1;
     }
     
-    status=apr_file_open(&fd, path->c_str(), APR_READ, APR_OS_DEFAULT, r->pool);
+    status=apr_file_open(&fd, fullpath.toAscii().data(), APR_READ, APR_OS_DEFAULT, r->pool);
     if (status != APR_SUCCESS) {
         return 1;
     }
@@ -81,34 +72,6 @@ apr_status_t send_local_file(const string *path, request_rec *r) {
     }
     
     return APR_SUCCESS;
-}
-
-map<string, string> GetQueryParameters(string query) {
-    map<string, string> params;
-    
-    size_t query_idx = query.find("?");
-    if (query_idx != string::npos) {
-        query.replace(0, query_idx + 1, "");
-    }
-    
-    split_vector_type split_params;
-    split(split_params, query, is_any_of("&") );
-    for (unsigned int i=0; i<split_params.size(); i++) {
-        string name   = split_params[i];
-        string value  = "";
-        size_t val_idx = name.find("=");
-        
-        if (val_idx != string::npos) {
-            value = name.substr(val_idx + 1, name.size() - val_idx);
-            name  = name.substr(0, val_idx);
-        }
-        
-        name  = UrlLibrary::UrlDecode(name);
-        value = UrlLibrary::UrlDecode(value);
-        params[name] = value;
-    }
-    
-    return params;
 }
 
 int writer(char *data, size_t size, size_t nmemb, std::string *buffer) {
@@ -219,11 +182,11 @@ Image* makeThumb(string *data) {
     return image;
 }
 
-bool saveImage(const string *path, Image *image) {
+bool saveImage(const QString &fullpath, Image *image) {
     bool ret = true;
     
     try {
-        image->write(path->c_str());
+        image->write(fullpath.toAscii().data());
     }
     catch(Exception &error) {
         fprintf(stderr, "%s\n", error.what());
@@ -233,14 +196,14 @@ bool saveImage(const string *path, Image *image) {
     return ret;
 }
 
-bool ensurePath(string &basepath, string &imagepath) {
-    QDir basedir(QString(basepath.c_str()));
+bool ensurePath(const QString &basepath, const QString &imagepath) {
+    QDir basedir(basepath);
     
     if (basedir.exists() == false) {
         return false;
     }
     
-    if (!basedir.mkpath(QString(imagepath.c_str()))) {
+    if (!basedir.mkpath(imagepath)) {
         return false;
     }
     
@@ -257,24 +220,25 @@ int image_handler(request_rec *r) {
 
     {
         
-        string query(r->parsed_uri.query);
-        map< string, string > params = GetQueryParameters(query);
-        if(params.find("location") == params.end()) {
+        QUrl query;
+        query.setEncodedQuery(QByteArray(r->parsed_uri.query));
+        
+        if(!query.hasQueryItem("size")) {
             return 400;
         }
-        if(params.find("size") == params.end()) {
+        if(!query.hasQueryItem("location")) {
             return 400;
         }
         
-        string location(params.find("location")->second.c_str());
-        string size(params.find("size")->second.c_str());
+        QString location(QUrl::fromPercentEncoding(query.encodedQueryItemValue(QByteArray("location"))));
+        QString size(QUrl::fromPercentEncoding(query.encodedQueryItemValue(QByteArray("size"))));
         if(size != "t" && size != "f") {
             return 400;
         }
         
         image_module_dir_config_t* config =
         (image_module_dir_config_t*)ap_get_module_config(r->per_dir_config, &image_module);
-        string basepath(config->command);
+        QString basepath(config->command);
         if (size == "t") {
             basepath.append("/thumb");
         }
@@ -282,27 +246,25 @@ int image_handler(request_rec *r) {
             basepath.append("/full");
         }
         
-        md5wrapper md5;
-        string hash = md5.getHashFromString(location).append(".jpg");
-        string nib1 = hash.substr(0,2);
-        string nib2 = hash.substr(2,2);
+        QByteArray md5 = QCryptographicHash::hash(location.toAscii(), QCryptographicHash::Md5).toHex();
+        QString hash = QString(md5).append(".jpg");
+        QString nib1 = hash.mid(0,2).toUpper();
+        QString nib2 = hash.mid(2,2).toUpper();
         
-        to_upper(nib1);
-        to_upper(nib2);
+        QString imagepath = nib1 + "/" + nib2;
+        QString fullpath  = basepath + "/" + imagepath + "/" + hash;
+        ap_log_rerror(APLOG_MARK, APLOG_NOTICE, NULL, r, "try:  %s", fullpath.toAscii().data());
         
-        string imagepath = nib1 + "/" + nib2;
-        string fullpath  = basepath + "/" + imagepath + "/" + hash;
-        ap_log_rerror(APLOG_MARK, APLOG_NOTICE, NULL, r, "try:  %s", fullpath.c_str());
-        
-        
-        
-        rv = send_local_file(&fullpath, r);
+        rv = send_local_file(fullpath, r);
         if (!rv) {
             return APR_SUCCESS;
         }
         
-        QUrl url(location.c_str());
-        ap_log_rerror(APLOG_MARK, APLOG_NOTICE, NULL, r, "curl:  %s", url.toEncoded().data());
+        QUrl url(location);
+        if (!url.isValid()) {
+            return 400;
+        }
+        ap_log_rerror(APLOG_MARK, APLOG_NOTICE, NULL, r, "curl:  %s", url.toString().toAscii().data());
             
         string data;
         if (getURL(&url, &data) == false) {
@@ -317,7 +279,7 @@ int image_handler(request_rec *r) {
             image = makeThumb(&data);
         }
 
-        if (image == NULL || !image->isValid() || !ensurePath(basepath, imagepath) || !saveImage(&fullpath, image)) {
+        if (image == NULL || !image->isValid() || !ensurePath(basepath, imagepath) || !saveImage(fullpath, image)) {
             delete image;
             return 404;
         }
@@ -325,7 +287,7 @@ int image_handler(request_rec *r) {
         ap_log_rerror(APLOG_MARK, APLOG_NOTICE, NULL, r, "done: %s", url.toEncoded().data());
             
         delete image;
-        rv = send_local_file(&fullpath, r);
+        rv = send_local_file(fullpath, r);
         if (!rv) {
             return APR_SUCCESS;
         }
