@@ -80,7 +80,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ConnectionManager);
     [[callback objectForKey:@"delegate"] getValue:&delegate];
 	SEL finish  = NSSelectorFromString([callback objectForKey:@"finish"]);
 	if (delegate && [delegate respondsToSelector:finish]) {
-		[delegate performSelector:finish withObject:connection withObject:info];
+		[delegate performSelector:finish withObject:info];
 	}
 	
 	/* Clean up */
@@ -100,7 +100,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ConnectionManager);
 	SEL fail    = NSSelectorFromString([callback objectForKey:@"fail"]);
 	if (delegate && [delegate respondsToSelector:fail]) {
         [info setObject:error forKey:@"error"];
-		[delegate performSelector:fail withObject:connection withObject:info];
+		[delegate performSelector:fail withObject:info];
 	}
 	
 	/* Clean up */

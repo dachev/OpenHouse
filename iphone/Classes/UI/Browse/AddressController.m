@@ -267,8 +267,8 @@
      addRequest:request
      withTag:identifier
      delegate:self
-     didFinishSelector:@selector(getAddressesFinish:withData:)
-     didFailSelector:@selector(getAddressesFail:withData:)
+     didFinishSelector:@selector(getAddressesFinishWithData:)
+     didFailSelector:@selector(getAddressesFailWithData:)
      ];
     
     [searchBar resignFirstResponder];
@@ -304,7 +304,7 @@
 
 #pragma mark -
 #pragma mark Geocoding API delegates
--(void) getAddressesFinish:(NSURLConnection *)connection withData:(NSDictionary *)data {
+-(void) getAddressesFinishWithData:(NSDictionary *)data {
     NSUInteger code = [(NSHTTPURLResponse *)[data objectForKey:@"response"] statusCode];
     NSData *payload = [data objectForKey:@"data"];
     NSString *tag   = [data objectForKey:@"tag"];
@@ -376,7 +376,7 @@
     [self showNoResults];
 }
 
--(void) getAddressesFail:(NSURLConnection *)connection withData:(NSDictionary *)data {
+-(void) getAddressesFailWithData:(NSDictionary *)data {
     NSString *tag  = [data objectForKey:@"tag"];
     NSError *error = [data objectForKey:@"error"];
     

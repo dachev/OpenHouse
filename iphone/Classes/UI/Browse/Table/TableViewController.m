@@ -136,8 +136,8 @@
          addRequest:request
          withTag:identifier
          delegate:self
-         didFinishSelector:@selector(getThumbFinish:withData:)
-         didFailSelector:@selector(getThumbFail:withData:)
+         didFinishSelector:@selector(getThumbFinishWithData:)
+         didFailSelector:@selector(getThumbFailWithData:)
          ];
 	}
 }
@@ -252,7 +252,7 @@
 
 #pragma mark -
 #pragma mark Image API delegates
--(void) getThumbFinish:(NSURLConnection *)connection withData:(NSDictionary *)data {
+-(void) getThumbFinishWithData:(NSDictionary *)data {
     NSUInteger code         = [(NSHTTPURLResponse *)[data objectForKey:@"response"] statusCode];
     NSData *payload         = [data objectForKey:@"data"];
     NSString *tag           = [data objectForKey:@"tag"];
@@ -277,7 +277,7 @@
 	cell.imageView.image = thumb;
 }
 
--(void) getThumbFail:(NSURLConnection *)connection withData:(NSDictionary *)data {
+-(void) getThumbFailWithData:(NSDictionary *)data {
     NSString *tag  = [data objectForKey:@"tag"];
     
     [requests removeObjectForKey:tag];

@@ -27,6 +27,15 @@
     
     [window addSubview:[mainController view]];
     [window makeKeyAndVisible];
+    
+        
+    //NSURLCache *sharedCache = [[NSURLCache alloc]
+    // initWithMemoryCapacity:0
+    // diskCapacity:1024*1024*10
+    // diskPath:diskPath];
+         
+    //[NSURLCache setSharedURLCache:sharedCache];
+    //[sharedCache release]
 }
 
 -(void) applicationWillTerminate:(UIApplication *)application {

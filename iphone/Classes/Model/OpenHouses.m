@@ -91,15 +91,15 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(OpenHouses);
      addRequest:request
      withTag:identifier
      delegate:self
-     didFinishSelector:@selector(getHousesFinish:withData:)
-     didFailSelector:@selector(getHousesFail:withData:)
+     didFinishSelector:@selector(getHousesFinishWithData:)
+     didFailSelector:@selector(getHousesFailWithData:)
      ];
 }
 
 
 #pragma mark -
 #pragma mark Search API delegates
--(void) getHousesFinish:(NSURLConnection *)connection withData:(NSDictionary *)data {
+-(void) getHousesFinishWithData:(NSDictionary *)data {
     NSUInteger code = [(NSHTTPURLResponse *)[data objectForKey:@"response"] statusCode];
     NSData *payload = [data objectForKey:@"data"];
     NSString *tag   = [data objectForKey:@"tag"];
@@ -144,7 +144,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(OpenHouses);
      }
 }
 
--(void) getHousesFail:(NSURLConnection *)connection withData:(NSDictionary *)data {
+-(void) getHousesFailWithData:(NSDictionary *)data {
     NSString *tag  = [data objectForKey:@"tag"];
     
     [requests removeObjectForKey:tag];

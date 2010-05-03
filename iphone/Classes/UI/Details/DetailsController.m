@@ -155,8 +155,8 @@
          addRequest:request
          withTag:identifier
          delegate:self
-         didFinishSelector:@selector(getPhotoFinish:withData:)
-         didFailSelector:@selector(getPhotoFail:withData:)
+         didFinishSelector:@selector(getPhotoFinishWithData:)
+         didFailSelector:@selector(getPhotoFailWithData:)
         ];
         
         idx++;
@@ -268,7 +268,7 @@
 
 #pragma mark -
 #pragma mark Image API delegates
--(void) getPhotoFinish:(NSURLConnection *)connection withData:(NSDictionary *)data {
+-(void) getPhotoFinishWithData:(NSDictionary *)data {
     // remove request from container
     NSURLResponse *response = [data objectForKey:@"response"];
     NSUInteger code         = [(NSHTTPURLResponse *)response statusCode];
@@ -296,7 +296,7 @@
     [self loadScrollView:imageView withPage:page+1];
 }
 
--(void) getPhotoFail:(NSURLConnection *)connection withData:(NSDictionary *)data {
+-(void) getPhotoFailWithData:(NSDictionary *)data {
     NSString *tag  = [data objectForKey:@"tag"];
     
     [requests removeObjectForKey:tag];
