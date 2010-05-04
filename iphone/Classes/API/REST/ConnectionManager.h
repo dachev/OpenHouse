@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SynthesizeSingleton.h"
+#import "DiskCache.h"
 
 
 @interface ConnectionManager : NSObject {
@@ -17,7 +18,20 @@
 }
 
 +(ConnectionManager *) sharedConnectionManager;
--(void) addRequest:(NSURLRequest *)request withTag:(NSString *)tag delegate:(id)d didFinishSelector:(SEL)finishSel didFailSelector:(SEL)failSel;
+-(void) addRequest:(NSURLRequest *)request
+        withTag:(NSString *)tag
+        delegate:(id)d
+        didFinishSelector:(SEL)finishSel
+        didFailSelector:(SEL)failSel;
+        
+-(void) addRequest:(NSURLRequest *)request
+        withTag:(NSString *)tag
+        delegate:(id)d
+        didFinishSelector:(SEL)finishSel
+        didFailSelector:(SEL)failSel
+        checkCache:(BOOL)fromCache
+        saveToCache:(BOOL)toCache;
+
 -(void) cancelRequest:(NSURLRequest *)request;
 
 @end

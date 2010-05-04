@@ -138,6 +138,8 @@
          delegate:self
          didFinishSelector:@selector(getThumbFinishWithData:)
          didFailSelector:@selector(getThumbFailWithData:)
+         checkCache:YES
+         saveToCache:YES
          ];
 	}
 }
@@ -253,17 +255,21 @@
 #pragma mark -
 #pragma mark Image API delegates
 -(void) getThumbFinishWithData:(NSDictionary *)data {
-    NSUInteger code         = [(NSHTTPURLResponse *)[data objectForKey:@"response"] statusCode];
+    NSHTTPURLResponse *resp = (NSHTTPURLResponse *)[data objectForKey:@"response"];
     NSData *payload         = [data objectForKey:@"data"];
     NSString *tag           = [data objectForKey:@"tag"];
     
     [requests removeObjectForKey:tag];
     
-    if(code != 200) {
+    if(resp && [resp statusCode] != 200) {
         return;
     }
     
-	NSUInteger idx         = (NSUInteger) [tag intValue];
+	NSUInteger idx = (NSUInteger) [tag intValue];
+    if (idx >= [currentAnnotations count]) {
+        return;
+    }
+    
 	NSUInteger indexes[]   = {0,idx};
 	NSIndexPath *indexPath = [NSIndexPath indexPathWithIndexes:indexes length:2];
 	UITableViewCell *cell  = [[self tableView] cellForRowAtIndexPath:indexPath];

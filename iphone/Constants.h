@@ -21,6 +21,8 @@
 #define OPEN_HOUSE_DATE_TIME @"hh:mm aaa"
 #define LOCATION_HISTORY_DATETIME @"hh:mm aaa, EEEE MMMM d"
 
+/* Dick cache */
+#define DISK_CACHE_MAX_SIZE 1024*1024*10;
 
 /* DB */
 #define DB_NAME @"openhouses.db"
