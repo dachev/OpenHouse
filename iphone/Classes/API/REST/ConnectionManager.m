@@ -73,17 +73,21 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ConnectionManager);
         DiskCache *cache = [DiskCache sharedDiskCache];
         NSData *data = [cache dataForRequest:request];
         
-        if (data != nil && d && [d respondsToSelector:finishSel]) {
-            NSMutableDictionary *info =
-                [NSMutableDictionary
-                dictionaryWithObjects:[NSArray arrayWithObjects:tag, data, nil]
-                forKeys:[NSArray arrayWithObjects:@"tag", @"data", nil]];
+        if (data != nil) {
+            if (d && [d respondsToSelector:finishSel]) {
+                NSMutableDictionary *info =
+                    [NSMutableDictionary
+                    dictionaryWithObjects:[NSArray arrayWithObjects:tag, data, nil]
+                    forKeys:[NSArray arrayWithObjects:@"tag", @"data", nil]];
             
-            [d performSelector:finishSel withObject:info];
+                [d performSelector:finishSel withObject:info];
+            }
             NSLog(@"hit");
+            return;
         }
-            
-        return;
+        else {
+            NSLog(@"miss");
+        }
     }
     
 	NSURLConnection *connection = [[[NSURLConnection alloc] initWithRequest:request delegate:self] autorelease];

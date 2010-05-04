@@ -157,6 +157,8 @@
          delegate:self
          didFinishSelector:@selector(getPhotoFinishWithData:)
          didFailSelector:@selector(getPhotoFailWithData:)
+         checkCache:YES
+         saveToCache:YES
         ];
         
         idx++;
@@ -270,14 +272,13 @@
 #pragma mark Image API delegates
 -(void) getPhotoFinishWithData:(NSDictionary *)data {
     // remove request from container
-    NSURLResponse *response = [data objectForKey:@"response"];
-    NSUInteger code         = [(NSHTTPURLResponse *)response statusCode];
+    NSHTTPURLResponse *resp = (NSHTTPURLResponse *)[data objectForKey:@"response"];
     NSData *payload         = [data objectForKey:@"data"];
     NSString *tag           = [data objectForKey:@"tag"];
     
     [requests removeObjectForKey:tag];
     
-    if(code != 200) {
+    if(resp && [resp statusCode] != 200) {
         return;
     }
     
