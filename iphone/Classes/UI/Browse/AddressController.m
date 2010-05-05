@@ -136,12 +136,6 @@
 
 #pragma mark -
 #pragma mark Custom methods
-/*
--(void) cencelHandler:(int)idx {
-    [self.navigationController dismissModalViewControllerAnimated:YES];
-}
-*/
-
 -(void) clearHandler:(int)idx {
     [self setAddresses:[NSArray array]];
     [searchBar setText:@""];
@@ -226,6 +220,7 @@
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"selectedAddressFromGeocoding" object:[addresses objectAtIndex:indexPath.row]];
     
+    [searchBar becomeFirstResponder];
     [self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
