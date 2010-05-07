@@ -19,7 +19,7 @@
 @end
 
 @implementation DetailsController
-@synthesize pageControl, scrollView, specsView, mapView, house, pages, requests, pageControlUsed;
+@synthesize pageControl, scrollView, specsView, house, imageURLs, pages, requests, pageControlUsed;
 
 -(id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
@@ -36,7 +36,7 @@
     [scrollView release];
     [requests release];
     [specsView release];
-    [mapView release];
+    [imageURLs release];
     [house release];
     
     [super dealloc];
@@ -85,14 +85,19 @@
 
 -(void) requestImage:(NSTimer*)theTime {
     NSNumber *info        = (NSNumber*)[theTime userInfo];
-    NSString *link        = [house.imageLinks objectAtIndex:[info intValue]];
-    NSString *encodedLink = [NSString encodeURIComponent:link];
-    NSString *url         = [NSString stringWithFormat:IMAGE_API_REQUEST_URL, @"f", encodedLink];
+    NSString *urlString   = [imageURLs objectAtIndex:[info intValue]];
+    NSURL *url            = [NSURL URLWithString:urlString];
     NSString *identifier  = [info stringValue];
-        
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    
+    if (url == nil) {
+        NSLog(@"%@", urlString);
+        NSLog(@"%@", url);
+        return;
+    }
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    //NSLog(@"%@", request.URL);
     [request setTimeoutInterval:CONFIG_NETWORK_TIMEOUT];
-    //[request setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
     [requests setObject:request forKey:identifier];
         
     ConnectionManager *manager = [ConnectionManager sharedConnectionManager];
@@ -111,17 +116,25 @@
     [house release];
     house = v;
     
-    self.pages = [house.imageLinks count];
+    self.imageURLs = [NSMutableArray arrayWithArray:house.imageLinks];
+    
+    double lat       = house.coordinate.latitude;
+    double lng       = house.coordinate.longitude;
+    NSString *pipe   = @"%7C";
+    NSString *colon  = @"%3A";
+    NSString *mapURL = [NSString stringWithFormat:STATIC_MAPS_REQUEST_URL, lat, lng, colon, pipe, colon, pipe, lat, lng];
+    NSLog(@"%@", mapURL);
+    [imageURLs insertObject:mapURL atIndex:0];
+    
+    self.pages = [imageURLs count];
     if (pages > 20) {
         pages = 20;
     }
     
     [self setScrollView:[[[UIScrollView alloc] initWithFrame:CGRectMake(0,0,320,CONFIG_PAGE_VIEW_HEIGHT)] autorelease]];
-    //[self setScrollView:[[[UIScrollView alloc] initWithFrame:CGRectMake(0,0,320,253)] autorelease]];
-    //scrollView.backgroundColor = [UIColor whiteColor];
     scrollView.backgroundColor = [UIColor colorWithRed:145/255.0 green:145/255.0 blue:145/255.0 alpha:1.0];
     scrollView.pagingEnabled = YES;
-    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * (pages+1), scrollView.frame.size.height);
+    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * (pages), scrollView.frame.size.height);
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.scrollsToTop = NO;
@@ -129,17 +142,14 @@
     
     [self setPageControl:[[[UIPageControl alloc] initWithFrame:CGRectMake(0,0,320,20)] autorelease]];
     [pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];
-    //pageControl.backgroundColor = [UIColor clearColor];
     pageControl.backgroundColor = [UIColor colorWithRed:145/255.0 green:145/255.0 blue:145/255.0 alpha:1.0];
-    pageControl.numberOfPages = pages+1;
+    pageControl.numberOfPages = pages;
     pageControl.currentPage = 0;
     
     UIView *separator = [[[UIView alloc] initWithFrame:CGRectMake(0,CONFIG_PAGE_VIEW_HEIGHT+10,320,1)] autorelease];
-    //UIView *separator = [[[UIView alloc] initWithFrame:CGRectMake(0,245,320,1)] autorelease];
     separator.backgroundColor = [UIColor colorWithRed:218/255.0 green:218/255.0 blue:218/255.0 alpha:1.0];
     
     SpecsView *sv = [[[SpecsView alloc] initWithFrame:CGRectZero] autorelease];
-    //SpecsView *sv = [[[SpecsView alloc] initWithFrame:CGRectMake(0,263,320,437)] autorelease];
     [sv setHouse:house];
     [self setSpecsView:sv];
     
@@ -162,53 +172,21 @@
     specsView.frame = frame;
     ((UIScrollView *)self.view).contentSize = CGSizeMake(320, CONFIG_PAGE_VIEW_HEIGHT+20+specsView.frame.size.height);
     
-	for (int idx = 0; idx < [house.imageLinks count]; idx++) {
-        [NSTimer scheduledTimerWithTimeInterval:0.02*idx
+	for (int idx = 0; idx < [imageURLs count]; idx++) {
+        if (idx > 0) {
+            NSString *imageUrl        = [imageURLs objectAtIndex:idx];
+            NSString *encodedImageUrl = [NSString encodeURIComponent:imageUrl];
+            NSString *fullUrlString   = [NSString stringWithFormat:IMAGE_API_REQUEST_URL, @"f", encodedImageUrl];
+        
+            [imageURLs replaceObjectAtIndex:idx withObject:fullUrlString];
+        }
+    
+        [NSTimer scheduledTimerWithTimeInterval:0.025*idx
                                          target:self
                                        selector:@selector(requestImage:)
                                        userInfo:[NSNumber numberWithInt:idx]
                                         repeats:NO];
     }
-    
-    // Create static map view
-    //NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"map" ofType:@"html"];
-    //float lat          = house.coordinate.latitude;
-    //float lng          = house.coordinate.longitude;
-    //NSString *url      = [NSString stringWithFormat:STATIC_MAPS_REQUEST_URL, lat, lng, lat, lng];
-    //NSString *html     = [NSString stringWithFormat:[NSString stringWithContentsOfFile:htmlPath], url];
-    //UIWebView *mapView = [[[UIWebView alloc] initWithFrame:CGRectMake(0,0,310,233)] autorelease];
-    //[mapView loadHTMLString:html baseURL:nil];
-    
-    // Create static map view
-    [self setMapView:[[[MKMapView alloc] initWithFrame:CGRectMake(0,0,310,233)] autorelease]];
-    
-    mapView.zoomEnabled   = NO;
-    mapView.scrollEnabled = NO;
-    mapView.mapType          = MKMapTypeStandard;
-    
-    // Add map view
-    [self showHouse];
-    [self loadScrollView:mapView withPage:0];
-}
-
--(void) showHouse {
-    // Set region and zoom
-    MKCoordinateRegion region;
-    MKCoordinateSpan span;
-    CLLocationCoordinate2D coord;
-    
-    coord.latitude      = house.coordinate.latitude;
-    coord.longitude     = house.coordinate.longitude;
-    span.latitudeDelta  = 0.005;
-    span.longitudeDelta = 0.005;
-    region.span         = span;
-    region.center       = coord;
-    
-    [mapView setRegion:region animated:TRUE];
-    
-    OpenHouse *houseCopy = [[[OpenHouse alloc] init] autorelease];
-    houseCopy.coordinate = house.coordinate;
-    [mapView addAnnotation:houseCopy];
 }
 
 -(void) scrollViewDidScroll:(UIScrollView *)sender {
@@ -300,7 +278,7 @@
     imageView.frame   = frame;
     
     // Insert into scoll parent
-    [self loadScrollView:imageView withPage:page+1];
+    [self loadScrollView:imageView withPage:page];
 }
 
 -(void) getPhotoFailWithData:(NSDictionary *)data {

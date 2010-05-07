@@ -16,8 +16,8 @@
     UIPageControl *pageControl;
 	UIScrollView *scrollView;
     SpecsView *specsView;
-    MKMapView *mapView;
     OpenHouse *house;
+    NSMutableArray *imageURLs;
     NSUInteger pages;
 	NSMutableDictionary *requests;
 	BOOL pageControlUsed;
@@ -26,12 +26,10 @@
 @property (nonatomic, retain) UIPageControl *pageControl;
 @property (nonatomic, retain) UIScrollView *scrollView;
 @property (nonatomic, retain) SpecsView *specsView;
-@property (nonatomic, retain) MKMapView *mapView;
 @property (nonatomic, retain) OpenHouse *house;
+@property (nonatomic, retain) NSMutableArray *imageURLs;
 @property (nonatomic, assign) NSUInteger pages;
 @property (nonatomic, retain) NSMutableDictionary *requests;
 @property (nonatomic, assign) BOOL pageControlUsed;
-
--(void) setHouse:(OpenHouse *)v;
 
 @end

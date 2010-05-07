@@ -10,7 +10,7 @@
 #define OPEN_HOUSES_REQUEST_QUERY @"[item type:housing][listing status:active][listing type:for sale][target country:US][open house date range:%@..%@][location:@%+08.4f%+09.4f+50mi]"
 #define IMAGE_API_REQUEST_URL @"http://openhouse.dachev.com/service/image/resize.jpg?size=%@&location=%@"
 #define SEARCH_API_REQUEST_URL @"http://openhouse.dachev.com/~blago/openhouse/service.py/search?offset=%d&records=%d&lat=%f&lng=%f&distance=%f&bdate=%@&edate=%@"
-#define STATIC_MAPS_REQUEST_URL @"http://maps.google.com/staticmap?center=%f,%f&zoom=15&size=310x233&maptype=mobile&markers=%f,%f,red&sensor=false"
+#define STATIC_MAPS_REQUEST_URL @"http://maps.google.com/maps/api/staticmap?center=%f,%f&zoom=14&size=310x233&maptype=roadmap&markers=color%@blue%@label%@%@%f,%f&sensor=true"
 #define GOOGLE_GEOCODING_URL @"http://maps.google.com/maps/api/geocode/json?sensor=true&region=us&address=%@"
 
 #define RESULTS_PER_PAGE_DISPLAY 10
