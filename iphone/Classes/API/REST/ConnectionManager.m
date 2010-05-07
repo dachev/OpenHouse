@@ -9,6 +9,7 @@
 #import "ConnectionManager.h"
 
 @interface ConnectionManager (Private)
+-(void) timerFireMethod:(NSTimer*)theTime;
 @end
 
 
@@ -43,22 +44,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ConnectionManager);
         didFinishSelector:(SEL)finishSel
         didFailSelector:(SEL)failSel {
         
-	NSURLConnection *connection = [[[NSURLConnection alloc] initWithRequest:request delegate:self] autorelease];
-    
-    NSMutableDictionary *info = [NSMutableDictionary
-                                 dictionaryWithObjects:[NSArray arrayWithObjects:tag, [NSMutableData data], nil]
-                                 forKeys:[NSArray arrayWithObjects:@"tag", @"data", nil]];
-    
-    NSValue *delegate = [NSValue valueWithNonretainedObject:d];
-    NSString *finish  = NSStringFromSelector(finishSel);
-    NSString *fail    = NSStringFromSelector(failSel);
-    NSMutableDictionary *callback = [NSMutableDictionary
-                                     dictionaryWithObjects:[NSArray arrayWithObjects:request, delegate, finish, fail, nil]
-                                     forKeys:[NSArray arrayWithObjects:@"request", @"delegate", @"finish", @"fail", nil]];
-    
-    CFDictionaryAddValue(requests, request, connection);
-    CFDictionaryAddValue(connections, connection, info);
-    CFDictionaryAddValue(callbacks, connection, callback);
+        [self addRequest:request
+                 withTag:tag
+                delegate:d
+       didFinishSelector:finishSel
+         didFailSelector:failSel
+              checkCache:NO
+             saveToCache:NO];
 }
 
 -(void) addRequest:(NSURLRequest *)request

@@ -105,6 +105,30 @@
     }
 }
 
+-(void) requestImage:(NSTimer*)theTime {
+    NSNumber *info        = (NSNumber*)[theTime userInfo];
+    OpenHouse *house      = [currentAnnotations objectAtIndex:[info intValue]];
+    NSString *link        = [[house imageLinks] objectAtIndex:0];
+    NSString *encodedLink = [NSString encodeURIComponent:link];
+    NSString *url         = [NSString stringWithFormat:IMAGE_API_REQUEST_URL, @"t", encodedLink];
+    NSString *identifier  = [info stringValue];
+        
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    [request setTimeoutInterval:CONFIG_NETWORK_TIMEOUT];
+    //[request setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
+    [requests setObject:request forKey:identifier];
+        
+    ConnectionManager *manager = [ConnectionManager sharedConnectionManager];
+    [manager addRequest:request
+                withTag:identifier
+               delegate:self
+      didFinishSelector:@selector(getThumbFinishWithData:)
+        didFailSelector:@selector(getThumbFailWithData:)
+             checkCache:YES
+            saveToCache:YES
+        ];
+}
+
 -(void) setCurrentAnnotations:(NSArray *)v {
 	[v retain];
 	[currentAnnotations release];
@@ -112,35 +136,20 @@
 	
     [self setThumbnails:[NSMutableArray arrayWithCapacity:RESULTS_PER_PAGE_DISPLAY]];
     
-	int idx = -1;
 	UIImage *defaultImage = [UIImage imageNamed:@"loading.png"];
-	for (OpenHouse *house in currentAnnotations) {
+	for (int idx = 0; idx < [currentAnnotations count]; idx++) {
 		[thumbnails addObject: defaultImage];
-		idx++;
-		
+        
+        OpenHouse *house = [currentAnnotations objectAtIndex:idx];
 		if ([[house imageLinks] count] < 1) {
 			continue;
 		}
-		
-		NSString *thumbLink  = [NSString encodeURIComponent:[[house imageLinks] objectAtIndex:0]];
-		NSString *url        = [NSString stringWithFormat:IMAGE_API_REQUEST_URL, @"t", thumbLink];
-		NSString *identifier = [NSString stringWithFormat:@"%d", idx];
         
-        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
-		[request setTimeoutInterval:CONFIG_NETWORK_TIMEOUT];
-		//[request setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
-        [requests setObject:request forKey:identifier];
-        
-        ConnectionManager *manager = [ConnectionManager sharedConnectionManager];
-        [manager
-         addRequest:request
-         withTag:identifier
-         delegate:self
-         didFinishSelector:@selector(getThumbFinishWithData:)
-         didFailSelector:@selector(getThumbFailWithData:)
-         checkCache:YES
-         saveToCache:YES
-         ];
+        [NSTimer scheduledTimerWithTimeInterval:0.02
+                                         target:self
+                                       selector:@selector(requestImage:)
+                                       userInfo:[NSNumber numberWithInt:idx]
+                                        repeats:NO];
 	}
 }
 

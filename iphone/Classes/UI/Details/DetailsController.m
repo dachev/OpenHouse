@@ -83,6 +83,29 @@
     }
 }
 
+-(void) requestImage:(NSTimer*)theTime {
+    NSNumber *info        = (NSNumber*)[theTime userInfo];
+    NSString *link        = [house.imageLinks objectAtIndex:[info intValue]];
+    NSString *encodedLink = [NSString encodeURIComponent:link];
+    NSString *url         = [NSString stringWithFormat:IMAGE_API_REQUEST_URL, @"f", encodedLink];
+    NSString *identifier  = [info stringValue];
+        
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    [request setTimeoutInterval:CONFIG_NETWORK_TIMEOUT];
+    //[request setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
+    [requests setObject:request forKey:identifier];
+        
+    ConnectionManager *manager = [ConnectionManager sharedConnectionManager];
+    [manager addRequest:request
+                withTag:identifier
+               delegate:self
+      didFinishSelector:@selector(getPhotoFinishWithData:)
+        didFailSelector:@selector(getPhotoFailWithData:)
+             checkCache:YES
+            saveToCache:YES
+        ];
+}
+
 -(void) setHouse:(OpenHouse *)v {
     [v retain];
     [house release];
@@ -139,29 +162,12 @@
     specsView.frame = frame;
     ((UIScrollView *)self.view).contentSize = CGSizeMake(320, CONFIG_PAGE_VIEW_HEIGHT+20+specsView.frame.size.height);
     
-    int idx = 0;
-    for (NSString *link in [house imageLinks]) {
-        NSString *photoLink  = [NSString encodeURIComponent:link];
-        NSString *url        = [NSString stringWithFormat:IMAGE_API_REQUEST_URL, @"f", photoLink];
-        NSString *identifier = [NSString stringWithFormat:@"%d", idx];
-        
-        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
-        [request setTimeoutInterval:CONFIG_NETWORK_TIMEOUT];
-        //[request setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
-        [requests setObject:request forKey:identifier];
-        
-        ConnectionManager *manager = [ConnectionManager sharedConnectionManager];
-        [manager
-         addRequest:request
-         withTag:identifier
-         delegate:self
-         didFinishSelector:@selector(getPhotoFinishWithData:)
-         didFailSelector:@selector(getPhotoFailWithData:)
-         checkCache:YES
-         saveToCache:YES
-        ];
-        
-        idx++;
+	for (int idx = 0; idx < [house.imageLinks count]; idx++) {
+        [NSTimer scheduledTimerWithTimeInterval:0.02*idx
+                                         target:self
+                                       selector:@selector(requestImage:)
+                                       userInfo:[NSNumber numberWithInt:idx]
+                                        repeats:NO];
     }
     
     // Create static map view

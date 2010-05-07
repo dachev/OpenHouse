@@ -22,7 +22,7 @@
 #define LOCATION_HISTORY_DATETIME @"hh:mm aaa, EEEE MMMM d"
 
 /* Dick cache */
-#define DISK_CACHE_MAX_SIZE 1024*1024*10;
+#define DISK_CACHE_MAX_SIZE 1024*1024*20;
 
 /* DB */
 #define DB_NAME @"openhouses.db"
@@ -30,4 +30,4 @@
 /* Misc config */
 #define CONFIG_NETWORK_TIMEOUT 10
 #define CONFIG_PAGE_VIEW_HEIGHT 253
-#define CONFIG_SEARCH_DISTANCE 100.0f
+#define CONFIG_SEARCH_DISTANCE 50.0f

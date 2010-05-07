@@ -88,6 +88,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DiskCache);
             self.currentSize += [size intValue];
         }
         
+        NSLog(@"Cache size:%dK", self.currentSize/1024);
+        
         // sort older to newer...
         [fileList sortUsingSelector:@selector(lastUpdateCompare:)];
         
@@ -179,6 +181,12 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DiskCache);
     
     NSString *filePath = [self.cachePath stringByAppendingPathComponent:fileName];
     return [NSData dataWithContentsOfFile:filePath];
+}
+
+-(BOOL) hasData:(NSData*)data ForRequest:(NSURLRequest*)request {
+    NSString *fileName = [self filenameForURL:request.URL.absoluteString];
+    
+    return [fileTable objectForKey:fileName] != nil;
 }
 
 -(BOOL) storeData:(NSData*)data ForRequest:(NSURLRequest*)request {
