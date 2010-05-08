@@ -110,11 +110,14 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ConnectionManager);
 -(void) cancelRequest:(NSURLRequest *)request {
     NSURLConnection *connection = (id)CFDictionaryGetValue(requests, request);
     
-    [connection cancel];
-    
-    CFDictionaryRemoveValue(requests, request);
-    CFDictionaryRemoveValue(connections, connection);
-    CFDictionaryRemoveValue(callbacks, connection);
+    if (request) {
+ 		CFDictionaryRemoveValue(requests, request);
+ 	}
+ 	if (connection) {
+ 		[connection cancel];
+ 		CFDictionaryRemoveValue(connections, connection);
+ 		CFDictionaryRemoveValue(callbacks, connection);
+ 	}
 }
 
 -(void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
@@ -152,9 +155,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ConnectionManager);
     }
 	
 	/* Clean up */
-    CFDictionaryRemoveValue(requests, request);
-    CFDictionaryRemoveValue(connections, connection);
-    CFDictionaryRemoveValue(callbacks, connection);
+    if (request) {
+ 		CFDictionaryRemoveValue(requests, request);
+ 	}
+ 	if (connection) {
+ 		CFDictionaryRemoveValue(connections, connection);
+ 		CFDictionaryRemoveValue(callbacks, connection);
+ 	}
 }
 
 -(void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
@@ -172,9 +179,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ConnectionManager);
 	}
 	
 	/* Clean up */
-    CFDictionaryRemoveValue(requests, request);
-    CFDictionaryRemoveValue(connections, connection);
-    CFDictionaryRemoveValue(callbacks, connection);
+    if (request) {
+ 		CFDictionaryRemoveValue(requests, request);
+ 	}
+ 	if (connection) {
+ 		CFDictionaryRemoveValue(connections, connection);
+ 		CFDictionaryRemoveValue(callbacks, connection);
+ 	}
 }
 
 
