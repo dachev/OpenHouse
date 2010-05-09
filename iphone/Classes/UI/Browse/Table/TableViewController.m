@@ -17,14 +17,16 @@
 @end
 
 @implementation TableViewController
-@synthesize currentAnnotations, thumbnails, requests, noResults;
+@synthesize annotations, timers, requests, thumbnails, noResults;
 
 #pragma mark -
 #pragma mark Instantiation and tear down
 -(id) initWithStyle:(UITableViewStyle)style {
     if (self = [super initWithStyle:style]) {
-		[self setCurrentAnnotations:[NSArray array]];
-		[self setRequests:[NSMutableDictionary dictionary]];
+		self.annotations = [NSArray array];
+        self.timers      = [NSMutableArray array];
+		self.requests    = [NSMutableDictionary dictionary];
+        self.thumbnails  = [NSMutableArray array];
         
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(browseControllerCallback) name:@"browseControllerWillShow" object:nil];
     }
@@ -35,9 +37,10 @@
 -(void) dealloc {
 	[self cancelRequests];
     
-	[currentAnnotations release];
-	[thumbnails release];
+	[annotations release];
+    [timers release];
     [requests release];
+	[thumbnails release];
 	
     [super dealloc];
 }
@@ -107,12 +110,12 @@
 
 -(void) requestImage:(NSTimer*)theTime {
     NSNumber *info        = (NSNumber*)[theTime userInfo];
-    OpenHouse *house      = [currentAnnotations objectAtIndex:[info intValue]];
+    OpenHouse *house      = [annotations objectAtIndex:[info intValue]];
     NSString *link        = [[house imageLinks] objectAtIndex:0];
     NSString *encodedLink = [NSString encodeURIComponent:link];
     NSString *url         = [NSString stringWithFormat:IMAGE_API_REQUEST_URL, @"t", encodedLink];
     NSString *identifier  = [info stringValue];
-        
+    NSLog(@"%d:%@", [info intValue], link);
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     [request setTimeoutInterval:CONFIG_NETWORK_TIMEOUT];
     //[request setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
@@ -129,42 +132,51 @@
         ];
 }
 
--(void) setCurrentAnnotations:(NSArray *)v {
+-(void) setAnnotations:(NSArray *)v {
 	[v retain];
-	[currentAnnotations release];
-	currentAnnotations = v;
+	[annotations release];
+	annotations = v;
 	
-    [self setThumbnails:[NSMutableArray arrayWithCapacity:RESULTS_PER_PAGE_DISPLAY]];
+    self.thumbnails = [NSMutableArray arrayWithCapacity:RESULTS_PER_PAGE_DISPLAY];
+    
+	for (int idx = 0; idx < [self.timers count]; idx++) {
+        NSTimer *timer = [timers objectAtIndex:idx];
+        if ([timer isValid]) {
+            [timer invalidate];
+        }
+    }
+    self.timers = [NSMutableArray array];
     
 	UIImage *defaultImage = [UIImage imageNamed:@"loading.png"];
-	for (int idx = 0; idx < [currentAnnotations count]; idx++) {
-		[thumbnails addObject: defaultImage];
+	for (int idx = 0; idx < [self.annotations count]; idx++) {
+		[self.thumbnails addObject: defaultImage];
         
-        OpenHouse *house = [currentAnnotations objectAtIndex:idx];
+        OpenHouse *house = [self.annotations objectAtIndex:idx];
 		if ([[house imageLinks] count] < 1) {
 			continue;
 		}
         
-        [NSTimer scheduledTimerWithTimeInterval:0.02
+        NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:0.02
                                          target:self
                                        selector:@selector(requestImage:)
                                        userInfo:[NSNumber numberWithInt:idx]
                                         repeats:NO];
+        [self.timers addObject:timer];
 	}
 }
 
--(void) showPage:(NSArray *)annotations withOrigin:(CLLocation *)origin {
+-(void) showPage:(NSArray *)a withOrigin:(CLLocation *)origin {
 	[self cancelRequests];
     [self setRequests:[NSMutableDictionary dictionary]];
     [self.tableView setContentOffset:CGPointMake(0,0)];
     
-    if (annotations == nil) {
+    if (a == nil) {
         self.noResults = YES;
-        [self setCurrentAnnotations:[NSArray array]];
+        [self setAnnotations:[NSArray array]];
     }
     else {
         self.noResults = NO;
-        [self setCurrentAnnotations:annotations];
+        [self setAnnotations:a];
     }
     
 	[self.tableView reloadData];
@@ -188,7 +200,7 @@
         return 3;
     }
     
-    return [currentAnnotations count];
+    return [annotations count];
 }
 
 // Customize the appearance of table view cells.
@@ -214,7 +226,7 @@
         return cell;
     }
     
-	OpenHouse *house = [currentAnnotations objectAtIndex:indexPath.row];
+	OpenHouse *house = [annotations objectAtIndex:indexPath.row];
     HouseTableCell *cell = (HouseTableCell *)[tableView dequeueReusableCellWithIdentifier:@"HouseCell"];
     if (cell == nil) {
         cell = [[[HouseTableCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"HouseCell"] autorelease];
@@ -239,7 +251,7 @@
         return;
     }
     
-	OpenHouse *house = [currentAnnotations objectAtIndex:indexPath.row];
+	OpenHouse *house = [annotations objectAtIndex:indexPath.row];
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"selectedHouse" object:house];
 }
 
@@ -248,7 +260,7 @@
         return;
     }
     
-	OpenHouse *house = [currentAnnotations objectAtIndex:indexPath.row];
+	OpenHouse *house = [annotations objectAtIndex:indexPath.row];
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"selectedHouse" object:house];
 }
 
@@ -275,7 +287,7 @@
     }
     
 	NSUInteger idx = (NSUInteger) [tag intValue];
-    if (idx >= [currentAnnotations count]) {
+    if (idx >= [annotations count]) {
         return;
     }
     

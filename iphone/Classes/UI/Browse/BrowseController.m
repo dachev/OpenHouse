@@ -29,7 +29,7 @@
 
 
 @implementation BrowseController
-@synthesize mapController, tableController, activeController, page, origin, currentAnnotations,
+@synthesize mapController, tableController, activeController, page, origin, annotations,
             geoCoder, statusView, navButtons, mapIconImage, listIconImage, locationManager,
             locationPendingSearch;
 
@@ -37,7 +37,7 @@
 #pragma mark Instantiation and tear down
 -(id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-		[self setCurrentAnnotations:[NSArray array]];
+		[self setAnnotations:[NSArray array]];
 		[self setPage:[NSNumber numberWithInt:0]];
 		
 		/* Initialize nav buttons */
@@ -80,7 +80,7 @@
 	[activeController release];
 	[page release];
 	[origin release];
-	[currentAnnotations release];
+	[annotations release];
     [geoCoder release];
     [statusView release];
 	[navButtons release];
@@ -130,7 +130,8 @@
     [self setToolbarItems:items];
     
     [self.navigationController setToolbarHidden:NO animated:NO];
-    [self.navigationController setDelegate:self];
+    self.navigationController.delegate = self;
+    //self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.0 green:0.29 blue:0.4 alpha:0];
     
     /* Set back button item */
     UIBarButtonItem *backButton = [[[UIBarButtonItem alloc]
@@ -469,7 +470,7 @@
         UINavigationController *navController = [[[UINavigationController alloc] initWithRootViewController:addressCotroller] autorelease];
         
         [navController setToolbarHidden:NO animated:NO];
-        [navController setNavigationBarHidden:NO animated:NO];
+        //[navController setNavigationBarHidden:NO animated:NO];
         
         [self.navigationController presentModalViewController:navController animated:YES];
     }

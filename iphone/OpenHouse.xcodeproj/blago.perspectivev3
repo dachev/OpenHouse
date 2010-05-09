@@ -270,7 +270,7 @@
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
 								<string>8381E81F118E2F9900A412EE</string>
-								<string>8381E820118E2F9900A412EE</string>
+								<string>8381E824118E2F9900A412EE</string>
 								<string>8381E87D118E321B00A412EE</string>
 								<string>8381E87E118E321B00A412EE</string>
 								<string>8381E88A118E321B00A412EE</string>
@@ -283,13 +283,16 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>40</integer>
-									<integer>39</integer>
+									<integer>27</integer>
+									<integer>21</integer>
+									<integer>11</integer>
+									<integer>10</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 409}, {276, 760}}</string>
+							<string>{{0, 0}, {276, 760}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -306,7 +309,7 @@
 							<real>276</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>0 59 1292 819 0 0 1440 878 </string>
+						<string>-1 59 1292 819 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -324,7 +327,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>83E55D200FB7F8FC00ED0E37</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Constants.h</string>
+								<string>MapViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -332,11 +335,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>83E55D210FB7F8FC00ED0E37</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Constants.h</string>
+										<string>MapViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>83495BA21195EE5F008598E3</string>
+										<string>83495C98119645C2008598E3</string>
 										<key>history</key>
 										<array>
 											<string>835B0FA20FC13181007F818F</string>
@@ -366,22 +369,24 @@
 											<string>83B89DAF118FC5D900BB6116</string>
 											<string>83B89DB1118FC5D900BB6116</string>
 											<string>83B89DC3118FC9F800BB6116</string>
-											<string>83B89F7B118FF18100BB6116</string>
 											<string>83B8A0871191052200BB6116</string>
-											<string>83B8A0A4119108A500BB6116</string>
 											<string>83B8A12411913C0900BB6116</string>
-											<string>83B13BA611929BB600102FC4</string>
-											<string>83B13BA711929BB600102FC4</string>
 											<string>83B13BED1193A49800102FC4</string>
 											<string>83B13BEE1193A49800102FC4</string>
-											<string>83B13BF11193A49800102FC4</string>
-											<string>83B13C6F1193BED700102FC4</string>
-											<string>83B13CB71193C04900102FC4</string>
 											<string>83B13CD31193C3AC00102FC4</string>
 											<string>83B13D051193CCC700102FC4</string>
 											<string>83B13D391193D39900102FC4</string>
-											<string>83B13D8C1193DAD100102FC4</string>
-											<string>83B746161195ECBB0015879C</string>
+											<string>83495BB811960BB0008598E3</string>
+											<string>83495BB911960BB0008598E3</string>
+											<string>83495BBA11960BB0008598E3</string>
+											<string>83495C54119637E6008598E3</string>
+											<string>83495C5C119642C6008598E3</string>
+											<string>83495C7D1196449C008598E3</string>
+											<string>83495C7E1196449C008598E3</string>
+											<string>83495C8A1196457B008598E3</string>
+											<string>83495C8B1196457B008598E3</string>
+											<string>83495C95119645A1008598E3</string>
+											<string>83495C96119645A1008598E3</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -395,18 +400,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {994, 587}}</string>
+								<string>{{0, 0}, {994, 506}}</string>
 								<key>RubberWindowFrame</key>
-								<string>0 59 1292 819 0 0 1440 878 </string>
+								<string>-1 59 1292 819 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>587pt</string>
+							<string>506pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>186pt</string>
+							<string>267pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -421,8 +426,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {994, 159}}</string>
-										<key>RubberWindowFrame</key>
-										<string>0 59 1292 819 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -438,7 +441,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {994, 270}}</string>
+										<string>{{10, 27}, {994, 240}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXProjectFindModule</string>
@@ -476,7 +479,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {994, 144}}</string>
+										<string>{{10, 27}, {994, 240}}</string>
+										<key>RubberWindowFrame</key>
+										<string>-1 59 1292 819 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -696,12 +701,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>83495BAC1195EE5F008598E3</string>
+		<string>83495BBE11960BB0008598E3</string>
 		<string>83495BAD1195EE5F008598E3</string>
 		<string>/Users/blago/Projects/openhouse/src/iphone/OpenHouse.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>0 59 1292 819 0 0 1440 878 </string>
+	<string>-1 59 1292 819 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>

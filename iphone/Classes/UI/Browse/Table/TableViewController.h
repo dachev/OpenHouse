@@ -15,15 +15,17 @@
 
 
 @interface TableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource> {
-	NSArray *currentAnnotations;
-	NSMutableArray *thumbnails;
+	NSArray *annotations;
+    NSMutableArray *timers;
 	NSMutableDictionary *requests;
+	NSMutableArray *thumbnails;
     BOOL noResults;
 }
 
-@property (nonatomic, retain) NSArray *currentAnnotations;
-@property (nonatomic, retain) NSMutableArray *thumbnails;
+@property (nonatomic, retain) NSArray *annotations;
+@property (nonatomic, retain) NSMutableArray *timers;
 @property (nonatomic, retain) NSMutableDictionary *requests;
+@property (nonatomic, retain) NSMutableArray *thumbnails;
 @property (nonatomic, assign) BOOL noResults;
 
 -(void) showPage:(NSArray *)annotations withOrigin:(CLLocation *)origin;

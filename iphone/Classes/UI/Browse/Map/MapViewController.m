@@ -12,20 +12,20 @@
 @end
 
 @implementation MapViewController
-@synthesize mapView, currentAnnotations;
+@synthesize mapView, annotations;
 
 #pragma mark -
 #pragma mark Instantiation and tear down
 -(id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-		[self setCurrentAnnotations:[NSArray array]];
+		[self setAnnotations:[NSArray array]];
     }
     return self;
 }
 
 -(void) dealloc {
 	[mapView release];
-	[currentAnnotations release];
+	[annotations release];
 	
     [super dealloc];
 }
@@ -73,8 +73,8 @@
 #pragma mark -
 #pragma mark Custom methods
 -(void) setLocation:(CLLocation *)loc {
-	[mapView removeAnnotations:currentAnnotations];
-    [self setCurrentAnnotations:[NSArray array]];
+	[mapView removeAnnotations:annotations];
+    [self setAnnotations:[NSArray array]];
     
 	/*Region and Zoom*/
 	MKCoordinateRegion region;
@@ -88,16 +88,16 @@
 	[mapView setRegion:region animated:TRUE];
 }
 
--(void) showPage:(NSArray *)annotations withOrigin:(CLLocation *)origin {
-	NSArray *oldAnnotations = currentAnnotations;
+-(void) showPage:(NSArray *)a withOrigin:(CLLocation *)origin {
+	NSArray *oldAnnotations = a;
 	[oldAnnotations retain];
-	[self setCurrentAnnotations:annotations];
+	[self setAnnotations:a];
 	
 	/* Adjust the map viewport to fit all pins */
 	float dLat = 0.0f;
 	float dLng = 0.0f;
 	
-	for (OpenHouse *annotation in currentAnnotations) {
+	for (OpenHouse *annotation in a) {
 		dLat = MAX(dLat, fabs([mapView region].center.latitude  - annotation.coordinate.latitude));
 		dLng = MAX(dLng, fabs([mapView region].center.longitude - annotation.coordinate.longitude));
 	}
@@ -124,12 +124,12 @@
 	/* Drop pins */
 	[mapView removeAnnotations:oldAnnotations];
 	[oldAnnotations release];
-	[mapView addAnnotations:currentAnnotations];
+	[mapView addAnnotations:annotations];
 }
 
 -(void) showCallout {
 	if ([self.view superview] != nil) {
-		[mapView selectAnnotation:[currentAnnotations objectAtIndex:0] animated:YES];
+		[mapView selectAnnotation:[annotations objectAtIndex:0] animated:YES];
 	}
 }
 

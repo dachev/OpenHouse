@@ -47,31 +47,23 @@
     self.view.backgroundColor = [UIColor colorWithRed:202/255.0 green:202/255.0 blue:202/255.0 alpha:1.0];
 }
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    [super viewDidLoad];
+-(void) viewDidAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+    
+    [self.navigationController setToolbarHidden:YES animated:YES];
 }
-*/
 
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+-(void) viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:animated];
+    
+    [self.navigationController setToolbarHidden:NO animated:NO];
 }
-*/
 
 -(void) didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
-}
-
-- (void)viewDidUnload {
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 -(void) cancelRequests {
@@ -90,8 +82,6 @@
     NSString *identifier  = [info stringValue];
     
     if (url == nil) {
-        NSLog(@"%@", urlString);
-        NSLog(@"%@", url);
         return;
     }
     

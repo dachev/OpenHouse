@@ -9,7 +9,6 @@
 #import "ConnectionManager.h"
 
 @interface ConnectionManager (Private)
--(void) timerFireMethod:(NSTimer*)theTime;
 @end
 
 

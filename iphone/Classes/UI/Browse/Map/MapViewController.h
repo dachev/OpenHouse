@@ -13,11 +13,11 @@
 #import "OpenHouse.h"
 
 @interface MapViewController : UIViewController <MKMapViewDelegate> {
-	NSArray *currentAnnotations;
+	NSArray *annotations;
 	MKMapView *mapView;
 }
 
-@property (nonatomic, retain) NSArray *currentAnnotations;
+@property (nonatomic, retain) NSArray *annotations;
 @property (nonatomic, retain) MKMapView *mapView;
 
 -(void) setLocation:(CLLocation *)loc;

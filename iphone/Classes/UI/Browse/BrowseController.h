@@ -33,7 +33,7 @@
 	
 	NSNumber *page;
 	CLLocation *origin;
-	NSArray *currentAnnotations;
+	NSArray *annotations;
     MKReverseGeocoder *geoCoder;
 	
     StatusView *statusView;
@@ -50,7 +50,7 @@
 @property (nonatomic, retain) UIViewController *activeController;
 @property (nonatomic, retain) NSNumber *page;
 @property (nonatomic, retain) CLLocation *origin;
-@property (nonatomic, retain) NSArray *currentAnnotations;
+@property (nonatomic, retain) NSArray *annotations;
 @property (nonatomic, retain) MKReverseGeocoder *geoCoder;
 @property (nonatomic, retain) StatusView *statusView;
 @property (nonatomic, retain) UISegmentedControl *navButtons;
