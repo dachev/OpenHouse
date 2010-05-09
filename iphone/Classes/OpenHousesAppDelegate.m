@@ -17,6 +17,10 @@
 @synthesize mainController;
 
 
+void uncaughtExceptionHandler(NSException *exception) {
+    [FlurryAPI logError:@"Uncaught" message:@"Crash!" exception:exception];
+}
+
 -(void) dealloc {
     [mainController release];
     [window release];
@@ -30,6 +34,7 @@
     [Database sharedDatabase];
     [DiskCache sharedDiskCache];
     
+    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
     [FlurryAPI startSession:@"H2S9NJ6VW43CXGKY26LT"];
     
     [window addSubview:[mainController view]];

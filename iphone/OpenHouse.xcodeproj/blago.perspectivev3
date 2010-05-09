@@ -281,10 +281,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>16</integer>
-									<integer>10</integer>
-									<integer>9</integer>
-									<integer>1</integer>
+									<integer>25</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -324,7 +321,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>83E55D200FB7F8FC00ED0E37</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>BrowseController.m</string>
+								<string>OpenHousesAppDelegate.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -332,11 +329,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>83E55D210FB7F8FC00ED0E37</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>BrowseController.m</string>
+										<string>OpenHousesAppDelegate.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>83BB08F0119766A600C05DE2</string>
+										<string>83BB08FE1197684300C05DE2</string>
 										<key>history</key>
 										<array>
 											<string>835B0FA20FC13181007F818F</string>
@@ -380,10 +377,10 @@
 											<string>8323FBE91196762A00E80006</string>
 											<string>8323FC0E11967B3E00E80006</string>
 											<string>83BB08D61197592C00C05DE2</string>
-											<string>83BB08D71197592C00C05DE2</string>
-											<string>83BB08E411975B1100C05DE2</string>
 											<string>83BB08EE119766A600C05DE2</string>
-											<string>83BB08EF119766A600C05DE2</string>
+											<string>83BB08F51197681800C05DE2</string>
+											<string>83BB08F61197681800C05DE2</string>
+											<string>83BB08F71197681800C05DE2</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -698,6 +695,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>83BB08FF1197684300C05DE2</string>
 		<string>83BB08F1119766A600C05DE2</string>
 		<string>83BB08F2119766A600C05DE2</string>
 		<string>/Users/blago/Projects/openhouse/src/iphone/OpenHouse.xcodeproj</string>
