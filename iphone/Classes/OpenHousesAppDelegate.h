@@ -10,6 +10,7 @@
 #import "MainViewController.h"
 #import "Database.h"
 #import "DiskCache.h"
+#import "FlurryAPI.h"
 
 @interface OpenHousesAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;

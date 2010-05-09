@@ -13,6 +13,7 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		8323FBF3119676ED00E80006 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8323FBF2119676ED00E80006 /* Default.png */; };
 		834A9F2F1005C7EC00B87E53 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = 834A9F2E1005C7EC00B87E53 /* list.png */; };
 		8357F5000FF831ED00F85065 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 8357F4FF0FF831ED00F85065 /* loading.png */; };
 		835B0F920FC13108007F818F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 835B0F910FC13108007F818F /* CoreLocation.framework */; };
@@ -52,6 +53,7 @@
 		8381E8A7118E321B00A412EE /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8381E899118E321B00A412EE /* MainViewController.m */; };
 		8381E8BB118E338E00A412EE /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8381E8BA118E338E00A412EE /* ConnectionManager.m */; };
 		83B89C47118F9E1200BB6116 /* DiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B89C46118F9E1200BB6116 /* DiskCache.m */; };
+		83BB08CF1197591900C05DE2 /* libFlurryWithLocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83BB08CE1197591900C05DE2 /* libFlurryWithLocation.a */; };
 		83DAD803102164F9008CFD01 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 83DAD802102164F9008CFD01 /* libsqlite3.dylib */; };
 		83DAD8AE10217B78008CFD01 /* openhouses.db in Resources */ = {isa = PBXBuildFile; fileRef = 83DAD8AD10217B78008CFD01 /* openhouses.db */; };
 		83E55D0D0FB7F8C800ED0E37 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E55D0C0FB7F8C800ED0E37 /* MapKit.framework */; };
@@ -70,6 +72,7 @@
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* OpenHouse_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenHouse_Prefix.pch; sourceTree = "<group>"; };
+		8323FBF2119676ED00E80006 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = resources/Default.png; sourceTree = "<group>"; };
 		834A9F2E1005C7EC00B87E53 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = list.png; path = resources/list.png; sourceTree = "<group>"; };
 		8357F4FF0FF831ED00F85065 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loading.png; path = resources/loading.png; sourceTree = "<group>"; };
 		835B0F910FC13108007F818F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -142,6 +145,9 @@
 		8381E8BA118E338E00A412EE /* ConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionManager.m; sourceTree = "<group>"; };
 		83B89C45118F9E1200BB6116 /* DiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiskCache.h; sourceTree = "<group>"; };
 		83B89C46118F9E1200BB6116 /* DiskCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiskCache.m; sourceTree = "<group>"; };
+		83BB08CC1197591900C05DE2 /* FlurryAdDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlurryAdDelegate.h; path = "/Applications/Flurry iPhone SDK v2.2/FlurryLibWithLocation/FlurryAdDelegate.h"; sourceTree = "<absolute>"; };
+		83BB08CD1197591900C05DE2 /* FlurryAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlurryAPI.h; path = "/Applications/Flurry iPhone SDK v2.2/FlurryLibWithLocation/FlurryAPI.h"; sourceTree = "<absolute>"; };
+		83BB08CE1197591900C05DE2 /* libFlurryWithLocation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFlurryWithLocation.a; path = "/Applications/Flurry iPhone SDK v2.2/FlurryLibWithLocation/libFlurryWithLocation.a"; sourceTree = "<absolute>"; };
 		83DAD802102164F9008CFD01 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = /usr/lib/libsqlite3.dylib; sourceTree = "<absolute>"; };
 		83DAD8AD10217B78008CFD01 /* openhouses.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = openhouses.db; path = resources/openhouses.db; sourceTree = "<group>"; };
 		83E55D0C0FB7F8C800ED0E37 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -164,6 +170,7 @@
 				83E55D0D0FB7F8C800ED0E37 /* MapKit.framework in Frameworks */,
 				835B0F920FC13108007F818F /* CoreLocation.framework in Frameworks */,
 				83DAD803102164F9008CFD01 /* libsqlite3.dylib in Frameworks */,
+				83BB08CF1197591900C05DE2 /* libFlurryWithLocation.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +223,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8323FBF2119676ED00E80006 /* Default.png */,
 				83DAD8AD10217B78008CFD01 /* openhouses.db */,
 				83FB83F1101AC16700936F2C /* logo.png */,
 				83FB83E4101ABF7600936F2C /* map.png */,
@@ -246,6 +254,7 @@
 		8381E81F118E2F9900A412EE /* API */ = {
 			isa = PBXGroup;
 			children = (
+				83BB08CB1197591900C05DE2 /* FlurryLibWithLocation */,
 				8381E820118E2F9900A412EE /* DiskCache */,
 				8381E821118E2F9900A412EE /* GeocoderManager */,
 				8381E824118E2F9900A412EE /* REST */,
@@ -443,6 +452,17 @@
 			path = Details;
 			sourceTree = "<group>";
 		};
+		83BB08CB1197591900C05DE2 /* FlurryLibWithLocation */ = {
+			isa = PBXGroup;
+			children = (
+				83BB08CC1197591900C05DE2 /* FlurryAdDelegate.h */,
+				83BB08CD1197591900C05DE2 /* FlurryAPI.h */,
+				83BB08CE1197591900C05DE2 /* libFlurryWithLocation.a */,
+			);
+			name = FlurryLibWithLocation;
+			path = "/Applications/Flurry iPhone SDK v2.2/FlurryLibWithLocation";
+			sourceTree = "<absolute>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -494,6 +514,7 @@
 				83FB83F2101AC16700936F2C /* logo.png in Resources */,
 				83FB854E101BD10500936F2C /* map.html in Resources */,
 				83DAD8AE10217B78008CFD01 /* openhouses.db in Resources */,
+				8323FBF3119676ED00E80006 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,6 +577,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = OpenHouse_Prefix.pch;
 				INFOPLIST_FILE = "OpenHouse-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Flurry iPhone SDK v2.2/FlurryLibWithLocation\"",
+					"\"$(SRCROOT)/Classes/API/FlurryLibWithLocation\"",
+				);
 				PRODUCT_NAME = OpenHouse;
 			};
 			name = Debug;
@@ -568,6 +594,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = OpenHouse_Prefix.pch;
 				INFOPLIST_FILE = "OpenHouse-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Flurry iPhone SDK v2.2/FlurryLibWithLocation\"",
+					"\"$(SRCROOT)/Classes/API/FlurryLibWithLocation\"",
+				);
 				PRODUCT_NAME = OpenHouse;
 			};
 			name = Release;

@@ -556,6 +556,8 @@
     if (self.locationPendingSearch == YES) {
         [self setOriginAtLat:newLocation.coordinate.latitude lng:newLocation.coordinate.longitude];
     }
+    
+    [FlurryAPI setLocation:newLocation];
 }
 
 -(void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {

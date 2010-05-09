@@ -30,6 +30,8 @@
     [Database sharedDatabase];
     [DiskCache sharedDiskCache];
     
+    [FlurryAPI startSession:@"H2S9NJ6VW43CXGKY26LT"];
+    
     [window addSubview:[mainController view]];
     [window makeKeyAndVisible];
 }

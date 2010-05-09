@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <MapKit/MKAnnotation.h>
+#import "FlurryAPI.h"
 #import "Database.h"
 #import "OpenHouses.h"
 #import "TaggedReverseGeocoder.h"
