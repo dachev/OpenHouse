@@ -61,11 +61,6 @@
         [self setMapIconImage:[UIImage imageNamed:@"map.png"]];
         
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"last_location_update"];
-        self.locationManager = [[[CLLocationManager alloc] init] autorelease];
-        self.locationManager.delegate = self;
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
-        self.locationManager.distanceFilter = 100;
-        [self.locationManager startUpdatingLocation];
 		
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectedHouseCallback:) name:@"selectedHouse" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectedLocationCallback:) name:@"selectedLocationFromHistory" object:nil];
@@ -462,6 +457,14 @@
             return;
         }
         
+        if (self.locationManager == nil) {
+            self.locationManager = [[[CLLocationManager alloc] init] autorelease];
+            self.locationManager.delegate = self;
+            self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+            self.locationManager.distanceFilter = 100;
+            [self.locationManager startUpdatingLocation];
+        }
+        
         [statusView showLabel:@"Locating..."];
         self.locationPendingSearch = YES;
     }
@@ -553,11 +556,15 @@
 -(void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
     NSDictionary *location = [self makeDictionaryWithCLLocation:newLocation];
     [[NSUserDefaults standardUserDefaults] setObject:location forKey:@"last_location_update"];
-    if (self.locationPendingSearch == YES) {
-        [self setOriginAtLat:newLocation.coordinate.latitude lng:newLocation.coordinate.longitude];
+    [FlurryAPI setLocation:newLocation];
+    
+    if (self.locationPendingSearch == NO) {
+        return;
     }
     
-    [FlurryAPI setLocation:newLocation];
+    [statusView hideLabel];
+    self.locationPendingSearch = NO;
+    [self setOriginAtLat:newLocation.coordinate.latitude lng:newLocation.coordinate.longitude];
 }
 
 -(void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
@@ -565,6 +572,10 @@
         return;
     }
     
+    //kCLErrorDenied
+    
+    self.locationManager = nil;
+    [statusView hideLabel];
     self.locationPendingSearch = NO;
     
     NSString *msg = @"Unable to determine your location.";
