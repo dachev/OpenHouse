@@ -35,7 +35,7 @@ void uncaughtExceptionHandler(NSException *exception) {
     [DiskCache sharedDiskCache];
     
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
-    [FlurryAPI startSession:@"H2S9NJ6VW43CXGKY26LT"];
+    [FlurryAPI startSession:ANALYTICS_API_KEY];
     
     [window addSubview:[mainController view]];
     [window makeKeyAndVisible];

@@ -28,6 +28,8 @@
 		self.requests    = [NSMutableDictionary dictionary];
         self.thumbnails  = [NSMutableArray array];
         
+        //self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(browseControllerCallback) name:@"browseControllerWillShow" object:nil];
     }
 	
@@ -209,8 +211,9 @@
         UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"noResultsCell"];
         if (cell == nil) {
             cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"noResultsCell"] autorelease];
+            cell.selectionStyle  = UITableViewCellSelectionStyleNone;
+            //cell.backgroundColor = [UIColor whiteColor];
         }
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         if (indexPath.row != 2) {
             return cell;
@@ -232,6 +235,7 @@
         cell = [[[HouseTableCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"HouseCell"] autorelease];
 		//cell.accessoryType  = UITableViewCellAccessoryDetailDisclosureButton;
         cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
+        //cell.backgroundColor = [UIColor whiteColor];
 		//cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
 	
