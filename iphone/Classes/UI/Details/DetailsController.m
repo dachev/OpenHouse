@@ -13,13 +13,14 @@
 @end
 
 @interface DetailsController (Private)
+-(void) showSpinners;
 -(void) showHouse;
 -(void) loadScrollView:(UIView *)view withPage:(int)page;
 -(void) cancelRequests;
 @end
 
 @implementation DetailsController
-@synthesize pageControl, scrollView, specsView, house, imageURLs, pages, requests, pageControlUsed;
+@synthesize pageControl, scrollView, specsView, house, imageURLs, spinners, pages, requests, pageControlUsed;
 
 -(id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
@@ -37,6 +38,7 @@
     [requests release];
     [specsView release];
     [imageURLs release];
+    [spinners release];
     [house release];
     
     [super dealloc];
@@ -107,19 +109,26 @@
     house = v;
     
     self.imageURLs = [NSMutableArray arrayWithArray:house.imageLinks];
+    while([self.imageURLs count] > 19) {
+        [self.imageURLs removeLastObject];
+    }
+    for (int idx = 0; idx < [self.imageURLs count]; idx++) {
+        NSString *imageUrl        = [self.imageURLs objectAtIndex:idx];
+        NSString *encodedImageUrl = [NSString encodeURIComponent:imageUrl];
+        NSString *fullUrlString   = [NSString stringWithFormat:IMAGE_API_REQUEST_URL, @"f", encodedImageUrl];
+        
+        [self.imageURLs replaceObjectAtIndex:idx withObject:fullUrlString];
+    }
     
     double lat       = house.coordinate.latitude;
     double lng       = house.coordinate.longitude;
     NSString *pipe   = @"%7C";
     NSString *colon  = @"%3A";
     NSString *mapURL = [NSString stringWithFormat:STATIC_MAPS_REQUEST_URL, lat, lng, colon, pipe, colon, pipe, lat, lng];
-    NSLog(@"%@", mapURL);
-    [imageURLs insertObject:mapURL atIndex:0];
+    [self.imageURLs insertObject:mapURL atIndex:0];
     
-    self.pages = [imageURLs count];
-    if (pages > 20) {
-        pages = 20;
-    }
+    self.pages    = [self.imageURLs count];
+    self.spinners = [NSMutableArray arrayWithCapacity:self.pages];
     
     [self setScrollView:[[[UIScrollView alloc] initWithFrame:CGRectMake(0,0,320,CONFIG_PAGE_VIEW_HEIGHT)] autorelease]];
     scrollView.backgroundColor = [UIColor colorWithRed:145/255.0 green:145/255.0 blue:145/255.0 alpha:1.0];
@@ -162,15 +171,9 @@
     specsView.frame = frame;
     ((UIScrollView *)self.view).contentSize = CGSizeMake(320, CONFIG_PAGE_VIEW_HEIGHT+20+specsView.frame.size.height);
     
-	for (int idx = 0; idx < [imageURLs count]; idx++) {
-        if (idx > 0) {
-            NSString *imageUrl        = [imageURLs objectAtIndex:idx];
-            NSString *encodedImageUrl = [NSString encodeURIComponent:imageUrl];
-            NSString *fullUrlString   = [NSString stringWithFormat:IMAGE_API_REQUEST_URL, @"f", encodedImageUrl];
-        
-            [imageURLs replaceObjectAtIndex:idx withObject:fullUrlString];
-        }
+    [self showSpinners];
     
+	for (int idx = 0; idx < [self.imageURLs count]; idx++) {
         [NSTimer scheduledTimerWithTimeInterval:0.025*idx
                                          target:self
                                        selector:@selector(requestImage:)
@@ -217,7 +220,7 @@
     
     int pageXOrigin = frame.size.width * page;
     int pageYOrigin = 0;
-    int xDiff = (320 - width);
+    int xDiff = (frame.size.width - width);
     int yDiff = (CONFIG_PAGE_VIEW_HEIGHT - height);
     
     frame.origin.x    = pageXOrigin + xDiff/2.0;
@@ -240,6 +243,29 @@
     [scrollView addSubview:separator2];
     [scrollView addSubview:separator3];
     [scrollView addSubview:separator4];
+}
+
+-(void) showSpinners {
+    for (int idx = 0; idx < [self.imageURLs count]; idx++) {
+        UIActivityIndicatorView *spinner = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge] autorelease];
+        [spinners addObject:spinner];
+        
+        CGRect frame = self.scrollView.frame;
+        
+        int pageXOrigin = frame.size.width * idx;
+        int pageYOrigin = 0;
+        int xDiff = (frame.size.width - spinner.frame.size.width);
+        int yDiff = (CONFIG_PAGE_VIEW_HEIGHT - spinner.frame.size.height);
+    
+        frame.origin.x    = pageXOrigin + xDiff/2.0;
+        frame.origin.y    = pageYOrigin + yDiff/2.0;
+        frame.size.width  = spinner.frame.size.width;
+        frame.size.height = spinner.frame.size.height;
+        spinner.frame = frame;
+        
+        [spinner startAnimating];
+        [scrollView addSubview:spinner];
+    }
 }
 
 #pragma mark -
@@ -267,6 +293,11 @@
     frame.size.height = [image size].height;
     imageView.frame   = frame;
     
+    // Remove spinner
+    UIActivityIndicatorView *spinner = (UIActivityIndicatorView*)[self.spinners objectAtIndex:page];
+    [spinner stopAnimating];
+    [spinner removeFromSuperview];
+    
     // Insert into scoll parent
     [self loadScrollView:imageView withPage:page];
 }
@@ -276,9 +307,12 @@
     
     [requests removeObjectForKey:tag];
     
-    //NSError *error = [data objectForKey:@"error"];
-    //NSLog(@"%@:%@", tag, [error localizedDescription]);
-    //[[NSNotificationCenter defaultCenter] postNotificationName:@"thumbRequestFailed" object:error];
+    NSUInteger page = (NSUInteger) [tag intValue];
+    
+    // Remove spinner
+    UIActivityIndicatorView *spinner = (UIActivityIndicatorView*)[self.spinners objectAtIndex:page];
+    [spinner stopAnimating];
+    [spinner removeFromSuperview];
 }
 
 

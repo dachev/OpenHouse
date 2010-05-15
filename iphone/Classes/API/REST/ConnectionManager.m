@@ -73,11 +73,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ConnectionManager);
             
                 [d performSelector:finishSel withObject:info];
             }
-            NSLog(@"hit");
+            //NSLog(@"hit");
             return;
         }
         else {
-            NSLog(@"miss");
+            //NSLog(@"miss");
         }
     }
     

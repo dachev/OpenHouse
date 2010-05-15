@@ -18,6 +18,7 @@
     SpecsView *specsView;
     OpenHouse *house;
     NSMutableArray *imageURLs;
+    NSMutableArray *spinners;
     NSUInteger pages;
 	NSMutableDictionary *requests;
 	BOOL pageControlUsed;
@@ -28,6 +29,7 @@
 @property (nonatomic, retain) SpecsView *specsView;
 @property (nonatomic, retain) OpenHouse *house;
 @property (nonatomic, retain) NSMutableArray *imageURLs;
+@property (nonatomic, retain) NSMutableArray *spinners;
 @property (nonatomic, assign) NSUInteger pages;
 @property (nonatomic, retain) NSMutableDictionary *requests;
 @property (nonatomic, assign) BOOL pageControlUsed;
