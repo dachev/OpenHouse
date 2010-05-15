@@ -14,7 +14,6 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		834A9F2F1005C7EC00B87E53 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = 834A9F2E1005C7EC00B87E53 /* list.png */; };
-		8357F5000FF831ED00F85065 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 8357F4FF0FF831ED00F85065 /* loading.png */; };
 		835B0F920FC13108007F818F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 835B0F910FC13108007F818F /* CoreLocation.framework */; };
 		8361078B1006D596007082CD /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = 836107891006D596007082CD /* down.png */; };
 		8361078C1006D596007082CD /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 8361078A1006D596007082CD /* up.png */; };
@@ -54,6 +53,8 @@
 		83B89C47118F9E1200BB6116 /* DiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B89C46118F9E1200BB6116 /* DiskCache.m */; };
 		83BB08CF1197591900C05DE2 /* libFlurryWithLocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83BB08CE1197591900C05DE2 /* libFlurryWithLocation.a */; };
 		83D61B87119E228600AAFDAD /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D61B86119E228600AAFDAD /* Default.png */; };
+		83D61BB0119F299900AAFDAD /* loadingThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D61BAF119F299900AAFDAD /* loadingThumb.png */; };
+		83D61BB5119F2BAF00AAFDAD /* noThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D61BB4119F2BAF00AAFDAD /* noThumb.png */; };
 		83DAD803102164F9008CFD01 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 83DAD802102164F9008CFD01 /* libsqlite3.dylib */; };
 		83DAD8AE10217B78008CFD01 /* openhouses.db in Resources */ = {isa = PBXBuildFile; fileRef = 83DAD8AD10217B78008CFD01 /* openhouses.db */; };
 		83E55D0D0FB7F8C800ED0E37 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E55D0C0FB7F8C800ED0E37 /* MapKit.framework */; };
@@ -73,7 +74,6 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* OpenHouse_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenHouse_Prefix.pch; sourceTree = "<group>"; };
 		834A9F2E1005C7EC00B87E53 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = list.png; path = resources/list.png; sourceTree = "<group>"; };
-		8357F4FF0FF831ED00F85065 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loading.png; path = resources/loading.png; sourceTree = "<group>"; };
 		835B0F910FC13108007F818F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		836107891006D596007082CD /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = down.png; path = resources/down.png; sourceTree = "<group>"; };
 		8361078A1006D596007082CD /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = up.png; path = resources/up.png; sourceTree = "<group>"; };
@@ -148,6 +148,8 @@
 		83BB08CD1197591900C05DE2 /* FlurryAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlurryAPI.h; path = "/Applications/Flurry iPhone SDK v2.2/FlurryLibWithLocation/FlurryAPI.h"; sourceTree = "<absolute>"; };
 		83BB08CE1197591900C05DE2 /* libFlurryWithLocation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFlurryWithLocation.a; path = "/Applications/Flurry iPhone SDK v2.2/FlurryLibWithLocation/libFlurryWithLocation.a"; sourceTree = "<absolute>"; };
 		83D61B86119E228600AAFDAD /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = resources/Default.png; sourceTree = "<group>"; };
+		83D61BAF119F299900AAFDAD /* loadingThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loadingThumb.png; path = resources/loadingThumb.png; sourceTree = "<group>"; };
+		83D61BB4119F2BAF00AAFDAD /* noThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noThumb.png; path = resources/noThumb.png; sourceTree = "<group>"; };
 		83DAD802102164F9008CFD01 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = /usr/lib/libsqlite3.dylib; sourceTree = "<absolute>"; };
 		83DAD8AD10217B78008CFD01 /* openhouses.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = openhouses.db; path = resources/openhouses.db; sourceTree = "<group>"; };
 		83E55D0C0FB7F8C800ED0E37 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -223,6 +225,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				83D61BB4119F2BAF00AAFDAD /* noThumb.png */,
+				83D61BAF119F299900AAFDAD /* loadingThumb.png */,
 				83D61B86119E228600AAFDAD /* Default.png */,
 				83DAD8AD10217B78008CFD01 /* openhouses.db */,
 				83FB83F1101AC16700936F2C /* logo.png */,
@@ -230,7 +234,6 @@
 				836107891006D596007082CD /* down.png */,
 				8361078A1006D596007082CD /* up.png */,
 				834A9F2E1005C7EC00B87E53 /* list.png */,
-				8357F4FF0FF831ED00F85065 /* loading.png */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* OpenHouse-Info.plist */,
 				83FB854D101BD10500936F2C /* map.html */,
@@ -506,7 +509,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
-				8357F5000FF831ED00F85065 /* loading.png in Resources */,
 				834A9F2F1005C7EC00B87E53 /* list.png in Resources */,
 				8361078B1006D596007082CD /* down.png in Resources */,
 				8361078C1006D596007082CD /* up.png in Resources */,
@@ -515,6 +517,8 @@
 				83FB854E101BD10500936F2C /* map.html in Resources */,
 				83DAD8AE10217B78008CFD01 /* openhouses.db in Resources */,
 				83D61B87119E228600AAFDAD /* Default.png in Resources */,
+				83D61BB0119F299900AAFDAD /* loadingThumb.png in Resources */,
+				83D61BB5119F2BAF00AAFDAD /* noThumb.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

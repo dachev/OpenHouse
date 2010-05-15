@@ -146,24 +146,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(OpenHouses);
 
 -(void) getHousesFailWithData:(NSDictionary *)data {
     NSString *tag  = [data objectForKey:@"tag"];
+    NSError *error = [data objectForKey:@"error"];
     
     [requests removeObjectForKey:tag];
-    
-    //NSError *error = [data objectForKey:@"error"];
-	//NSLog(@"%@:%@", tag, [error localizedDescription]);
-	//[[NSNotificationCenter defaultCenter] postNotificationName:@"thumbRequestFailed" object:error];
-    
-	/*
-     UIAlertView *alert = [[UIAlertView alloc]
-     initWithTitle:nil
-     message:@"An API error has ocurred. Please try again later."
-     delegate:self
-     cancelButtonTitle:nil
-     otherButtonTitles:@"OK", nil];
      
-     [alert show];
-     [alert release];
-     */
+    if ([delegate respondsToSelector: @selector(failedWithError:)]) {
+        [delegate failedWithError:error];
+    }
 }
 
 

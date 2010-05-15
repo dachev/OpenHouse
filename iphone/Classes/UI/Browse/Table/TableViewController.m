@@ -149,14 +149,16 @@
     }
     self.timers = [NSMutableArray array];
     
-	UIImage *defaultImage = [UIImage imageNamed:@"loading.png"];
+	UIImage *loadingThumbImage = [UIImage imageNamed:@"loadingThumb.png"];
+	UIImage *noThumbImage = [UIImage imageNamed:@"noThumb.png"];
 	for (int idx = 0; idx < [self.annotations count]; idx++) {
-		[self.thumbnails addObject: defaultImage];
-        
         OpenHouse *house = [self.annotations objectAtIndex:idx];
 		if ([[house imageLinks] count] < 1) {
+            [self.thumbnails addObject: noThumbImage];
 			continue;
 		}
+        
+        [self.thumbnails addObject: loadingThumbImage];
         
         NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:0.02
                                          target:self

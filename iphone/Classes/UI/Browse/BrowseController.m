@@ -532,8 +532,7 @@
 -(void) failedWithError:(NSError *)error {
     [statusView hideLabel];
     
-    NSString *msg = @"An API error has ocurred. Please try again later.";
-    [self showAlertWithText:msg];
+    [self showAlertWithText:[error localizedDescription]];
 }
 
 

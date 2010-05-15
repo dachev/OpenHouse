@@ -179,6 +179,17 @@
 			83D61B9C119F269700AAFDAD /* PBXBookmark */ = 83D61B9C119F269700AAFDAD /* PBXBookmark */;
 			83D61B9D119F269700AAFDAD /* PBXTextBookmark */ = 83D61B9D119F269700AAFDAD /* PBXTextBookmark */;
 			83D61B9E119F269700AAFDAD /* PBXTextBookmark */ = 83D61B9E119F269700AAFDAD /* PBXTextBookmark */;
+			83D61BAE119F26F700AAFDAD /* PBXTextBookmark */ = 83D61BAE119F26F700AAFDAD /* PBXTextBookmark */;
+			83D61BB1119F29A300AAFDAD /* PBXTextBookmark */ = 83D61BB1119F29A300AAFDAD /* PBXTextBookmark */;
+			83D61BB2119F29A300AAFDAD /* PBXTextBookmark */ = 83D61BB2119F29A300AAFDAD /* PBXTextBookmark */;
+			83D61BB3119F29A300AAFDAD /* PBXTextBookmark */ = 83D61BB3119F29A300AAFDAD /* PBXTextBookmark */;
+			83D61BC6119F2E6400AAFDAD /* PBXTextBookmark */ = 83D61BC6119F2E6400AAFDAD /* PBXTextBookmark */;
+			83D61BC7119F2E6400AAFDAD /* PBXTextBookmark */ = 83D61BC7119F2E6400AAFDAD /* PBXTextBookmark */;
+			83D61BC8119F2E6400AAFDAD /* PBXTextBookmark */ = 83D61BC8119F2E6400AAFDAD /* PBXTextBookmark */;
+			83D61BC9119F2E6400AAFDAD /* PBXTextBookmark */ = 83D61BC9119F2E6400AAFDAD /* PBXTextBookmark */;
+			83D61BCA119F2E6400AAFDAD /* PBXTextBookmark */ = 83D61BCA119F2E6400AAFDAD /* PBXTextBookmark */;
+			83D61BCB119F2E6400AAFDAD /* PBXTextBookmark */ = 83D61BCB119F2E6400AAFDAD /* PBXTextBookmark */;
+			83D61BCC119F2E8500AAFDAD /* PBXTextBookmark */ = 83D61BCC119F2E8500AAFDAD /* PBXTextBookmark */;
 			83E4DA18100C4FB500E8FE1E = 83E4DA18100C4FB500E8FE1E /* PBXTextBookmark */;
 			83FBD13D0FCE37590008C3BC = 83FBD13D0FCE37590008C3BC /* PBXTextBookmark */;
 		};
@@ -328,6 +339,11 @@
 		vrLoc = 0;
 	};
 	8357F4FF0FF831ED00F85065 /* loading.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = loading.png;
+		path = /Users/blago/Projects/openhouse/src/iphone/resources/loading.png;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavWindowFrame = "{{15, -1}, {1023, 874}}";
 		};
@@ -535,7 +551,7 @@
 		fRef = 8381E890118E321B00A412EE /* TableViewController.m */;
 		name = "TableViewController.m: 238";
 		rLen = 0;
-		rLoc = 7385;
+		rLoc = 7523;
 		rType = 0;
 		vrLen = 1708;
 		vrLoc = 5986;
@@ -545,7 +561,7 @@
 		fRef = 8381E890118E321B00A412EE /* TableViewController.m */;
 		name = "TableViewController.m: 221";
 		rLen = 0;
-		rLoc = 6523;
+		rLoc = 6661;
 		rType = 0;
 		vrLen = 1525;
 		vrLoc = 6296;
@@ -555,7 +571,7 @@
 		fRef = 8381E890118E321B00A412EE /* TableViewController.m */;
 		name = "TableViewController.m: 238";
 		rLen = 0;
-		rLoc = 7385;
+		rLoc = 7523;
 		rType = 0;
 		vrLen = 1471;
 		vrLoc = 6446;
@@ -598,9 +614,9 @@
 	};
 	8381E86C118E304D00A412EE /* OpenHouses.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1097, 2782}}";
-			sepNavSelRange = "{2526, 0}";
-			sepNavVisRange = "{1910, 1448}";
+			sepNavIntBoundsRect = "{{0, 0}, {1097, 2574}}";
+			sepNavSelRange = "{5074, 0}";
+			sepNavVisRange = "{4069, 1511}";
 		};
 	};
 	8381E87F118E321B00A412EE /* AddressController.h */ = {
@@ -613,9 +629,9 @@
 	};
 	8381E880118E321B00A412EE /* AddressController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1013, 5070}}";
-			sepNavSelRange = "{7050, 0}";
-			sepNavVisRange = "{6652, 1533}";
+			sepNavIntBoundsRect = "{{0, 0}, {957, 5499}}";
+			sepNavSelRange = "{11918, 100}";
+			sepNavVisRange = "{11420, 1013}";
 			sepNavWindowFrame = "{{2, 4}, {1438, 874}}";
 		};
 	};
@@ -642,9 +658,9 @@
 	};
 	8381E884118E321B00A412EE /* BrowseController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {978, 8203}}";
-			sepNavSelRange = "{12325, 0}";
-			sepNavVisRange = "{11676, 1484}";
+			sepNavIntBoundsRect = "{{0, 0}, {1125, 7969}}";
+			sepNavSelRange = "{18463, 15}";
+			sepNavVisRange = "{17805, 1297}";
 		};
 	};
 	8381E888118E321B00A412EE /* MapViewController.h */ = {
@@ -656,9 +672,9 @@
 	};
 	8381E889118E321B00A412EE /* MapViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {933, 2353}}";
-			sepNavSelRange = "{1572, 0}";
-			sepNavVisRange = "{1379, 956}";
+			sepNavIntBoundsRect = "{{0, 0}, {933, 2392}}";
+			sepNavSelRange = "{638, 0}";
+			sepNavVisRange = "{2043, 1109}";
 		};
 	};
 	8381E88C118E321B00A412EE /* HouseTableCell.m */ = {
@@ -677,9 +693,9 @@
 	};
 	8381E890118E321B00A412EE /* TableViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {950, 4043}}";
-			sepNavSelRange = "{7385, 0}";
-			sepNavVisRange = "{6427, 1584}";
+			sepNavIntBoundsRect = "{{0, 0}, {1083, 4108}}";
+			sepNavSelRange = "{4329, 0}";
+			sepNavVisRange = "{8847, 1112}";
 		};
 	};
 	8381E892118E321B00A412EE /* DetailsController.h */ = {
@@ -1043,7 +1059,7 @@
 		fRef = 8381E890118E321B00A412EE /* TableViewController.m */;
 		name = "TableViewController.m: 238";
 		rLen = 0;
-		rLoc = 7385;
+		rLoc = 7523;
 		rType = 0;
 		vrLen = 1584;
 		vrLoc = 6427;
@@ -1089,6 +1105,116 @@
 		rType = 0;
 		vrLen = 956;
 		vrLoc = 1379;
+	};
+	83D61BAE119F26F700AAFDAD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8381E889118E321B00A412EE /* MapViewController.m */;
+		name = "MapViewController.m: 68";
+		rLen = 0;
+		rLoc = 1633;
+		rType = 0;
+		vrLen = 967;
+		vrLoc = 0;
+	};
+	83D61BB1119F29A300AAFDAD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8381E889118E321B00A412EE /* MapViewController.m */;
+		name = "MapViewController.m: 28";
+		rLen = 0;
+		rLoc = 638;
+		rType = 0;
+		vrLen = 986;
+		vrLoc = 183;
+	};
+	83D61BB2119F29A300AAFDAD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8381E890118E321B00A412EE /* TableViewController.m */;
+		name = "TableViewController.m: 163";
+		rLen = 0;
+		rLoc = 4674;
+		rType = 0;
+		vrLen = 1478;
+		vrLoc = 3818;
+	};
+	83D61BB3119F29A300AAFDAD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8381E890118E321B00A412EE /* TableViewController.m */;
+		name = "TableViewController.m: 153";
+		rLen = 0;
+		rLoc = 4286;
+		rType = 0;
+		vrLen = 1494;
+		vrLoc = 3836;
+	};
+	83D61BC6119F2E6400AAFDAD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8381E889118E321B00A412EE /* MapViewController.m */;
+		name = "MapViewController.m: 28";
+		rLen = 0;
+		rLoc = 638;
+		rType = 0;
+		vrLen = 1109;
+		vrLoc = 2043;
+	};
+	83D61BC7119F2E6400AAFDAD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 83FBC9870FCD07320008C3BC /* Constants.h */;
+		name = "Constants.h: 13";
+		rLen = 0;
+		rLoc = 710;
+		rType = 0;
+		vrLen = 1464;
+		vrLoc = 0;
+	};
+	83D61BC8119F2E6400AAFDAD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8381E890118E321B00A412EE /* TableViewController.m */;
+		name = "TableViewController.m: 154";
+		rLen = 0;
+		rLoc = 4329;
+		rType = 0;
+		vrLen = 1112;
+		vrLoc = 8847;
+	};
+	83D61BC9119F2E6400AAFDAD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8381E884118E321B00A412EE /* BrowseController.m */;
+		name = "BrowseController.m: 217";
+		rLen = 4;
+		rLoc = 7593;
+		rType = 0;
+		vrLen = 1181;
+		vrLoc = 7950;
+	};
+	83D61BCA119F2E6400AAFDAD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8381E86C118E304D00A412EE /* OpenHouses.m */;
+		name = "OpenHouses.m: 84";
+		rLen = 0;
+		rLoc = 2526;
+		rType = 0;
+		vrLen = 1662;
+		vrLoc = 1780;
+	};
+	83D61BCB119F2E6400AAFDAD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8381E86C118E304D00A412EE /* OpenHouses.m */;
+		name = "OpenHouses.m: 154";
+		rLen = 0;
+		rLoc = 5131;
+		rType = 0;
+		vrLen = 1375;
+		vrLoc = 4282;
+	};
+	83D61BCC119F2E8500AAFDAD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8381E86C118E304D00A412EE /* OpenHouses.m */;
+		name = "OpenHouses.m: 154";
+		rLen = 0;
+		rLoc = 5131;
+		rType = 0;
+		vrLen = 580;
+		vrLoc = 4810;
 	};
 	83DAD8AD10217B78008CFD01 /* openhouses.db */ = {
 		uiCtxt = {
@@ -1169,8 +1295,8 @@
 	};
 	83FBC9870FCD07320008C3BC /* Constants.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1286, 564}}";
-			sepNavSelRange = "{216, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1286, 516}}";
+			sepNavSelRange = "{710, 0}";
 			sepNavVisRange = "{0, 1464}";
 			sepNavWindowFrame = "{{15, -1}, {1023, 874}}";
 		};
