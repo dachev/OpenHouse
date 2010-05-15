@@ -18,7 +18,7 @@
 #pragma mark Instantiation and tear down
 -(id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-		[self setAnnotations:[NSArray array]];
+		self.annotations = [NSArray array];
     }
     return self;
 }
@@ -74,7 +74,7 @@
 #pragma mark Custom methods
 -(void) setLocation:(CLLocation *)loc {
 	[mapView removeAnnotations:annotations];
-    [self setAnnotations:[NSArray array]];
+    self.annotations = [NSArray array];
     
 	/*Region and Zoom*/
 	MKCoordinateRegion region;
@@ -89,9 +89,9 @@
 }
 
 -(void) showPage:(NSArray *)a withOrigin:(CLLocation *)origin {
-	NSArray *oldAnnotations = a;
+	NSArray *oldAnnotations = annotations;
 	[oldAnnotations retain];
-	[self setAnnotations:a];
+	self.annotations = a;
 	
 	/* Adjust the map viewport to fit all pins */
 	float dLat = 0.0f;
