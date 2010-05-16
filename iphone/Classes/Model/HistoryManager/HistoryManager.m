@@ -1,20 +1,20 @@
 //
-//  TaggedReverseGeocoder.m
+//  HistoryManager.m
 //  OpenHouses
 //
 //  Created by blago on 8/2/09.
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
-#import "TaggedReverseGeocoder.h"
+#import "HistoryManager.h"
 
-@interface TaggedReverseGeocoder (Private)
+@interface HistoryManager (Private)
 -(void) getAddressAtLocation:(CLLocation*)loc;
 -(void) cancelRequests;
 @end
 
-@implementation TaggedReverseGeocoder
-SYNTHESIZE_SINGLETON_FOR_CLASS(TaggedReverseGeocoder);
+@implementation HistoryManager
+SYNTHESIZE_SINGLETON_FOR_CLASS(HistoryManager);
 @synthesize requests;
 
 #pragma mark -

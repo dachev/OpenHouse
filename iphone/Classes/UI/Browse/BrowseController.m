@@ -226,8 +226,8 @@
 	[self updateNavButtons];
     [self showPage:[NSNumber numberWithInt:1]];
     
-    TaggedReverseGeocoder *geocoder = [TaggedReverseGeocoder sharedTaggedReverseGeocoder];
-    [geocoder logLocation:loc];
+    HistoryManager *history = [HistoryManager sharedHistoryManager];
+    [history logLocation:loc];
 }
 
 -(void) showPage:(NSNumber *)p {

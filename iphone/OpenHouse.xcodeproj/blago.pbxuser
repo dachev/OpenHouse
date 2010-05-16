@@ -532,7 +532,7 @@
 		fRef = 8381E884118E321B00A412EE /* BrowseController.m */;
 		name = "BrowseController.m: 368";
 		rLen = 0;
-		rLoc = 12006;
+		rLoc = 11983;
 		rType = 0;
 		vrLen = 1484;
 		vrLoc = 11676;
@@ -638,6 +638,12 @@
 		vrLoc = 6446;
 	};
 	8381E822118E2F9900A412EE /* TaggedReverseGeocoder.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = TaggedReverseGeocoder.h;
+		path = /Users/blago/Projects/openhouse/src/iphone/Classes/API/GeocoderManager/TaggedReverseGeocoder.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {933, 512}}";
 			sepNavSelRange = "{269, 0}";
@@ -645,10 +651,16 @@
 		};
 	};
 	8381E823118E2F9900A412EE /* TaggedReverseGeocoder.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = TaggedReverseGeocoder.m;
+		path = /Users/blago/Projects/openhouse/src/iphone/Classes/API/GeocoderManager/TaggedReverseGeocoder.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {933, 1924}}";
-			sepNavSelRange = "{3943, 0}";
-			sepNavVisRange = "{0, 713}";
+			sepNavIntBoundsRect = "{{0, 0}, {933, 1885}}";
+			sepNavSelRange = "{413, 0}";
+			sepNavVisRange = "{143, 699}";
 		};
 	};
 	8381E855118E304D00A412EE /* Database.h */ = {
@@ -726,16 +738,16 @@
 	};
 	8381E883118E321B00A412EE /* BrowseController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {933, 936}}";
-			sepNavSelRange = "{775, 0}";
-			sepNavVisRange = "{44, 1182}";
+			sepNavIntBoundsRect = "{{0, 0}, {933, 923}}";
+			sepNavSelRange = "{297, 14}";
+			sepNavVisRange = "{44, 1050}";
 		};
 	};
 	8381E884118E321B00A412EE /* BrowseController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1111, 7553}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1231, 7462}}";
 			sepNavSelRange = "{4860, 0}";
-			sepNavVisRange = "{3728, 1834}";
+			sepNavVisRange = "{4200, 595}";
 		};
 	};
 	8381E888118E321B00A412EE /* MapViewController.h */ = {
@@ -1041,7 +1053,7 @@
 		fRef = 8381E884118E321B00A412EE /* BrowseController.m */;
 		name = "BrowseController.m: 368";
 		rLen = 0;
-		rLoc = 12006;
+		rLoc = 11983;
 		rType = 0;
 		vrLen = 1391;
 		vrLoc = 11712;
@@ -1313,7 +1325,7 @@
 		fRef = 8381E884118E321B00A412EE /* BrowseController.m */;
 		name = "BrowseController.m: 476";
 		rLen = 0;
-		rLoc = 16197;
+		rLoc = 16174;
 		rType = 0;
 		vrLen = 2078;
 		vrLoc = 15559;
@@ -1867,7 +1879,7 @@
 		fRef = 8381E883118E321B00A412EE /* BrowseController.h */;
 		name = "BrowseController.h: 28";
 		rLen = 0;
-		rLoc = 775;
+		rLoc = 768;
 		rType = 0;
 		vrLen = 1182;
 		vrLoc = 44;
@@ -1876,7 +1888,7 @@
 		isa = PBXTextBookmark;
 		fRef = 8381E884118E321B00A412EE /* BrowseController.m */;
 		rLen = 0;
-		rLoc = 8202;
+		rLoc = 8179;
 		rType = 0;
 	};
 	83D61C56119F82C700AAFDAD /* PBXTextBookmark */ = {
@@ -1908,6 +1920,20 @@
 		rType = 0;
 		vrLen = 816;
 		vrLoc = 4480;
+	};
+	83D61C6A119F86D200AAFDAD /* HistoryManager.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {933, 447}}";
+			sepNavSelRange = "{373, 0}";
+			sepNavVisRange = "{0, 530}";
+		};
+	};
+	83D61C6B119F86D200AAFDAD /* HistoryManager.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {933, 2067}}";
+			sepNavSelRange = "{271, 0}";
+			sepNavVisRange = "{3, 630}";
+		};
 	};
 	83DAD8AD10217B78008CFD01 /* openhouses.db */ = {
 		uiCtxt = {

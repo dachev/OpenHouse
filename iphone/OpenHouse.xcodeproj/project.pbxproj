@@ -17,7 +17,6 @@
 		835B0F920FC13108007F818F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 835B0F910FC13108007F818F /* CoreLocation.framework */; };
 		8361078B1006D596007082CD /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = 836107891006D596007082CD /* down.png */; };
 		8361078C1006D596007082CD /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 8361078A1006D596007082CD /* up.png */; };
-		8381E840118E2F9900A412EE /* TaggedReverseGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8381E823118E2F9900A412EE /* TaggedReverseGeocoder.m */; };
 		8381E845118E2F9900A412EE /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8381E82F118E2F9900A412EE /* CDataScanner.m */; };
 		8381E846118E2F9900A412EE /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8381E832118E2F9900A412EE /* CDataScanner_Extensions.m */; };
 		8381E847118E2F9900A412EE /* NSCharacterSet_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8381E834118E2F9900A412EE /* NSCharacterSet_Extensions.m */; };
@@ -55,6 +54,7 @@
 		83D61B87119E228600AAFDAD /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D61B86119E228600AAFDAD /* Default.png */; };
 		83D61BB0119F299900AAFDAD /* loadingThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D61BAF119F299900AAFDAD /* loadingThumb.png */; };
 		83D61BB5119F2BAF00AAFDAD /* noThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D61BB4119F2BAF00AAFDAD /* noThumb.png */; };
+		83D61C6C119F86D200AAFDAD /* HistoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D61C6B119F86D200AAFDAD /* HistoryManager.m */; };
 		83DAD803102164F9008CFD01 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 83DAD802102164F9008CFD01 /* libsqlite3.dylib */; };
 		83DAD8AE10217B78008CFD01 /* openhouses.db in Resources */ = {isa = PBXBuildFile; fileRef = 83DAD8AD10217B78008CFD01 /* openhouses.db */; };
 		83E55D0D0FB7F8C800ED0E37 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E55D0C0FB7F8C800ED0E37 /* MapKit.framework */; };
@@ -77,8 +77,6 @@
 		835B0F910FC13108007F818F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		836107891006D596007082CD /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = down.png; path = resources/down.png; sourceTree = "<group>"; };
 		8361078A1006D596007082CD /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = up.png; path = resources/up.png; sourceTree = "<group>"; };
-		8381E822118E2F9900A412EE /* TaggedReverseGeocoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaggedReverseGeocoder.h; sourceTree = "<group>"; };
-		8381E823118E2F9900A412EE /* TaggedReverseGeocoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaggedReverseGeocoder.m; sourceTree = "<group>"; };
 		8381E82E118E2F9900A412EE /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
 		8381E82F118E2F9900A412EE /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
 		8381E831118E2F9900A412EE /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner_Extensions.h; sourceTree = "<group>"; };
@@ -150,6 +148,8 @@
 		83D61B86119E228600AAFDAD /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = resources/Default.png; sourceTree = "<group>"; };
 		83D61BAF119F299900AAFDAD /* loadingThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loadingThumb.png; path = resources/loadingThumb.png; sourceTree = "<group>"; };
 		83D61BB4119F2BAF00AAFDAD /* noThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noThumb.png; path = resources/noThumb.png; sourceTree = "<group>"; };
+		83D61C6A119F86D200AAFDAD /* HistoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryManager.h; sourceTree = "<group>"; };
+		83D61C6B119F86D200AAFDAD /* HistoryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryManager.m; sourceTree = "<group>"; };
 		83DAD802102164F9008CFD01 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = /usr/lib/libsqlite3.dylib; sourceTree = "<absolute>"; };
 		83DAD8AD10217B78008CFD01 /* openhouses.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = openhouses.db; path = resources/openhouses.db; sourceTree = "<group>"; };
 		83E55D0C0FB7F8C800ED0E37 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -259,7 +259,6 @@
 			children = (
 				83BB08CB1197591900C05DE2 /* FlurryLibWithLocation */,
 				8381E820118E2F9900A412EE /* DiskCache */,
-				8381E821118E2F9900A412EE /* GeocoderManager */,
 				8381E824118E2F9900A412EE /* REST */,
 				8381E82D118E2F9900A412EE /* TouchJSON */,
 			);
@@ -273,15 +272,6 @@
 				83B89C46118F9E1200BB6116 /* DiskCache.m */,
 			);
 			path = DiskCache;
-			sourceTree = "<group>";
-		};
-		8381E821118E2F9900A412EE /* GeocoderManager */ = {
-			isa = PBXGroup;
-			children = (
-				8381E822118E2F9900A412EE /* TaggedReverseGeocoder.h */,
-				8381E823118E2F9900A412EE /* TaggedReverseGeocoder.m */,
-			);
-			path = GeocoderManager;
 			sourceTree = "<group>";
 		};
 		8381E824118E2F9900A412EE /* REST */ = {
@@ -335,6 +325,7 @@
 		8381E853118E304D00A412EE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				83D61C69119F86D200AAFDAD /* HistoryManager */,
 				8381E854118E304D00A412EE /* DB */,
 				8381E869118E304D00A412EE /* OpenHouse.h */,
 				8381E86A118E304D00A412EE /* OpenHouse.m */,
@@ -466,6 +457,15 @@
 			path = "/Applications/Flurry iPhone SDK v2.2/FlurryLibWithLocation";
 			sourceTree = "<absolute>";
 		};
+		83D61C69119F86D200AAFDAD /* HistoryManager */ = {
+			isa = PBXGroup;
+			children = (
+				83D61C6A119F86D200AAFDAD /* HistoryManager.h */,
+				83D61C6B119F86D200AAFDAD /* HistoryManager.m */,
+			);
+			path = HistoryManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -531,7 +531,6 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* OpenHousesAppDelegate.m in Sources */,
-				8381E840118E2F9900A412EE /* TaggedReverseGeocoder.m in Sources */,
 				8381E845118E2F9900A412EE /* CDataScanner.m in Sources */,
 				8381E846118E2F9900A412EE /* CDataScanner_Extensions.m in Sources */,
 				8381E847118E2F9900A412EE /* NSCharacterSet_Extensions.m in Sources */,
@@ -565,6 +564,7 @@
 				8381E8A7118E321B00A412EE /* MainViewController.m in Sources */,
 				8381E8BB118E338E00A412EE /* ConnectionManager.m in Sources */,
 				83B89C47118F9E1200BB6116 /* DiskCache.m in Sources */,
+				83D61C6C119F86D200AAFDAD /* HistoryManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

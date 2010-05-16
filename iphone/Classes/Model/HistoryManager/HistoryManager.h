@@ -1,5 +1,5 @@
 //
-//  TaggedReverseGeocoder.h
+//  HistoryManager.h
 //  OpenHouses
 //
 //  Created by blago on 8/2/09.
@@ -14,13 +14,13 @@
 #import "Constants.h"
 
 
-@interface TaggedReverseGeocoder : NSObject {
+@interface HistoryManager : NSObject {
 	NSMutableDictionary *requests;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *requests;
 
-+(TaggedReverseGeocoder *) sharedTaggedReverseGeocoder;
++(HistoryManager *) sharedHistoryManager;
 -(void) logLocation:(CLLocation*)loc;
 
 @end

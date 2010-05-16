@@ -12,7 +12,7 @@
 #import "FlurryAPI.h"
 #import "Database.h"
 #import "OpenHouses.h"
-#import "TaggedReverseGeocoder.h"
+#import "HistoryManager.h"
 #import "MapViewController.h"
 #import "TableViewController.h"
 #import "DetailsController.h"
