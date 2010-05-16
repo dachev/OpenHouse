@@ -43,8 +43,8 @@
                                              target:self
                                              action:@selector(clearHandler:)] autorelease];
         
-		[[self navigationItem] setRightBarButtonItem:barCancelButton];
-		[[self navigationItem] setLeftBarButtonItem:barClearButton];
+		[[self navigationItem] setRightBarButtonItem:barClearButton];
+		[[self navigationItem] setLeftBarButtonItem:barCancelButton];
         
         [self setLocations:[NSArray array]];
         
