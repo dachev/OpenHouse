@@ -36,7 +36,8 @@
             query = @"";
         }
         
-        [self setSearchBar:[[[UISearchBar alloc] initWithFrame:CGRectMake(0,0,320,45)] autorelease]];
+        float width = self.view.bounds.size.width;
+        [self setSearchBar:[[[UISearchBar alloc] initWithFrame:CGRectMake(0,0,width,44)] autorelease]];
         self.navigationItem.titleView = searchBar;
         
         [searchBar becomeFirstResponder];

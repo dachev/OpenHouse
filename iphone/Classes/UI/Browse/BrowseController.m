@@ -243,8 +243,8 @@
 		return;
 	}
     
-    NSString *title = [NSString stringWithFormat:@"Browse (%d)", [[openHouses totalResults] intValue]];
-    [[self navigationItem] setTitle:title];
+    //NSString *title = [NSString stringWithFormat:@"Browse (%d)", [[openHouses totalResults] intValue]];
+    //[[self navigationItem] setTitle:title];
 	
 	[[self mapController] showPage:[openHouses getPage:p] withOrigin:origin];
 	[[self tableController] showPage:[openHouses getPage:p] withOrigin:origin];

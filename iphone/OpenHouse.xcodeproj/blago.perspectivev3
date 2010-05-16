@@ -279,7 +279,10 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>28</integer>
+									<integer>11</integer>
+									<integer>5</integer>
+									<integer>4</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -331,7 +334,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>83C01F8411A0815500141CA8</string>
+										<string>83C01FAE11A08BC000141CA8</string>
 										<key>history</key>
 										<array>
 											<string>835B0FA20FC13181007F818F</string>
@@ -369,7 +372,6 @@
 											<string>83D61C34119F7E1400AAFDAD</string>
 											<string>83D61C35119F7E1400AAFDAD</string>
 											<string>83D61C37119F7E1400AAFDAD</string>
-											<string>83D61C51119F82C700AAFDAD</string>
 											<string>83D61C78119F89CC00AAFDAD</string>
 											<string>83D61C79119F89CC00AAFDAD</string>
 											<string>83D61C9D119F93AA00AAFDAD</string>
@@ -388,11 +390,12 @@
 											<string>83D61E63119FCF1800AAFDAD</string>
 											<string>83D61E6C119FCFE000AAFDAD</string>
 											<string>83C01F6611A07E0100141CA8</string>
-											<string>83C01F6711A07E0100141CA8</string>
 											<string>83C01F6811A07E0100141CA8</string>
-											<string>83C01F6911A07E0100141CA8</string>
 											<string>83C01F6A11A07E0100141CA8</string>
-											<string>83C01F6B11A07E0100141CA8</string>
+											<string>83C01F9111A0881300141CA8</string>
+											<string>83C01FA811A08B8600141CA8</string>
+											<string>83C01FAC11A08BC000141CA8</string>
+											<string>83C01FAD11A08BC000141CA8</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -406,18 +409,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {994, 549}}</string>
+								<string>{{0, 0}, {994, 636}}</string>
 								<key>RubberWindowFrame</key>
 								<string>1 59 1292 819 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>549pt</string>
+							<string>636pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>224pt</string>
+							<string>137pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -485,7 +488,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {994, 197}}</string>
+										<string>{{10, 27}, {994, 110}}</string>
 										<key>RubberWindowFrame</key>
 										<string>1 59 1292 819 0 0 1440 878 </string>
 									</dict>
@@ -707,6 +710,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>83C01FAB11A08B8600141CA8</string>
+		<string>83C01F9411A0881300141CA8</string>
+		<string>83C01F9511A0881300141CA8</string>
 		<string>/Users/blago/Projects/openhouse/src/iphone/OpenHouse.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
