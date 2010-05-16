@@ -18,12 +18,16 @@
     MainViewController *mainController;
     SplashViewController *splashController;
     NSDate *launchTime;
+    NSTimer *initializeTimer;
+    NSTimer *renderTimer;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) MainViewController *mainController;
-@property (nonatomic, retain) SplashViewController *splashController;
+@property (nonatomic, retain) IBOutlet MainViewController *mainController;
+@property (nonatomic, retain) IBOutlet SplashViewController *splashController;
 @property (nonatomic, retain) NSDate *launchTime;
+@property (nonatomic, retain) NSTimer *initializeTimer;
+@property (nonatomic, retain) NSTimer *renderTimer;
 
 @end
 

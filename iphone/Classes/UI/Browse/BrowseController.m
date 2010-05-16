@@ -102,8 +102,7 @@
 	[openHouses setDelegate:self];
  	
 	/* Initialize toolbar items */
-    StatusView *sv = [[[StatusView alloc] initWithFrame:CGRectMake(0,0,225,20)] autorelease];
-    [self setStatusView:sv];
+    self.statusView = [[[StatusView alloc] initWithFrame:CGRectMake(0,0,225,20)] autorelease];
 	
     UIBarButtonItem *statusButton = [[UIBarButtonItem alloc] initWithCustomView:statusView];
     UIBarButtonItem *actionButton = [[UIBarButtonItem alloc]
@@ -122,18 +121,25 @@
 	[actionButton release];
 	[flipButton release];
     [self setToolbarItems:items];
+    self.navigationController.toolbar.tintColor = [UIColor colorWithRed:88/255.0 green:136/255.0 blue:181/255.0 alpha:1];
     
     [self.navigationController setToolbarHidden:NO animated:NO];
     self.navigationController.delegate = self;
-    //self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.0 green:0.29 blue:0.4 alpha:0];
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:88/255.0 green:136/255.0 blue:181/255.0 alpha:1];
     
     /* Set back button item */
-    UIBarButtonItem *backButton = [[[UIBarButtonItem alloc]
-                                    initWithTitle:@"Browse"
-                                    style:UIBarButtonItemStylePlain
-                                    target:nil
-                                    action:nil] autorelease];
-    self.navigationItem.backBarButtonItem = backButton;
+    //UIBarButtonItem *backButton = [[[UIBarButtonItem alloc]
+    //                                initWithTitle:@"Browse"
+    //                                style:UIBarButtonItemStylePlain
+    //                                target:nil
+    //                                action:nil] autorelease];
+    //self.navigationItem.backBarButtonItem = backButton;
+    self.navigationItem.hidesBackButton = YES;
+    
+    UIImage *brandImage             = [UIImage imageNamed:@"brandname.png"];
+    UIImageView *brandImageView     = [[[UIImageView alloc] initWithImage:brandImage] autorelease];
+    UIBarButtonItem *brandImageItem = [[[UIBarButtonItem alloc] initWithCustomView:brandImageView] autorelease];
+    self.navigationItem.leftBarButtonItem = brandImageItem;
     
     /* Start the show */
     NSDictionary *lastLocationSearched = (NSDictionary*)
@@ -459,7 +465,8 @@
         UINavigationController *navController = [[[UINavigationController alloc] initWithRootViewController:addressCotroller] autorelease];
         
         [navController setToolbarHidden:NO animated:NO];
-        //[navController setNavigationBarHidden:NO animated:NO];
+        navController.navigationBar.tintColor = [UIColor colorWithRed:88/255.0 green:136/255.0 blue:181/255.0 alpha:1];
+        navController.toolbar.tintColor = [UIColor colorWithRed:88/255.0 green:136/255.0 blue:181/255.0 alpha:1];
         
         [self.navigationController presentModalViewController:navController animated:YES];
     }
@@ -468,6 +475,8 @@
         UINavigationController *navController = [[[UINavigationController alloc] initWithRootViewController:historyCotroller] autorelease];
 
         [navController setToolbarHidden:NO animated:NO];
+        navController.navigationBar.tintColor = [UIColor colorWithRed:88/255.0 green:136/255.0 blue:181/255.0 alpha:1];
+        navController.toolbar.tintColor = [UIColor colorWithRed:88/255.0 green:136/255.0 blue:181/255.0 alpha:1];
 
         [self.navigationController presentModalViewController:navController animated:YES];
     }

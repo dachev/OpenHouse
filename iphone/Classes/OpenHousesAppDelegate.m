@@ -10,7 +10,7 @@
 
 @interface OpenHousesAppDelegate (Private)
 -(void) initializeMainController;
--(void) activateMainController;
+-(void) renderMainController;
 @end
 
 @implementation OpenHousesAppDelegate
@@ -19,6 +19,8 @@
 @synthesize mainController;
 @synthesize splashController;
 @synthesize launchTime;
+@synthesize initializeTimer;
+@synthesize renderTimer;
 
 
 void uncaughtExceptionHandler(NSException *exception) {
@@ -26,9 +28,18 @@ void uncaughtExceptionHandler(NSException *exception) {
 }
 
 -(void) dealloc {
+    if ([self.initializeTimer isValid]) {
+        [self.initializeTimer invalidate];
+    }
+    if ([self.renderTimer isValid]) {
+        [self.renderTimer invalidate];
+    }
+
     [splashController release];
     [mainController release];
     [launchTime release];
+    [initializeTimer release];
+    [renderTimer release];
     [window release];
 	
     [super dealloc];
@@ -41,16 +52,15 @@ void uncaughtExceptionHandler(NSException *exception) {
     
     self.launchTime = [NSDate date];
     
-    [NSTimer scheduledTimerWithTimeInterval:0.001
-                                     target:self
-                                   selector:@selector(initializeMainController)
-                                   userInfo:nil
-                                    repeats:NO];
+    self.initializeTimer = [NSTimer
+        scheduledTimerWithTimeInterval:0.01
+                                target:self
+                              selector:@selector(initializeMainController)
+                              userInfo:nil
+                               repeats:NO];
 }
 
 -(void) initializeMainController {
-    self.mainController = [[[MainViewController alloc] initWithNibName:nil bundle:nil] autorelease];
-    
     [Database sharedDatabase];
     [DiskCache sharedDiskCache];
     
@@ -59,27 +69,33 @@ void uncaughtExceptionHandler(NSException *exception) {
     
     NSTimeInterval lauchDuration = -[self.launchTime timeIntervalSinceNow];
     if (lauchDuration >= MINIMUM_DURATION_SPLASH_VISIBLE) {
-        [self activateMainController];
+        [self renderMainController];
         return;
     }
     
-    NSTimeInterval waitDuration = MINIMUM_DURATION_SPLASH_VISIBLE - lauchDuration;
-    [NSTimer scheduledTimerWithTimeInterval:waitDuration
-                                     target:self
-                                   selector:@selector(activateMainController)
-                                   userInfo:nil
-                                    repeats:NO];
+    NSTimeInterval waitMoreDuration = MINIMUM_DURATION_SPLASH_VISIBLE - lauchDuration;
+    self.renderTimer = [NSTimer
+        scheduledTimerWithTimeInterval:waitMoreDuration
+                                target:self
+                              selector:@selector(renderMainController)
+                              userInfo:nil
+                               repeats:NO];
 }
 
--(void) activateMainController {
+-(void) renderMainController {
+    self.mainController = [[[MainViewController alloc] initWithNibName:nil bundle:nil] autorelease];
     [window addSubview:self.mainController.view];
     
-    [self.splashController.view removeFromSuperview];
-    self.splashController = nil;
+    //[self.splashController.view removeFromSuperview];
+    //self.splashController = nil;
 }
 
 -(void) applicationWillTerminate:(UIApplication *)application {
-    [[Database sharedDatabase] release];
+    [self.mainController.view removeFromSuperview];
+    self.mainController = nil;
+    
+    //[[Database sharedDatabase] release];
+    //[[DiskCache sharedDiskCache] release];
 }
 
 

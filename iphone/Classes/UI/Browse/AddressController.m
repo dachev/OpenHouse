@@ -40,8 +40,9 @@
         self.navigationItem.titleView = searchBar;
         
         [searchBar becomeFirstResponder];
-        [searchBar setDelegate:self];
         
+        searchBar.tintColor         = [UIColor colorWithRed:88/255.0 green:136/255.0 blue:181/255.0 alpha:1];
+        searchBar.delegate          = self;
         searchBar.text              = query;
         searchBar.delegate          = self;
         searchBar.placeholder       = @"US address, city, or zip";

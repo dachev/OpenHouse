@@ -16,7 +16,7 @@
 #pragma mark Instantiation and tear down
 -(id) initWithStyle:(UITableViewStyle)style {
     if (self = [super initWithStyle:style]) {
-        self.navigationItem.prompt = @"Select a location";
+        //self.navigationItem.prompt = @"Select a location";
         
         // Set bottom buttons
 		NSArray *sortItems = [NSArray arrayWithObjects:@"Latest", @"Most Frequent", nil];
