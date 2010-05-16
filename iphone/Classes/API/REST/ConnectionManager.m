@@ -150,7 +150,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ConnectionManager);
         NSData *payload = (NSData *)[info objectForKey:@"data"];
         
         [cache storeData:payload ForRequest:request];
-        NSLog(@"save");
+        //NSLog(@"save");
     }
 	
 	/* Clean up */

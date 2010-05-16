@@ -12,6 +12,7 @@
 #define SEARCH_API_REQUEST_URL @"http://openhouse.dachev.com/~blago/openhouse/service.py/search?offset=%d&records=%d&lat=%f&lng=%f&distance=%f&bdate=%@&edate=%@"
 #define STATIC_MAPS_REQUEST_URL @"http://maps.google.com/maps/api/staticmap?center=%f,%f&zoom=15&size=310x233&maptype=roadmap&markers=color%@blue%@label%@%@%f,%f&sensor=true"
 #define GOOGLE_GEOCODING_URL @"http://maps.google.com/maps/api/geocode/json?sensor=true&region=us&address=%@"
+#define GOOGLE_REVERSE_GEOCODING_URL @"http://maps.google.com/maps/api/geocode/json?sensor=true&region=us&latlng=%f,%f"
 
 #define RESULTS_PER_PAGE_DISPLAY 10
 #define RESULTS_PER_PAGE_FETCH 50

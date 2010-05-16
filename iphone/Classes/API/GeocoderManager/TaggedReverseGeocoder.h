@@ -7,17 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <MapKit/MapKit.h>
+#import "SynthesizeSingleton.h"
+#import "ConnectionManager.h"
+#import "CJSONDeserializer.h"
+#import "Database.h"
+#import "Constants.h"
 
 
-@interface TaggedReverseGeocoder : MKReverseGeocoder {
-    float lat;
-    float lng;
+@interface TaggedReverseGeocoder : NSObject {
+	NSMutableDictionary *requests;
 }
 
-@property (nonatomic, assign) float lat;
-@property (nonatomic, assign) float lng;
+@property (nonatomic, retain) NSMutableDictionary *requests;
 
-+(TaggedReverseGeocoder *) requestWithLocation:(CLLocation *)location;
++(TaggedReverseGeocoder *) sharedTaggedReverseGeocoder;
+-(void) logLocation:(CLLocation*)loc;
 
 @end

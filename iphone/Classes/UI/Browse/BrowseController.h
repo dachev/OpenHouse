@@ -26,7 +26,6 @@
 @interface BrowseController : UIViewController <OpenHousesApiDelegate,
                                                 UIActionSheetDelegate,
                                                 UINavigationControllerDelegate,
-                                                MKReverseGeocoderDelegate,
                                                 CLLocationManagerDelegate> {
     MapViewController   *mapController;
     TableViewController *tableController;

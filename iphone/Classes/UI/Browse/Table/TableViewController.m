@@ -117,7 +117,7 @@
     NSString *encodedLink = [NSString encodeURIComponent:link];
     NSString *url         = [NSString stringWithFormat:IMAGE_API_REQUEST_URL, @"t", encodedLink];
     NSString *identifier  = [info stringValue];
-    NSLog(@"%d:%@", [info intValue], link);
+    
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     [request setTimeoutInterval:CONFIG_NETWORK_TIMEOUT];
     //[request setCachePolicy:NSURLRequestReturnCacheDataElseLoad];

@@ -18,7 +18,6 @@
 -(void) showPage:(NSNumber *)p;
 -(void) updateNavButtons;
 -(void) toggleView;
--(void) getAddressAtLocation:(CLLocation *)location;
 -(void) selectAction:(id)sender;
 -(NSDictionary *) makeDictionaryWithLat:(double)lat lng:(double)lng;
 -(NSDictionary *) makeDictionaryWithCLLocation:(CLLocation *)location;
@@ -106,17 +105,17 @@
     StatusView *sv = [[[StatusView alloc] initWithFrame:CGRectMake(0,0,225,20)] autorelease];
     [self setStatusView:sv];
 	
-    UIBarButtonItem *statusButton  = [[UIBarButtonItem alloc] initWithCustomView:statusView];
-    UIBarButtonItem *actionButton  = [[UIBarButtonItem alloc]
-                                      //initWithBarButtonSystemItem:UIBarButtonSystemItemAction
-                                      initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
-                                      target:self
-                                      action:@selector(selectAction:)];
-	UIBarButtonItem *flipButton    = [[UIBarButtonItem alloc]
-									  initWithImage:listIconImage
-									  style:UIBarButtonItemStylePlain
-									  target:self
-									  action:@selector(changeView:)];
+    UIBarButtonItem *statusButton = [[UIBarButtonItem alloc] initWithCustomView:statusView];
+    UIBarButtonItem *actionButton = [[UIBarButtonItem alloc]
+                                     //initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                     initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
+                                     target:self
+                                     action:@selector(selectAction:)];
+	UIBarButtonItem *flipButton   = [[UIBarButtonItem alloc]
+                                     initWithImage:listIconImage
+                                     style:UIBarButtonItemStylePlain
+                                     target:self
+                                     action:@selector(changeView:)];
 
 	NSArray *items = [NSArray arrayWithObjects:actionButton, statusButton,flipButton,nil];
     [statusButton release];
@@ -227,21 +226,8 @@
 	[self updateNavButtons];
     [self showPage:[NSNumber numberWithInt:1]];
     
-    Database *db = [Database sharedDatabase];
-    if ([db hasLocationForLat:lat lng:lng] == NO) {
-        [db createLocationForLat:lat lng:lng];
-        [self getAddressAtLocation:loc];
-    }
-    else {
-        [db updateTimestampForLat:lat lng:lng];
-    }
-    [db incrementCountForLat:lat lng:lng];
-}
-
--(void) getAddressAtLocation:(CLLocation *)location {
-    [self setGeoCoder:[TaggedReverseGeocoder requestWithLocation:location]];
-    geoCoder.delegate = self;
-    [geoCoder start];
+    TaggedReverseGeocoder *geocoder = [TaggedReverseGeocoder sharedTaggedReverseGeocoder];
+    [geocoder logLocation:loc];
 }
 
 -(void) showPage:(NSNumber *)p {
@@ -533,20 +519,6 @@
     [statusView hideLabel];
     
     [self showAlertWithText:[error localizedDescription]];
-}
-
-
-#pragma mark -
-#pragma mark MKReverseGeocoderDelegate methods
--(void) reverseGeocoder:(TaggedReverseGeocoder *)geocoder didFindPlacemark:(MKPlacemark *)placemark {
-    Database *db   = [Database sharedDatabase];
-    NSString *addr = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@" "];
-    
-    [db updateAddress:addr forLat:geocoder.lat lng:geocoder.lng];
-}
-
--(void) reverseGeocoder:(TaggedReverseGeocoder *)geocoder didFailWithError:(NSError *)error {
-    
 }
 
 
