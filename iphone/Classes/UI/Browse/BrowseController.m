@@ -17,6 +17,7 @@
 -(void) getPage:(NSNumber *)p;
 -(void) showPage:(NSNumber *)p;
 -(void) updateNavButtons;
+-(void) updateStatusView;
 -(void) toggleView;
 -(void) selectAction:(id)sender;
 -(NSDictionary *) makeDictionaryWithLat:(double)lat lng:(double)lng;
@@ -36,8 +37,8 @@
 #pragma mark Instantiation and tear down
 -(id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-		[self setAnnotations:[NSArray array]];
-		[self setPage:[NSNumber numberWithInt:0]];
+		self.annotations = [NSArray array];
+		self.page = [NSNumber numberWithInt:0];
 		
 		/* Initialize nav buttons */
 		NSArray *navItems = [NSArray arrayWithObjects:[UIImage imageNamed:@"down.png"], [UIImage imageNamed:@"up.png"], nil];
@@ -128,12 +129,12 @@
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:88/255.0 green:136/255.0 blue:181/255.0 alpha:1];
     
     /* Set back button item */
-    //UIBarButtonItem *backButton = [[[UIBarButtonItem alloc]
-    //                                initWithTitle:@"Browse"
-    //                                style:UIBarButtonItemStylePlain
-    //                                target:nil
-    //                                action:nil] autorelease];
-    //self.navigationItem.backBarButtonItem = backButton;
+    UIBarButtonItem *backButton = [[[UIBarButtonItem alloc]
+                                    initWithTitle:@"Browse"
+                                    style:UIBarButtonItemStylePlain
+                                    target:nil
+                                    action:nil] autorelease];
+    self.navigationItem.backBarButtonItem = backButton;
     self.navigationItem.hidesBackButton = YES;
     
     UIImage *brandImage             = [UIImage imageNamed:@"brandname.png"];
@@ -219,7 +220,7 @@
     [[self navigationItem] setTitle:@""];
     self.locationPendingSearch = NO;
     
-    [self setPage:[NSNumber numberWithInt:0]];
+    self.page = [NSNumber numberWithInt:0];
     
     CLLocation *loc = [[[CLLocation alloc] initWithLatitude:lat longitude:lng] autorelease];
     [self setOrigin:loc];
@@ -242,19 +243,17 @@
 		[self getPage:p];
 		return;
 	}
-    
-    //NSString *title = [NSString stringWithFormat:@"Browse (%d)", [[openHouses totalResults] intValue]];
-    //[[self navigationItem] setTitle:title];
 	
 	[[self mapController] showPage:[openHouses getPage:p] withOrigin:origin];
 	[[self tableController] showPage:[openHouses getPage:p] withOrigin:origin];
 	
-	[self setPage:p];
+	self.page = p;
 	[self updateNavButtons];
+    [self updateStatusView];
 }
 
 -(void) getPage:(NSNumber *)p {
-    [statusView showLabel:@"Loading Data..."];
+    [statusView showLabel:@"Loading Data..." withSpinner:YES];
     
 	OpenHouses *openHouses = [OpenHouses sharedOpenHouses];
 	[openHouses loadMoreData];
@@ -272,6 +271,20 @@
 	if ([[self page] intValue] > 1) {
 		[[self navButtons] setEnabled:YES forSegmentAtIndex:1];
 	}
+}
+
+-(void) updateStatusView {
+    if ([self.page intValue] < 1) {
+        return;
+    }
+
+	OpenHouses *openHouses = [OpenHouses sharedOpenHouses];
+    int begin = ([self.page intValue]-1)*RESULTS_PER_PAGE_DISPLAY;
+    int end   = begin + [[openHouses getPage:self.page] count];
+    int total = [[openHouses totalResults] intValue];
+    
+    NSString *summary = [NSString stringWithFormat:@"%d-%d of %d results", begin+1, end, total];
+    [statusView showLabel:summary withSpinner:NO];
 }
 
 -(void) selectAction:(id)sender {
@@ -457,7 +470,7 @@
             [self.locationManager startUpdatingLocation];
         }
         
-        [statusView showLabel:@"Locating..."];
+        [statusView showLabel:@"Locating..." withSpinner:YES];
         self.locationPendingSearch = YES;
     }
     else if (buttonIndex == 2) {
@@ -525,7 +538,7 @@
 }
 
 -(void) failedWithError:(NSError *)error {
-    [statusView hideLabel];
+    [self updateStatusView];
     
     [self showAlertWithText:[error localizedDescription]];
 }

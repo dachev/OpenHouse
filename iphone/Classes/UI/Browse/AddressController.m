@@ -277,7 +277,7 @@
     }
     
     [[NSUserDefaults standardUserDefaults] setObject:query forKey:@"address_search_query"];
-    [statusView showLabel:@"Searching..."];
+    [statusView showLabel:@"Searching..." withSpinner:YES];
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)sBar {

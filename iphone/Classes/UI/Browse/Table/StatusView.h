@@ -13,7 +13,7 @@
 
 }
 
--(void) showLabel:(NSString *)label;
+-(void) showLabel:(NSString *)label withSpinner:(BOOL)spin;
 -(void) hideLabel;
 
 @end

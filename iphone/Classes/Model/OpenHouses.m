@@ -107,18 +107,18 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(OpenHouses);
     [requests removeObjectForKey:tag];
     
     if(code != 200) {
-        //[self getHousesFail:connection withError:@""];
+        //[self getHousesFail:connection withError:@"Server error. PLease try again later."];
         return;
     }
     
 	NSDictionary *response = [[CJSONDeserializer deserializer] deserializeAsDictionary:payload error:nil];
 	if (response == nil) {
-        //[self getHousesFail:connection withError:@""];
+        //[self getHousesFail:connection withError:@"Server error. PLease try again later."];
         return;
 	}
     
 	if ([[response objectForKey:@"success"] intValue] != 1) {
-        //[self getHousesFail:connection withError:@""];
+        //[self getHousesFail:connection withError:@"Server error. PLease try again later."];
         return;
 	}
     
