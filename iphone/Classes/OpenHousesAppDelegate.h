@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MainViewController.h"
+#import "SplashViewController.h"
 #import "Database.h"
 #import "DiskCache.h"
 #import "FlurryAPI.h"
@@ -15,10 +16,14 @@
 @interface OpenHousesAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
     MainViewController *mainController;
+    SplashViewController *splashController;
+    NSDate *launchTime;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet MainViewController *mainController;
+@property (nonatomic, retain) MainViewController *mainController;
+@property (nonatomic, retain) SplashViewController *splashController;
+@property (nonatomic, retain) NSDate *launchTime;
 
 @end
 

@@ -55,6 +55,7 @@
 		83D61BB0119F299900AAFDAD /* loadingThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D61BAF119F299900AAFDAD /* loadingThumb.png */; };
 		83D61BB5119F2BAF00AAFDAD /* noThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D61BB4119F2BAF00AAFDAD /* noThumb.png */; };
 		83D61C6C119F86D200AAFDAD /* HistoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D61C6B119F86D200AAFDAD /* HistoryManager.m */; };
+		83D61CB0119F964900AAFDAD /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D61CAF119F964900AAFDAD /* SplashViewController.m */; };
 		83DAD803102164F9008CFD01 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 83DAD802102164F9008CFD01 /* libsqlite3.dylib */; };
 		83DAD8AE10217B78008CFD01 /* openhouses.db in Resources */ = {isa = PBXBuildFile; fileRef = 83DAD8AD10217B78008CFD01 /* openhouses.db */; };
 		83E55D0D0FB7F8C800ED0E37 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E55D0C0FB7F8C800ED0E37 /* MapKit.framework */; };
@@ -150,6 +151,8 @@
 		83D61BB4119F2BAF00AAFDAD /* noThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noThumb.png; path = resources/noThumb.png; sourceTree = "<group>"; };
 		83D61C6A119F86D200AAFDAD /* HistoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryManager.h; sourceTree = "<group>"; };
 		83D61C6B119F86D200AAFDAD /* HistoryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryManager.m; sourceTree = "<group>"; };
+		83D61CAE119F964900AAFDAD /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
+		83D61CAF119F964900AAFDAD /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
 		83DAD802102164F9008CFD01 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = /usr/lib/libsqlite3.dylib; sourceTree = "<absolute>"; };
 		83DAD8AD10217B78008CFD01 /* openhouses.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = openhouses.db; path = resources/openhouses.db; sourceTree = "<group>"; };
 		83E55D0C0FB7F8C800ED0E37 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -390,6 +393,8 @@
 				8381E891118E321B00A412EE /* Details */,
 				8381E898118E321B00A412EE /* MainViewController.h */,
 				8381E899118E321B00A412EE /* MainViewController.m */,
+				83D61CAE119F964900AAFDAD /* SplashViewController.h */,
+				83D61CAF119F964900AAFDAD /* SplashViewController.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -565,6 +570,7 @@
 				8381E8BB118E338E00A412EE /* ConnectionManager.m in Sources */,
 				83B89C47118F9E1200BB6116 /* DiskCache.m in Sources */,
 				83D61C6C119F86D200AAFDAD /* HistoryManager.m in Sources */,
+				83D61CB0119F964900AAFDAD /* SplashViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
