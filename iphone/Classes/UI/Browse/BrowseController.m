@@ -538,6 +538,7 @@
 }
 
 -(void) failedWithError:(NSError *)error {
+    [statusView hideLabel];
     [self updateStatusView];
     
     [self showAlertWithText:[error localizedDescription]];

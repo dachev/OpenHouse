@@ -11,7 +11,10 @@
 
 @interface OpenHouses (Private)
 -(void) cancelRequests;
+-(NSError*) errorWithText:(NSString*)text;
 -(NSNumber *) calculatePageFromStartIndex:(NSNumber *)idx;
+-(void) getHousesFinishWithData:(NSDictionary *)data;
+-(void) getHousesFailWithData:(NSDictionary *)data;
 @end
 
 @implementation OpenHouses
@@ -96,6 +99,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(OpenHouses);
      ];
 }
 
+-(NSError*) errorWithText:(NSString*)text {
+    NSDictionary *info = [NSDictionary dictionaryWithObjectsAndKeys:text, NSLocalizedDescriptionKey, nil];
+    NSError *error = [NSError errorWithDomain:@"ApiRequestErrorDomain" code:-1 userInfo:info];
+    
+    return error;
+}
+
 
 #pragma mark -
 #pragma mark Search API delegates
@@ -107,18 +117,27 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(OpenHouses);
     [requests removeObjectForKey:tag];
     
     if(code != 200) {
-        //[self getHousesFail:connection withError:@"Server error. PLease try again later."];
+        NSError *error = [self errorWithText:@"Server error. Please try again later."];
+        NSMutableDictionary *errorData = [NSMutableDictionary dictionaryWithDictionary:data];
+        [errorData setObject:error forKey:@"error"];
+        [self getHousesFailWithData:errorData];
         return;
     }
     
 	NSDictionary *response = [[CJSONDeserializer deserializer] deserializeAsDictionary:payload error:nil];
 	if (response == nil) {
-        //[self getHousesFail:connection withError:@"Server error. PLease try again later."];
+        NSError *error = [self errorWithText:@"Server error. Please try again later."];
+        NSMutableDictionary *errorData = [NSMutableDictionary dictionaryWithDictionary:data];
+        [errorData setObject:error forKey:@"error"];
+        [self getHousesFailWithData:errorData];
         return;
 	}
     
 	if ([[response objectForKey:@"success"] intValue] != 1) {
-        //[self getHousesFail:connection withError:@"Server error. PLease try again later."];
+        NSError *error = [self errorWithText:@"Server error. Please try again later."];
+        NSMutableDictionary *errorData = [NSMutableDictionary dictionaryWithDictionary:data];
+        [errorData setObject:error forKey:@"error"];
+        [self getHousesFailWithData:errorData];
         return;
 	}
     

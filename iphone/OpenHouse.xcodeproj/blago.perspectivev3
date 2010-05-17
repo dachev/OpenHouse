@@ -285,15 +285,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>23</integer>
-									<integer>17</integer>
-									<integer>16</integer>
+									<integer>15</integer>
+									<integer>9</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 30}, {276, 760}}</string>
+							<string>{{0, 0}, {276, 760}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -328,7 +327,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>83E55D200FB7F8FC00ED0E37</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>BrowseController.m</string>
+								<string>OpenHouses.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -336,11 +335,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>83E55D210FB7F8FC00ED0E37</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>BrowseController.m</string>
+										<string>OpenHouses.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>83C0203711A0AA3E00141CA8</string>
+										<string>83C0203B11A0AB4C00141CA8</string>
 										<key>history</key>
 										<array>
 											<string>835B0FA20FC13181007F818F</string>
@@ -400,9 +399,9 @@
 											<string>83C0200F11A099C800141CA8</string>
 											<string>83C0201C11A09A8900141CA8</string>
 											<string>83C0201D11A09A8900141CA8</string>
-											<string>83C0203411A0AA3E00141CA8</string>
 											<string>83C0203511A0AA3E00141CA8</string>
-											<string>83C0203611A0AA3E00141CA8</string>
+											<string>83C0203911A0AB4C00141CA8</string>
+											<string>83C0203A11A0AB4C00141CA8</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -717,7 +716,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>83C0203811A0AA3E00141CA8</string>
 		<string>83C01F9411A0881300141CA8</string>
 		<string>83C01F9511A0881300141CA8</string>
 		<string>/Users/blago/Projects/openhouse/src/iphone/OpenHouse.xcodeproj</string>
