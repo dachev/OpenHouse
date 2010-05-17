@@ -216,6 +216,10 @@
 			83C0203911A0AB4C00141CA8 /* PBXTextBookmark */ = 83C0203911A0AB4C00141CA8 /* PBXTextBookmark */;
 			83C0203A11A0AB4C00141CA8 /* PBXTextBookmark */ = 83C0203A11A0AB4C00141CA8 /* PBXTextBookmark */;
 			83C0203B11A0AB4C00141CA8 /* PBXTextBookmark */ = 83C0203B11A0AB4C00141CA8 /* PBXTextBookmark */;
+			83C0204A11A0C28600141CA8 /* PBXTextBookmark */ = 83C0204A11A0C28600141CA8 /* PBXTextBookmark */;
+			83C0204B11A0C28600141CA8 /* PBXTextBookmark */ = 83C0204B11A0C28600141CA8 /* PBXTextBookmark */;
+			83C0204C11A0C28600141CA8 /* PBXTextBookmark */ = 83C0204C11A0C28600141CA8 /* PBXTextBookmark */;
+			83C0204D11A0C28600141CA8 /* PBXTextBookmark */ = 83C0204D11A0C28600141CA8 /* PBXTextBookmark */;
 			83C543F30FFAF53300BC7067 = 83C543F30FFAF53300BC7067 /* PBXTextBookmark */;
 			83D61B9A119F269700AAFDAD = 83D61B9A119F269700AAFDAD /* PBXBookmark */;
 			83D61B9C119F269700AAFDAD = 83D61B9C119F269700AAFDAD /* PBXBookmark */;
@@ -532,9 +536,9 @@
 	};
 	8381E86C118E304D00A412EE /* OpenHouses.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1097, 2795}}";
-			sepNavSelRange = "{3770, 0}";
-			sepNavVisRange = "{2487, 1575}";
+			sepNavIntBoundsRect = "{{0, 0}, {1097, 2769}}";
+			sepNavSelRange = "{4216, 0}";
+			sepNavVisRange = "{3185, 1681}";
 		};
 	};
 	8381E87F118E321B00A412EE /* AddressController.h */ = {
@@ -1564,6 +1568,46 @@
 		rType = 0;
 		vrLen = 1433;
 		vrLoc = 2824;
+	};
+	83C0204A11A0C28600141CA8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8381E8BA118E338E00A412EE /* ConnectionManager.m */;
+		name = "ConnectionManager.m: 21";
+		rLen = 0;
+		rLoc = 388;
+		rType = 0;
+		vrLen = 1501;
+		vrLoc = 4243;
+	};
+	83C0204B11A0C28600141CA8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8381E884118E321B00A412EE /* BrowseController.m */;
+		name = "BrowseController.m: 541";
+		rLen = 0;
+		rLoc = 19500;
+		rType = 0;
+		vrLen = 1372;
+		vrLoc = 18881;
+	};
+	83C0204C11A0C28600141CA8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8381E86C118E304D00A412EE /* OpenHouses.m */;
+		name = "OpenHouses.m: 119";
+		rLen = 0;
+		rLoc = 3770;
+		rType = 0;
+		vrLen = 1575;
+		vrLoc = 2487;
+	};
+	83C0204D11A0C28600141CA8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8381E86C118E304D00A412EE /* OpenHouses.m */;
+		name = "OpenHouses.m: 128";
+		rLen = 0;
+		rLoc = 4216;
+		rType = 0;
+		vrLen = 1681;
+		vrLoc = 3185;
 	};
 	83C543F30FFAF53300BC7067 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
