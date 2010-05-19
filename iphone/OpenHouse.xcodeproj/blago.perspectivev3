@@ -339,7 +339,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>83C0204D11A0C28600141CA8</string>
+										<string>83AF615311A39E67008BBC2A</string>
 										<key>history</key>
 										<array>
 											<string>835B0FA20FC13181007F818F</string>
@@ -401,7 +401,7 @@
 											<string>83C0203511A0AA3E00141CA8</string>
 											<string>83C0204A11A0C28600141CA8</string>
 											<string>83C0204B11A0C28600141CA8</string>
-											<string>83C0204C11A0C28600141CA8</string>
+											<string>83C0205211A20BE000141CA8</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -415,18 +415,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {994, 566}}</string>
+								<string>{{0, 0}, {994, 637}}</string>
 								<key>RubberWindowFrame</key>
 								<string>1 59 1292 819 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>566pt</string>
+							<string>637pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>207pt</string>
+							<string>136pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -440,7 +440,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {994, 197}}</string>
+										<string>{{10, 27}, {994, 109}}</string>
+										<key>RubberWindowFrame</key>
+										<string>1 59 1292 819 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -457,8 +459,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {994, 180}}</string>
-										<key>RubberWindowFrame</key>
-										<string>1 59 1292 819 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXProjectFindModule</string>
@@ -496,7 +496,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {994, 221}}</string>
+										<string>{{10, 27}, {994, 105}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -524,11 +524,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>83C01F6D11A07E0100141CA8</string>
+				<string>83AF615411A39E67008BBC2A</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>83C01F6E11A07E0100141CA8</string>
+				<string>83AF615511A39E67008BBC2A</string>
 				<string>83E55D200FB7F8FC00ED0E37</string>
-				<string>83C01F6F11A07E0100141CA8</string>
+				<string>83AF615611A39E67008BBC2A</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -677,14 +677,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>83C01F7011A07E0100141CA8</string>
+				<string>83AF615711A39E67008BBC2A</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>83C01F7111A07E0100141CA8</string>
-				<string>83C01F7211A07E0100141CA8</string>
-				<string>83C01F7311A07E0100141CA8</string>
-				<string>83C01F7411A07E0100141CA8</string>
-				<string>83C01F7511A07E0100141CA8</string>
+				<string>83AF615811A39E67008BBC2A</string>
+				<string>83AF615911A39E67008BBC2A</string>
+				<string>83AF615A11A39E67008BBC2A</string>
+				<string>83AF615B11A39E67008BBC2A</string>
+				<string>83AF615C11A39E67008BBC2A</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
 			<string>2</string>
@@ -716,9 +716,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>83C0204E11A0C28600141CA8</string>
-		<string>83C01F9411A0881300141CA8</string>
-		<string>83C01F9511A0881300141CA8</string>
 		<string>/Users/blago/Projects/openhouse/src/iphone/OpenHouse.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
