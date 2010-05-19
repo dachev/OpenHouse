@@ -209,6 +209,7 @@
 			83C0204B11A0C28600141CA8 = 83C0204B11A0C28600141CA8 /* PBXTextBookmark */;
 			83C543F30FFAF53300BC7067 = 83C543F30FFAF53300BC7067 /* PBXTextBookmark */;
 			83CA21F211A3BABC00A05873 /* PBXTextBookmark */ = 83CA21F211A3BABC00A05873 /* PBXTextBookmark */;
+			83CA21FB11A3BDAE00A05873 /* PBXTextBookmark */ = 83CA21FB11A3BDAE00A05873 /* PBXTextBookmark */;
 			83D61B9A119F269700AAFDAD = 83D61B9A119F269700AAFDAD /* PBXBookmark */;
 			83D61B9C119F269700AAFDAD = 83D61B9C119F269700AAFDAD /* PBXBookmark */;
 			83D61BC6119F2E6400AAFDAD = 83D61BC6119F2E6400AAFDAD /* PBXTextBookmark */;
@@ -512,8 +513,8 @@
 	8381E86B118E304D00A412EE /* OpenHouses.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {933, 624}}";
-			sepNavSelRange = "{437, 0}";
-			sepNavVisRange = "{38, 1078}";
+			sepNavSelRange = "{304, 0}";
+			sepNavVisRange = "{38, 1072}";
 			sepNavWindowFrame = "{{2, 4}, {1438, 874}}";
 		};
 	};
@@ -956,6 +957,16 @@
 		rLoc = 437;
 		rType = 0;
 		vrLen = 1078;
+		vrLoc = 38;
+	};
+	83CA21FB11A3BDAE00A05873 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8381E86B118E304D00A412EE /* OpenHouses.h */;
+		name = "OpenHouses.h: 15";
+		rLen = 0;
+		rLoc = 304;
+		rType = 0;
+		vrLen = 1072;
 		vrLoc = 38;
 	};
 	83D61B9A119F269700AAFDAD /* PBXBookmark */ = {
