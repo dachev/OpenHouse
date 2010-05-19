@@ -1,0 +1,37 @@
+Open Houses
+
+Discover open houses for sale in any given area. Browse in map or list mode. Search by address, current location or an arbitrary map location. Access previous searches through a history manager. Open house details include:
+	* Photos
+	* Price
+	* Date/Time
+	* Address
+	* Description
+	* Propert taxes
+	* HOA Dues
+	* Badrooms
+	* Bathrooms
+	* Year built
+	* Area
+	* School district
+	* MLS ID
+	* Broker
+	* Agent
+OpenHouse uses a simple and speedy UI that makes searching fun.
+
+Business
+
+2009 Blagovest Dachev
+
+0.1
+
+7BDMB716LL
+
+house,openhouse,real estate,property,realestate,homes for sale,search homes,house for sale,mls,condo
+
+http://openhouse.dachev.com
+
+http://openhouse.dachev.com
+
+openhouse@dachev.com
+
+http://cougarlife.com/profiles/wetNwild
