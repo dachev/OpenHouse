@@ -4,8 +4,8 @@
 ##  This is a C++ module so things have to be handled a little differently.
 
 #   the used tools
-APXS=apxs2
-APACHECTL=apache2ctl
+APXS=/opt/local/apache2/bin/apxs
+APACHECTL=/opt/local/apache2/binapachectl
 
 # Get all of apxs's internal values.
 APXS_CC=`$(APXS) -q CC`   
@@ -24,37 +24,16 @@ APP_LIBS = `pkg-config --libs GraphicsMagick++` `pkg-config --libs libcurl` `pkg
 OBJECTS = mod_image.o
 
 # the default target
-all: mod_image.so
-
-# link
-mod_image.so: $(OBJECTS)
-	g++ -fPIC -shared -o $@ $(OBJECTS) $(APXS_LIBS_SHLIB) $(APP_LIBS)
-
-# compile
-%.o:%.cpp
-	g++ -c -fPIC $(APP_INCLUDES) -I$(APXS_INCLUDEDIR) -I. $(APXS_CFLAGS) $(APXS_CFLAGS_SHLIB) -Wall -o $@ $<
+all:
+	$(APXS) -S CC=g++ $(APP_INCLUDES) -c mod_image.c $(APP_LIBS)
 
 # install the shared object file into Apache 
 install: all
-	$(APXS) -i -n 'image' mod_image.so
-
-# display the apxs variables
-check_apxs_vars:
-	@echo APXS_CC $(APXS_CC);\
-	echo APXS_TARGET $(APXS_TARGET);\
-	echo APXS_CFLAGS $(APXS_CFLAGS);\
-	echo APXS_SBINDIR $(APXS_SBINDIR);\
-	echo APXS_CFLAGS_SHLIB $(APXS_CFLAGS_SHLIB);\
-	echo APXS_INCLUDEDIR $(APXS_INCLUDEDIR);\
-	echo APXS_LD_SHLIB $(APXS_LD_SHLIB);\
-	echo APXS_LIBEXECDIR $(APXS_LIBEXECDIR);\
-	echo APXS_LDFLAGS_SHLIB $(APXS_LDFLAGS_SHLIB);\
-	echo APXS_SYSCONFDIR $(APXS_SYSCONFDIR);\
-	echo APXS_LIBS_SHLIB $(APXS_LIBS_SHLIB)
+	sudo $(APXS) -i -n 'image' -a .libs/mod_image.so
 
 #   cleanup
 clean:
-	-rm -f *.so *.o *~ ._*
+	-rm -rf *.so *.o *~ ._* *.la *.lo *.slo .libs
 
 #   install and activate shared object by reloading Apache to
 #   force a reload of the shared object file
