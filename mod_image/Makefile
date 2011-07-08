@@ -4,7 +4,7 @@
 ##  This is a C++ module so things have to be handled a little differently.
 
 #   the used tools
-APXS=/opt/local/apache2/bin/apxs
+APXS=/usr/bin/apxs2
 APACHECTL=/opt/local/apache2/binapachectl
 
 # Get all of apxs's internal values.
